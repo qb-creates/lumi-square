@@ -1,0 +1,193 @@
+#include "leds.h"
+
+volatile uint16_t Output::ledColorData[4][4][8];
+volatile uint8_t Output::currentLedIndex = 0;
+volatile bool Output::isDisplayRefreshing = false;
+
+Output::LED Output::leds[16] = {
+    LED(0, 0, 0x0001),
+    LED(0, 1, 0x0001),
+    LED(0, 2, 0x0001),
+    LED(0, 3, 0x0001),
+    LED(1, 0, 0x0008),
+    LED(1, 1, 0x0008),
+    LED(1, 2, 0x0008),
+    LED(1, 3, 0x0008),
+    LED(2, 0, 0x0040),
+    LED(2, 1, 0x0040),
+    LED(2, 2, 0x0040),
+    LED(2, 3, 0x0040),
+    LED(3, 0, 0x0200),
+    LED(3, 1, 0x0200),
+    LED(3, 2, 0x0200),
+    LED(3, 3, 0x0200)};
+
+/**
+ * @brief Static Output object. Used to control the leds under the buttons.
+ *
+ * @param r The row the led is in.
+ * @param c The coloumn the led is in.
+ * @param baseAddress The base address for the driver pins this led is connected to.
+ */
+Output::LED::LED(uint8_t r, uint8_t c, uint16_t baseAddress)
+    : row(r), column(c), rAddress(baseAddress), gAddress(baseAddress << 1), bAddress(baseAddress << 2), color(), isLedOn(true), intensity(1) {}
+
+/**
+ * @brief Configures the led communication.
+ *
+ */
+void Output::configureLeds()
+{
+    DDRC = 0xFF;
+    PORTC = 0x01;
+    std::cout.configure();
+}
+
+/**
+ * @brief Refreshes the leds. Call this every 1ms to properly show all the led colors.
+ * Will result in a 62.5hz refresh rate froe the leds
+ *
+ */
+void Output::refreshLeds()
+{
+    isDisplayRefreshing = true;
+
+    LED *led = &leds[currentLedIndex];
+
+    PORTC = _BV(led->column);
+
+    for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
+    {
+        std::cout << ledColorData[led->column][led->row][colorDataIndex];
+
+        for (int j = 0; j < _BV(colorDataIndex); ++j)
+        {
+            _delay_us(2);
+        }
+    }
+
+    std::cout << 0x0000;
+
+    ++currentLedIndex;
+
+    if (currentLedIndex > 15)
+        currentLedIndex = 0;
+
+    isDisplayRefreshing = false;
+}
+
+/**
+ * @brief Returns the color of the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to get the color of.
+ * @return Color
+ */
+Color Output::getLedColor(uint8_t ledIndex)
+{
+    return leds[ledIndex].color;
+}
+
+/**
+ * @brief Sets the color of the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to set the color.
+ * @param color The color to change the led to.
+ */
+void Output::setLedColor(uint8_t ledIndex, const Color &color)
+{
+    LED *led = &leds[ledIndex];
+    led->color = color;
+
+    if (led->isLedOn)
+    {
+        onSetLedColor(*led, color, led->intensity);
+    }
+}
+
+/**
+ * @brief Turns on the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to turn on.
+ */
+void Output::ledOn(uint8_t ledIndex)
+{
+    LED *led = &leds[ledIndex];
+
+    if (!led->isLedOn)
+    {
+        onSetLedColor(*led, led->color, led->intensity);
+
+        led->isLedOn = true;
+    }
+}
+
+/**
+ * @brief Turns off the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to turn off.
+ */
+void Output::ledOff(uint8_t ledIndex)
+{
+    LED *led = &leds[ledIndex];
+
+    if (led->isLedOn)
+    {
+        onSetLedColor(*led, Color(), 0);
+
+        led->isLedOn = false;
+    }
+}
+
+/**
+ * @brief Gets the status of the led identified by the ledIndex. Will return true if led is on. False if it si off
+ *
+ * @param ledIndex Index of the led you want to get the power status for.
+ * @return true
+ * @return false
+ */
+bool Output::getLedStatus(uint8_t ledIndex)
+{
+    return leds[ledIndex].isLedOn;
+}
+
+/**
+ * @brief Sets the intensity of the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to set the intensity for
+ * @param intensity The intensity level to set the led to. Valid values are from 0 - 1.
+ */
+void Output::setLedIntensity(uint8_t ledIndex, double intensity)
+{
+    LED *led = &leds[ledIndex];
+    
+    if (led->isLedOn)
+    {
+        onSetLedColor(*led, led->color, intensity);
+    }
+
+    led->intensity = intensity;
+}
+
+void Output::onSetLedColor(const LED &led, const Color &color, double intensity)
+{
+    while (isDisplayRefreshing)
+    {
+    }
+
+    cli();
+
+    uint8_t column = led.column;
+    uint8_t row = led.row;
+
+    for (int i = 0; i < 8; i++)
+    {
+        uint8_t mask = _BV(i);
+
+        ledColorData[column][row][i] &= ~(led.rAddress | led.gAddress | led.bAddress);
+        ledColorData[column][row][i] |= ((uint8_t)(color.r * intensity) & mask) ? led.rAddress : 0;
+        ledColorData[column][row][i] |= ((uint8_t)(color.g * intensity) & mask) ? led.gAddress : 0;
+        ledColorData[column][row][i] |= ((uint8_t)(color.b * intensity) & mask) ? led.bAddress : 0;
+    }
+
+    sei();
+}
