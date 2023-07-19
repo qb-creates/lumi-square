@@ -1,14 +1,36 @@
-# For PCBs designed using KiCad: https://www.kicad.org/
-# Format documentation: https://kicad.org/help/file-formats/
+.pio
+.vscode
+**/.gitignore
+**/*-backups
+package.json
+
+#Build Directories
+[Dd]ebug/
+[Rr]elease/
+
+#Build Results
+*.o
+*.d
+*.eep
+*.elf
+*.hex
+*.map
+*.srec
+
+#User Specific Files
+*.atsuo
+
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+# Format documentation: http://kicad-pcb.org/help/file-formats/
+
+# Directories
+gerber
 
 # Temporary files
 *.000
 *.bak
 *.bck
 *.kicad_pcb-bak
-*.kicad_sch-bak
-*-backups
-*.kicad_prl
 *.sch-bak
 *~
 _autosave-*
