@@ -30,7 +30,7 @@ Output::LED Output::leds[16] = {
  * @param baseAddress The base address for the driver pins this led is connected to.
  */
 Output::LED::LED(uint8_t r, uint8_t c, uint16_t baseAddress)
-    : row(r), column(c), rAddress(baseAddress), gAddress(baseAddress << 1), bAddress(baseAddress << 2), color(), isLedOn(true), intensity(1) {}
+    : row(r), column(c), rAddress(baseAddress), gAddress(baseAddress << 1), bAddress(baseAddress << 2), color(), isLedOn(false), intensity(1) {}
 
 /**
  * @brief Configures the led communication.

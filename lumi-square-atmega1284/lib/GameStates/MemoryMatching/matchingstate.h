@@ -19,6 +19,7 @@ private:
     bool guessCorrect;
     int16_t timer;
     int8_t correctGueses;
+    int8_t flashCount;
 };
 
 #endif

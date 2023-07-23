@@ -4,6 +4,7 @@
 #include "basestate.h"
 #include "MainMenu/mainmenustate.h"
 #include "MemoryMatching/matchingstate.h"
+#include "GameOver/gameoverstate.h"
 
 class StateManager
 {
@@ -17,9 +18,10 @@ public:
 private:
     StateManager();
     GameBaseState *currentState;
+    GameOverState gameOverState;
     MainMenuState mainMenuState;
     MemoryMatchingState memoryMatchingState;
-    GameBaseState *stateDictionary[4];
+    GameBaseState *stateDictionary[10];
 };
 
 #endif

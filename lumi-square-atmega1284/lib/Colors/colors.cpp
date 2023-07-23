@@ -8,6 +8,7 @@ const Color Colors::cyan = Color(0, 255, 150);
 const Color Colors::aquamarine = Color(0, 255, 20);
 const Color Colors::orange = Color(255, 60, 0);
 const Color Colors::yellow = Color(255, 255, 0);
+const Color Colors::green = Color(0, 255, 0);
 
 /**
  * @brief Default constructor. Constructs a new Color object with r,g,b components defaulted to 0.

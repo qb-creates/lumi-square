@@ -1,6 +1,6 @@
 #include "audio.h"
 
-int8_t AudioSource::playTime = 0;
+int16_t AudioSource::playTime = 0;
 bool AudioSource::isPlaying = false;
 
 void AudioSource::configureAudioSource()
@@ -30,7 +30,7 @@ void AudioSource::updateAudioSource()
     }
 }
 
-void AudioSource::playNote(MusicNote note, int8_t time)
+void AudioSource::playNote(MusicNote note, int16_t time)
 {
     OCR1A = static_cast<uint16_t>(note);
 

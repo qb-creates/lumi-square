@@ -1,9 +1,10 @@
 #include "statemanager.h"
 #include "buttons.h"
 
-
-StateManager::StateManager() : currentState(), mainMenuState(), memoryMatchingState(), stateDictionary{}
+StateManager::StateManager()
+    : currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), stateDictionary{}
 {
+    stateDictionary[1] = &gameOverState;
     stateDictionary[2] = &mainMenuState;
     stateDictionary[3] = &memoryMatchingState;
     currentState = &mainMenuState;

@@ -27,6 +27,7 @@ public:
     static const Color aquamarine;
     static const Color orange;
     static const Color yellow;
+    static const Color green;
 
 private:
     Colors();

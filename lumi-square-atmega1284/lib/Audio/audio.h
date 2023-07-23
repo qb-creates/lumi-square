@@ -28,12 +28,12 @@ class AudioSource
 public:
     static void configureAudioSource();
     static void updateAudioSource();
-    static void playNote(MusicNote note, int8_t time);
+    static void playNote(MusicNote note, int16_t time);
 
 private:
     AudioSource();
     static bool isPlaying;
-    static int8_t playTime;
+    static int16_t playTime;
     static MusicNote note;
 };
 
