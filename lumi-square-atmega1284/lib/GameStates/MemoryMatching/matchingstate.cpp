@@ -4,7 +4,7 @@
 #include "random.h"
 
 MemoryMatchingState::MemoryMatchingState()
-    : GameBaseState(), firstGuessIndex(-1), secondGuessIndex(-1), guessCorrect(false), timer(0), correctGueses(0), flashCount(6) {}
+    : GameBaseState(), firstGuessIndex(-1), secondGuessIndex(-1), guessCorrect(false), timer(0), correctGueses(0) {}
 
 void MemoryMatchingState::enterState()
 {
@@ -13,23 +13,17 @@ void MemoryMatchingState::enterState()
 
 void MemoryMatchingState::exitState()
 {
-    for (int i = 0; i < 16; i++)
-    {
-        Output::ledOff(i);
-    }
-
     firstGuessIndex = -1;
     secondGuessIndex = -1;
     guessCorrect = false;
     timer = 0;
     correctGueses = 0;
-    flashCount = 6;
     nextState = GameState::None;
 }
 
 void MemoryMatchingState::updateState()
 {
-    if (timer >= 0 && correctGueses != 8)
+    if (timer >= 0)
     {
         timer -= 16;
 
@@ -55,24 +49,7 @@ void MemoryMatchingState::updateState()
 
     if (correctGueses == 8)
     {
-        timer -= 16;
-
-        if (timer <= 0)
-        {
-            for (int i = 0; i < 16; i++)
-            {
-                flashCount % 2 ? Output::ledOn(i) : Output::ledOff(i);
-            }
-
-            if (flashCount == 0)
-            {
-                nextState = GameState::GameOver;
-                return;
-            }
-
-            flashCount--;
-            timer = 200;
-        }
+        nextState = GameState::GameOver;
     }
 }
 

@@ -2,17 +2,14 @@
 #include "leds.h"
 
 GameOverState::GameOverState()
-    : GameBaseState(), queuedState(GameState::None), flashButtonTimer(0), flashTargetTime(2000), transitionTimer(0), flip(true) {}
+    : GameBaseState(), flashAnimationTimer(200), transitionTimer(0), flashCount(7), onLED{} {}
 
 void GameOverState::enterState()
 {
-    Output::ledOn(12);
-    Output::setLedIntensity(12, 1);
-    Output::setLedColor(12, Colors::orange);
-
-    Output::ledOn(15);
-    Output::setLedIntensity(15, 1);
-    Output::setLedColor(15, Colors::green);
+    for (int i = 0; i < 16; i++)
+    {
+        onLED[i] = Output::getLedStatus(i);
+    }
 }
 
 void GameOverState::exitState()
@@ -20,36 +17,50 @@ void GameOverState::exitState()
     for (int i = 0; i < 16; i++)
     {
         Output::ledOff(i);
+        onLED[i] = false;
     }
 
-    flip = true;
-    flashButtonTimer = 0;
-    flashTargetTime = 2000;
+    flashAnimationTimer = 200;
     transitionTimer = 0;
-    queuedState = GameState::None;
+    flashCount = 7;
     nextState = GameState::None;
 }
 
 void GameOverState::updateState()
 {
-    flashButtonTimer += 16;
-
-    if (flashButtonTimer > flashTargetTime && transitionTimer == 0)
+    if (flashAnimationTimer > 0)
     {
-        flashButtonTimer = 0;
-        flip = !flip;
+        flashAnimationTimer -= 16;
 
-        if (flip)
+        if (flashAnimationTimer <= 0)
         {
-            Output::ledOn(12);
-            Output::ledOn(15);
-            flashTargetTime = 2000;
-        }
-        else
-        {
-            Output::ledOff(12);
-            Output::ledOff(15);
-            flashTargetTime = 400;
+            for (int i = 0; i < 16; i++)
+            {
+                if (flashCount % 2)
+                {
+                    if (onLED[i])
+                    {
+                        Output::ledOff(i);
+                    }
+                }
+                else
+                {
+                    if (onLED[i])
+                    {
+                        Output::ledOn(i);
+                    }
+                }
+            }
+
+            if (flashCount != 0)
+            {
+                flashCount--;
+                flashAnimationTimer = 300;
+            }
+            else
+            {
+                transitionTimer = 2000;
+            }
         }
     }
 
@@ -59,22 +70,9 @@ void GameOverState::updateState()
 
         if (transitionTimer <= 0)
         {
-            nextState = queuedState;
+            nextState = GameState::Menu;
         }
     }
 }
 
-void GameOverState::onButtonPressed(int8_t buttonIndex)
-{
-    switch (buttonIndex)
-    {
-    case 12:
-        queuedState = GameState::Previous;
-        transitionTimer = 400;
-        break;
-    case 15:
-        queuedState = GameState::Menu;
-        transitionTimer = 400;
-        break;
-    }
-}
+void GameOverState::onButtonPressed(int8_t buttonIndex) {}

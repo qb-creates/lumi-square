@@ -13,11 +13,10 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    GameState queuedState;
-    int16_t flashButtonTimer;
-    int16_t flashTargetTime;
+    int16_t flashAnimationTimer;
     int16_t transitionTimer;
-    bool flip;
+    int8_t flashCount;
+    bool onLED[16];
 };
 
 #endif

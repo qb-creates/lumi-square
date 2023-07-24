@@ -10,7 +10,6 @@ enum class GameState
     GameOver = 1,
     Menu = 2,
     MemoryMatching = 3,
-    TicTacToe = 4,
     LightSpeed = 5,
     Simon = 6
 };

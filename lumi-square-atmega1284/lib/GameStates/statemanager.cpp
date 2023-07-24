@@ -2,11 +2,12 @@
 #include "buttons.h"
 
 StateManager::StateManager()
-    : currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), stateDictionary{}
+    : currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), simonState(), stateDictionary{}
 {
     stateDictionary[1] = &gameOverState;
     stateDictionary[2] = &mainMenuState;
     stateDictionary[3] = &memoryMatchingState;
+    stateDictionary[6] = &simonState;
     currentState = &mainMenuState;
     currentState->enterState();
 }

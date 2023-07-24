@@ -5,6 +5,7 @@
 
 enum class MusicNote : uint16_t
 {
+    G4 = 290,
     C5 = 219,
     Db5 = 207,
     D5 = 196,
@@ -20,7 +21,8 @@ enum class MusicNote : uint16_t
     C6 = 110,
     Db6 = 104,
     D6 = 98,
-    Eb = 92
+    Eb = 92,
+    G6 = 70
 };
 
 class AudioSource

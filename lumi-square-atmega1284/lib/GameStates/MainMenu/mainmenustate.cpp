@@ -71,6 +71,9 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     case 0:
         queuedState = GameState::MemoryMatching;
         break;
+    case 1:
+        queuedState = GameState::Simon;
+        break;
     case 12:
 
         return;
