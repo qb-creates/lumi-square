@@ -105,6 +105,26 @@ void Output::setLedColor(uint8_t ledIndex, const Color &color)
 }
 
 /**
+ * @brief Sets the color of the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to set the color.
+ * @param color The color to change the led to.
+ * @param intensity The intensity level to set the led to. Valid values are from 0 - 1.
+ */
+void Output::setLedColor(uint8_t ledIndex, const Color &color, double intensity)
+{
+    LED *led = &leds[ledIndex];
+    led->color = color;
+
+    if (led->isLedOn)
+    {
+        onSetLedColor(*led, color, led->intensity);
+    }
+
+    setLedIntensity(ledIndex, intensity);
+}
+
+/**
  * @brief Turns on the led identified by the ledIndex.
  *
  * @param ledIndex Index of the led you want to turn on.
@@ -119,6 +139,28 @@ void Output::ledOn(uint8_t ledIndex)
 
         led->isLedOn = true;
     }
+}
+
+/**
+ * @brief Turns on the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to turn on.
+ * @param color The color to change the led to.
+ * @param intensity The intensity level to set the led to. Valid values are from 0 - 1.
+ */
+void Output::ledOn(uint8_t ledIndex, const Color &color, double intensity)
+{
+    LED *led = &leds[ledIndex];
+
+    if (!led->isLedOn)
+    {
+        onSetLedColor(*led, led->color, led->intensity);
+
+        led->isLedOn = true;
+    }
+
+    setLedColor(ledIndex, color);
+    setLedIntensity(ledIndex, intensity);
 }
 
 /**
@@ -139,7 +181,29 @@ void Output::ledOff(uint8_t ledIndex)
 }
 
 /**
- * @brief Gets the status of the led identified by the ledIndex. Will return true if led is on. False if it si off
+ * @brief Turns off the led identified by the ledIndex.
+ *
+ * @param ledIndex Index of the led you want to turn on.
+ * @param color The color to change the led to.
+ * @param intensity The intensity level to set the led to. Valid values are from 0 - 1.
+ */
+void Output::ledOff(uint8_t ledIndex, const Color &color, double intensity)
+{
+    LED *led = &leds[ledIndex];
+
+    if (led->isLedOn)
+    {
+        onSetLedColor(*led, Color(), 0);
+
+        led->isLedOn = false;
+    }
+
+    setLedColor(ledIndex, color);
+    setLedIntensity(ledIndex, intensity);
+}
+
+/**
+ * @brief Gets the status of the led identified by the ledIndex. Will return true if led is on. False if it is off
  *
  * @param ledIndex Index of the led you want to get the power status for.
  * @return true
@@ -159,7 +223,7 @@ bool Output::getLedStatus(uint8_t ledIndex)
 void Output::setLedIntensity(uint8_t ledIndex, double intensity)
 {
     LED *led = &leds[ledIndex];
-    
+
     if (led->isLedOn)
     {
         onSetLedColor(*led, led->color, intensity);

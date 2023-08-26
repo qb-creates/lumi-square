@@ -1,13 +1,14 @@
-#include "random.h"
 #include "audio.h"
-#include "leds.h"
 #include "buttons.h"
+#include "leds.h"
+#include "random.h"
 #include "statemanager.h"
 #include <avr/interrupt.h>
 #include <avr/io.h>
+#include <iostream.h>
+#include <lcd.h>
 #include <stdlib.h>
 #include <util/delay.h>
-
 volatile bool fixedUpdate = false;
 volatile uint8_t fixedUpdateCounter = 0;
 
@@ -26,15 +27,18 @@ ISR(TIMER0_OVF_vect)
 
 int main(void)
 {
+
     // Timer 0 is configured in normal mode with a prescaler of 64
     TCCR0 = _BV(CS02);
 
     TIMSK |= _BV(TOIE0);
 
+    I2C::Instance().initialize();
     Random::configureRNG();
     AudioSource::configureAudioSource();
     Input::configureButtonMatrix();
     Output::configureLeds();
+    LCD::Instance().initializeDisplay();
     sei();
 
     while (true)

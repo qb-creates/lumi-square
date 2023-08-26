@@ -12,8 +12,11 @@ public:
     static void configureLeds();
     static Color getLedColor(uint8_t ledIndex);
     static void setLedColor(uint8_t ledIndex, const Color &color);
+    static void setLedColor(uint8_t ledIndex, const Color &color, double intensity);
     static void ledOn(uint8_t ledIndex);
+    static void ledOn(uint8_t ledIndex, const Color &color, double intensity);
     static void ledOff(uint8_t ledIndex);
+    static void ledOff(uint8_t ledIndex, const Color &color, double intensity);
     static bool getLedStatus(uint8_t ledIndex);
     static void setLedIntensity(uint8_t ledIndex, double intensity);
 

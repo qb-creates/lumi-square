@@ -22,7 +22,6 @@ private:
     bool isPlayingSequence;
     int16_t timer;
     bool buttonLedIsOn;
-    bool gameOver;
 };
 
 #endif

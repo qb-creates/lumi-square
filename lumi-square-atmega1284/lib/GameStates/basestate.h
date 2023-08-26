@@ -28,5 +28,25 @@ protected:
     GameState nextState;
 };
 
-#endif
+enum class Difficulty
+{
+    Easy,
+    Medium,
+    Hard
+};
 
+class GameProperties
+{
+public:
+    GameProperties(const GameProperties &) = delete;
+    void operator=(const GameProperties &) = delete;
+    Difficulty gameDifficulty;
+    static GameProperties &Instance();
+    Difficulty increaseDifficulty();
+
+private:
+    GameProperties();
+    int8_t difficultyCount;
+};
+
+#endif

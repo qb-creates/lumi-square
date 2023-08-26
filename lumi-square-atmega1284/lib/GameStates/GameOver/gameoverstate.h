@@ -14,7 +14,7 @@ public:
 
 private:
     int16_t flashAnimationTimer;
-    int16_t transitionTimer;
+    int16_t transitionToMainTimer;
     int8_t flashCount;
     bool onLED[16];
 };

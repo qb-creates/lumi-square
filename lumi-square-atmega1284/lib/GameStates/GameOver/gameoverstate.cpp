@@ -2,7 +2,7 @@
 #include "leds.h"
 
 GameOverState::GameOverState()
-    : GameBaseState(), flashAnimationTimer(200), transitionTimer(0), flashCount(7), onLED{} {}
+    : GameBaseState(), flashAnimationTimer(200), transitionToMainTimer(0), flashCount(7), onLED{} {}
 
 void GameOverState::enterState()
 {
@@ -21,7 +21,7 @@ void GameOverState::exitState()
     }
 
     flashAnimationTimer = 200;
-    transitionTimer = 0;
+    transitionToMainTimer = 0;
     flashCount = 7;
     nextState = GameState::None;
 }
@@ -59,16 +59,16 @@ void GameOverState::updateState()
             }
             else
             {
-                transitionTimer = 2000;
+                transitionToMainTimer = 2000;
             }
         }
     }
 
-    if (transitionTimer > 0)
+    if (transitionToMainTimer > 0)
     {
-        transitionTimer -= 16;
+        transitionToMainTimer -= 16;
 
-        if (transitionTimer <= 0)
+        if (transitionToMainTimer <= 0)
         {
             nextState = GameState::Menu;
         }
