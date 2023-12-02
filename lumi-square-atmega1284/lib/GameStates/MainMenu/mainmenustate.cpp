@@ -8,19 +8,18 @@ MainMenuState::MainMenuState()
 
 void MainMenuState::enterState()
 {
-    LCD::Instance().clearDisplay();
     LCD::Instance().writeChars(0, 0, "Memory Matching ");
-    LCD::Instance().writeChars(1, 0, "High Score:");
+    LCD::Instance().writeChars(1, 0, "High Score:     ");
 
     for (int i = 1; i < 8; i++)
     {
         Output::ledOn(i, Colors::azure, .05);
     }
 
-    setDifficultyLightColor();
+    setDifficultyLEDColor();
 
     Output::ledOn(0, Colors::yellow, .5);
-    Output::ledOn(15, Colors::aquamarine, 1);
+    Output::ledOn(15, Colors::yellow, .4);
 }
 
 void MainMenuState::exitState()
@@ -76,7 +75,7 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
         break;
     case 12:
         GameProperties::Instance().increaseDifficulty();
-        setDifficultyLightColor();
+        setDifficultyLEDColor();
         return;
     case 15:
         nextState = queuedState;
@@ -101,18 +100,18 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     }
 }
 
-void MainMenuState::setDifficultyLightColor()
+void MainMenuState::setDifficultyLEDColor()
 {
     switch (GameProperties::Instance().gameDifficulty)
     {
     case Difficulty::Easy:
-        Output::ledOn(12, Colors::green, 0.5);
+        Output::ledOn(12, Colors::green, 0.4);
         break;
     case Difficulty::Medium:
-        Output::ledOn(12, Colors::orange, 0.5);
+        Output::ledOn(12, Colors::orange, 0.4);
         break;
     case Difficulty::Hard:
-        Output::ledOn(12, Colors::red, 0.5);
+        Output::ledOn(12, Colors::red, 0.4);
         break;
     }
 }

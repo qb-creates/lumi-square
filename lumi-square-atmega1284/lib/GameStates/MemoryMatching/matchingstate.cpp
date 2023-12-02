@@ -125,3 +125,11 @@ void MemoryMatchingState::randomizeLights()
         }
     }
 }
+
+MemoryMatchingStateEasy::MemoryMatchingStateEasy() : MemoryMatchingState()
+{
+}
+
+void MemoryMatchingStateEasy::enterState()
+{
+}

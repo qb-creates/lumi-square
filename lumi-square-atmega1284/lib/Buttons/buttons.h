@@ -8,7 +8,7 @@ class Input
 {
 public:
     static void configureButtonMatrix();
-    static void scanButtonMatrix();
+    static bool scanButtonMatrix();
     static bool getButton(uint8_t buttonIndex);
     static bool getButtonDown(uint8_t buttonIndex);
 

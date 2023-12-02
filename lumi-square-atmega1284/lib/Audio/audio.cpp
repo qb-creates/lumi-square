@@ -6,13 +6,13 @@ bool AudioSource::isPlaying = false;
 void AudioSource::configureAudioSource()
 {
     //  Configure
-    DDRB |= _BV(PB5);
+    DDRE |= _BV(PE3);
 
     // Enable PWM mode based on comparator OCR1B. Clear OC1B on match and set OC1B when TCNT1 = 0x000;
-    TCCR1A |= _BV(WGM10) | _BV(WGM11);
+    TCCR3A |= _BV(WGM30) | _BV(WGM31);
 
     // Selects a Prescaler of 64. Fast PWM mode. Top is determined by OCR1A
-    TCCR1B |= _BV(WGM13) | _BV(WGM12) | _BV(CS11) | _BV(CS10);
+    TCCR3B |= _BV(WGM33) | _BV(WGM32) | _BV(CS31) | _BV(CS30);
 }
 
 void AudioSource::updateAudioSource()
@@ -24,7 +24,7 @@ void AudioSource::updateAudioSource()
         if (playTime <= 0)
         {
             // Disable PWM output
-            TCCR1A &= ~_BV(COM1A0);
+            TCCR3A &= ~_BV(COM3A0);
             isPlaying = false;
         }
     }
@@ -32,10 +32,10 @@ void AudioSource::updateAudioSource()
 
 void AudioSource::playNote(MusicNote note, int16_t time)
 {
-    OCR1A = static_cast<uint16_t>(note);
+    OCR3A = static_cast<uint16_t>(note);
 
     // Enable PWM output
-    TCCR1A |= _BV(COM1A0);
+    TCCR3A |= _BV(COM3A0);
     playTime = time;
     isPlaying = true;
 }

@@ -22,3 +22,13 @@ private:
 };
 
 #endif
+
+class MemoryMatchingStateEasy : public MemoryMatchingState
+{
+public:
+    MemoryMatchingStateEasy();
+    void enterState();
+    void exitState();
+    void updateState();
+    void onButtonPressed(int8_t buttonIndex);
+};

@@ -43,8 +43,6 @@ void LightSpeedState::enterState()
         }
     }
 
-    LCD::Instance().clearDisplay();
-    LCD::Instance().writeChars(0, 0, "Light Speed     ");
     LCD::Instance().writeChars(1, 0, "Score:0    T:30");
 }
 
@@ -52,7 +50,8 @@ void LightSpeedState::exitState()
 {
     lightCount = 2000;
     score = 0;
-    timer = 30000;
+    timer = 1000;
+    counter = 30;
     nextState = GameState::None;
 }
 

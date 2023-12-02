@@ -17,7 +17,7 @@ private:
     int8_t currentSelectedButton;
     int16_t flashSelectedButtonTimer;
     int16_t flashTargetTime;
-    void setDifficultyLightColor();
+    void setDifficultyLEDColor();
 };
 
 #endif

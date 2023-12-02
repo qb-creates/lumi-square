@@ -45,7 +45,7 @@ void Input::configureButtonMatrix()
  * @brief Scan the button matrix. Call this periodically to update the button pressed states.
  *
  */
-void Input::scanButtonMatrix()
+bool Input::scanButtonMatrix()
 {
     buttonData = 0;
 
@@ -65,7 +65,10 @@ void Input::scanButtonMatrix()
 
         if (!(PINA & _BV(PIN7)))
             buttonData |= rowFourBaseAddress * columnAddress;
+
     }
+    
+    return buttonData != 0;
 }
 
 /**

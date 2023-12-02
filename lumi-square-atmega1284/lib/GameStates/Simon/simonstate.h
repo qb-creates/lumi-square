@@ -15,6 +15,7 @@ public:
 
 private:
     void playNewSequence();
+    void replaySequence();
     int8_t pattern[100];
     MusicNote patternNotes[100];
     int8_t patternIndex;
@@ -22,6 +23,7 @@ private:
     bool isPlayingSequence;
     int16_t timer;
     bool buttonLedIsOn;
+    int lives;
 };
 
 #endif
