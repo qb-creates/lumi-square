@@ -1,6 +1,7 @@
 #include "lcd.h"
 #include "iostream.h"
 #include "string.h"
+#include <util/delay.h>
 LCD::LCD()
     : sAddress(0x7C) {}
 
@@ -8,6 +9,24 @@ LCD &LCD::Instance()
 {
     static LCD instance;
     return instance;
+}
+
+void LCD::displayPower(bool on)
+{
+    if (on)
+    {
+        DDRC |= _BV(PC2);
+        PORTC &= ~_BV(PC2);
+        _delay_ms(100);
+
+        TWCR &= ~((1 << TWSTO) | (1 << TWEN));
+        I2C::Instance().initialize();
+        LCD::Instance().initializeDisplay();
+        return;
+    }
+
+    TWCR = 0;
+    PORTC |= _BV(PC2);
 }
 
 void LCD::initializeDisplay()
@@ -58,7 +77,7 @@ void LCD::writeInteger(int8_t row, int8_t column, int32_t value)
     I2C::Instance().start(sAddress);
     int address = row == 0 ? 0x80 : 0xC0;
     address += column;
-    
+
     char temp[5]{0, 0, 0, 0, 0};
     int counter = 0;
     do

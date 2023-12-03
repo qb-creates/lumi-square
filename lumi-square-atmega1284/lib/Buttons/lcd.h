@@ -9,6 +9,7 @@ public:
     LCD(const LCD &) = delete;
     void operator=(const LCD &) = delete;
     static LCD &Instance();
+    void displayPower(bool on);
     void initializeDisplay();
     void clearDisplay();
     void writeChars(int8_t row, int8_t column, const char *data);

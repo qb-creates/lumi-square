@@ -8,7 +8,7 @@
 void std::SPI::configure() const
 {
     /* Set SS, SCK, and MOSI as outputs. Set MISO as input */
-    DDRB |= _BV(PB0) | _BV(PB1) | _BV(PB2);
+    DDRB |= _BV(PB4) | _BV(PB5) | _BV(PB6) | _BV(PB7);
 
     /* Enable SPI, Master, set clock rate fck/16 */
     SPSR = _BV(SPI2X);
@@ -33,8 +33,8 @@ void std::SPI::transmit(char dData) const
 
 void std::SPI::latch() const
 {
-    PORTB |= _BV(PB0);
-    PORTB &= ~_BV(PB0);
+    PORTB |= _BV(PB4);
+    PORTB &= ~_BV(PB4);
 }
 
 I2C::I2C() {}
@@ -48,7 +48,7 @@ I2C &I2C::Instance()
 void I2C::initialize()
 {
     TWSR = 0;
-    TWBR = 0x02;
+    TWBR = 17;
     TWCR = 0x04;
 }
 

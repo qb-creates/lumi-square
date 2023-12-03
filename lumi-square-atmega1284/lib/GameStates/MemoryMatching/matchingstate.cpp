@@ -101,7 +101,7 @@ void MemoryMatchingState::randomizeLights()
         Output::setLedIntensity(i, 1);
 
         while (1)
-        {
+        { 
             int value = Random::range(1, 16);
             bool valueRepeated = false;
 

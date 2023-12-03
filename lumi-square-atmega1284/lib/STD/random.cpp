@@ -7,7 +7,7 @@
 void Random::configureRNG()
 {
     // Timer 2 is configured in normal mode with no prescaler. TCNT2 will be used for the seed for our Random Generator.
-    TCCR2 = _BV(CS20);
+    TCCR2B = _BV(CS20);
 }
 
 /**

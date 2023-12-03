@@ -38,8 +38,8 @@ Output::LED::LED(uint8_t r, uint8_t c, uint16_t baseAddress)
  */
 void Output::configureLeds()
 {
-    DDRC = 0xFF;
-    PORTC = 0x01;
+    DDRB |= 0x0F;
+    PORTB |= 0x01;
     std::cout.configure();
 }
 
@@ -54,7 +54,7 @@ void Output::refreshLeds()
 
     LED *led = &leds[currentLedIndex];
 
-    PORTC = _BV(led->column);
+    PORTB = _BV(led->column);
 
     for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
     {
