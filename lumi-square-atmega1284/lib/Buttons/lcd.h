@@ -10,14 +10,27 @@ public:
     void operator=(const LCD &) = delete;
     static LCD &Instance();
     void displayPower(bool on);
-    void initializeDisplay();
     void clearDisplay();
-    void writeChars(int8_t row, int8_t column, const char *data);
-    void writeInteger(int8_t row, int8_t column, int32_t value);
+    void writeString(int8_t row, int8_t column, const char *data);
+    void writeNumber(int8_t row, int8_t column, int32_t value);
 
 private:
     LCD();
-    const uint8_t sAddress;
+    const uint8_t LCD_SLAVE_ADDRESS;
+    const uint8_t STARTING_CONTROL_BYTE;
+    const uint8_t LAST_CONTROL_BYTE;
+    const uint8_t LAST_WRITE_CONTROL_BYTE;
+    const uint8_t WRITE_CONTROL_BYTE_CONTINUATION;
+    const uint8_t DISPLAY_ON_COMMAND;
+    const uint8_t CLEAR_DISPLAY_COMMAND;
+    const uint8_t TWO_DISPLAY_LINES_COMMAND;
+    const uint8_t ASCII_ZERO;
+    const uint8_t ASCII_SPACE;
+    uint8_t displayContentCache[2][16];
+    void initializeDisplay();
+    void writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte);
+    void repopulateDisplayFromCache();
+    int8_t getRAMAddress(int8_t row, int8_t column);
 };
 
 #endif

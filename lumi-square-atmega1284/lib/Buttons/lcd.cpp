@@ -2,106 +2,190 @@
 #include "iostream.h"
 #include "string.h"
 #include <util/delay.h>
-LCD::LCD()
-    : sAddress(0x7C) {}
 
+LCD::LCD()
+    : LCD_SLAVE_ADDRESS(0x7C),
+      STARTING_CONTROL_BYTE(0x80),
+      LAST_CONTROL_BYTE(0x00),
+      LAST_WRITE_CONTROL_BYTE(0x40),
+      WRITE_CONTROL_BYTE_CONTINUATION(0xC0),
+      DISPLAY_ON_COMMAND(0x0C),
+      CLEAR_DISPLAY_COMMAND(0x01),
+      TWO_DISPLAY_LINES_COMMAND(0x28),
+      ASCII_ZERO(0x30),
+      ASCII_SPACE(0x20),
+      displayContentCache{{0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20},
+                          {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20}} {}
+
+/**
+ * @brief Returns the singleton instance of the LCD class.
+ *
+ * This static member function provides access to the singleton instance of the LCD class.
+ * If an instance of the LCD class does not already exist, it creates a new instance.
+ * Subsequent calls to this function return a reference to the existing instance.
+ *
+ * @return A reference to the singleton instance of the LCD class.
+ *
+ * @note This function ensures that only one instance of the LCD class exists throughout
+ *       the lifetime of the program. It follows the singleton design pattern.
+ */
 LCD &LCD::Instance()
 {
     static LCD instance;
     return instance;
 }
 
+/**
+ * @brief Turns the LCD display power on or off.
+ *
+ * This function controls the power state of the LCD display. If the 'on' parameter
+ * is set to true, the display is powered on; if it is set to false, the display
+ * is powered off.
+ *
+ * @param on A boolean value indicating whether to power on (true) or off (false) the display.
+ *           - true: The display is powered on.
+ *           - false: The display is powered off.
+ */
 void LCD::displayPower(bool on)
 {
     if (on)
     {
-        DDRC |= _BV(PC2);
+        DDRC = _BV(PC2);
         PORTC &= ~_BV(PC2);
         _delay_ms(100);
 
         TWCR &= ~((1 << TWSTO) | (1 << TWEN));
-        I2C::Instance().initialize();
-        LCD::Instance().initializeDisplay();
+        initializeDisplay();
+        repopulateDisplayFromCache();
         return;
     }
 
     TWCR = 0;
-    PORTC |= _BV(PC2);
+    DDRC = _BV(PC0) | _BV(PC1) | _BV(PC2);
+    PORTC = 0xFC;
+}
+
+/**
+ * @brief Clears all characters from the LCD display.
+ *
+ * This function sends a command to the LCD display to clear all characters
+ * from the display, effectively clearing the entire screen.
+ */
+void LCD::clearDisplay()
+{
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+    I2C::Instance().transmit(LAST_CONTROL_BYTE);
+    I2C::Instance().transmit(CLEAR_DISPLAY_COMMAND);
+    I2C::Instance().stop();
+}
+
+/**
+ * @brief Writes a string to the specified row and column on the LCD.
+ *
+ * This function writes the string value to the LCD starting at the specified
+ * row and column coordinates. The characters of the string are displayed
+ * consecutively on the LCD.
+ *
+ * @param row The row index on the LCD where the writing should start.
+ * @param col The column index on the LCD where the writing should start.
+ * @param value The string to be displayed on the LCD.
+ */
+void LCD::writeString(int8_t row, int8_t column, const char *data)
+{
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+    size_t len = strlen(data);
+    int address = getRAMAddress(row, column);
+
+    for (size_t i = 0; i < len; i++)
+    {
+        displayContentCache[row][column + i] = data[i];
+        uint8_t controlByte = i != (len - 1) ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
+        writeDataToRAM(address, data[i], controlByte);
+        address++;
+    }
+
+    I2C::Instance().stop();
+}
+
+/**
+ * @brief Writes an integer value to the specified row and column on the LCD.
+ *
+ * This function writes the integer value to the LCD starting at the specified
+ * row and column coordinates. The integer is formatted as characters and
+ * displayed on the LCD.
+ *
+ * @param row The row index on the LCD where the writing should start.
+ * @param col The column index on the LCD where the writing should start.
+ * @param value The integer value to be displayed on the LCD.
+ */
+void LCD::writeNumber(int8_t row, int8_t column, int32_t value)
+{
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+    uint8_t digits[3];
+
+    // Extract, hundreds, tens, and ones place
+    digits[0] = (value / 100) + ASCII_ZERO;
+    digits[1] = ((value / 10) % 10) + ASCII_ZERO;
+    digits[2] = (value % 10) + ASCII_ZERO;
+
+    // Replace leading zeros with spaces to ensure leading zeros are not displayed.
+    if (digits[0] == ASCII_ZERO)
+    {
+        digits[0] = ASCII_SPACE;
+        digits[1] = digits[1] == ASCII_ZERO ? ASCII_SPACE : digits[1];
+    }
+
+    int address = getRAMAddress(row, column);
+
+    for (int i = 0; i < 3; ++i)
+    {
+        displayContentCache[row][column + i] = digits[i];
+        uint8_t controlByte = i != 2 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
+        writeDataToRAM(address + i, digits[i], controlByte);
+    }
+
+    I2C::Instance().stop();
 }
 
 void LCD::initializeDisplay()
 {
-    I2C::Instance().start(sAddress);
-    I2C::Instance().transmit(0x80);
-    I2C::Instance().transmit(0x0C);
-    I2C::Instance().transmit(0x00);
-    I2C::Instance().transmit(0x28);
+    I2C::Instance().initialize();
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+    I2C::Instance().transmit(STARTING_CONTROL_BYTE);
+    I2C::Instance().transmit(DISPLAY_ON_COMMAND);
+    I2C::Instance().transmit(LAST_CONTROL_BYTE);
+    I2C::Instance().transmit(TWO_DISPLAY_LINES_COMMAND);
     I2C::Instance().stop();
 }
 
-void LCD::clearDisplay()
+void LCD::writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte)
 {
-    I2C::Instance().start(sAddress);
-    I2C::Instance().transmit(0x00);
-    I2C::Instance().transmit(0x01);
-    I2C::Instance().stop();
+    I2C::Instance().transmit(STARTING_CONTROL_BYTE);
+    I2C::Instance().transmit(dAddress);
+    I2C::Instance().transmit(controlByte);
+    I2C::Instance().transmit(dataByte);
 }
 
-void LCD::writeChars(int8_t row, int8_t column, const char *data)
+void LCD::repopulateDisplayFromCache()
 {
-    size_t len = strlen(data);
-    I2C::Instance().start(sAddress);
-    int address = row == 0 ? 0x80 : 0xC0;
-    address += column;
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
 
-    for (size_t i = 0; i < len; i++)
+    for (int row = 0; row < 2; ++row)
     {
-        // Write data
-        I2C::Instance().transmit(0x80);
-        I2C::Instance().transmit(address);
-        I2C::Instance().transmit(i != (len - 1) ? 0xC0 : 0x40);
-        I2C::Instance().transmit(data[i]);
+        int address = getRAMAddress(row, 0);
 
-        address++;
-        if (address == 0x90)
+        for (int column = 0; column < 16; ++column)
         {
-            address = 0xC0;
+            uint8_t controlByte = column < 16 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
+            writeDataToRAM((address + column), displayContentCache[row][column], controlByte);
         }
     }
 
     I2C::Instance().stop();
 }
 
-void LCD::writeInteger(int8_t row, int8_t column, int32_t value)
+int8_t LCD::getRAMAddress(int8_t row, int8_t column)
 {
-    I2C::Instance().start(sAddress);
     int address = row == 0 ? 0x80 : 0xC0;
-    address += column;
-
-    char temp[5]{0, 0, 0, 0, 0};
-    int counter = 0;
-    do
-    {
-        int mod = value % 10;
-        value /= 10;
-        temp[counter] = mod;
-
-        counter++;
-
-    } while (value != 0);
-
-    for (int i = counter - 1; i >= 0; --i)
-    {
-        I2C::Instance().transmit(0x80);
-        I2C::Instance().transmit(address);
-        I2C::Instance().transmit(0xC0);
-        I2C::Instance().transmit(0x30 + temp[i]);
-
-        address++;
-        if (address == 0x90)
-        {
-            address = 0xC0;
-        }
-    }
-    I2C::Instance().stop();
+    return address += column;
 }
