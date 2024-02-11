@@ -41,6 +41,18 @@ bool Color::operator==(Color const &color) const
 }
 
 /**
+ * @brief 
+ *
+ * @param color The color we are comparing this object to.
+ * @return true
+ * @return false
+ */
+bool Color::operator!=(Color const &color) const
+{
+    return (color.r != r || color.g != g || color.b != b);
+}
+
+/**
  * @brief Copies the r,g,b component values from the passed in color object to this object.
  *
  * @param color The color that will be copied.

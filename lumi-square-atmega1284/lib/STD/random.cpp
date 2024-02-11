@@ -11,14 +11,22 @@ void Random::configureRNG()
 }
 
 /**
+ * @brief 
+ * 
+ */
+void Random::seedRNG()
+{
+    srand(TCNT2);
+}
+
+/**
  * @brief Returns a random integer within the min and the max. Range is inclusive
  * 
  * @param min The minimum value.
  * @param max The maximum value.
  * @return uint8_t 
  */
-uint8_t Random::range(uint8_t min, uint8_t max)
+int16_t Random::range(int16_t min, int16_t max)
 {
-    srand(TCNT2);
     return min + (rand() % ((max - min) + 1));
 }

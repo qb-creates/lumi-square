@@ -3,52 +3,39 @@
 #include "lcd.h"
 #include "leds.h"
 #include "random.h"
+
 LightSpeedState::LightSpeedState()
-    : GameBaseState(), timer(1000), counter(30), score(0), lightCount(2000) {}
+    : GameBaseState(), timer(1000), counter(30), score(0), shuffleLeds(false), ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
 void LightSpeedState::enterState()
 {
-    for (int i = 0; i < 16; i++)
+    uint8_t i = 0;
+
+    while (i < 5)
     {
-        Output::setLedColor(i, Colors::azure, .6);
+        int ledIndex = Random::range(0, 15);
+
+        if (Output::getLedStatus(ledIndex))
+            continue;
+
+        Output::setLedColor(ledIndex, Colors::azure, .5);
+        Output::ledOn(ledIndex);
+        ledShuffleTimes[ledIndex] = Random::range(1, 4) * 1234;
+        ++i;
     }
 
-    int temp[5] = {0, 0, 0, 0, 0};
-    int tempAddress = 0;
-
-    for (int i = 0; i < 5; i++)
+    if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
     {
-        while (1)
-        {
-            int value = Random::range(1, 16);
-            bool valueRepeated = false;
-
-            for (int i = 0; i < 5; i++)
-            {
-                if (value == temp[i])
-                {
-                    valueRepeated = true;
-                    break;
-                }
-            }
-
-            if (valueRepeated)
-                continue;
-
-            temp[tempAddress] = value;
-            tempAddress++;
-
-            Output::ledOn(value - 1);
-            break;
-        }
+        enablePowerUps = true;
+        shuffleLeds = true;
     }
 
-    LCD::Instance().writeChars(1, 0, "Score:0    T:30");
+    LCD::Instance().writeString(0, 0, "  Score   Time  ");
+    LCD::Instance().writeString(1, 0, "     0     30   ");
 }
 
 void LightSpeedState::exitState()
 {
-    lightCount = 2000;
     score = 0;
     timer = 1000;
     counter = 30;
@@ -57,36 +44,25 @@ void LightSpeedState::exitState()
 
 void LightSpeedState::updateState()
 {
-    lightCount -= 16;
-
-    if (lightCount <= 0)
+    if (shuffleLeds)
     {
-        // int previous = 0;
-        // while (1)
-        // {
-        //     int value = Random::range(1, 16);
+        for (int ledIndex = 0; ledIndex < 16; ++ledIndex)
+        {
+            if (!Output::getLedStatus(ledIndex))
+            {
+                continue;
+            }
 
-        //     if (!Output::getLedStatus(value - 1) && (value - 1))
-        //     {
-        //         previous = value;
-        //         Output::ledOn(value - 1);
-        //         break;
-        //     }
-        // }
+            ledShuffleTimes[ledIndex] -= 16;
 
-        // while (1)
-        // {
-        //     int value = Random::range(1, 16);
-
-        //     if (Output::getLedStatus(value - 1) && previous != value)
-        //     {
-        //         Output::ledOff(value - 1);
-        //         break;
-        //     }
-        // }
-
-        lightCount = 1000;
+            if (ledShuffleTimes[ledIndex] <= 0)
+            {
+                powerOnRandomLight();
+                Output::ledOff(ledIndex);
+            }
+        }
     }
+
     timer -= 16;
 
     if (timer <= 0)
@@ -94,43 +70,83 @@ void LightSpeedState::updateState()
         timer = 1000;
         --counter;
 
-        LCD::Instance().writeInteger(1, 13, counter);
+        LCD::Instance().writeNumber(1, 10, counter);
+
         if (counter <= 0)
         {
             nextState = GameState::GameOver;
         }
     }
-    
 }
 
 void LightSpeedState::onButtonPressed(int8_t buttonIndex)
 {
-    if (Output::getLedStatus(buttonIndex))
+    if (!Output::getLedStatus(buttonIndex))
+        return;
+
+    powerOnRandomLight();
+
+    Color buttonColor = Output::getLedColor(buttonIndex);
+
+    if (buttonColor == Colors::azure)
     {
-        while (1)
-        {
-            int value = Random::range(1, 16);
-
-            if (!Output::getLedStatus(value - 1))
-            {
-                Output::ledOn(value - 1);
-                break;
-            }
-        }
-
-        Output::ledOff(buttonIndex);
-        AudioSource::playNote(MusicNote::G6, 50);
         ++score;
-    }
-    else
+        AudioSource::playButtonAudio(MusicNote2::G5, 50);
+    }   
+    else if (buttonColor == Colors::green)
     {
-        score -= 2;
-
-        if (score < 0)
+        counter += 7;
+        AudioSource::playButtonAudio(MusicNote2::A5, 50);
+    }   
+    else if (buttonColor == Colors::red)
+    {
+        if (GameProperties::Instance().gameDifficulty == Difficulty::Hard)
         {
-            score = 0;
+            --score;
+        }
+
+        counter -= 3;
+        AudioSource::playButtonAudio(MusicNote2::G6, 50);
+    }    
+
+    Output::ledOff(buttonIndex);    
+    LCD::Instance().writeNumber(1, 3, score);
+}
+
+void LightSpeedState::powerOnRandomLight()
+{
+    while (1)
+    {
+        int ledIndex = Random::range(0, 15);
+
+        if (!Output::getLedStatus(ledIndex))
+        {
+            Output::setLedColor(ledIndex, Colors::azure, .5);
+            Output::ledOn(ledIndex);
+            ledShuffleTimes[ledIndex] = Random::range(2, 5) * 1234;
+            break;
         }
     }
-
-    LCD::Instance().writeInteger(1, 6, score);
 }
+
+/**
+ * Easy
+ *  - No red blocks.
+ *  - Lights do not shuffle
+ *  - 30 seconds
+ *
+ * Medium
+ *  - Red blocks decrease score
+ *  - Lights shuffle
+ *      - Produce red light randomly when light dissapears
+ *  - Green Time extension block
+ *
+ * Hard
+ *  - Red block decrease time and score
+ *  - More red blocks
+ *  - lights shuffle
+ *  - Green Time extension block
+ *
+ *
+ * Each light has a random shuffle time.
+ */

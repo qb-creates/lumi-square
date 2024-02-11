@@ -10,6 +10,7 @@ public:
     Color();
     Color(uint8_t r, uint8_t g, uint8_t b);
     bool operator==(Color const &color) const;
+    bool operator!=(Color const &color) const;
     void operator=(Color const &color);
     uint8_t r;
     uint8_t g;

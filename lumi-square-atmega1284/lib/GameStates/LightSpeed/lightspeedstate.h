@@ -16,7 +16,10 @@ private:
     int16_t timer;
     int8_t counter;
     int16_t score;
-    int16_t lightCount;
+    bool shuffleLeds;
+    bool enablePowerUps;
+    int16_t ledShuffleTimes[16];
+    void powerOnRandomLight();
 };
 
 #endif
