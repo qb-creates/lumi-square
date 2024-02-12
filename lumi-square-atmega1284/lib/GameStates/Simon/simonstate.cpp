@@ -1,4 +1,5 @@
 #include "simonstate.h"
+#include "lcd.h"
 #include "leds.h"
 #include "random.h"
 
@@ -9,19 +10,22 @@ void SimonState::enterState()
 {
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
 
-    for (int i = 0; i < 16; i++)
-    {
-        Output::setLedIntensity(i, .6);
-    }
+    Output::setLedColor(0, Colors::aquamarine, .6);
+    Output::setLedColor(3, Colors::pink, .6);
+    Output::setLedColor(12, Colors::purple, .6);
+    Output::setLedColor(15, Colors::cyan, .6);
+    Output::setLedColor(5, Colors::green, .6);
+    Output::setLedColor(6, Colors::red, .6);
+    Output::setLedColor(9, Colors::yellow, .6);
+    Output::setLedColor(10, Colors::azure, .6);
 
-    Output::setLedColor(0, Colors::aquamarine);
-    Output::setLedColor(3, Colors::pink);
-    Output::setLedColor(12, Colors::purple);
-    Output::setLedColor(15, Colors::cyan);
-    Output::setLedColor(5, Colors::green);
-    Output::setLedColor(6, Colors::red);
-    Output::setLedColor(9, Colors::yellow);
-    Output::setLedColor(10, Colors::azure);
+    LCD::Instance().writeString(0, 0, " Round    Lives ");
+    LCD::Instance().writeString(1, 0, "    1           ");
+
+    for (int i = 0; i < lives; ++i)
+    {
+        LCD::Instance().writeByte(1, 13 - i, 0x00);
+    }
 
     playNewSequence();
 }
@@ -96,24 +100,27 @@ void SimonState::onButtonPressed(int8_t buttonIndex)
     {
         switch (buttonIndex)
         {
+        case 1:
+        case 2:
+        case 4:
+        case 7:
+        case 8:
+        case 11:
+        case 13:
+        case 14:
+            return;
         case 5:
-            Output::setLedColor(buttonIndex, Colors::green);
-            AudioSource::playNote(MusicNote::G5, 200);
+            AudioSource::playNote(MusicNote::G3, 200);
             break;
         case 6:
-            Output::setLedColor(buttonIndex, Colors::red);
-            AudioSource::playNote(MusicNote::C5, 200);
+            AudioSource::playNote(MusicNote::C3, 200);
             break;
         case 9:
-            Output::setLedColor(buttonIndex, Colors::yellow);
-            AudioSource::playNote(MusicNote::E5, 200);
+            AudioSource::playNote(MusicNote::E3, 200);
             break;
         case 10:
-            Output::setLedColor(buttonIndex, Colors::azure);
-            AudioSource::playNote(MusicNote::G4, 200);
+            AudioSource::playNote(MusicNote::G2, 200);
             break;
-        default:
-            return;
         }
 
         if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
@@ -121,23 +128,17 @@ void SimonState::onButtonPressed(int8_t buttonIndex)
             switch (buttonIndex)
             {
             case 0:
-                Output::setLedColor(buttonIndex, Colors::aquamarine);
-                AudioSource::playNote(MusicNote::C4, 200);
+                AudioSource::playNote(MusicNote::G4, 200);
                 break;
             case 3:
-                Output::setLedColor(buttonIndex, Colors::pink);
-                AudioSource::playNote(MusicNote::E4, 200);
+                AudioSource::playNote(MusicNote::C4, 200);
                 break;
             case 12:
-                Output::setLedColor(buttonIndex, Colors::purple);
-                AudioSource::playNote(MusicNote::G3, 200);
+                AudioSource::playNote(MusicNote::E4, 200);
                 break;
             case 15:
-                Output::setLedColor(buttonIndex, Colors::cyan);
-                AudioSource::playNote(MusicNote::C3, 200);
+                AudioSource::playNote(MusicNote::G3, 200);
                 break;
-            default:
-                return;
             }
         }
 
@@ -149,6 +150,8 @@ void SimonState::onButtonPressed(int8_t buttonIndex)
         else
         {
             --lives;
+
+            LCD::Instance().writeByte(1, 13 - lives, 0x20);
 
             if (lives == 0)
             {
@@ -178,43 +181,83 @@ void SimonState::playNewSequence()
     {
     case 1:
         pattern[patternIndex] = 5;
-        patternNotes[patternIndex] = MusicNote::G5;
+        patternNotes[patternIndex] = MusicNote::G3;
         break;
     case 2:
         pattern[patternIndex] = 6;
-        patternNotes[patternIndex] = MusicNote::C5;
+        patternNotes[patternIndex] = MusicNote::C3;
         break;
     case 3:
         pattern[patternIndex] = 9;
-        patternNotes[patternIndex] = MusicNote::E5;
+        patternNotes[patternIndex] = MusicNote::E3;
         break;
     case 4:
         pattern[patternIndex] = 10;
-        patternNotes[patternIndex] = MusicNote::G4;
+        patternNotes[patternIndex] = MusicNote::G2;
         break;
     case 5:
         pattern[patternIndex] = 0;
-        patternNotes[patternIndex] = MusicNote::C4;
+        patternNotes[patternIndex] = MusicNote::G4;
         break;
     case 6:
         pattern[patternIndex] = 3;
-        patternNotes[patternIndex] = MusicNote::E4;
+        patternNotes[patternIndex] = MusicNote::C4;
         break;
     case 7:
         pattern[patternIndex] = 12;
-        patternNotes[patternIndex] = MusicNote::G3;
+        patternNotes[patternIndex] = MusicNote::E4;
         break;
     case 8:
         pattern[patternIndex] = 15;
-        patternNotes[patternIndex] = MusicNote::C3;
+        patternNotes[patternIndex] = MusicNote::G3;
         break;
     }
 
     isPlayingSequence = true;
     timer = 700;
     playPattern = 0;
+
+    LCD::Instance().writeNumber(1, 2, patternIndex + 1);
 }
 
 void SimonState::replaySequence()
 {
+}
+
+void SimonState::playNote(int8_t buttonIndex)
+{
+    switch (buttonIndex)
+    {
+    case 5:
+        AudioSource::playNote(MusicNote::G4, 200);
+        break;
+    case 6:
+        AudioSource::playNote(MusicNote::C4, 200);
+        break;
+    case 9:
+        AudioSource::playNote(MusicNote::E4, 200);
+        break;
+    case 10:
+        AudioSource::playNote(MusicNote::G3, 200);
+        break;
+    }
+
+    if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
+    {
+        switch (buttonIndex)
+        {
+        case 0:
+            AudioSource::playNote(MusicNote::G5, 200);
+            break;
+        case 3:
+            AudioSource::playNote(MusicNote::C5, 200);
+            break;
+        case 12:
+            AudioSource::playNote(MusicNote::E5, 200);
+            break;
+        case 15:
+            AudioSource::playNote(MusicNote::G4, 200);
+            break;
+        }
+    }
 }

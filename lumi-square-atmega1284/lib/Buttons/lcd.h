@@ -13,6 +13,7 @@ public:
     void clearDisplay();
     void writeString(int8_t row, int8_t column, const char *data);
     void writeNumber(int8_t row, int8_t column, int32_t value);
+    void writeByte(int8_t row, int8_t column, uint8_t data);
 
 private:
     LCD();
@@ -26,10 +27,13 @@ private:
     const uint8_t TWO_DISPLAY_LINES_COMMAND;
     const uint8_t ASCII_ZERO;
     const uint8_t ASCII_SPACE;
+    const uint8_t heartCharacter[8];
+    const uint8_t batteryLowCharacter[8];
     uint8_t displayContentCache[2][16];
     void initializeDisplay();
     void writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte);
     void repopulateDisplayFromCache();
+    void writeCustomCharacter(const uint8_t character[], uint8_t startingAddress);
     int8_t getRAMAddress(int8_t row, int8_t column);
 };
 

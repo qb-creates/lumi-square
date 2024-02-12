@@ -16,6 +16,7 @@ public:
 private:
     void playNewSequence();
     void replaySequence();
+    void playNote(int8_t buttonIndex);
     int8_t pattern[100];
     MusicNote patternNotes[100];
     int8_t patternIndex;

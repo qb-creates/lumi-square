@@ -14,6 +14,8 @@ LCD::LCD()
       TWO_DISPLAY_LINES_COMMAND(0x28),
       ASCII_ZERO(0x30),
       ASCII_SPACE(0x20),
+      heartCharacter{0x00, 0x00, 0x0A, 0x1F, 0x1F, 0x0E, 0x04, 0x00},
+      batteryLowCharacter{0x0E, 0x1B, 0x11, 0x11, 0x11, 0x13, 0x1F, 0x1F},
       displayContentCache{{0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20},
                           {0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20}} {}
 
@@ -147,6 +149,26 @@ void LCD::writeNumber(int8_t row, int8_t column, int32_t value)
     I2C::Instance().stop();
 }
 
+/**
+ * @brief Writes a single byte of data to the LCD screen.
+ * 
+ * This function writes a single byte of data to the LCD at the specified
+ * row and column coordinates.
+ * 
+ * @param row The row index on the LCD screen where the data will be written.
+ * @param column The column index on the LCD screen where the data will be written. 
+ * @param data The byte of data to be written to the LCD screen.
+ */
+void LCD::writeByte(int8_t row, int8_t column, uint8_t data)
+{
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+
+    int address = getRAMAddress(row, column);
+    writeDataToRAM(address, data, LAST_WRITE_CONTROL_BYTE);
+
+    I2C::Instance().stop();
+}
+
 void LCD::initializeDisplay()
 {
     I2C::Instance().initialize();
@@ -156,6 +178,9 @@ void LCD::initializeDisplay()
     I2C::Instance().transmit(LAST_CONTROL_BYTE);
     I2C::Instance().transmit(TWO_DISPLAY_LINES_COMMAND);
     I2C::Instance().stop();
+
+    writeCustomCharacter(heartCharacter, 0x00);
+    writeCustomCharacter(batteryLowCharacter, 0x08);
 }
 
 void LCD::writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte)
@@ -179,6 +204,21 @@ void LCD::repopulateDisplayFromCache()
             uint8_t controlByte = column < 16 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
             writeDataToRAM((address + column), displayContentCache[row][column], controlByte);
         }
+    }
+
+    I2C::Instance().stop();
+}
+
+void LCD::writeCustomCharacter(const uint8_t character[], uint8_t startingAddress)
+{
+    I2C::Instance().start(LCD_SLAVE_ADDRESS);
+
+    for (int i = 0; i < 8; ++i)
+    {
+        I2C::Instance().transmit(0x80);
+        I2C::Instance().transmit(0x40 | startingAddress | i);
+        I2C::Instance().transmit(i < 8 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE);
+        I2C::Instance().transmit(character[i]);
     }
 
     I2C::Instance().stop();
