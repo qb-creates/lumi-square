@@ -5,7 +5,7 @@
 #include "random.h"
 
 LightSpeedState::LightSpeedState()
-    : GameBaseState(), timer(1000), counter(30), score(0), shuffleLeds(false), ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
+    : GameBaseState(), timer(1000), counter(30), score(0), shuffleLeds(false), timePowerUpActive(false), redHazardActive(false), ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
 void LightSpeedState::enterState()
 {
@@ -20,15 +20,15 @@ void LightSpeedState::enterState()
 
         Output::setLedColor(ledIndex, Colors::azure, .5);
         Output::ledOn(ledIndex);
-        ledShuffleTimes[ledIndex] = Random::range(1, 4) * 1234;
+        ledShuffleTimes[ledIndex] = Random::range(500, 1500 );
         ++i;
     }
 
     if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
     {
         enablePowerUps = true;
-        shuffleLeds = true;
     }
+    shuffleLeds = true;
 
     LCD::Instance().writeString(0, 0, "  Score   Time  ");
     LCD::Instance().writeString(1, 0, "     0     30   ");
@@ -58,6 +58,17 @@ void LightSpeedState::updateState()
             if (ledShuffleTimes[ledIndex] <= 0)
             {
                 powerOnRandomLight();
+                
+                if (Output::getLedColor(ledIndex) == Colors::green)
+                {
+                    timePowerUpActive = false;
+                }
+
+                if (Output::getLedColor(ledIndex) == Colors::red)
+                {
+                    redHazardActive = false;
+                }
+
                 Output::ledOff(ledIndex);
             }
         }
@@ -91,25 +102,26 @@ void LightSpeedState::onButtonPressed(int8_t buttonIndex)
     if (buttonColor == Colors::azure)
     {
         ++score;
-        AudioSource::playButtonAudio(MusicNote2::G5, 50);
-    }   
+        AudioSource::playNote(MusicNote::G5, 50);
+    }
     else if (buttonColor == Colors::green)
     {
         counter += 7;
-        AudioSource::playButtonAudio(MusicNote2::A5, 50);
-    }   
+        timePowerUpActive = false;
+        AudioSource::playNote(MusicNote::A5, 50);
+    }
     else if (buttonColor == Colors::red)
     {
         if (GameProperties::Instance().gameDifficulty == Difficulty::Hard)
         {
             --score;
         }
-
         counter -= 3;
-        AudioSource::playButtonAudio(MusicNote2::G6, 50);
-    }    
+        redHazardActive = false;
+        AudioSource::playNote(MusicNote::G6, 50);
+    }
 
-    Output::ledOff(buttonIndex);    
+    Output::ledOff(buttonIndex);
     LCD::Instance().writeNumber(1, 3, score);
 }
 
@@ -121,32 +133,29 @@ void LightSpeedState::powerOnRandomLight()
 
         if (!Output::getLedStatus(ledIndex))
         {
-            Output::setLedColor(ledIndex, Colors::azure, .5);
+            Color ledColor = Colors::azure;
+
+            if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
+            {
+                int asdf = Random::range(1, 3);
+
+                if (!timePowerUpActive && asdf == 1)
+                {
+                    ledColor = Colors::green;
+                    timePowerUpActive = true;
+                }
+                else if (!redHazardActive && asdf == 2)
+                {
+                    ledColor = Colors::red;
+                    redHazardActive = true;
+                }                
+            }
+
+            int16_t shuffleTime = ledColor != Colors::azure ?  1000 : Random::range(500, 1500 );
+            Output::setLedColor(ledIndex, ledColor, .5);
             Output::ledOn(ledIndex);
-            ledShuffleTimes[ledIndex] = Random::range(2, 5) * 1234;
+            ledShuffleTimes[ledIndex] = shuffleTime;
             break;
         }
     }
 }
-
-/**
- * Easy
- *  - No red blocks.
- *  - Lights do not shuffle
- *  - 30 seconds
- *
- * Medium
- *  - Red blocks decrease score
- *  - Lights shuffle
- *      - Produce red light randomly when light dissapears
- *  - Green Time extension block
- *
- * Hard
- *  - Red block decrease time and score
- *  - More red blocks
- *  - lights shuffle
- *  - Green Time extension block
- *
- *
- * Each light has a random shuffle time.
- */

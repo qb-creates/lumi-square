@@ -68,7 +68,7 @@ void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
             guessCorrect = (Output::getLedColor(firstGuessIndex) == Output::getLedColor(secondGuessIndex));
             timer = guessCorrect ? 300 : 600;
         }
-        AudioSource::playNote(secondGuessIndex == -1 ? MusicNote::C6 : MusicNote::D6, 100);
+        AudioSource::playNote(secondGuessIndex == -1 ? MusicNote::C5 : MusicNote::D5, 100);
         Output::ledOn(buttonIndex);
     }
 }

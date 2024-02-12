@@ -2,14 +2,15 @@
 #include "audio.h"
 #include "lcd.h"
 #include "leds.h"
+#include <random.h>
 
 MainMenuState::MainMenuState()
     : GameBaseState(), queuedState(GameState::MemoryMatching), currentSelectedButton(0), flashSelectedButtonTimer(0), flashTargetTime(800) {}
 
 void MainMenuState::enterState()
 {
-    LCD::Instance().writeChars(0, 0, "Memory Matching ");
-    LCD::Instance().writeChars(1, 0, "High Score:     ");
+    LCD::Instance().writeString(0, 0, "Memory Matching ");
+    LCD::Instance().writeString(1, 0, "High Score:     ");
 
     for (int i = 1; i < 8; i++)
     {
@@ -62,15 +63,15 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     switch (buttonIndex)
     {
     case 0:
-        LCD::Instance().writeChars(0, 0, "Memory Matching ");
+        LCD::Instance().writeString(0, 0, "Memory Matching ");
         queuedState = GameState::MemoryMatching;
         break;
     case 1:
-        LCD::Instance().writeChars(0, 0, "Simon           ");
+        LCD::Instance().writeString(0, 0, "Simon           ");
         queuedState = GameState::Simon;
         break;
     case 2:
-        LCD::Instance().writeChars(0, 0, "Light Speed     ");
+        LCD::Instance().writeString(0, 0, "Light Speed     ");
         queuedState = GameState::LightSpeed;
         break;
     case 12:
@@ -78,6 +79,7 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
         setDifficultyLEDColor();
         return;
     case 15:
+        Random::seedRNG();
         nextState = queuedState;
         return;
     }
@@ -85,13 +87,13 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     if (Output::getLedStatus(buttonIndex) && currentSelectedButton != buttonIndex)
     {
         // Change the previously selected button's color to azure with an intensity of 0.1.
-        Output::setLedColor(currentSelectedButton, Colors::azure, .1);
+        Output::setLedColor(currentSelectedButton, Colors::azure, .05);
 
         // Change the newly selected button's color to orange with an intensity of .5.
         Output::setLedColor(buttonIndex, Colors::yellow, .5);
 
         // Play audio tone
-        AudioSource::playNote(MusicNote::G5, 100);
+        AudioSource::playNote(MusicNote::G4, 100);
 
         // Reset our flashing variables.
         currentSelectedButton = buttonIndex;

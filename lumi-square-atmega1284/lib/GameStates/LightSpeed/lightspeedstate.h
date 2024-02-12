@@ -18,6 +18,8 @@ private:
     int16_t score;
     bool shuffleLeds;
     bool enablePowerUps;
+    bool timePowerUpActive;
+    bool redHazardActive;
     int16_t ledShuffleTimes[16];
     void powerOnRandomLight();
 };
