@@ -167,6 +167,8 @@ void LCD::writeByte(int8_t row, int8_t column, uint8_t data)
     writeDataToRAM(address, data, LAST_WRITE_CONTROL_BYTE);
 
     I2C::Instance().stop();
+
+    displayContentCache[row][column] = data;
 }
 
 void LCD::initializeDisplay()
@@ -179,8 +181,8 @@ void LCD::initializeDisplay()
     I2C::Instance().transmit(TWO_DISPLAY_LINES_COMMAND);
     I2C::Instance().stop();
 
-    writeCustomCharacter(heartCharacter, 0x00);
-    writeCustomCharacter(batteryLowCharacter, 0x08);
+    writeCustomCharacter(heartCharacter, 0x08);
+    writeCustomCharacter(batteryLowCharacter, 0x10);
 }
 
 void LCD::writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte)
