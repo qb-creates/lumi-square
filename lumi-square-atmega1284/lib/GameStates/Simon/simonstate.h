@@ -15,12 +15,12 @@ public:
 
 private:
     void playNewSequence();
-    int8_t pattern[100];
+    int8_t simonSequenceIndex;
+    int8_t playerSequenceIndex;
+    int8_t simonLightSequence[100];
+    MusicNote simonMusicNoteSequence[100];
     int8_t buttonOptions[8];
     MusicNote musicNoteOptions[16];
-    MusicNote patternNotes[100];
-    int8_t patternIndex;
-    int8_t playPattern;
     bool isPlayingSequence;
     int16_t timer;
     bool buttonLedIsOn;
