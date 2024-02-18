@@ -24,23 +24,29 @@ Difficulty GameProperties::increaseDifficulty()
 
     ++difficultyCount;
 
-    if (difficultyCount > 3)
+    if (difficultyCount > 2)
     {
-        difficultyCount = 1;
+        difficultyCount = 0;
     }
 
     switch (difficultyCount)
     {
-    case 1:
+    case 0:
         difficulty = Difficulty::Easy;
         break;
-    case 2:
+    case 1:
         difficulty = Difficulty::Medium;
         break;
-    case 3:
+    case 2:
         difficulty = Difficulty::Hard;
         break;
     }
     gameDifficulty = difficulty;
     return difficulty;
+}
+
+void GameProperties::setDifficulty(Difficulty difficulty)
+{
+    gameDifficulty = difficulty;
+    difficultyCount = static_cast<int8_t>(difficulty);
 }

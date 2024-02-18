@@ -43,6 +43,7 @@ public:
     Difficulty gameDifficulty;
     static GameProperties &Instance();
     Difficulty increaseDifficulty();
+    void setDifficulty(Difficulty difficulty);
 
 private:
     GameProperties();
