@@ -15,9 +15,12 @@ public:
     static void setLedColor(uint8_t ledIndex, const Color &color, double intensity);
     static void ledOn(uint8_t ledIndex);
     static void ledOn(uint8_t ledIndex, const Color &color, double intensity);
+    static void ledOn(const uint8_t * range, uint8_t count, const Color &color, double intensity);
     static void ledOff(uint8_t ledIndex);
     static void ledOff(uint8_t ledIndex, const Color &color, double intensity);
+    static void ledOff(const uint8_t * range, uint8_t count, const Color &color, double intensity);
     static bool getLedStatus(uint8_t ledIndex);
+    static double getLedIntensity(uint8_t ledIndex);
     static void setLedIntensity(uint8_t ledIndex, double intensity);
 
 private:

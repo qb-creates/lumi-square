@@ -163,6 +163,14 @@ void Output::ledOn(uint8_t ledIndex, const Color &color, double intensity)
     setLedIntensity(ledIndex, intensity);
 }
 
+void Output::ledOn(const uint8_t *range, uint8_t count, const Color &color, double intensity)
+{
+    for (int i = 0; i < count; ++i)
+    {
+        ledOn(range[i], color, intensity);
+    }
+}
+
 /**
  * @brief Turns off the led identified by the ledIndex.
  *
@@ -202,6 +210,14 @@ void Output::ledOff(uint8_t ledIndex, const Color &color, double intensity)
     setLedIntensity(ledIndex, intensity);
 }
 
+void Output::ledOff(const uint8_t *range, uint8_t count, const Color &color, double intensity)
+{
+    for (int i = 0; i < count; ++i)
+    {
+        ledOff(range[i], color, intensity);
+    }
+}
+
 /**
  * @brief Gets the status of the led identified by the ledIndex. Will return true if led is on. False if it is off
  *
@@ -212,6 +228,17 @@ void Output::ledOff(uint8_t ledIndex, const Color &color, double intensity)
 bool Output::getLedStatus(uint8_t ledIndex)
 {
     return leds[ledIndex].isLedOn;
+}
+
+/**
+ * @brief
+ *
+ * @param ledIndex Index of the led you want to get the power status for.
+ * @return uint8_t
+ */
+double Output::getLedIntensity(uint8_t ledIndex)
+{
+    return leds[ledIndex].intensity;
 }
 
 /**

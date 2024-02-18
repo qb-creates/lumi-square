@@ -14,10 +14,14 @@ public:
 
 private:
     GameState queuedState;
-    int8_t currentSelectedButton;
-    int16_t flashSelectedButtonTimer;
-    int16_t flashTargetTime;
-    void setDifficultyLEDColor();
+    Difficulty maxDifficulty;
+    int8_t highlightedButtonIndex;
+    int16_t highlightedButtonTimer;
+    double test;
+    void queueGameState(GameState gamestate, Difficulty maxDifficulty, const char *gameStateName);
+    void highlightSelectedButton(int8_t selectedButtonIndex);
+    void increaseDifficulty();
+    void resetDifficulty();
 };
 
 #endif

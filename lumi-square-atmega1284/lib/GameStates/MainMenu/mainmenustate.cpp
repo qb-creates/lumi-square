@@ -5,56 +5,49 @@
 #include <random.h>
 
 MainMenuState::MainMenuState()
-    : GameBaseState(), queuedState(GameState::MemoryMatching), currentSelectedButton(0), flashSelectedButtonTimer(0), flashTargetTime(800) {}
+    : GameBaseState(),
+      queuedState(GameState::MemoryMatching),
+      maxDifficulty(Difficulty::Easy),
+      highlightedButtonIndex(0),
+      highlightedButtonTimer(1000) {}
 
 void MainMenuState::enterState()
 {
-    LCD::Instance().writeString(0, 0, "Memory Matching ");
-    LCD::Instance().writeString(1, 0, "High Score:     ");
+    uint8_t gameSelectButtons[] = {1, 2, 3, 4, 5, 6, 7};
+    Output::ledOn(gameSelectButtons, 7, Colors::azure, .05);
 
-    for (int i = 1; i < 8; i++)
-    {
-        Output::ledOn(i, Colors::azure, .05);
-    }
-
-    setDifficultyLEDColor();
-
-    Output::ledOn(0, Colors::yellow, .5);
+    Output::ledOn(0, Colors::yellow, .6);
     Output::ledOn(15, Colors::yellow, .4);
+    resetDifficulty();
+    queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Memory Matching ");
 }
 
 void MainMenuState::exitState()
 {
-    for (int i = 0; i < 16; i++)
-    {
-        Output::ledOff(i);
-    }
+    uint8_t allMenuButtons[] = {0, 1, 2, 3, 4, 5, 6, 7, 12, 15};
+    Output::ledOff(allMenuButtons, 10, Colors::azure, .05);
 
-    currentSelectedButton = 0;
-    flashSelectedButtonTimer = 0;
-    flashTargetTime = 1000;
-    queuedState = GameState::MemoryMatching;
+    highlightedButtonIndex = 0;
+    highlightedButtonTimer = 1000;
     nextState = GameState::None;
 }
 
 void MainMenuState::updateState()
 {
-    flashSelectedButtonTimer += 16;
+    highlightedButtonTimer -= 16;
 
-    if (flashSelectedButtonTimer > flashTargetTime)
+    if (highlightedButtonTimer > 0)
+        return;
+
+    if (Output::getLedColor(highlightedButtonIndex) == Colors::azure)
     {
-        flashSelectedButtonTimer = 0;
-
-        if (Output::getLedColor(currentSelectedButton) == Colors::azure)
-        {
-            flashTargetTime = 1000;
-            Output::setLedColor(currentSelectedButton, Colors::yellow, .5);
-        }
-        else
-        {
-            flashTargetTime = 400;
-            Output::setLedColor(currentSelectedButton, Colors::azure, .05);
-        }
+        highlightedButtonTimer = 1000;
+        Output::setLedColor(highlightedButtonIndex, Colors::yellow, .5);
+    }
+    else
+    {
+        highlightedButtonTimer = 400;
+        Output::setLedColor(highlightedButtonIndex, Colors::azure, .05);
     }
 }
 
@@ -63,20 +56,16 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     switch (buttonIndex)
     {
     case 0:
-        LCD::Instance().writeString(0, 0, "Memory Matching ");
-        queuedState = GameState::MemoryMatching;
+        queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Memory Matching ");
         break;
     case 1:
-        LCD::Instance().writeString(0, 0, "Simon           ");
-        queuedState = GameState::Simon;
+        queueGameState(GameState::Simon, Difficulty::Hard, "Simon           ");
         break;
     case 2:
-        LCD::Instance().writeString(0, 0, "Light Speed     ");
-        queuedState = GameState::LightSpeed;
+        queueGameState(GameState::LightSpeed, Difficulty::Hard, "Light Speed     ");
         break;
     case 12:
-        GameProperties::Instance().increaseDifficulty();
-        setDifficultyLEDColor();
+        increaseDifficulty();
         return;
     case 15:
         Random::seedRNG();
@@ -84,27 +73,39 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
         return;
     }
 
-    if (Output::getLedStatus(buttonIndex) && currentSelectedButton != buttonIndex)
+    resetDifficulty();
+    highlightSelectedButton(buttonIndex);
+}
+
+void MainMenuState::queueGameState(GameState gamestate, Difficulty maxDifficulty, const char *gameStateName)
+{
+    this->maxDifficulty = maxDifficulty;
+    queuedState = gamestate;
+    LCD::Instance().writeString(0, 0, gameStateName);
+    LCD::Instance().writeString(1, 0, "High Score:     ");
+}
+
+void MainMenuState::highlightSelectedButton(int8_t selectedButtonIndex)
+{
+    if (Output::getLedStatus(selectedButtonIndex) && highlightedButtonIndex != selectedButtonIndex)
     {
-        // Change the previously selected button's color to azure with an intensity of 0.1.
-        Output::setLedColor(currentSelectedButton, Colors::azure, .05);
-
-        // Change the newly selected button's color to orange with an intensity of .5.
-        Output::setLedColor(buttonIndex, Colors::yellow, .5);
-
-        // Play audio tone
+        Output::setLedColor(highlightedButtonIndex, Colors::azure, .05);
+        Output::setLedColor(selectedButtonIndex, Colors::yellow, .5);
         AudioSource::playNote(MusicNote::G4, 100);
-
-        // Reset our flashing variables.
-        currentSelectedButton = buttonIndex;
-        flashSelectedButtonTimer = 0;
-        flashTargetTime = 1000;
+        highlightedButtonIndex = selectedButtonIndex;
+        highlightedButtonTimer = 1000;
     }
 }
 
-void MainMenuState::setDifficultyLEDColor()
+void MainMenuState::increaseDifficulty()
 {
-    switch (GameProperties::Instance().gameDifficulty)
+    if (GameProperties::Instance().gameDifficulty == maxDifficulty)
+    {
+        resetDifficulty();
+        return;
+    }
+
+    switch (GameProperties::Instance().increaseDifficulty())
     {
     case Difficulty::Easy:
         Output::ledOn(12, Colors::green, 0.4);
@@ -116,4 +117,10 @@ void MainMenuState::setDifficultyLEDColor()
         Output::ledOn(12, Colors::red, 0.4);
         break;
     }
+}
+
+void MainMenuState::resetDifficulty()
+{
+    Output::ledOn(12, Colors::green, 0.4);
+    GameProperties::Instance().setDifficulty(Difficulty::Easy);
 }
