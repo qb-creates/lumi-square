@@ -2,6 +2,7 @@
 #define MATCHINGSTATE_H
 
 #include "basestate.h"
+#include "colors.h"
 
 class MemoryMatchingState : public GameBaseState
 {
@@ -13,22 +14,15 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    void randomizeLights();
-    int8_t firstGuessIndex;
-    int8_t secondGuessIndex;
-    bool guessCorrect;
-    int16_t timer;
-    int8_t correctGueses;
+    static Color colorList[16];
+    int16_t ledBrightnessAdjustTimer;
+    int8_t correctMatches;
+    int8_t selectedLedIndex1;
+    int8_t selectedLedIndex2;
+    bool isGuessCorrect;
+    void shuffleLedColors();
+    void evaluateGuess();
+    void adjustLedBrightness();
 };
 
 #endif
-
-class MemoryMatchingStateEasy : public MemoryMatchingState
-{
-public:
-    MemoryMatchingStateEasy();
-    void enterState();
-    void exitState();
-    void updateState();
-    void onButtonPressed(int8_t buttonIndex);
-};

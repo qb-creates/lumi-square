@@ -3,51 +3,60 @@
 #include "leds.h"
 #include "random.h"
 
+Color MemoryMatchingState::colorList[16] = {
+    Colors::pink,
+    Colors::azure,
+    Colors::cyan,
+    Colors::purple,
+    Colors::aquamarine,
+    Colors::red,
+    Colors::orange,
+    Colors::yellow,
+    Colors::aquamarine,
+    Colors::red,
+    Colors::azure,
+    Colors::purple,
+    Colors::pink,
+    Colors::cyan,
+    Colors::orange,
+    Colors::yellow};
+
 MemoryMatchingState::MemoryMatchingState()
-    : GameBaseState(), firstGuessIndex(-1), secondGuessIndex(-1), guessCorrect(false), timer(0), correctGueses(0) {}
+    : GameBaseState(),
+      ledBrightnessAdjustTimer(0),
+      correctMatches(0),
+      selectedLedIndex1(-1),
+      selectedLedIndex2(-1),
+      isGuessCorrect(false) {}
 
 void MemoryMatchingState::enterState()
 {
-    randomizeLights();
+    shuffleLedColors();
 }
 
 void MemoryMatchingState::exitState()
 {
-    firstGuessIndex = -1;
-    secondGuessIndex = -1;
-    guessCorrect = false;
-    timer = 0;
-    correctGueses = 0;
+    ledBrightnessAdjustTimer = 0;
+    correctMatches = 0;
+    selectedLedIndex1 = -1;
+    selectedLedIndex2 = -1;
+    isGuessCorrect = false;
     nextState = GameState::None;
 }
 
 void MemoryMatchingState::updateState()
 {
-    if (timer >= 0)
-    {
-        timer -= 16;
+    if (ledBrightnessAdjustTimer <= 0)
+        return;
 
-        if (timer <= 0)
-        {
-            if (guessCorrect)
-            {
-                Output::setLedIntensity(firstGuessIndex, .2);
-                Output::setLedIntensity(secondGuessIndex, .2);
-                correctGueses++;
-            }
-            else
-            {
-                Output::ledOff(firstGuessIndex);
-                Output::ledOff(secondGuessIndex);
-            }
+    ledBrightnessAdjustTimer -= 16;
 
-            firstGuessIndex = -1;
-            secondGuessIndex = -1;
-            guessCorrect = false;
-        }
-    }
+    if (ledBrightnessAdjustTimer >= 0)
+        return;
 
-    if (correctGueses == 8)
+    adjustLedBrightness();
+
+    if (correctMatches == 8)
     {
         nextState = GameState::GameOver;
     }
@@ -55,81 +64,70 @@ void MemoryMatchingState::updateState()
 
 void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
 {
-    if (timer < 0 && !Output::getLedStatus(buttonIndex))
-    {
-        if (firstGuessIndex == -1)
-        {
-            firstGuessIndex = buttonIndex;
-        }
-        else if (secondGuessIndex == -1)
-        {
-            secondGuessIndex = buttonIndex;
+    if (ledBrightnessAdjustTimer > 0 || Output::getLedStatus(buttonIndex))
+        return;
 
-            guessCorrect = (Output::getLedColor(firstGuessIndex) == Output::getLedColor(secondGuessIndex));
-            timer = guessCorrect ? 300 : 600;
-        }
-        AudioSource::playNote(secondGuessIndex == -1 ? MusicNote::C5 : MusicNote::D5, 100);
-        Output::ledOn(buttonIndex);
+    if (selectedLedIndex1 == -1)
+    {
+        selectedLedIndex1 = buttonIndex;
+    }
+    else
+    {
+        selectedLedIndex2 = buttonIndex;
+        evaluateGuess();
+    }
+
+    MusicNote musicNote = selectedLedIndex2 == -1 ? MusicNote::C5 : MusicNote::D5;
+    Output::ledOn(buttonIndex);
+    AudioSource::playNote(musicNote, 100);
+}
+
+void MemoryMatchingState::shuffleLedColors()
+{
+    // Shuffle the colorList array.
+    for (int i = 15; i > 0; --i)
+    {
+        int j = Random::range(0, 15);
+        Color temp = colorList[i];
+        colorList[i] = colorList[j];
+        colorList[j] = temp;
+    }
+
+    // Set Led colors.
+    for (int i = 0; i < 16; ++i)
+    {
+        Output::setLedColor(i, colorList[i], 1);
     }
 }
 
-void MemoryMatchingState::randomizeLights()
+void MemoryMatchingState::evaluateGuess()
 {
-    static Color colorList[16] = {
-        Colors::pink,
-        Colors::azure,
-        Colors::cyan,
-        Colors::purple,
-        Colors::aquamarine,
-        Colors::red,
-        Colors::orange,
-        Colors::yellow,
-        Colors::aquamarine,
-        Colors::red,
-        Colors::azure,
-        Colors::purple,
-        Colors::pink,
-        Colors::cyan,
-        Colors::orange,
-        Colors::yellow};
-
-    int temp[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int tempAddress = 0;
-
-    for (int i = 0; i < 16; i++)
+    if (Output::getLedColor(selectedLedIndex1) == Output::getLedColor(selectedLedIndex2))
     {
-        Output::setLedIntensity(i, 1);
-
-        while (1)
-        { 
-            int value = Random::range(1, 16);
-            bool valueRepeated = false;
-
-            for (int i = 0; i < 16; i++)
-            {
-                if (value == temp[i])
-                {
-                    valueRepeated = true;
-                    break;
-                }
-            }
-
-            if (valueRepeated)
-                continue;
-
-            temp[tempAddress] = value;
-            tempAddress++;
-
-            Output::setLedColor(i, colorList[(value - 1)]);
-            break;
-        }
+        isGuessCorrect = true;
+        ledBrightnessAdjustTimer = 300;
+    }
+    else
+    {
+        isGuessCorrect = false;
+        ledBrightnessAdjustTimer = 600;
     }
 }
 
-MemoryMatchingStateEasy::MemoryMatchingStateEasy() : MemoryMatchingState()
+void MemoryMatchingState::adjustLedBrightness()
 {
-}
+    if (isGuessCorrect)
+    {
+        Output::setLedIntensity(selectedLedIndex1, .2);
+        Output::setLedIntensity(selectedLedIndex2, .2);
+        correctMatches++;
+    }
+    else
+    {
+        Output::ledOff(selectedLedIndex1);
+        Output::ledOff(selectedLedIndex2);
+    }
 
-void MemoryMatchingStateEasy::enterState()
-{
+    selectedLedIndex1 = -1;
+    selectedLedIndex2 = -1;
 }
