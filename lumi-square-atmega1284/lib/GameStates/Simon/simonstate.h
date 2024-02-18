@@ -14,17 +14,20 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    void playNewSequence();
-    int8_t simonSequenceIndex;
-    int8_t playerSequenceIndex;
-    int8_t simonLightSequence[100];
+    int8_t sequenceIndex;
+    int8_t activeLedIndex;
+    int8_t currentRound;
+    int8_t simonLedSequence[100];
     MusicNote simonMusicNoteSequence[100];
-    int8_t buttonOptions[8];
-    MusicNote musicNoteOptions[16];
-    bool isPlayingSequence;
-    int16_t timer;
-    bool buttonLedIsOn;
-    int lives;
+    int8_t ledOptions[8];
+    MusicNote musicNoteOptions[8];
+    bool listeningForPlayerInput;
+    int16_t ledBrightnessAdjustTimer;
+    int8_t lives;
+    void playRoundSequence();
+    void listenForPlayerInput();
+    void playNextSequenceNote();
+    void incrementRound();
 };
 
 #endif
