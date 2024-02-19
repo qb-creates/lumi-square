@@ -5,20 +5,18 @@
 
 SimonState::SimonState()
     : GameBaseState(),
+      buttonMapArray{5, 6, 9, 10, 0, 3, 12, 15},
+      musicNoteMapArray{MusicNote::G3, MusicNote::C3, MusicNote::E3, MusicNote::G2, MusicNote::G4, MusicNote::C4, MusicNote::E4, MusicNote::G3},
       sequenceIndex(0),
-      activeLedIndex(0),
+      activeButtonIndex(0),
       currentRound(0),
-      simonLedSequence{},
+      simonButtonSequence{},
       simonMusicNoteSequence{},
-      ledOptions{5, 6, 9, 10, 0, 3, 12, 15},
-      musicNoteOptions{MusicNote::G3, MusicNote::C3, MusicNote::E3, MusicNote::G2, MusicNote::G4, MusicNote::C4, MusicNote::E4, MusicNote::G3},
       listeningForPlayerInput(false),
-      ledBrightnessAdjustTimer(0) {}
+      delayTimer(0) {}
 
 void SimonState::enterState()
 {
-    lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
-
     if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
     {
         Output::ledOn(0, Colors::aquamarine, .1);
@@ -31,111 +29,127 @@ void SimonState::enterState()
     Output::ledOn(6, Colors::red, .1);
     Output::ledOn(9, Colors::yellow, .1);
     Output::ledOn(10, Colors::azure, .1);
-
     LCD::Instance().writeString(0, 0, " Round   Lives \x02");
     LCD::Instance().writeString(1, 0, "    1           ");
+
+    lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
 
     for (int i = 0; i < lives; ++i)
     {
         LCD::Instance().writeByte(1, 12 - i, 0x01);
     }
 
-    playRoundSequence();
+    startNextRoundSequence();
 }
 
 void SimonState::exitState()
 {
-    uint8_t allSimonButtons[] = {5, 6, 9, 10, 0, 3, 12, 15};
-    Output::ledOn(allSimonButtons, 8, Colors::red, .6);
-
-    ledBrightnessAdjustTimer = 0;
     currentRound = 0;
     sequenceIndex = 0;
     nextState = GameState::None;
+    Output::ledOn(buttonMapArray, 8, Colors::red, .6);
 }
 
 void SimonState::updateState()
 {
-    if (ledBrightnessAdjustTimer <= 0 || nextState == GameState::GameOver)
-        return;
-
-    ledBrightnessAdjustTimer -= 16;
-
-    if (ledBrightnessAdjustTimer >= 0)
-        return;
-
-    if (Output::getLedIntensity(activeLedIndex) == .6)
+    if (lives == 0)
     {
-        ledBrightnessAdjustTimer = 200;
-        Output::setLedIntensity(activeLedIndex, .1);
+        nextState = GameState::GameOver;
         return;
     }
+    
+    // Subtract 16 milliseconds from the delay timer if it is greater than 0 
+    delayTimer -= (delayTimer > 0) ? 16 : 0;
 
-    if (sequenceIndex == currentRound)
+    if (delayTimer > 0)
+        return;
+
+    // Deactive the button led if it is active
+    if (Output::getLedIntensity(activeButtonIndex) == .6)
     {
-        listeningForPlayerInput ? playRoundSequence() : listenForPlayerInput();
+        delayTimer = 200;
+        Output::setLedIntensity(activeButtonIndex, .1);
+
+        if (sequenceIndex == currentRound)
+        {
+            listeningForPlayerInput ? startNextRoundSequence() : listenForPlayerInput();
+        }
+
         return;
     }
 
     if (!listeningForPlayerInput)
     {
-        playNextSequenceNote();
+        playNextSequenceElement();
     }
 }
 
 void SimonState::onButtonPressed(int8_t buttonIndex)
 {
-    if (!listeningForPlayerInput || ledBrightnessAdjustTimer > 0 || !Output::getLedStatus(buttonIndex))
+    // Return if not currently listening for player input, the selected button is off, or a button is active (active == intensity of .6)
+    if (!listeningForPlayerInput || Output::getLedIntensity(activeButtonIndex) == .6 || !Output::getLedStatus(buttonIndex))
+        return;
+
+    if (simonButtonSequence[sequenceIndex] == buttonIndex)
     {
+        playNextSequenceElement();
         return;
     }
 
-    if (simonLedSequence[sequenceIndex] != buttonIndex)
-    {
-        --lives;
-
-        LCD::Instance().writeByte(1, 12 - lives, 0x20);
-        AudioSource::playNote(MusicNote::E1, 200);
-
-        if (lives != 0)
-        {
-            listeningForPlayerInput = false;
-            ledBrightnessAdjustTimer = 700;
-            sequenceIndex = 0;
-            return;
-        }
-
-        nextState = GameState::GameOver;
-        return;
-    }
-
-    playNextSequenceNote();
+    removeLifePoint();
+    replayRoundSequence();
 }
 
-void SimonState::playRoundSequence()
+void SimonState::startNextRoundSequence()
 {
-    uint8_t totalLedCount = GameProperties::Instance().gameDifficulty == Difficulty::Easy ? 3 : 7;
-    uint8_t randomLedIndex = Random::range(0, totalLedCount);
+    while (1)
+    {
+        uint8_t totalLedCount = GameProperties::Instance().gameDifficulty == Difficulty::Easy ? 3 : 7;
+        uint8_t randomIndex = Random::range(0, totalLedCount);
 
-    ledBrightnessAdjustTimer = 500;
+        if (currentRound >= 2)
+        {
+            // Continue and grab another random button index if current random button is the same as the previous two buttons in the simon sequence.
+            if (simonButtonSequence[currentRound - 1] == buttonMapArray[randomIndex] && simonButtonSequence[currentRound - 2] == buttonMapArray[randomIndex])
+                continue;
+        }
+
+        delayTimer = 500;
+        sequenceIndex = 0;
+        listeningForPlayerInput = false;
+        simonButtonSequence[currentRound] = buttonMapArray[randomIndex];
+        simonMusicNoteSequence[currentRound] = musicNoteMapArray[randomIndex];
+        LCD::Instance().writeNumber(1, 2, ++currentRound);
+        break;
+    }
+}
+
+void SimonState::replayRoundSequence()
+{
+    delayTimer = 700;
     sequenceIndex = 0;
     listeningForPlayerInput = false;
-    simonLedSequence[currentRound] = ledOptions[randomLedIndex];
-    simonMusicNoteSequence[currentRound] = musicNoteOptions[randomLedIndex];
-    LCD::Instance().writeNumber(1, 2, ++currentRound);
 }
 
 void SimonState::listenForPlayerInput()
 {
-    ledBrightnessAdjustTimer = 0;
+    delayTimer = 0;
     sequenceIndex = 0;
     listeningForPlayerInput = true;
 }
 
-void SimonState::playNextSequenceNote()
+void SimonState::playNextSequenceElement()
 {
-    ledBrightnessAdjustTimer = 300;
-    Output::setLedIntensity(simonLedSequence[sequenceIndex], .6);
+    delayTimer = 300;
+    activeButtonIndex = simonButtonSequence[sequenceIndex];
+    Output::setLedIntensity(simonButtonSequence[sequenceIndex], .6);
     AudioSource::playNote(simonMusicNoteSequence[sequenceIndex], 200);
-    activeLedIndex = simonLedSequence[sequenceIndex++];
+    ++sequenceIndex;
+}
+
+void SimonState::removeLifePoint()
+{
+    --lives;
+    LCD::Instance().writeByte(1, (12 - lives), 0x20);
+    AudioSource::playNote(MusicNote::E1, 200);
 }

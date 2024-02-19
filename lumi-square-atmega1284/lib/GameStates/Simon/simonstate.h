@@ -14,20 +14,21 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
+    const uint8_t buttonMapArray[8];
+    const MusicNote musicNoteMapArray[8];
     int8_t sequenceIndex;
-    int8_t activeLedIndex;
+    int8_t activeButtonIndex;
     int8_t currentRound;
-    int8_t simonLedSequence[100];
+    int8_t simonButtonSequence[100];
     MusicNote simonMusicNoteSequence[100];
-    int8_t ledOptions[8];
-    MusicNote musicNoteOptions[8];
     bool listeningForPlayerInput;
-    int16_t ledBrightnessAdjustTimer;
+    int16_t delayTimer;
     int8_t lives;
-    void playRoundSequence();
+    void startNextRoundSequence();
+    void replayRoundSequence();
     void listenForPlayerInput();
-    void playNextSequenceNote();
-    void incrementRound();
+    void playNextSequenceElement();
+    void removeLifePoint();
 };
 
 #endif
