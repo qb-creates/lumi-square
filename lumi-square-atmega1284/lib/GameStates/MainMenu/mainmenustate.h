@@ -22,6 +22,7 @@ private:
     void highlightSelectedButton(int8_t selectedButtonIndex);
     void increaseDifficulty();
     void resetDifficulty();
+    void displayHighScore();
 };
 
 #endif

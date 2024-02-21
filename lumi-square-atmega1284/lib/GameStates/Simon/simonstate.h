@@ -24,11 +24,13 @@ private:
     bool listeningForPlayerInput;
     int16_t delayTimer;
     int8_t lives;
+    uint8_t *highScoreAddress;
     void startNextRoundSequence();
     void replayRoundSequence();
     void listenForPlayerInput();
     void playNextSequenceElement();
     void removeLifePoint();
+    void saveHighScore();
 };
 
 #endif

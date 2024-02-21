@@ -2,7 +2,7 @@
 #include "leds.h"
 
 GameOverState::GameOverState()
-    : GameBaseState(), flashAnimationTimer(200), transitionToMainTimer(0), flashCount(7), onLED{} {}
+    : GameBaseState(GameState::GameOver), flashAnimationTimer(200), transitionToMainTimer(0), flashCount(7), onLED{} {}
 
 void GameOverState::enterState()
 {

@@ -5,7 +5,7 @@
 #include <random.h>
 
 MainMenuState::MainMenuState()
-    : GameBaseState(),
+    : GameBaseState(GameState::Menu),
       queuedState(GameState::MemoryMatching),
       maxDifficulty(Difficulty::Easy),
       highlightedButtonIndex(0),
@@ -18,8 +18,8 @@ void MainMenuState::enterState()
 
     Output::ledOn(0, Colors::yellow, .6);
     Output::ledOn(15, Colors::yellow, .4);
-    resetDifficulty();
     queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Memory Matching ");
+    resetDifficulty();
 }
 
 void MainMenuState::exitState()
@@ -73,16 +73,18 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
         return;
     }
 
-    resetDifficulty();
     highlightSelectedButton(buttonIndex);
 }
 
 void MainMenuState::queueGameState(GameState gamestate, Difficulty maxDifficulty, const char *gameStateName)
 {
+    if (queuedState == gamestate)
+        return;
+        
     this->maxDifficulty = maxDifficulty;
     queuedState = gamestate;
     LCD::Instance().writeString(0, 0, gameStateName);
-    LCD::Instance().writeString(1, 0, "High Score:     ");
+    resetDifficulty();
 }
 
 void MainMenuState::highlightSelectedButton(int8_t selectedButtonIndex)
@@ -117,10 +119,21 @@ void MainMenuState::increaseDifficulty()
         Output::ledOn(12, Colors::red, 0.4);
         break;
     }
+
+    displayHighScore();
 }
 
 void MainMenuState::resetDifficulty()
 {
     Output::ledOn(12, Colors::green, 0.4);
     GameProperties::Instance().setDifficulty(Difficulty::Easy);
+    displayHighScore();
+}
+
+void MainMenuState::displayHighScore()
+{
+    int8_t savedHighScore = HighScoreManager::getHighScore(queuedState, GameProperties::Instance().gameDifficulty);
+
+    LCD::Instance().writeString(1, 0, "High Score:     ");
+    LCD::Instance().writeNumber(1, 11, savedHighScore);
 }

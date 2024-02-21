@@ -4,7 +4,7 @@
 #include "random.h"
 
 SimonState::SimonState()
-    : GameBaseState(),
+    : GameBaseState(GameState::Simon),
       buttonMapArray{5, 6, 9, 10, 0, 3, 12, 15},
       musicNoteMapArray{MusicNote::G3, MusicNote::C3, MusicNote::E3, MusicNote::G2, MusicNote::G4, MusicNote::C4, MusicNote::E4, MusicNote::G3},
       sequenceIndex(0),
@@ -13,7 +13,8 @@ SimonState::SimonState()
       simonButtonSequence{},
       simonMusicNoteSequence{},
       listeningForPlayerInput(false),
-      delayTimer(0) {}
+      delayTimer(0),
+      highScoreAddress((uint8_t *)0) {}
 
 void SimonState::enterState()
 {
@@ -32,6 +33,7 @@ void SimonState::enterState()
     LCD::Instance().writeString(0, 0, " Round   Lives \x02");
     LCD::Instance().writeString(1, 0, "    1           ");
 
+    highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
 
     for (int i = 0; i < lives; ++i)
@@ -55,10 +57,11 @@ void SimonState::updateState()
     if (lives == 0)
     {
         nextState = GameState::GameOver;
+        saveHighScore();
         return;
     }
-    
-    // Subtract 16 milliseconds from the delay timer if it is greater than 0 
+
+    // Subtract 16 milliseconds from the delay timer if it is greater than 0
     delayTimer -= (delayTimer > 0) ? 16 : 0;
 
     if (delayTimer > 0)
@@ -152,4 +155,14 @@ void SimonState::removeLifePoint()
     --lives;
     LCD::Instance().writeByte(1, (12 - lives), 0x20);
     AudioSource::playNote(MusicNote::E1, 200);
+}
+
+void SimonState::saveHighScore()
+{
+    bool highscore = HighScoreManager::getHighScore(currentState, GameProperties::Instance().gameDifficulty);
+
+    if (highscore < currentRound)
+    {
+        HighScoreManager::saveHighScore(currentState, GameProperties::Instance().gameDifficulty, currentRound);
+    }
 }

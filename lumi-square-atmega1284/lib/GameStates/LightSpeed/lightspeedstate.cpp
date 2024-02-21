@@ -5,7 +5,13 @@
 #include "random.h"
 
 LightSpeedState::LightSpeedState()
-    : GameBaseState(), timer(1000), counter(30), score(0), shuffleLeds(false), timePowerUpActive(false), redHazardActive(false), ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
+    : GameBaseState(GameState::LightSpeed),
+      timer(1000),
+      counter(30),
+      score(0),
+      shuffleLeds(false),
+      timePowerUpActive(false),
+      ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
 void LightSpeedState::enterState()
 {
@@ -20,7 +26,7 @@ void LightSpeedState::enterState()
 
         Output::setLedColor(ledIndex, Colors::azure, .5);
         Output::ledOn(ledIndex);
-        ledShuffleTimes[ledIndex] = Random::range(500, 1500 );
+        ledShuffleTimes[ledIndex] = Random::range(500, 1500);
         ++i;
     }
 
@@ -58,17 +64,11 @@ void LightSpeedState::updateState()
             if (ledShuffleTimes[ledIndex] <= 0)
             {
                 powerOnRandomLight();
-                
+
                 if (Output::getLedColor(ledIndex) == Colors::green)
                 {
                     timePowerUpActive = false;
                 }
-
-                if (Output::getLedColor(ledIndex) == Colors::red)
-                {
-                    redHazardActive = false;
-                }
-
                 Output::ledOff(ledIndex);
             }
         }
@@ -93,33 +93,25 @@ void LightSpeedState::updateState()
 void LightSpeedState::onButtonPressed(int8_t buttonIndex)
 {
     if (!Output::getLedStatus(buttonIndex))
+    {
+        --score;
+        LCD::Instance().writeNumber(1, 3, score);
         return;
+    }
 
     powerOnRandomLight();
 
     Color buttonColor = Output::getLedColor(buttonIndex);
+    int points = buttonColor == Colors::azure ? 1 : 3;
+    MusicNote musicNote = buttonColor == Colors::azure ? MusicNote::G5 : MusicNote::A5;
 
-    if (buttonColor == Colors::azure)
+    if (buttonColor == Colors::green)
     {
-        ++score;
-        AudioSource::playNote(MusicNote::G5, 50);
-    }
-    else if (buttonColor == Colors::green)
-    {
-        counter += 7;
         timePowerUpActive = false;
-        AudioSource::playNote(MusicNote::A5, 50);
     }
-    else if (buttonColor == Colors::red)
-    {
-        if (GameProperties::Instance().gameDifficulty == Difficulty::Hard)
-        {
-            --score;
-        }
-        counter -= 3;
-        redHazardActive = false;
-        AudioSource::playNote(MusicNote::G6, 50);
-    }
+
+    score += points;
+    AudioSource::playNote(musicNote, 50);
 
     Output::ledOff(buttonIndex);
     LCD::Instance().writeNumber(1, 3, score);
@@ -137,21 +129,16 @@ void LightSpeedState::powerOnRandomLight()
 
             if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
             {
-                int asdf = Random::range(1, 3);
+                int asdf = Random::range(1, 20);
 
-                if (!timePowerUpActive && asdf == 1)
+                if (!timePowerUpActive && asdf == 5)
                 {
                     ledColor = Colors::green;
                     timePowerUpActive = true;
                 }
-                else if (!redHazardActive && asdf == 2)
-                {
-                    ledColor = Colors::red;
-                    redHazardActive = true;
-                }                
             }
 
-            int16_t shuffleTime = ledColor != Colors::azure ?  1000 : Random::range(500, 1500 );
+            int16_t shuffleTime = ledColor != Colors::azure ? 500 : Random::range(500, 1500);
             Output::setLedColor(ledIndex, ledColor, .5);
             Output::ledOn(ledIndex);
             ledShuffleTimes[ledIndex] = shuffleTime;

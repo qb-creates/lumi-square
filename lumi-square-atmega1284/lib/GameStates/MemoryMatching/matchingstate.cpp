@@ -22,7 +22,7 @@ Color MemoryMatchingState::colorList[16] = {
     Colors::yellow};
 
 MemoryMatchingState::MemoryMatchingState()
-    : GameBaseState(),
+    : GameBaseState(GameState::MemoryMatching),
       ledBrightnessAdjustTimer(0),
       correctMatches(0),
       selectedLedIndex1(-1),
