@@ -1,12 +1,11 @@
 #include "mainmenustate.h"
-#include "audio.h"
 #include "lcd.h"
 #include "leds.h"
 #include <random.h>
 
 MainMenuState::MainMenuState()
     : GameBaseState(GameState::Menu),
-      queuedState(GameState::MemoryMatching),
+      queuedState(GameState::None),
       maxDifficulty(Difficulty::Easy),
       highlightedButtonIndex(0),
       highlightedButtonTimer(1000) {}
@@ -30,6 +29,7 @@ void MainMenuState::exitState()
     highlightedButtonIndex = 0;
     highlightedButtonTimer = 1000;
     nextState = GameState::None;
+    queuedState = GameState::None;
 }
 
 void MainMenuState::updateState()
@@ -80,7 +80,7 @@ void MainMenuState::queueGameState(GameState gamestate, Difficulty maxDifficulty
 {
     if (queuedState == gamestate)
         return;
-        
+
     this->maxDifficulty = maxDifficulty;
     queuedState = gamestate;
     LCD::Instance().writeString(0, 0, gameStateName);
@@ -93,7 +93,7 @@ void MainMenuState::highlightSelectedButton(int8_t selectedButtonIndex)
     {
         Output::setLedColor(highlightedButtonIndex, Colors::azure, .05);
         Output::setLedColor(selectedButtonIndex, Colors::yellow, .5);
-        AudioSource::playNote(MusicNote::G4, 100);
+        AudioSource::playMusicNote(MusicNote::G4, 100);
         highlightedButtonIndex = selectedButtonIndex;
         highlightedButtonTimer = 1000;
     }
@@ -111,12 +111,15 @@ void MainMenuState::increaseDifficulty()
     {
     case Difficulty::Easy:
         Output::ledOn(12, Colors::green, 0.4);
+        LCD::Instance().writeString(1, 0, "Easy    ");
         break;
     case Difficulty::Medium:
+        LCD::Instance().writeString(1, 0, "Medium  ");
         Output::ledOn(12, Colors::orange, 0.4);
         break;
     case Difficulty::Hard:
         Output::ledOn(12, Colors::red, 0.4);
+        LCD::Instance().writeString(1, 0, "Hard    ");
         break;
     }
 
@@ -126,6 +129,7 @@ void MainMenuState::increaseDifficulty()
 void MainMenuState::resetDifficulty()
 {
     Output::ledOn(12, Colors::green, 0.4);
+    LCD::Instance().writeString(1, 0, "Easy    ");
     GameProperties::Instance().setDifficulty(Difficulty::Easy);
     displayHighScore();
 }
@@ -133,7 +137,6 @@ void MainMenuState::resetDifficulty()
 void MainMenuState::displayHighScore()
 {
     int8_t savedHighScore = HighScoreManager::getHighScore(queuedState, GameProperties::Instance().gameDifficulty);
-
-    LCD::Instance().writeString(1, 0, "High Score:     ");
+    LCD::Instance().writeString(1, 8, "HS:     ");
     LCD::Instance().writeNumber(1, 11, savedHighScore);
 }

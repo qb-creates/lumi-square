@@ -2,7 +2,6 @@
 #define SIMON_H
 
 #include "basestate.h"
-#include "audio.h"
 
 class SimonState : public GameBaseState
 {

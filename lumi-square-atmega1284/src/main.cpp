@@ -84,8 +84,8 @@ int main(void)
 
             if (!enterSleepMode)
             {
-                AudioSource::updateAudioSource();
-                // AudioSource::playMusic();
+                AudioSource::playNextAudioClipNote();
+                AudioSource::updateMusicNoteTimer();
                 StateManager::Instance().buttonPressed();
                 StateManager::Instance().update();
                 fixedUpdate = false;

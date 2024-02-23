@@ -1,5 +1,4 @@
 #include "lightspeedstate.h"
-#include "audio.h"
 #include "lcd.h"
 #include "leds.h"
 #include "random.h"
@@ -111,7 +110,7 @@ void LightSpeedState::onButtonPressed(int8_t buttonIndex)
     }
 
     score += points;
-    AudioSource::playNote(musicNote, 50);
+    AudioSource::playMusicNote(musicNote, 50);
 
     Output::ledOff(buttonIndex);
     LCD::Instance().writeNumber(1, 3, score);

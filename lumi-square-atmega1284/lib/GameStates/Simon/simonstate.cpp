@@ -6,7 +6,7 @@
 SimonState::SimonState()
     : GameBaseState(GameState::Simon),
       buttonMapArray{5, 6, 9, 10, 0, 3, 12, 15},
-      musicNoteMapArray{MusicNote::G3, MusicNote::C3, MusicNote::E3, MusicNote::G2, MusicNote::G4, MusicNote::C4, MusicNote::E4, MusicNote::G3},
+      musicNoteMapArray{MusicNote::G4, MusicNote::C4, MusicNote::E4, MusicNote::G3, MusicNote::A4, MusicNote::D4, MusicNote::F4, MusicNote::B3},
       sequenceIndex(0),
       activeButtonIndex(0),
       currentRound(0),
@@ -61,6 +61,9 @@ void SimonState::updateState()
         return;
     }
 
+    if (AudioSource::isPlayingAudioClip())
+        return;
+        
     // Subtract 16 milliseconds from the delay timer if it is greater than 0
     delayTimer -= (delayTimer > 0) ? 16 : 0;
 
@@ -146,7 +149,7 @@ void SimonState::playNextSequenceElement()
     delayTimer = 300;
     activeButtonIndex = simonButtonSequence[sequenceIndex];
     Output::setLedIntensity(simonButtonSequence[sequenceIndex], .6);
-    AudioSource::playNote(simonMusicNoteSequence[sequenceIndex], 200);
+    AudioSource::playMusicNote(simonMusicNoteSequence[sequenceIndex], 200);
     ++sequenceIndex;
 }
 
@@ -154,12 +157,12 @@ void SimonState::removeLifePoint()
 {
     --lives;
     LCD::Instance().writeByte(1, (12 - lives), 0x20);
-    AudioSource::playNote(MusicNote::E1, 200);
+    AudioSource::playAudioClip(FAILURE_AUDIO_CLIP);
 }
 
 void SimonState::saveHighScore()
 {
-    bool highscore = HighScoreManager::getHighScore(currentState, GameProperties::Instance().gameDifficulty);
+    uint8_t highscore = HighScoreManager::getHighScore(currentState, GameProperties::Instance().gameDifficulty);
 
     if (highscore < currentRound)
     {

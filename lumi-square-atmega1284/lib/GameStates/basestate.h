@@ -2,6 +2,8 @@
 #define GAMEBASESTATE_H
 
 #include <stdint.h>
+#include "soundeffects.h"
+#include "audio.h"
 #include "gameproperties.h"
 #include "highscoremanager.h"
 

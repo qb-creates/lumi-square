@@ -1,5 +1,4 @@
 #include "matchingstate.h"
-#include "audio.h"
 #include "leds.h"
 #include "random.h"
 
@@ -79,7 +78,7 @@ void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
 
     MusicNote musicNote = selectedLedIndex2 == -1 ? MusicNote::C5 : MusicNote::D5;
     Output::ledOn(buttonIndex);
-    AudioSource::playNote(musicNote, 100);
+    AudioSource::playMusicNote(musicNote, 100);
 }
 
 void MemoryMatchingState::shuffleLedColors()
