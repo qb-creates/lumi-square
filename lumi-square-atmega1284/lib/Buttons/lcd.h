@@ -12,7 +12,7 @@ public:
     void displayPower(bool on);
     void clearDisplay();
     void writeString(int8_t row, int8_t column, const char *data);
-    void writeNumber(int8_t row, int8_t column, int32_t value);
+    void writeNumber(int8_t row, int8_t column, uint8_t value);
     void writeByte(int8_t row, int8_t column, uint8_t data);
 
 private:

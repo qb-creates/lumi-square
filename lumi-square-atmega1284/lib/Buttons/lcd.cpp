@@ -120,7 +120,7 @@ void LCD::writeString(int8_t row, int8_t column, const char *data)
  * @param col The column index on the LCD where the writing should start.
  * @param value The integer value to be displayed on the LCD.
  */
-void LCD::writeNumber(int8_t row, int8_t column, int32_t value)
+void LCD::writeNumber(int8_t row, int8_t column, uint8_t value)
 {
     I2C::Instance().start(LCD_SLAVE_ADDRESS);
     uint8_t digits[3];
