@@ -1,27 +1,27 @@
 #include "highscoremanager.h"
 #include <avr/boot.h>
 
-uintptr_t highScoreStatusAddress = 0;
+const uint8_t HighScoreManager::HIGHSCORE_INITIALIZATION_FLAG = 0x77;
 
 uint8_t HighScoreManager::getHighScore(GameState gameState, Difficulty difficulty)
 {
     uint8_t *highScoreAddress = getHighScoreAddress(gameState, difficulty);
-    uint8_t *highScoreStatusAddress = highScoreAddress + 3;
+    uint8_t *highScoreInitFlagAddress = highScoreAddress + 3;
 
-    uint8_t highscoreSaveStatus = eeprom_read_byte(highScoreStatusAddress);
-    return highscoreSaveStatus == 0x00 ? eeprom_read_byte(highScoreAddress) : 0;
+    uint8_t highScoreInitStatus = eeprom_read_byte(highScoreInitFlagAddress);
+    return highScoreInitStatus == HIGHSCORE_INITIALIZATION_FLAG ? eeprom_read_byte(highScoreAddress) : 0;
 }
 
 void HighScoreManager::saveHighScore(GameState gameState, Difficulty difficulty, uint8_t highScore)
 {
     uint8_t *highScoreAddress = getHighScoreAddress(gameState, difficulty);
-    uint8_t *highScoreStatusAddress = highScoreAddress + 3;
+    uint8_t *highScoreInitFlagAddress = highScoreAddress + 3;
 
-    uint8_t highscoreSaveStatus = eeprom_read_byte(highScoreStatusAddress);
+    uint8_t highScoreInitStatus = eeprom_read_byte(highScoreInitFlagAddress);
 
-    if (highscoreSaveStatus != 0x00)
+    if (highScoreInitStatus != HIGHSCORE_INITIALIZATION_FLAG)
     {
-        eeprom_write_byte(highScoreStatusAddress, 0x00);
+        eeprom_write_byte(highScoreInitFlagAddress, HIGHSCORE_INITIALIZATION_FLAG);
     }
 
     eeprom_write_byte(highScoreAddress, highScore);
