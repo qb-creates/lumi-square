@@ -1,116 +1,148 @@
 #include "audio.h"
 
-int16_t AudioSource::playTime = 0;
-bool AudioSource::isPlaying = false;
-bool AudioSource::buttonIsPlaying = false;
+const MusicNote *AudioSource::m_pQueuedAudioData;
+bool AudioSource::m_isPlayingMusicNote = false;
+bool AudioSource::m_isPlayingAudioClip = false;
+int16_t AudioSource::m_audioPlayTime = 0;
+uint16_t AudioSource::m_audioClipBeatDuration = 0;
 
-int16_t happyBirthday[] = {
-  static_cast<int16_t>(MusicNote::E4), 4,  static_cast<int16_t>(MusicNote::B3),8,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::D4),4,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::B3),8,
-  static_cast<int16_t>(MusicNote::A3), 4,  static_cast<int16_t>(MusicNote::A3),8,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::E4),4,  static_cast<int16_t>(MusicNote::D4),8,  static_cast<int16_t>(MusicNote::C4),8,
-  static_cast<int16_t>(MusicNote::B3), -4,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::D4),4,  static_cast<int16_t>(MusicNote::E4),4,
-  static_cast<int16_t>(MusicNote::C4), 4,  static_cast<int16_t>(MusicNote::A3),4,  static_cast<int16_t>(MusicNote::A3),8,  static_cast<int16_t>(MusicNote::A3),4,  static_cast<int16_t>(MusicNote::B3),8,  static_cast<int16_t>(MusicNote::C4),8,
+/**
+ * @brief Checks if an audio clip is currently playing.
+ *
+ * Retrieves the current state of audio clip playback. Returns true if an audio
+ * clip is currently playing, and false otherwise.
+ *
+ * @return true if an audio clip is currently playing, false otherwise.
+ */
+bool AudioSource::isPlayingAudioClip()
+{
+    return m_isPlayingAudioClip;
+}
 
-  static_cast<int16_t>(MusicNote::D5), -4,  static_cast<int16_t>(MusicNote::F5),8,  static_cast<int16_t>(MusicNote::A5),4,  static_cast<int16_t>(MusicNote::G5),8,  static_cast<int16_t>(MusicNote::F5),8,
-  static_cast<int16_t>(MusicNote::E5), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),4, static_cast<int16_t>(MusicNote::Rest), 4,
+/**
+ * @brief Checks if a music note is currently playing.
+ *
+ * Retrieves the current state of music note playback. Returns true if a music
+ * note is currently playing, and false otherwise.
+ *
+ * @return true if a music note is currently playing, false otherwise.
+ */
+bool AudioSource::isPlayingMusicNote()
+{
+    return m_isPlayingMusicNote;
+}
 
-  static_cast<int16_t>(MusicNote::E5), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::B4),8,
-  static_cast<int16_t>(MusicNote::A4), 4,  static_cast<int16_t>(MusicNote::A4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),8,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,
-
-  static_cast<int16_t>(MusicNote::D5), -4,  static_cast<int16_t>(MusicNote::F5),8,  static_cast<int16_t>(MusicNote::A5),4,  static_cast<int16_t>(MusicNote::G5),8,  static_cast<int16_t>(MusicNote::F5),8,
-  static_cast<int16_t>(MusicNote::E5), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),4, static_cast<int16_t>(MusicNote::Rest), 4,
-  
-
-  static_cast<int16_t>(MusicNote::E5),2,  static_cast<int16_t>(MusicNote::C5),2,
-  static_cast<int16_t>(MusicNote::D5),2,   static_cast<int16_t>(MusicNote::B4),2,
-  static_cast<int16_t>(MusicNote::C5),2,   static_cast<int16_t>(MusicNote::A4),2,
-  static_cast<int16_t>(MusicNote::Ab4),2,  static_cast<int16_t>(MusicNote::B4),4,  static_cast<int16_t>(MusicNote::Rest),8, 
-  static_cast<int16_t>(MusicNote::E5),2,   static_cast<int16_t>(MusicNote::C5),2,
-  static_cast<int16_t>(MusicNote::D5),2,   static_cast<int16_t>(MusicNote::B4),2,
-  static_cast<int16_t>(MusicNote::C5),4,   static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::A5),2,
-  static_cast<int16_t>(MusicNote::Ab4),2,
-};
-
+/**
+ * @brief Configures Timer 1 for PWM output.
+ *
+ * Configures Timer 1 for PWM output on pin PD4.
+ * Enables PWM mode with Fast PWM and sets the top value based on OCR1A.
+ * Selects a Prescaler of 64 to determine PWM frequency.
+ */
 void AudioSource::configureAudioSource()
 {
-    //  Configure
-    DDRD |= _BV(PD4) | _BV(PD6);
-
-    // Enable PWM mode based on comparator OCR3A. Clear OC1B on compare match and set OC1B when TCNT3 = 0x000;
-    // OCR1A is our top and how we adjust pwm frequency.
-    // Frequency is going to be
+    DDRD |= _BV(PD4);
     TCCR1A |= _BV(WGM10) | _BV(WGM11);
-
-    // Selects a Prescaler of 64. Fast PWM mode. Top is determined by OCR1A
     TCCR1B |= _BV(WGM13) | _BV(WGM12) | _BV(CS11) | _BV(CS10);
-
-    TCCR2A |= _BV(WGM21) | _BV(WGM20);
-    TCCR2B |= _BV(CS22) | _BV(CS21) | _BV(CS20) | _BV(WGM22);
 }
-int musicCounter = 0;
-void AudioSource::playMusic()
+
+/**
+ * @brief Updates the timer for note playback.
+ *
+ * This function is responsible for updating the timer associated with note playback.
+ * It decrements the timer value and stops note playback when the timer reaches zero.
+ */
+void AudioSource::updateMusicNoteTimer()
 {
-    if (!isPlaying)
+    if (!m_isPlayingMusicNote)
+        return;
+
+    m_audioPlayTime -= 16;
+
+    if (m_audioPlayTime <= 0)
     {
-        int16_t noteDuration = happyBirthday[musicCounter + 1];
-        int16_t duration = 0;
+        m_isPlayingMusicNote = false;
+
+        if (*m_pQueuedAudioData == MusicNote::END && m_isPlayingAudioClip)
+        {
+            m_isPlayingAudioClip = false;
+        }
+
+        // Disable PWM output
+        TCCR1A &= ~_BV(COM1B1);
+    }
+}
+
+
+/**
+ * @brief Prepares and initiates playback of the given audio clip.
+ *
+ * Sets the beat duration based on the clip's beats per minute (bpm).
+ * Initializes queued audio data and marks clip for immediate playback.
+ * Playback of individual notes from the queued audio clip is initiated
+ * by calling playNextAudioClipNote() every 16ms.
+ *
+ * @param audioClip The audio clip to be queued for playback.
+ */
+void AudioSource::playAudioClip(AudioClip audioClip)
+{
+    m_audioClipBeatDuration = 60000 / audioClip.bpm;
+    m_isPlayingAudioClip = true;
+    m_pQueuedAudioData = audioClip.audioData;
+}
+
+/**
+ * @brief Plays the next note from the audio clip data.
+ *
+ * This function plays the next note from the audio clip data. It retrieves the
+ * next note and its duration from the queued audio data. Then, it calculates
+ * the play time duration for the note based on the audio clip's calculated beat duration.
+ * The function loads the note's OCR value into the OCR1 register to set the PWM
+ * frequency for that note. The note is played for the calculated note duration.
+ */
+void AudioSource::playNextAudioClipNote()
+{
+    if (!m_isPlayingMusicNote && m_isPlayingAudioClip)
+    {
+        int16_t note = static_cast<int16_t>(*m_pQueuedAudioData++);
+        int16_t noteDuration = static_cast<int16_t>(*m_pQueuedAudioData++);
+
         if (noteDuration < 0)
         {
             noteDuration *= -1;
-            duration = (1333 / noteDuration) + (1333 / (noteDuration * 2));
+            m_audioPlayTime = ((m_audioClipBeatDuration * 4) / noteDuration) + ((m_audioClipBeatDuration * 4) / (noteDuration * 2));
         }
         else
         {
-            duration = (1333 / noteDuration);
+            m_audioPlayTime = (m_audioClipBeatDuration * 4) / noteDuration;
         }
 
-        playNote(happyBirthday[musicCounter], duration);
+        // Configure pwm frequency
+        OCR1A = note;
+        OCR1B = note / 2;
 
-        musicCounter += 2;
-        if (musicCounter > 197)
-        {
-            musicCounter = 0;
-        }
-    }
-}
-void AudioSource::updateAudioSource()
-{
-    if (playTime > 0)
-    {
-        playTime -= 16;
-
-        if (playTime <= 0)
-        {
-            // Disable PWM output
-            TCCR1A &= ~_BV(COM1B1);
-            isPlaying = false;
-        }
+        // Enable PWM output
+        TCCR1A |= _BV(COM1B1);
+        m_isPlayingMusicNote = true;
     }
 }
 
-void AudioSource::playNote(MusicNote note, int16_t time)
+/**
+ * @brief Plays the specified music note for the given duration.
+ *
+ * Starts immediate playback of the specified music note for the given duration.
+ * Stops playback when the specified time elapses.
+ *
+ * @param note The music note to be played.
+ * @param time The duration of note playback (in milliseconds).
+ */
+void AudioSource::playMusicNote(MusicNote note, int16_t time)
 {
     OCR1A = static_cast<uint16_t>(note);
     OCR1B = static_cast<uint16_t>(note) / 2;
 
     // Enable PWM output
     TCCR1A |= _BV(COM1B1);
-    playTime = time;
-    isPlaying = true;
-}
-
-void AudioSource::playNote(int16_t note, int16_t time)
-{
-    OCR1A = note;
-    OCR1B = note / 2;
-
-    // Enable PWM output
-    TCCR1A |= _BV(COM1B1);
-    playTime = time;
-    isPlaying = true;
+    m_audioPlayTime = time;
+    m_isPlayingMusicNote = true;
 }
