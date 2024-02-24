@@ -16,6 +16,7 @@ public:
     static void playMusicNote(MusicNote note, int16_t time);
 
 private:
+    AudioSource();
     AudioSource(const AudioSource &) = delete;
     void operator=(const AudioSource &) = delete;
     static const MusicNote *m_pQueuedAudioData;

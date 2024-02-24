@@ -30,7 +30,7 @@ void SimonState::enterState()
     Output::ledOn(6, Colors::red, .1);
     Output::ledOn(9, Colors::yellow, .1);
     Output::ledOn(10, Colors::azure, .1);
-    LCD::Instance().writeString(0, 0, " Round   Lives \x02");
+    LCD::Instance().writeString(0, 0, " Round  Lives  \x02");
     LCD::Instance().writeString(1, 0, "    1           ");
 
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
@@ -38,7 +38,7 @@ void SimonState::enterState()
 
     for (int i = 0; i < lives; ++i)
     {
-        LCD::Instance().writeByte(1, 12 - i, 0x01);
+        LCD::Instance().writeByte(1, 11 - i, 0x01);
     }
 
     startNextRoundSequence();
@@ -156,7 +156,7 @@ void SimonState::playNextSequenceElement()
 void SimonState::removeLifePoint()
 {
     --lives;
-    LCD::Instance().writeByte(1, (12 - lives), 0x20);
+    LCD::Instance().writeByte(1, (11 - lives), 0x20);
     AudioSource::playAudioClip(FAILURE_AUDIO_CLIP);
 }
 

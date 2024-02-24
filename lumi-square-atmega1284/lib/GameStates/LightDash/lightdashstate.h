@@ -1,12 +1,12 @@
-#ifndef LIGHTSPEED_H
-#define LIGHTSPEED_H
+#ifndef LIGHTDASH_H
+#define LIGHTDASH_H
 
 #include "basestate.h"
 
-class LightSpeedState : public GameBaseState
+class LightDashState : public GameBaseState
 {
 public:
-    LightSpeedState();
+    LightDashState();
     void enterState();
     void exitState();
     void updateState();

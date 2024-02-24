@@ -1,10 +1,10 @@
-#include "lightspeedstate.h"
+#include "lightdashstate.h"
 #include "lcd.h"
 #include "leds.h"
 #include "random.h"
 
-LightSpeedState::LightSpeedState()
-    : GameBaseState(GameState::LightSpeed),
+LightDashState::LightDashState()
+    : GameBaseState(GameState::LightDash),
       timer(1000),
       counter(30),
       score(0),
@@ -12,7 +12,7 @@ LightSpeedState::LightSpeedState()
       timePowerUpActive(false),
       ledShuffleTimes{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
-void LightSpeedState::enterState()
+void LightDashState::enterState()
 {
     uint8_t i = 0;
 
@@ -39,7 +39,7 @@ void LightSpeedState::enterState()
     LCD::Instance().writeString(1, 0, "     0     30   ");
 }
 
-void LightSpeedState::exitState()
+void LightDashState::exitState()
 {
     score = 0;
     timer = 1000;
@@ -47,7 +47,7 @@ void LightSpeedState::exitState()
     nextState = GameState::None;
 }
 
-void LightSpeedState::updateState()
+void LightDashState::updateState()
 {
     if (shuffleLeds)
     {
@@ -89,7 +89,7 @@ void LightSpeedState::updateState()
     }
 }
 
-void LightSpeedState::onButtonPressed(int8_t buttonIndex)
+void LightDashState::onButtonPressed(int8_t buttonIndex)
 {
     if (!Output::getLedStatus(buttonIndex))
     {
@@ -116,7 +116,7 @@ void LightSpeedState::onButtonPressed(int8_t buttonIndex)
     LCD::Instance().writeNumber(1, 3, score);
 }
 
-void LightSpeedState::powerOnRandomLight()
+void LightDashState::powerOnRandomLight()
 {
     while (1)
     {

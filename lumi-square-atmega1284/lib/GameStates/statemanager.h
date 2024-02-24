@@ -5,7 +5,7 @@
 #include "MainMenu/mainmenustate.h"
 #include "MemoryMatching/matchingstate.h"
 #include "GameOver/gameoverstate.h"
-#include "LightSpeed/lightspeedstate.h"
+#include "LightDash/lightdashstate.h"
 #include "Simon/simonstate.h"
 
 class StateManager
@@ -23,7 +23,7 @@ private:
     GameOverState gameOverState;
     MainMenuState mainMenuState;
     MemoryMatchingState memoryMatchingState;
-    LightSpeedState lightSpeedState;
+    LightDashState lightSpeedState;
     SimonState simonState;
     GameBaseState *stateDictionary[10];
 };

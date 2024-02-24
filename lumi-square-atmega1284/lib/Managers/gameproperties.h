@@ -10,7 +10,7 @@ enum class GameState
     GameOver = 1,
     Menu = 2,
     MemoryMatching = 3,
-    LightSpeed = 5,
+    LightDash = 5,
     Simon = 6
 };
 
@@ -24,8 +24,6 @@ enum class Difficulty
 class GameProperties
 {
 public:
-    GameProperties(const GameProperties &) = delete;
-    void operator=(const GameProperties &) = delete;
     Difficulty gameDifficulty;
     static GameProperties &Instance();
     Difficulty increaseDifficulty();
@@ -33,6 +31,8 @@ public:
 
 private:
     GameProperties();
+    GameProperties(const GameProperties &) = delete;
+    void operator=(const GameProperties &) = delete;
     int8_t difficultyCount;
 };
 #endif
