@@ -119,8 +119,9 @@ void LCD::writeString(int8_t row, int8_t column, const char *data)
  * @param row The row index on the LCD where the writing should start.
  * @param col The column index on the LCD where the writing should start.
  * @param value The integer value to be displayed on the LCD.
+ * @param leftAlign If true, the numbers will be left-aligned; if false, they will be right-aligned.
  */
-void LCD::writeNumber(int8_t row, int8_t column, uint8_t value)
+void LCD::writeNumber(int8_t row, int8_t column, uint8_t value, bool leftAlign)
 {
     I2C::Instance().start(LCD_SLAVE_ADDRESS);
     uint8_t digits[3];
@@ -130,11 +131,20 @@ void LCD::writeNumber(int8_t row, int8_t column, uint8_t value)
     digits[1] = ((value / 10) % 10) + ASCII_ZERO;
     digits[2] = (value % 10) + ASCII_ZERO;
 
-    // Replace leading zeros with spaces to ensure leading zeros are not displayed.
+    // Replace leading zeros with spaces to ensure leading zeros are not displayed. Will also left or right align the numbers
     if (digits[0] == ASCII_ZERO)
     {
-        digits[0] = ASCII_SPACE;
-        digits[1] = digits[1] == ASCII_ZERO ? ASCII_SPACE : digits[1];
+        if (!leftAlign)
+        {
+            digits[0] = ASCII_SPACE;
+            digits[1] = digits[1] == ASCII_ZERO ? ASCII_SPACE : digits[1];
+        }
+        else
+        {
+            digits[0] = digits[1] != ASCII_ZERO ? digits[1] : digits[2];
+            digits[1] = digits[1] != ASCII_ZERO ? digits[2] : ASCII_SPACE;
+            digits[2] = ASCII_SPACE;
+        }
     }
 
     int address = getRAMAddress(row, column);
@@ -151,12 +161,12 @@ void LCD::writeNumber(int8_t row, int8_t column, uint8_t value)
 
 /**
  * @brief Writes a single byte of data to the LCD screen.
- * 
+ *
  * This function writes a single byte of data to the LCD at the specified
  * row and column coordinates.
- * 
+ *
  * @param row The row index on the LCD screen where the data will be written.
- * @param column The column index on the LCD screen where the data will be written. 
+ * @param column The column index on the LCD screen where the data will be written.
  * @param data The byte of data to be written to the LCD screen.
  */
 void LCD::writeByte(int8_t row, int8_t column, uint8_t data)
