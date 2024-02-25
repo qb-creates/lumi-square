@@ -75,10 +75,8 @@ void LCD::displayPower(bool on)
  */
 void LCD::clearDisplay()
 {
-    I2C::Instance().start(LCD_SLAVE_ADDRESS);
-    I2C::Instance().transmit(LAST_CONTROL_BYTE);
-    I2C::Instance().transmit(CLEAR_DISPLAY_COMMAND);
-    I2C::Instance().stop();
+    writeString(0, 0, "                ");
+    writeString(1, 0, "                ");
 }
 
 /**

@@ -17,12 +17,15 @@ private:
     Difficulty maxDifficulty;
     int8_t highlightedButtonIndex;
     int16_t highlightedButtonTimer;
-    double test;
+    int16_t countdownTimer;
+    int8_t countdownCounter;
+    bool isStartingGame;
     void queueGameState(GameState gamestate, Difficulty maxDifficulty, const char *gameStateName);
     void highlightSelectedButton(int8_t selectedButtonIndex);
     void increaseDifficulty();
     void resetDifficulty();
     void displayHighScore();
+    void startCountdown();
 };
 
 #endif
