@@ -29,6 +29,10 @@ private:
     const uint8_t ASCII_SPACE;
     const uint8_t heartCharacter[8];
     const uint8_t batteryLowCharacter[8];
+    const uint8_t difficultySeparator[8];
+    const uint8_t easyCharacter[8];
+    const uint8_t mediumCharacter[8];
+    const uint8_t hardCharacter[8];
     uint8_t displayContentCache[2][16];
     void initializeDisplay();
     void writeDataToRAM(uint8_t dAddress, uint8_t dataByte, uint8_t controlByte);
