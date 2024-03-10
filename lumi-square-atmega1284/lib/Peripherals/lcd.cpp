@@ -58,6 +58,7 @@ void LCD::displayPower(bool on)
     {
         DDRC = _BV(PC2);
         PORTC &= ~_BV(PC2);
+        // PORTC |= ~_BV(PC2);
         _delay_ms(100);
 
         TWCR &= ~((1 << TWSTO) | (1 << TWEN));
@@ -69,6 +70,7 @@ void LCD::displayPower(bool on)
     TWCR = 0;
     DDRC = _BV(PC0) | _BV(PC1) | _BV(PC2);
     PORTC = 0xFC;
+    // PORTC = 0xF8;
 }
 
 /**
