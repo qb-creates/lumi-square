@@ -3,6 +3,7 @@
 const MusicNote *AudioSource::m_pQueuedAudioData;
 bool AudioSource::m_isPlayingMusicNote = false;
 bool AudioSource::m_isPlayingAudioClip = false;
+bool AudioSource::m_isMute = false;
 int16_t AudioSource::m_audioPlayTime = 0;
 uint16_t AudioSource::m_audioClipBeatDuration = 0;
 
@@ -73,7 +74,6 @@ void AudioSource::updateMusicNoteTimer()
     }
 }
 
-
 /**
  * @brief Prepares and initiates playback of the given audio clip.
  *
@@ -121,8 +121,12 @@ void AudioSource::playNextAudioClipNote()
         OCR1A = note;
         OCR1B = note / 2;
 
-        // Enable PWM output
-        TCCR1A |= _BV(COM1B1);
+        if (!m_isMute)
+        {
+            // Enable PWM output
+            TCCR1A |= _BV(COM1B1);
+        }
+        
         m_isPlayingMusicNote = true;
     }
 }
@@ -141,8 +145,31 @@ void AudioSource::playMusicNote(MusicNote note, int16_t time)
     OCR1A = static_cast<uint16_t>(note);
     OCR1B = static_cast<uint16_t>(note) / 2;
 
-    // Enable PWM output
-    TCCR1A |= _BV(COM1B1);
+    if (!m_isMute)
+    {
+        // Enable PWM output
+        TCCR1A |= _BV(COM1B1);
+    }
+
     m_audioPlayTime = time;
     m_isPlayingMusicNote = true;
+}
+
+/**
+ * @brief
+ *
+ * @param mute
+ */
+void AudioSource::muteAudioSource(bool mute)
+{
+    m_isMute = mute;
+
+    if (mute)
+    {
+        TCCR1A &= ~_BV(COM1B1);
+    }
+    else if (m_isPlayingMusicNote)
+    {
+        TCCR1A |= _BV(COM1B1);
+    }
 }

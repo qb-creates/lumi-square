@@ -1,8 +1,8 @@
 #include "colors.h"
 
 const Color Colors::red = Color(255, 0, 0);
-const Color Colors::pink = Color(255, 120, 120);
-const Color Colors::azure = Color(0, 150, 255);
+const Color Colors::pink = Color(255, 20, 30);
+const Color Colors::azure = Color(0, 80, 255);
 const Color Colors::purple = Color(255, 0, 255);
 const Color Colors::cyan = Color(0, 255, 150);
 const Color Colors::aquamarine = Color(0, 255, 20);

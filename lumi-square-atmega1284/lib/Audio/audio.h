@@ -14,6 +14,7 @@ public:
     static void playAudioClip(AudioClip audioClip);
     static void playNextAudioClipNote();
     static void playMusicNote(MusicNote note, int16_t time);
+    static void muteAudioSource(bool mute);
 
 private:
     AudioSource();
@@ -22,6 +23,7 @@ private:
     static const MusicNote *m_pQueuedAudioData;
     static bool m_isPlayingAudioClip;
     static bool m_isPlayingMusicNote;
+    static bool m_isMute;
     static int16_t m_audioPlayTime;
     static uint16_t m_audioClipBeatDuration;
 };
