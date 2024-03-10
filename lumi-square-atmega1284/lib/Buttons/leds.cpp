@@ -62,7 +62,7 @@ void Output::refreshLeds()
 
         for (int j = 0; j < _BV(colorDataIndex); ++j)
         {
-            _delay_us(2);
+            asm("NOP");
         }
     }
 
