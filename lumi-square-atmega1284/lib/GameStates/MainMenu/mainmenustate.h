@@ -25,7 +25,9 @@ private:
     void increaseDifficulty();
     void resetDifficulty();
     void displayHighScore();
-    void startCountdown();
+    void startCountdownTimer();
+    void updateHighlightedButtonTimer();
+    void updateCountdownTimer();
 };
 
 #endif

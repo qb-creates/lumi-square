@@ -117,8 +117,8 @@ void MemoryMatchingState::adjustLedBrightness()
 {
     if (isGuessCorrect)
     {
-        Output::setLedIntensity(selectedLedIndex1, .2);
-        Output::setLedIntensity(selectedLedIndex2, .2);
+        Output::setLedIntensity(selectedLedIndex1, .4);
+        Output::setLedIntensity(selectedLedIndex2, .4);
         correctMatches++;
     }
     else

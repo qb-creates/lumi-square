@@ -22,6 +22,7 @@ class Colors final
 public:
     static const Color red;
     static const Color pink;
+    static const Color blue;
     static const Color azure;
     static const Color purple;
     static const Color cyan;
