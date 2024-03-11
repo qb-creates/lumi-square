@@ -1,6 +1,6 @@
 #ifndef LEDS_H
 #define LEDS_H
-#include "colors.h"
+#include "../Colors/colors.h"
 #include "iostream.h"
 #include <avr/interrupt.h>
 #include <util/delay.h>

@@ -5,7 +5,7 @@
 #include <avr/interrupt.h>
 
 volatile bool SleepManager::m_isSleep = false;
-uint16_t SleepManager::m_sleepTimer = 0;
+volatile uint16_t SleepManager::m_sleepTimer = 0;
 uint16_t SleepManager::m_sleepTimeout = 45000;
 
 ISR(INT0_vect)
@@ -14,6 +14,11 @@ ISR(INT0_vect)
         return;
 
     SleepManager::wakeUpInterruptHandler();
+}
+
+ISR(PCINT0_vect)
+{
+    SleepManager::resetSleepTimer();
 }
 
 /**
@@ -42,6 +47,8 @@ bool SleepManager::isSleep()
  */
 void SleepManager::setSleepTimeout(uint16_t timeout) {
     m_sleepTimeout = timeout;
+    PCICR = _BV(PCIE0);
+    PCMSK0 = _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
 }
 
 /**

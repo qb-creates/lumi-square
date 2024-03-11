@@ -117,7 +117,7 @@ void Input::clearSystemButtonStates()
  * 
  * @return void
  */
-bool Input::scanButtonMatrix()
+void Input::scanButtonMatrix()
 {
     buttonData = 0;
 
@@ -138,8 +138,6 @@ bool Input::scanButtonMatrix()
         if (!(PINA & _BV(PIN7)))
             buttonData |= rowFourBaseAddress * columnAddress;
     }
-
-    return buttonData != 0;
 }
 
 /**

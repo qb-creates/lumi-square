@@ -15,7 +15,7 @@ public:
 
 private:
     static volatile bool m_isSleep;
-    static uint16_t m_sleepTimer;
+    static volatile uint16_t m_sleepTimer;
     static uint16_t m_sleepTimeout;
 
 private:
