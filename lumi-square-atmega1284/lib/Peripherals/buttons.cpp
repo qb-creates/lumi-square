@@ -37,10 +37,10 @@ Input::Button::Button(uint8_t buttonIndex)
 
 /**
  * @brief Configures pins for system buttons and button matrix.
- * 
+ *
  * This function configures PD2 and PD3 as inputs for the sleep and mute buttons, respectively.
  * Additionally, it configures DDRA as inputs and outputs for the button matrix.
- * 
+ *
  * @return void
  */
 void Input::configureButtonPins()
@@ -56,14 +56,14 @@ void Input::configureButtonPins()
 
 /**
  * @brief Updates the states of system buttons for the current frame.
- * 
- * This function updates boolean values to reflect the current status of all system buttons for 
- * the current frame. It checks if the buttons have been pressed down or released in the current 
+ *
+ * This function updates boolean values to reflect the current status of all system buttons for
+ * the current frame. It checks if the buttons have been pressed down or released in the current
  * frame and updates their states accordingly.
- * 
- * It is important to call this function frequently or at the beginning of each frame to ensure 
+ *
+ * It is important to call this function frequently or at the beginning of each frame to ensure
  * proper detection of system button presses.
- * 
+ *
  * @return void
  */
 void Input::updateSystemButtonStates()
@@ -82,39 +82,15 @@ void Input::updateSystemButtonStates()
 }
 
 /**
- * @brief Clears the states of system buttons.
- * 
- * This function resets the states of all system buttons back to false. It ensures
- * that the button states are cleared and ready for the next frame.
- * 
- * It is important to call this function at the end of each frame to ensure that
- * the button states are properly reset for the next frame.
- * 
- * @return void
- */
-void Input::clearSystemButtonStates()
-{
-    if (muteButtonDown)
-    {
-        muteButtonDown = false;
-    }
-
-    if (sleepButtonUp)
-    {
-        sleepButtonUp = false;
-    }
-}
-
-/**
  * @brief Scans the button matrix to detect pressed buttons.
- * 
+ *
  * This function scans a button matrix connected to the microcontroller,
  * detecting if any buttons have been pressed. It iterates through the rows
  * and columns of the matrix to determine the status of each button.
- * 
- * It is important to call this function frequently to ensure proper 
+ *
+ * It is important to call this function frequently to ensure proper
  * detection of button presses.
- * 
+ *
  * @return void
  */
 void Input::scanButtonMatrix()
@@ -142,14 +118,14 @@ void Input::scanButtonMatrix()
 
 /**
  * @brief Checks if the button at the specified index is currently pressed.
- * 
+ *
  * This function takes an index parameter representing the position of the
  * button in a button array. It returns true if the button at the specified
  * index is currently pressed, indicating that the user is holding down the button.
  * Otherwise, it returns false.
- * 
+ *
  * @param buttonIndex The index of the button in the button array.
- * 
+ *
  * @return bool True if the button at the specified index is pressed, false otherwise.
  */
 bool Input::getButton(uint8_t buttonIndex)
@@ -159,14 +135,14 @@ bool Input::getButton(uint8_t buttonIndex)
 
 /**
  * @brief Checks if the button at the specified index was just pressed down.
- * 
+ *
  * This function takes an index parameter representing the position of the
  * button in a button array. It returns true if the button at the specified
  * index was just pressed down, indicating a new press in the current frame.
  * Otherwise, it returns false until the button is released and pressed again.
- * 
+ *
  * @param buttonIndex The index of the button in the button array.
- * 
+ *
  * @return bool True if the button at the specified index was just pressed down,
  *              false otherwise.
  */
@@ -189,11 +165,11 @@ bool Input::getButtonDown(uint8_t buttonIndex)
 
 /**
  * @brief Checks if the sleep button is currently pressed.
- * 
+ *
  * This function returns true if the sleep button is currently pressed,
  * indicating that the user wants to put the microcontroller to sleep.
  * Otherwise, it returns false.
- * 
+ *
  * @return bool True if the sleep button is pressed, false otherwise.
  */
 bool Input::getSleepButton()
@@ -203,28 +179,32 @@ bool Input::getSleepButton()
 
 /**
  * @brief Checks if the sleep button was just released.
- * 
+ *
  * This function returns true if the sleep button was just released
  * in the current frame, indicating a release since the last frame.
  * Otherwise, it returns false until the button is pressed and released again.
- * 
+ *
  * @return bool True if the sleep button was just released, false otherwise.
  */
 bool Input::getSleepButtonUp()
 {
-    return sleepButtonUp;
+    bool buttonState = sleepButtonUp;
+    sleepButtonUp = false;
+    return buttonState;
 }
 
 /**
  * @brief Checks if the mute button was just pressed down.
- * 
+ *
  * This function returns true if the mute button was just pressed down
  * in the current frame, indicating a new press since the last frame.
  * Otherwise, it returns false until the button is released and pressed again.
- * 
+ *
  * @return bool True if the mute button was just pressed down, false otherwise.
  */
 bool Input::getMuteButtonDown()
 {
-    return muteButtonDown;
+    bool buttonState = muteButtonDown;
+    muteButtonDown = false;
+    return buttonState;
 }

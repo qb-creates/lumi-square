@@ -9,7 +9,6 @@ class Input
 public:
     static void configureButtonPins();
     static void updateSystemButtonStates();
-    static void clearSystemButtonStates();
     static void scanButtonMatrix();
     static bool getButton(uint8_t buttonIndex);
     static bool getButtonDown(uint8_t buttonIndex);
