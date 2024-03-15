@@ -2,25 +2,30 @@
 #define SLEEPMANAGER_H
 
 #include <stdint.h>
-
-class SleepManager
+#include "fixedupdate.h"
+class SleepManager : public FixedUpdateEventListener
 {
 public:
-    static bool isSleep();
-    static void setSleepTimeout(uint16_t timeout);
-    static void updateSleepTimer(uint16_t time);
-    static void resetSleepTimer();
-    static void enterSleepMode();
-    static void wakeUpInterruptHandler();
+    static SleepManager& Instance();
+    bool isSleep();
+    void setSleepTimeout(uint16_t timeout);
+    void resetSleepTimer();
+    void wakeUpInterruptHandler();
+    void onFixedUpdate() override;
 
 private:
-    static volatile bool m_isSleep;
-    static volatile uint16_t m_sleepTimer;
-    static uint16_t m_sleepTimeout;
+    volatile bool m_isSleep;
+    volatile uint16_t m_sleepTimer;
+    int16_t m_sleepButtonTimer;
+    uint16_t m_sleepTimeout;
+    bool m_enableSleep;
 
 private:
+    SleepManager();
     SleepManager(const SleepManager &) = delete;
     void operator=(const SleepManager &) = delete;
+    void updateSleepTimer();
+    void enterSleepMode();
 };
 
 #endif

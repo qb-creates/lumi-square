@@ -78,7 +78,7 @@ void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
 
     MusicNote musicNote = selectedLedIndex2 == -1 ? MusicNote::C5 : MusicNote::D5;
     Output::ledOn(buttonIndex);
-    AudioSource::playMusicNote(musicNote, 100);
+    AudioSource::Instance().playMusicNote(musicNote, 100);
 }
 
 void MemoryMatchingState::shuffleLedColors()

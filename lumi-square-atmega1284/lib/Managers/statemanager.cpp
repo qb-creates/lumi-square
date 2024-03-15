@@ -1,8 +1,9 @@
 #include "statemanager.h"
 #include "buttons.h"
+#include "fixedupdate.h"
 
 StateManager::StateManager()
-    : currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), lightSpeedState(), simonState(), stateDictionary{}
+    : FixedUpdateEventListener(), currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), lightSpeedState(), simonState(), stateDictionary{}
 {
     stateDictionary[1] = &gameOverState;
     stateDictionary[2] = &mainMenuState;
@@ -19,6 +20,12 @@ StateManager &StateManager::Instance()
     return instance;
 }
 
+void StateManager::onFixedUpdate()
+{
+    buttonPressed();
+    update();
+}
+
 void StateManager::update()
 {
     currentState->updateState();
@@ -30,7 +37,6 @@ void StateManager::update()
 
         if (currentState != nextState)
         {
-            stateDictionary[static_cast<int8_t>(GameState::Previous)] = currentState;
             currentState->exitState();
             currentState = nextState;
             currentState->enterState();

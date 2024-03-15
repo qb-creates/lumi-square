@@ -61,7 +61,7 @@ void SimonState::updateState()
         return;
     }
 
-    if (AudioSource::isPlayingAudioClip())
+    if (AudioSource::Instance().isPlayingAudioClip())
         return;
         
     // Subtract 16 milliseconds from the delay timer if it is greater than 0
@@ -149,7 +149,7 @@ void SimonState::playNextSequenceElement()
     delayTimer = 300;
     activeButtonIndex = simonButtonSequence[sequenceIndex];
     Output::setLedIntensity(simonButtonSequence[sequenceIndex], 1);
-    AudioSource::playMusicNote(simonMusicNoteSequence[sequenceIndex], 200);
+    AudioSource::Instance().playMusicNote(simonMusicNoteSequence[sequenceIndex], 200);
     ++sequenceIndex;
 }
 
@@ -157,7 +157,7 @@ void SimonState::removeLifePoint()
 {
     --lives;
     LCD::Instance().writeByte(1, (11 - lives), 0x20);
-    AudioSource::playAudioClip(FAILURE_AUDIO_CLIP);
+    AudioSource::Instance().playAudioClip(FAILURE_AUDIO_CLIP);
 }
 
 void SimonState::saveHighScore()

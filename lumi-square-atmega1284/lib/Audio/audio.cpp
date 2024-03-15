@@ -1,11 +1,26 @@
 #include "audio.h"
+#include "buttons.h"
+#include "fixedupdate.h"
 
-const MusicNote *AudioSource::m_pQueuedAudioData;
-bool AudioSource::m_isPlayingMusicNote = false;
-bool AudioSource::m_isPlayingAudioClip = false;
-bool AudioSource::m_isMute = false;
-int16_t AudioSource::m_audioPlayTime = 0;
-uint16_t AudioSource::m_audioClipBeatDuration = 0;
+AudioSource::AudioSource()
+    : FixedUpdateEventListener(),
+      m_pQueuedAudioData(nullptr),
+      m_isPlayingAudioClip(false),
+      m_isPlayingMusicNote(false),
+      m_isMute(false),
+      m_audioPlayTime(0),
+      m_audioClipBeatDuration(0)
+{
+    DDRD |= _BV(PD4);
+    TCCR1A |= _BV(WGM10) | _BV(WGM11);
+    TCCR1B |= _BV(WGM13) | _BV(WGM12) | _BV(CS11) | _BV(CS10);
+}
+
+AudioSource &AudioSource::Instance()
+{
+    static AudioSource instance;
+    return instance;
+}
 
 /**
  * @brief Checks if an audio clip is currently playing.
@@ -31,20 +46,6 @@ bool AudioSource::isPlayingAudioClip()
 bool AudioSource::isPlayingMusicNote()
 {
     return m_isPlayingMusicNote;
-}
-
-/**
- * @brief Configures Timer 1 for PWM output.
- *
- * Configures Timer 1 for PWM output on pin PD4.
- * Enables PWM mode with Fast PWM and sets the top value based on OCR1A.
- * Selects a Prescaler of 64 to determine PWM frequency.
- */
-void AudioSource::configureAudioSource()
-{
-    DDRD |= _BV(PD4);
-    TCCR1A |= _BV(WGM10) | _BV(WGM11);
-    TCCR1B |= _BV(WGM13) | _BV(WGM12) | _BV(CS11) | _BV(CS10);
 }
 
 /**
@@ -126,7 +127,7 @@ void AudioSource::playNextAudioClipNote()
             // Enable PWM output
             TCCR1A |= _BV(COM1B1);
         }
-        
+
         m_isPlayingMusicNote = true;
     }
 }
@@ -172,4 +173,16 @@ void AudioSource::muteAudioSource(bool mute)
     {
         TCCR1A |= _BV(COM1B1);
     }
+}
+
+void AudioSource::onFixedUpdate()
+{
+    if (Input::getMuteButtonDown())
+    {
+        m_isMute = !m_isMute;
+        muteAudioSource(m_isMute);
+    }
+
+    playNextAudioClipNote();
+    updateMusicNoteTimer();
 }

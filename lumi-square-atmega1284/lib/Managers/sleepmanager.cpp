@@ -1,32 +1,48 @@
 #include "sleepmanager.h"
+#include "audio.h"
+#include "buttons.h"
 #include "lcd.h"
 #include "random.h"
-#include <avr/sleep.h>
 #include <avr/interrupt.h>
-
-volatile bool SleepManager::m_isSleep = false;
-volatile uint16_t SleepManager::m_sleepTimer = 0;
-uint16_t SleepManager::m_sleepTimeout = 45000;
+#include <avr/sleep.h>
 
 ISR(INT0_vect)
 {
-    if (!SleepManager::isSleep())
+    if (!SleepManager::Instance().isSleep())
         return;
 
-    SleepManager::wakeUpInterruptHandler();
+    SleepManager::Instance().wakeUpInterruptHandler();
 }
 
 ISR(PCINT0_vect)
 {
-    SleepManager::resetSleepTimer();
+    SleepManager::Instance().resetSleepTimer();
+}
+
+SleepManager::SleepManager()
+    : FixedUpdateEventListener(), m_isSleep(false), m_sleepTimer(0), m_sleepButtonTimer(0), m_sleepTimeout(45000), m_enableSleep(false)
+
+{
+    // Enable Pin control interrupts PC4 - PC7
+    PCICR = _BV(PCIE0);
+    PCMSK0 = _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
+
+    // Set the sleep mode to PWR_DOWN.
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+}
+
+SleepManager &SleepManager::Instance()
+{
+    static SleepManager instance;
+    return instance;
 }
 
 /**
  * @brief Checks if the microcontroller is in sleep mode.
- * 
+ *
  * This function returns a boolean value indicating whether the microcontroller
- * is currently in sleep mode. 
- * 
+ * is currently in sleep mode.
+ *
  * @return bool True if the microcontroller is in sleep mode, false otherwise.
  */
 bool SleepManager::isSleep()
@@ -36,36 +52,35 @@ bool SleepManager::isSleep()
 
 /**
  * @brief Sets the time duration for the microcontroller to go to sleep.
- * 
+ *
  * This function allows you to specify the time duration in milliseconds
  * after which the microcontroller will automatically go to sleep. Once
  * the specified time elapses, the microcontroller will enter sleep mode.
- * 
+ *
  * @param timeout The time duration in milliseconds for the sleep timeout.
- * 
+ *
  * @return void
  */
-void SleepManager::setSleepTimeout(uint16_t timeout) {
+void SleepManager::setSleepTimeout(uint16_t timeout)
+{
     m_sleepTimeout = timeout;
-    PCICR = _BV(PCIE0);
-    PCMSK0 = _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
 }
 
 /**
  * @brief Updates the sleep timer by adding a specified duration.
- * 
+ *
  * This function updates the sleep timer by adding the specified duration
  * in milliseconds every time it is called. When the accumulated time
  * reaches the timeout set by setSleepTimeout(), the microcontroller
  * will go to sleep.
- * 
+ *
  * @param time The duration to add to the sleep timer in milliseconds.
- * 
+ *
  * @return void
  */
-void SleepManager::updateSleepTimer(uint16_t time)
+void SleepManager::updateSleepTimer()
 {
-    m_sleepTimer += time;
+    m_sleepTimer += 16;
 
     if (m_sleepTimer >= m_sleepTimeout)
     {
@@ -75,11 +90,11 @@ void SleepManager::updateSleepTimer(uint16_t time)
 
 /**
  * @brief Resets the sleep timer to zero.
- * 
+ *
  * This function resets the sleep timer, effectively setting the accumulated time
  * back to zero. It can be used when you want to restart the timer for
  * determining when the microcontroller should go to sleep.
- * 
+ *
  * @return void
  */
 void SleepManager::resetSleepTimer()
@@ -89,12 +104,12 @@ void SleepManager::resetSleepTimer()
 
 /**
  * @brief Puts the microcontroller into sleep mode to conserve power.
- * 
+ *
  * This function puts the microcontroller into a low-power sleep mode,
  * suspending its operation until a wake-up event occurs. External interrupts
  * are enabled, and PD2 (Pin D2) is configured to cause the microcontroller
  * to wake up from sleep mode.
- * 
+ *
  * @return void
  */
 void SleepManager::enterSleepMode()
@@ -110,12 +125,12 @@ void SleepManager::enterSleepMode()
 
 /**
  * @brief Interrupt handler for waking up from sleep mode.
- * 
+ *
  * This function is called when the microcontroller wakes up from sleep mode
  * due to an external interrupt on Pin D2. It performs specific actions that
  * need to be executed upon waking up, such as disabling external interrupts
  * and powering on the LCD.
- * 
+ *
  * @return void
  */
 void SleepManager::wakeUpInterruptHandler()
@@ -124,4 +139,29 @@ void SleepManager::wakeUpInterruptHandler()
     EICRA = 0;
     m_isSleep = false;
     LCD::Instance().displayPower(true);
+}
+
+void SleepManager::onFixedUpdate()
+{
+    if (Input::getSleepButton() && m_sleepButtonTimer < 1200)
+    {
+        m_sleepButtonTimer += 16;
+
+        if (m_sleepButtonTimer >= 1200)
+        {
+            AudioSource::Instance().playMusicNote(MusicNote::A5, 100);
+        }
+    }
+
+    if (Input::getSleepButtonUp())
+    {
+        if (m_sleepButtonTimer >= 1200)
+        {
+            enterSleepMode();
+        }
+
+        m_sleepButtonTimer = 0;
+    }
+
+    updateSleepTimer();
 }

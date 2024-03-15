@@ -88,7 +88,7 @@ void MainMenuState::highlightSelectedButton(int8_t selectedButtonIndex)
     {
         Output::setLedColor(highlightedButtonIndex, Colors::azure, .5);
         Output::setLedColor(selectedButtonIndex, Colors::yellow, 1);
-        AudioSource::playMusicNote(MusicNote::G4, 100);
+        AudioSource::Instance().playMusicNote(MusicNote::G4, 100);
         highlightedButtonIndex = selectedButtonIndex;
         highlightedButtonTimer = 1000;
     }
@@ -148,7 +148,7 @@ void MainMenuState::startCountdownTimer()
     LCD::Instance().writeString(0, 0, "   Starting..  ");
     LCD::Instance().writeString(1, 0, "       3        ");
 
-    AudioSource::playMusicNote(MusicNote::C5, 200);
+    AudioSource::Instance().playMusicNote(MusicNote::C5, 200);
 }
 
 void MainMenuState::updateHighlightedButtonTimer()
@@ -187,6 +187,6 @@ void MainMenuState::updateCountdownTimer()
         }
 
         LCD::Instance().writeNumber(1, 7, countdownCounter, true);
-        AudioSource::playMusicNote(countdownCounter == 0 ? MusicNote::E5 : MusicNote::C5, 200);
+        AudioSource::Instance().playMusicNote(countdownCounter == 0 ? MusicNote::E5 : MusicNote::C5, 200);
     }
 }

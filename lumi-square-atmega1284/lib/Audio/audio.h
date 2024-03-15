@@ -3,29 +3,31 @@
 
 #include "audioclip.h"
 #include "avr/io.h"
+#include "fixedupdate.h"
 
-class AudioSource
+class AudioSource : public FixedUpdateEventListener
 {
 public:
-    static bool isPlayingAudioClip();
-    static bool isPlayingMusicNote();
-    static void configureAudioSource();
-    static void updateMusicNoteTimer();
-    static void playAudioClip(AudioClip audioClip);
-    static void playNextAudioClipNote();
-    static void playMusicNote(MusicNote note, int16_t time);
-    static void muteAudioSource(bool mute);
+    static AudioSource &Instance();
+    bool isPlayingAudioClip();
+    bool isPlayingMusicNote();
+    void updateMusicNoteTimer();
+    void playAudioClip(AudioClip audioClip);
+    void playNextAudioClipNote();
+    void playMusicNote(MusicNote note, int16_t time);
+    void muteAudioSource(bool mute);
+    void onFixedUpdate() override;
 
 private:
     AudioSource();
     AudioSource(const AudioSource &) = delete;
     void operator=(const AudioSource &) = delete;
-    static const MusicNote *m_pQueuedAudioData;
-    static bool m_isPlayingAudioClip;
-    static bool m_isPlayingMusicNote;
-    static bool m_isMute;
-    static int16_t m_audioPlayTime;
-    static uint16_t m_audioClipBeatDuration;
+    const MusicNote *m_pQueuedAudioData;
+    bool m_isPlayingAudioClip;
+    bool m_isPlayingMusicNote;
+    bool m_isMute;
+    int16_t m_audioPlayTime;
+    uint16_t m_audioClipBeatDuration;
 };
 
 #endif

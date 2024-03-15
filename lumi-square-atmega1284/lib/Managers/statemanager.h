@@ -1,24 +1,28 @@
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
-#include "basestate.h"
-#include "MainMenu/mainmenustate.h"
-#include "MemoryMatching/matchingstate.h"
 #include "GameOver/gameoverstate.h"
 #include "LightDash/lightdashstate.h"
+#include "MainMenu/mainmenustate.h"
+#include "MemoryMatching/matchingstate.h"
 #include "Simon/simonstate.h"
+#include "basestate.h"
+#include "fixedupdate.h"
 
-class StateManager
+class StateManager : public FixedUpdateEventListener
 {
 public:
+    static StateManager &Instance();
+    void onFixedUpdate() override;
+
+private:
+    StateManager();
     StateManager(const StateManager &) = delete;
     void operator=(const StateManager &) = delete;
-    static StateManager &Instance();
     void update();
     void buttonPressed();
 
 private:
-    StateManager();
     GameBaseState *currentState;
     GameOverState gameOverState;
     MainMenuState mainMenuState;
@@ -26,6 +30,7 @@ private:
     LightDashState lightSpeedState;
     SimonState simonState;
     GameBaseState *stateDictionary[10];
+
 };
 
 #endif
