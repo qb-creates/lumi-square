@@ -2,6 +2,7 @@
 #define LIGHTDASH_H
 
 #include "basestate.h"
+#include "colors.h"
 
 class LightDashState : public GameBaseState
 {
@@ -13,14 +14,24 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    int16_t timer;
-    int8_t counter;
+    int16_t gameTimer;
+    int8_t remainingGameTime;
     int16_t score;
-    bool shuffleLeds;
+    int8_t scoreDeductionAmount;
+    int8_t bonusLedPointValue;
+    int16_t maxLedTurnOffTime;
+    int16_t minLedTurnOffTime;
+    int16_t bonusLedTurnOffTime;
     bool enablePowerUps;
-    bool timePowerUpActive;
-    int16_t ledShuffleTimes[16];
-    void powerOnRandomLight();
+    bool bonusLedActive;
+    int16_t ledTurnOffTimers[16];
+    void updateLedOffTimers();
+    void updateGameTimer();
+    void turnOnRandomLed();
+    void turnOffSelectedLed(int8_t buttonIndex);
+    void deductPointsFromScore();
+    void addPointsToScore(int8_t buttonIndex);
+    void playMusicNote(int8_t buttonIndex);
 };
 
 #endif
