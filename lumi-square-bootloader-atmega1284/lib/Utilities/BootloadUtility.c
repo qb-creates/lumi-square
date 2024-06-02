@@ -13,7 +13,7 @@ const uint8_t pageAck[] = {'P', 'a', 'g', 'e'};
 const uint8_t lastPageIndicator = 0xFE;
 
 /**
- * @brief Starts the bootload process. The devices signature, high fuse bits, and 'CTU' is
+ * @brief Starts the bootload process. The devices signature, high fuse bits, and 'CTS' is
  * sent back to the server.
  * 
  */
@@ -23,7 +23,7 @@ void startBootloadProcess(void)
     uint8_t signature[] = {boot_signature_byte_get(0x00), boot_signature_byte_get(0x02), boot_signature_byte_get(0x04)};
     
     // Store the devices signature, high fuse bits, and "CTU" in an array.
-    uint8_t ack[] = {signature[0], signature[1], signature[2], boot_lock_fuse_bits_get(GET_HIGH_FUSE_BITS), 'C', 'T', 'U'};
+    uint8_t ack[] = {signature[0], signature[1], signature[2], boot_lock_fuse_bits_get(GET_HIGH_FUSE_BITS), 'C', 'T', 'S'};
 
     OCR1A = (F_CPU / (2 * 1024 * 2)) - 1;
     eeprom_update_byte(bootloaderStatusAddress, uploadeFailedCode);    

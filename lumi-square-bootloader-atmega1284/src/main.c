@@ -3,6 +3,7 @@
 #include "BootloadUtility.h"
 
 const uint8_t ack[] = {'\r'};
+const uint8_t ctu[] = {'C', 'T', 'U'};
 
 int main(void)
 {
@@ -15,6 +16,9 @@ int main(void)
     bool writeToFlash = false;
     bool applicationExist = eeprom_read_byte(bootloaderStatusAddress) == uploadCompleteCode;
 
+    DDRD = 0x00;
+    PORTD = 0x00;
+
     // Return to application section.
     if (applicationExist && (PIND & _BV(PD6)))
     {
@@ -24,15 +28,7 @@ int main(void)
     // Continue to bootloader section.
     enableUSART();
     startBootloadIndicator();
-
-    // Enable CTS output. Set CTS to low to signify that the lumi-square is ready to be updated.
-    DDRD |= _BV(PD7);
-    PORTD &= ~_BV(PD7);
-
-    if (applicationExist)
-    {
-        wdt_enable(WDTO_8S);
-    }
+    usartTransmit(ctu, 3);
 
     while (true)
     {
@@ -55,6 +51,7 @@ int main(void)
             {
                 writeToFlash = true;
                 startBootloadProcess();
+                wdt_enable(WDTO_8S);
             }
 
             continue;
