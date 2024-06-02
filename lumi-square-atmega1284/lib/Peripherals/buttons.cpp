@@ -7,6 +7,7 @@ volatile bool Input::nextButtonPressed = false;
 volatile bool Input::nextButtonUp = false;
 volatile bool Input::nextButtonDown = false;
 volatile bool Input::previousButtonPressed = false;
+volatile bool Input::previousButtonUp = false;
 volatile bool Input::previousButtonDown = false;
 volatile uint32_t Input::buttonData = 0;
 
@@ -219,6 +220,13 @@ bool Input::getNextButtonDown()
 bool Input::getPreviousButton()
 {
     return previousButtonPressed;
+}
+
+bool Input::getPreviousButtonUp()
+{
+    bool buttonState = previousButtonUp;
+    previousButtonUp = false;
+    return buttonState;
 }
 
 /**

@@ -11,6 +11,7 @@ public:
     static AudioSource &Instance();
     bool isPlayingAudioClip();
     bool isPlayingMusicNote();
+    bool isMuteButtonsPressed();
     void updateMusicNoteTimer();
     void playAudioClip(AudioClip audioClip);
     void playNextAudioClipNote();
@@ -26,9 +27,10 @@ private:
     bool m_isPlayingAudioClip;
     bool m_isPlayingMusicNote;
     bool m_isMute;
+    bool m_muteButtonsPressed;
     int16_t m_audioPlayTime;
     uint16_t m_audioClipBeatDuration;
-    int16_t m_muteButtonTimer;
+    int16_t m_muteButtonDelay;
 };
 
 #endif

@@ -16,6 +16,7 @@ public:
     static bool getNextButtonUp();
     static bool getNextButtonDown();
     static bool getPreviousButton();
+    static bool getPreviousButtonUp();
     static bool getPreviousButtonDown();
 
 private:
@@ -38,6 +39,7 @@ private:
     static volatile bool nextButtonUp;
     static volatile bool nextButtonDown;
     static volatile bool previousButtonPressed;
+    static volatile bool previousButtonUp;
     static volatile bool previousButtonDown;
     static Button buttons[];
 };

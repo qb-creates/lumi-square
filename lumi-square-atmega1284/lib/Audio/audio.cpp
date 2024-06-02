@@ -1,7 +1,7 @@
 #include "audio.h"
-#include "buttons.h"
-#include "../STD/fixedupdate.h"
 #include "../Peripherals/lcd.h"
+#include "../STD/fixedupdate.h"
+#include "buttons.h"
 
 AudioSource::AudioSource()
     : FixedUpdateEventListener(),
@@ -9,9 +9,10 @@ AudioSource::AudioSource()
       m_isPlayingAudioClip(false),
       m_isPlayingMusicNote(false),
       m_isMute(false),
+      m_muteButtonsPressed(false),
       m_audioPlayTime(0),
       m_audioClipBeatDuration(0),
-      m_muteButtonTimer(0)
+      m_muteButtonDelay(0)
 {
     DDRD |= _BV(PD4);
     TCCR1A |= _BV(WGM10) | _BV(WGM11);
@@ -48,6 +49,17 @@ bool AudioSource::isPlayingAudioClip()
 bool AudioSource::isPlayingMusicNote()
 {
     return m_isPlayingMusicNote;
+}
+
+/**
+ * @brief 
+ * 
+ * @return true 
+ * @return false 
+ */
+bool AudioSource::isMuteButtonsPressed()
+{
+    return m_muteButtonsPressed;
 }
 
 /**
@@ -181,20 +193,23 @@ void AudioSource::muteAudioSource(bool mute)
 
 void AudioSource::onFixedUpdate()
 {
-    if (Input::getNextButton() && Input::getPreviousButton() && m_muteButtonTimer < 300)
+    if (Input::getNextButton() && Input::getPreviousButton() && m_muteButtonDelay < 300)
     {
-        m_muteButtonTimer += 16;
+        m_muteButtonDelay += 16;
 
-        if (m_muteButtonTimer >= 300)
+        if (m_muteButtonDelay >= 300)
         {
             m_isMute = !m_isMute;
             muteAudioSource(m_isMute);
         }
+
+        m_muteButtonsPressed = true;
     }
-    
-    if (!Input::getNextButton() && !Input::getNextButton()) 
+
+    if (!Input::getNextButton() && !Input::getPreviousButton())
     {
-        m_muteButtonTimer = 0;
+        m_muteButtonDelay = 0;
+        m_muteButtonsPressed = false;
     }
 
     playNextAudioClipNote();
