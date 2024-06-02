@@ -30,7 +30,7 @@ void GameOverState::updateState()
 {
     if (flashAnimationTimer > 0)
     {
-        flashAnimationTimer -= 16;
+        flashAnimationTimer -= FixedUpdateTimer::DELTA_TIME;
 
         if (flashAnimationTimer <= 0)
         {
@@ -66,7 +66,7 @@ void GameOverState::updateState()
 
     if (transitionToMainTimer > 0)
     {
-        transitionToMainTimer -= 16;
+        transitionToMainTimer -= FixedUpdateTimer::DELTA_TIME;
 
         if (transitionToMainTimer <= 0)
         {

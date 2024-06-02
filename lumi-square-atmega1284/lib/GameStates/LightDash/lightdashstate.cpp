@@ -97,7 +97,7 @@ void LightDashState::updateLedOffTimers()
             continue;
         }
 
-        ledTurnOffTimers[ledIndex] -= 16;
+        ledTurnOffTimers[ledIndex] -= FixedUpdateTimer::DELTA_TIME;
 
         if (ledTurnOffTimers[ledIndex] <= 0)
         {
@@ -115,7 +115,7 @@ void LightDashState::updateLedOffTimers()
 
 void LightDashState::updateGameTimer()
 {
-    gameTimer -= 16;
+    gameTimer -= FixedUpdateTimer::DELTA_TIME;
 
     if (gameTimer <= 0)
     {

@@ -4,9 +4,9 @@
 #include "avr/interrupt.h"
 
 volatile bool FixedUpdateTimer::fixedUpdate = false;
-volatile uint8_t FixedUpdateTimer::fixedUpdateCounter = 0;
-const int FixedUpdateTimer::MAX_HANDLERS = 10;
-int FixedUpdateTimer::numHandlers = 0;
+const int8_t FixedUpdateTimer::MAX_HANDLERS = 10;
+const int8_t FixedUpdateTimer::DELTA_TIME = 16;
+int8_t FixedUpdateTimer::numHandlers = 0;
 FixedUpdateEventListener *FixedUpdateTimer::eventListeners[10];
 
 ISR(TIMER3_OVF_vect)

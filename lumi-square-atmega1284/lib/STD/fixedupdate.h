@@ -11,15 +11,15 @@ public:
 class FixedUpdateTimer
 {
 public:
+    static const int8_t DELTA_TIME;
     static volatile bool fixedUpdate;
-    static volatile uint8_t fixedUpdateCounter;
     static void configureFixedUpdate();
     static void registerEventHandler(FixedUpdateEventListener* listener);
     static void triggerFixedUpdateEvent();
 
 private:
-    static int numHandlers;
-    static const int MAX_HANDLERS;    
+    static int8_t numHandlers;
+    static const int8_t MAX_HANDLERS;    
     static FixedUpdateEventListener *eventListeners[10];
 };
 #endif

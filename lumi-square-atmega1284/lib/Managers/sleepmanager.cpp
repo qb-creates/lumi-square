@@ -78,7 +78,7 @@ void SleepManager::setSleepTimeout(uint16_t timeout)
  */
 void SleepManager::updateSleepTimer()
 {
-    m_sleepTimer += 16;
+    m_sleepTimer += FixedUpdateTimer::DELTA_TIME;
 
     if (m_sleepTimer >= m_sleepTimeout)
     {

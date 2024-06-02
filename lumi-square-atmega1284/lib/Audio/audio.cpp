@@ -73,7 +73,7 @@ void AudioSource::updateMusicNoteTimer()
     if (!m_isPlayingMusicNote)
         return;
 
-    m_audioPlayTime -= 16;
+    m_audioPlayTime -= FixedUpdateTimer::DELTA_TIME;
 
     if (m_audioPlayTime <= 0)
     {
@@ -195,7 +195,7 @@ void AudioSource::onFixedUpdate()
 {
     if (Input::getNextButton() && Input::getPreviousButton() && m_muteButtonDelay < 300)
     {
-        m_muteButtonDelay += 16;
+        m_muteButtonDelay += FixedUpdateTimer::DELTA_TIME;
 
         if (m_muteButtonDelay >= 300)
         {

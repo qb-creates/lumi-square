@@ -35,7 +35,7 @@ void MainMenuState::updateState()
     {
         if (previousButtonDelay < 100 && Input::getPreviousButton() && !AudioSource::Instance().isMuteButtonsPressed())
         {
-            previousButtonDelay += 16;
+            previousButtonDelay += FixedUpdateTimer::DELTA_TIME;
 
             if (previousButtonDelay >= 100)
             {
@@ -56,7 +56,7 @@ void MainMenuState::updateState()
 
         if (nextButtonDelay < 100 && Input::getNextButton() && !AudioSource::Instance().isMuteButtonsPressed())
         {
-            nextButtonDelay += 16;
+            nextButtonDelay += FixedUpdateTimer::DELTA_TIME;
 
             if (nextButtonDelay >= 100)
             {

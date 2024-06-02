@@ -47,7 +47,7 @@ void MemoryMatchingState::updateState()
     if (ledBrightnessAdjustTimer <= 0)
         return;
 
-    ledBrightnessAdjustTimer -= 16;
+    ledBrightnessAdjustTimer -= FixedUpdateTimer::DELTA_TIME;
 
     if (ledBrightnessAdjustTimer >= 0)
         return;
