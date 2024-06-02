@@ -1,8 +1,8 @@
 #ifndef MATCHINGSTATE_H
 #define MATCHINGSTATE_H
 
-#include "basestate.h"
-#include "colors.h"
+#include "../basestate.h"
+#include "../../Colors/colors.h"
 
 class MemoryMatchingState : public GameBaseState
 {
@@ -14,12 +14,12 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    static Color colorList[16];
     int16_t ledBrightnessAdjustTimer;
     int8_t correctMatches;
     int8_t selectedLedIndex1;
     int8_t selectedLedIndex2;
     bool isGuessCorrect;
+    Color colorList[16];
     void shuffleLedColors();
     void evaluateGuess();
     void adjustLedBrightness();

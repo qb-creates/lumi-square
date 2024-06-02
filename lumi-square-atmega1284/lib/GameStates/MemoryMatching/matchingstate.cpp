@@ -1,24 +1,6 @@
-#include "matchingstate.h"
-#include "leds.h"
-#include "random.h"
-
-Color MemoryMatchingState::colorList[16] = {
-    Colors::pink,
-    Colors::azure,
-    Colors::cyan,
-    Colors::purple,
-    Colors::aquamarine,
-    Colors::red,
-    Colors::orange,
-    Colors::yellow,
-    Colors::aquamarine,
-    Colors::red,
-    Colors::azure,
-    Colors::purple,
-    Colors::pink,
-    Colors::cyan,
-    Colors::orange,
-    Colors::yellow};
+#include "./matchingstate.h"
+#include "../../Peripherals/leds.h"
+#include "../../STD/random.h"
 
 MemoryMatchingState::MemoryMatchingState()
     : GameBaseState(GameState::MemoryMatching),
@@ -26,7 +8,24 @@ MemoryMatchingState::MemoryMatchingState()
       correctMatches(0),
       selectedLedIndex1(-1),
       selectedLedIndex2(-1),
-      isGuessCorrect(false) {}
+      isGuessCorrect(false),
+      colorList {
+          Colors::pink,
+          Colors::azure,
+          Colors::cyan,
+          Colors::purple,
+          Colors::aquamarine,
+          Colors::red,
+          Colors::orange,
+          Colors::yellow,
+          Colors::aquamarine,
+          Colors::red,
+          Colors::azure,
+          Colors::purple,
+          Colors::pink,
+          Colors::cyan,
+          Colors::orange,
+          Colors::yellow} {}
 
 void MemoryMatchingState::enterState()
 {

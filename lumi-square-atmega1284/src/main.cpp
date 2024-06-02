@@ -15,7 +15,7 @@
 
 int main(void)
 {
-    LCD::Instance().displayPower(true);
+    LCD::Instance().displayPower(true);    
     Random::configureRNG();
     Input::configureButtonPins();
     Output::configureLeds();
@@ -23,6 +23,8 @@ int main(void)
     FixedUpdateTimer::registerEventHandler(&StateManager::Instance());
     FixedUpdateTimer::registerEventHandler(&AudioSource::Instance());
     FixedUpdateTimer::configureFixedUpdate();
+    LCD::Instance().writeByte(0, 14, 0x00);
+    LCD::Instance().writeByte(0, 15, 0x01);
 
     sei();
 

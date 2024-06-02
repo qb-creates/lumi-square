@@ -1,6 +1,7 @@
 #include "audio.h"
 #include "buttons.h"
 #include "../STD/fixedupdate.h"
+#include "../Peripherals/lcd.h"
 
 AudioSource::AudioSource()
     : FixedUpdateEventListener(),
@@ -164,6 +165,8 @@ void AudioSource::playMusicNote(MusicNote note, int16_t time)
 void AudioSource::muteAudioSource(bool mute)
 {
     m_isMute = mute;
+
+    mute ? LCD::Instance().writeByte(0, 15, 0x02) : LCD::Instance().writeByte(0, 15, 0x01);
 
     if (mute)
     {

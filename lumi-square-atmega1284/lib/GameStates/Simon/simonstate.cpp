@@ -20,17 +20,17 @@ void SimonState::enterState()
 {
     if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
     {
-        Output::ledOn(0, Colors::aquamarine, .4);
-        Output::ledOn(3, Colors::purple, .4);
-        Output::ledOn(12, Colors::orange, .4);
-        Output::ledOn(15, Colors::azure, .4);
+        Output::ledOn(0, Colors::aquamarine, .1);
+        Output::ledOn(3, Colors::purple, .1);
+        Output::ledOn(12, Colors::orange, .1);
+        Output::ledOn(15, Colors::azure, .1);
     }
 
-    Output::ledOn(5, Colors::green, .4);
-    Output::ledOn(6, Colors::red, .4);
-    Output::ledOn(9, Colors::yellow, .4);
-    Output::ledOn(10, Colors::blue, .4);
-    LCD::Instance().writeString(0, 0, " Round  Lives  \x02");
+    Output::ledOn(5, Colors::green, .1);
+    Output::ledOn(6, Colors::red, .1);
+    Output::ledOn(9, Colors::yellow, .1);
+    Output::ledOn(10, Colors::blue, .1);
+    LCD::Instance().writeString(0, 0, " Round  Lives ");
     LCD::Instance().writeString(1, 0, "    1           ");
 
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
@@ -38,7 +38,7 @@ void SimonState::enterState()
 
     for (int i = 0; i < lives; ++i)
     {
-        LCD::Instance().writeByte(1, 11 - i, 0x01);
+        LCD::Instance().writeByte(1, 11 - i, 0x03);
     }
 
     startNextRoundSequence();
@@ -49,7 +49,7 @@ void SimonState::exitState()
     currentRound = 0;
     sequenceIndex = 0;
     nextState = GameState::None;
-    Output::ledOn(buttonMapArray, 8, Colors::red, .6);
+    Output::ledOn(buttonMapArray, 8, Colors::red, .8);
 }
 
 void SimonState::updateState()
@@ -74,7 +74,7 @@ void SimonState::updateState()
     if (Output::getLedIntensity(activeButtonIndex) == 1)
     {
         delayTimer = 200;
-        Output::setLedIntensity(activeButtonIndex, .4);
+        Output::setLedIntensity(activeButtonIndex, .1);
 
         if (sequenceIndex == currentRound)
         {

@@ -28,7 +28,9 @@ private:
     const uint8_t ASCII_ZERO;
     const uint8_t ASCII_SPACE;
     const uint8_t heartCharacter[8];
-    const uint8_t batteryLowCharacter[8];
+    const uint8_t speakerCharacter[8];
+    const uint8_t unmuteCharacter[8];
+    const uint8_t muteCharacter[8];
     const uint8_t difficultySeparator[8];
     const uint8_t easyCharacter[8];
     const uint8_t mediumCharacter[8];

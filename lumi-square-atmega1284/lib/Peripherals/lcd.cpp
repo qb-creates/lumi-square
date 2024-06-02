@@ -15,7 +15,9 @@ LCD::LCD()
       ASCII_ZERO(0x30),
       ASCII_SPACE(0x20),
       heartCharacter{0x00, 0x00, 0x0A, 0x1F, 0x1F, 0x0E, 0x04, 0x00},
-      batteryLowCharacter{0x0E, 0x1B, 0x11, 0x11, 0x11, 0x13, 0x1F, 0x1F},
+      speakerCharacter{0x01, 0x03, 0x0F, 0x0F, 0x0F, 0x03, 0x01, 0x00},
+      unmuteCharacter{0x04, 0x02, 0x09, 0x05, 0x09, 0x02, 0x04, 0x00},
+      muteCharacter{0x00, 0x00, 0x0A, 0x04, 0x0A, 0x00, 0x00, 0x00},
       difficultySeparator{0x10, 0x08, 0x04, 0x08, 0x10, 0x00, 0x00, 0x00},
       easyCharacter{0x0E, 0x08, 0x0E, 0x08, 0x0E, 0x00, 0x00, 0x00},
       mediumCharacter{0x0A, 0x15, 0x11, 0x11, 0x11, 0x00, 0x00, 0x00},
@@ -56,7 +58,7 @@ void LCD::displayPower(bool on)
 {
     if (on)
     {
-        DDRC = _BV(PC2);
+        DDRC = _BV(PC2) | _BV(PC3);
         PORTC |= _BV(PC2);
         _delay_ms(100);
 
@@ -67,7 +69,7 @@ void LCD::displayPower(bool on)
     }
 
     TWCR = 0;
-    DDRC = _BV(PC0) | _BV(PC1) | _BV(PC2);
+    DDRC|= _BV(PC0) | _BV(PC1) | _BV(PC2) | _BV(PC3);
     PORTC &= ~_BV(PC2);
 }
 
@@ -193,8 +195,10 @@ void LCD::initializeDisplay()
     I2C::Instance().transmit(TWO_DISPLAY_LINES_COMMAND);
     I2C::Instance().stop();
 
-    writeCustomCharacter(heartCharacter, 0x08);
-    writeCustomCharacter(batteryLowCharacter, 0x10);
+    writeCustomCharacter(speakerCharacter, 0x00);
+    writeCustomCharacter(unmuteCharacter, 0x08);
+    writeCustomCharacter(muteCharacter, 0x10);
+    writeCustomCharacter(heartCharacter, 0x18);
     writeCustomCharacter(easyCharacter, 0x20);
     writeCustomCharacter(mediumCharacter, 0x28);
     writeCustomCharacter(hardCharacter, 0x30);

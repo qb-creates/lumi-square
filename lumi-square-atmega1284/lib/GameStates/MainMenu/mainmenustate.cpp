@@ -26,7 +26,7 @@ void MainMenuState::enterState()
     Output::ledOn(15, Colors::yellow, .8);
 
     LCD::Instance().clearDisplay();
-    queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Matching    \x02");
+    queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Matching   ");
     resetDifficulty();
 }
 
@@ -52,13 +52,13 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     switch (buttonIndex)
     {
     case 0:
-        queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Matching    ");
+        queueGameState(GameState::MemoryMatching, Difficulty::Easy, "Matching   ");
         break;
     case 1:
-        queueGameState(GameState::Simon, Difficulty::Hard, "Simon Says  ");
+        queueGameState(GameState::Simon, Difficulty::Hard, "Simon Says ");
         break;
     case 2:
-        queueGameState(GameState::LightDash, Difficulty::Hard, "Light Dash  ");
+        queueGameState(GameState::LightDash, Difficulty::Hard, "Light Dash ");
         break;
     case 12:
         increaseDifficulty();
@@ -145,7 +145,7 @@ void MainMenuState::startCountdownTimer()
     Output::ledOff(allMenuButtons, 10, Colors::azure, .5);
 
     // Show countdown text
-    LCD::Instance().writeString(0, 0, "   Starting..  ");
+    LCD::Instance().writeString(0, 0, "   Starting.. ");
     LCD::Instance().writeString(1, 0, "       3        ");
 
     AudioSource::Instance().playMusicNote(MusicNote::C5, 200);

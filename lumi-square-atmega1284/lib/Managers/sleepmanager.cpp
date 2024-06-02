@@ -16,6 +16,12 @@ ISR(INT0_vect)
 
 ISR(PCINT0_vect)
 {
+    if (SleepManager::Instance().isSleep())
+    {
+        SleepManager::Instance().wakeUpInterruptHandler();
+        return;
+    }
+    
     SleepManager::Instance().resetSleepTimer();
 }
 
@@ -120,6 +126,7 @@ void SleepManager::enterSleepMode()
     EICRA = 0;
     Random::seedRNG();
     LCD::Instance().displayPower(false);
+    PORTA = ~(0x0F);
     sleep_mode();
 }
 
