@@ -28,6 +28,7 @@ private:
     bool m_isMute;
     int16_t m_audioPlayTime;
     uint16_t m_audioClipBeatDuration;
+    int16_t m_muteButtonTimer;
 };
 
 #endif

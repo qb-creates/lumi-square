@@ -3,10 +3,11 @@ const uint32_t Input::rowOneBaseAddress = 0x0001;
 const uint32_t Input::rowTwoBaseAddress = 0x0010;
 const uint32_t Input::rowThreeBaseAddress = 0x0100;
 const uint32_t Input::rowFourBaseAddress = 0x1000;
-volatile bool Input::sleepButtonPressed = false;
-volatile bool Input::sleepButtonUp = false;
-volatile bool Input::muteButtonPressed = false;
-volatile bool Input::muteButtonDown = false;
+volatile bool Input::nextButtonPressed = false;
+volatile bool Input::nextButtonUp = false;
+volatile bool Input::nextButtonDown = false;
+volatile bool Input::previousButtonPressed = false;
+volatile bool Input::previousButtonDown = false;
 volatile uint32_t Input::buttonData = 0;
 
 Input::Button Input::buttons[16] = {
@@ -38,14 +39,14 @@ Input::Button::Button(uint8_t buttonIndex)
 /**
  * @brief Configures pins for system buttons and button matrix.
  *
- * This function configures PD2 and PD3 as inputs for the sleep and mute buttons, respectively.
+ * This function configures PD2 and PD3 as inputs for the next and previous buttons, respectively.
  * Additionally, it configures DDRA as inputs and outputs for the button matrix.
  *
  * @return void
  */
 void Input::configureButtonPins()
 {
-    // Enable pullup resistor for sleep and mute buttons
+    // Enable pullup resistor for next and previous buttons
     DDRD &= ~(_BV(PD2) | _BV(PD3));
     PORTD |= _BV(PD2) | _BV(PD3);
 
@@ -68,16 +69,17 @@ void Input::configureButtonPins()
  */
 void Input::updateSystemButtonStates()
 {
-    if (muteButtonPressed != !(PIND & _BV(PD3)))
+    if (previousButtonPressed != !(PIND & _BV(PD3)))
     {
-        muteButtonPressed = !(PIND & _BV(PD3));
-        muteButtonDown = muteButtonPressed;
+        previousButtonPressed = !(PIND & _BV(PD3));
+        previousButtonDown = previousButtonPressed;
     }
 
-    if (sleepButtonPressed != !(PIND & _BV(PD2)))
+    if (nextButtonPressed != !(PIND & _BV(PD2)))
     {
-        sleepButtonPressed = !(PIND & _BV(PD2));
-        sleepButtonUp = !sleepButtonPressed;
+        nextButtonPressed = !(PIND & _BV(PD2));
+        nextButtonDown = nextButtonPressed;
+        nextButtonUp = !nextButtonPressed;
     }
 }
 
@@ -164,47 +166,73 @@ bool Input::getButtonDown(uint8_t buttonIndex)
 }
 
 /**
- * @brief Checks if the sleep button is currently pressed.
+ * @brief Checks if the next button is currently pressed.
  *
- * This function returns true if the sleep button is currently pressed,
- * indicating that the user wants to put the microcontroller to sleep.
- * Otherwise, it returns false.
+ * This function returns true if the next button is currently pressed,
  *
- * @return bool True if the sleep button is pressed, false otherwise.
+ * @return bool True if the next button is pressed, false otherwise.
  */
-bool Input::getSleepButton()
+bool Input::getNextButton()
 {
-    return sleepButtonPressed;
+    return nextButtonPressed;
 }
 
 /**
- * @brief Checks if the sleep button was just released.
+ * @brief Checks if the next button was just released.
  *
- * This function returns true if the sleep button was just released
+ * This function returns true if the next button was just released
  * in the current frame, indicating a release since the last frame.
  * Otherwise, it returns false until the button is pressed and released again.
  *
- * @return bool True if the sleep button was just released, false otherwise.
+ * @return bool True if the next button was just released, false otherwise.
  */
-bool Input::getSleepButtonUp()
+bool Input::getNextButtonUp()
 {
-    bool buttonState = sleepButtonUp;
-    sleepButtonUp = false;
+    bool buttonState = nextButtonUp;
+    nextButtonUp = false;
     return buttonState;
 }
 
 /**
- * @brief Checks if the mute button was just pressed down.
+ * @brief Checks if the next button was just pressed down.
  *
- * This function returns true if the mute button was just pressed down
+ * This function returns true if the next button was just pressed down
  * in the current frame, indicating a new press since the last frame.
  * Otherwise, it returns false until the button is released and pressed again.
  *
- * @return bool True if the mute button was just pressed down, false otherwise.
+ * @return bool True if the next button was just pressed down, false otherwise.
  */
-bool Input::getMuteButtonDown()
+bool Input::getNextButtonDown()
 {
-    bool buttonState = muteButtonDown;
-    muteButtonDown = false;
+    bool buttonState = nextButtonDown;
+    nextButtonDown = false;
+    return buttonState;
+}
+
+/**
+ * @brief Checks if the previous button is currently pressed.
+ *
+ * This function returns true if the previous button is currently pressed.
+ *
+ * @return bool True if the previous button is pressed, false otherwise.
+ */
+bool Input::getPreviousButton()
+{
+    return previousButtonPressed;
+}
+
+/**
+ * @brief Checks if the previous button was just pressed down.
+ *
+ * This function returns true if the previous button was just pressed down
+ * in the current frame, indicating a new press since the last frame.
+ * Otherwise, it returns false until the button is released and pressed again.
+ *
+ * @return bool True if the previous button was just pressed down, false otherwise.
+ */
+bool Input::getPreviousButtonDown()
+{
+    bool buttonState = previousButtonDown;
+    previousButtonDown = false;
     return buttonState;
 }

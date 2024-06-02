@@ -6,14 +6,6 @@
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
 
-ISR(INT0_vect)
-{
-    if (!SleepManager::Instance().isSleep())
-        return;
-
-    SleepManager::Instance().wakeUpInterruptHandler();
-}
-
 ISR(PCINT0_vect)
 {
     if (SleepManager::Instance().isSleep())
@@ -26,7 +18,7 @@ ISR(PCINT0_vect)
 }
 
 SleepManager::SleepManager()
-    : FixedUpdateEventListener(), m_isSleep(false), m_sleepTimer(0), m_sleepButtonTimer(0), m_sleepTimeout(45000), m_enableSleep(false)
+    : FixedUpdateEventListener(), m_isSleep(false), m_sleepTimer(0), m_sleepTimeout(45000)
 
 {
     // Enable Pin control interrupts PC4 - PC7
@@ -122,11 +114,9 @@ void SleepManager::enterSleepMode()
 {
     m_sleepTimer = 0;
     m_isSleep = true;
-    EIMSK = _BV(INT0);
-    EICRA = 0;
     Random::seedRNG();
-    LCD::Instance().displayPower(false);
-    PORTA = ~(0x0F);
+    LCD::Instance().displayPower(false);    
+    PORTA = ~(0x0F); // Enable All led buttons
     sleep_mode();
 }
 
@@ -142,33 +132,11 @@ void SleepManager::enterSleepMode()
  */
 void SleepManager::wakeUpInterruptHandler()
 {
-    EIMSK = 0;
-    EICRA = 0;
     m_isSleep = false;
     LCD::Instance().displayPower(true);
 }
 
 void SleepManager::onFixedUpdate()
 {
-    if (Input::getSleepButton() && m_sleepButtonTimer < 1200)
-    {
-        m_sleepButtonTimer += 16;
-
-        if (m_sleepButtonTimer >= 1200)
-        {
-            AudioSource::Instance().playMusicNote(MusicNote::A5, 100);
-        }
-    }
-
-    if (Input::getSleepButtonUp())
-    {
-        if (m_sleepButtonTimer >= 1200)
-        {
-            enterSleepMode();
-        }
-
-        m_sleepButtonTimer = 0;
-    }
-
     updateSleepTimer();
 }

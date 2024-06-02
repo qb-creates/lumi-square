@@ -10,7 +10,8 @@ AudioSource::AudioSource()
       m_isPlayingMusicNote(false),
       m_isMute(false),
       m_audioPlayTime(0),
-      m_audioClipBeatDuration(0)
+      m_audioClipBeatDuration(0),
+      m_muteButtonTimer(0)
 {
     DDRD |= _BV(PD4);
     TCCR1A |= _BV(WGM10) | _BV(WGM11);
@@ -180,10 +181,20 @@ void AudioSource::muteAudioSource(bool mute)
 
 void AudioSource::onFixedUpdate()
 {
-    if (Input::getMuteButtonDown())
+    if (Input::getNextButton() && Input::getPreviousButton() && m_muteButtonTimer < 300)
     {
-        m_isMute = !m_isMute;
-        muteAudioSource(m_isMute);
+        m_muteButtonTimer += 16;
+
+        if (m_muteButtonTimer >= 300)
+        {
+            m_isMute = !m_isMute;
+            muteAudioSource(m_isMute);
+        }
+    }
+    
+    if (!Input::getNextButton() && !Input::getNextButton()) 
+    {
+        m_muteButtonTimer = 0;
     }
 
     playNextAudioClipNote();

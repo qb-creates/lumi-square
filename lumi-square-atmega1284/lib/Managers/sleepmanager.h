@@ -16,9 +16,7 @@ public:
 private:
     volatile bool m_isSleep;
     volatile uint16_t m_sleepTimer;
-    int16_t m_sleepButtonTimer;
     uint16_t m_sleepTimeout;
-    bool m_enableSleep;
 
 private:
     SleepManager();

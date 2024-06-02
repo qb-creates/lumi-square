@@ -12,9 +12,11 @@ public:
     static void scanButtonMatrix();
     static bool getButton(uint8_t buttonIndex);
     static bool getButtonDown(uint8_t buttonIndex);
-    static bool getSleepButton();
-    static bool getSleepButtonUp();
-    static bool getMuteButtonDown();
+    static bool getNextButton();
+    static bool getNextButtonUp();
+    static bool getNextButtonDown();
+    static bool getPreviousButton();
+    static bool getPreviousButtonDown();
 
 private:
     class Button
@@ -32,10 +34,11 @@ private:
     static const uint32_t rowThreeBaseAddress;
     static const uint32_t rowFourBaseAddress;
     static volatile uint32_t buttonData;
-    static volatile bool sleepButtonPressed;
-    static volatile bool sleepButtonUp;
-    static volatile bool muteButtonPressed;
-    static volatile bool muteButtonDown;
+    static volatile bool nextButtonPressed;
+    static volatile bool nextButtonUp;
+    static volatile bool nextButtonDown;
+    static volatile bool previousButtonPressed;
+    static volatile bool previousButtonDown;
     static Button buttons[];
 };
 #endif
