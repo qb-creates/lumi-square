@@ -9,7 +9,7 @@ AudioSource::AudioSource()
       m_isPlayingAudioClip(false),
       m_isPlayingMusicNote(false),
       m_isMute(false),
-      m_muteButtonsPressed(false),
+      m_muteButtonPressed(false),
       m_audioPlayTime(0),
       m_audioClipBeatDuration(0),
       m_muteButtonDelay(0)
@@ -59,7 +59,7 @@ bool AudioSource::isPlayingMusicNote()
  */
 bool AudioSource::isMuteButtonsPressed()
 {
-    return m_muteButtonsPressed;
+    return m_muteButtonPressed;
 }
 
 /**
@@ -193,23 +193,23 @@ void AudioSource::muteAudioSource(bool mute)
 
 void AudioSource::onFixedUpdate()
 {
-    if (Input::getNextButton() && Input::getPreviousButton() && m_muteButtonDelay < 300)
+    if (Input::getDifficultyButton() && m_muteButtonDelay < 1000)
     {
         m_muteButtonDelay += FixedUpdateTimer::DELTA_TIME;
 
-        if (m_muteButtonDelay >= 300)
+        if (m_muteButtonDelay >= 1000)
         {
             m_isMute = !m_isMute;
             muteAudioSource(m_isMute);
+            m_muteButtonPressed = true;
         }
 
-        m_muteButtonsPressed = true;
     }
 
-    if (!Input::getNextButton() && !Input::getPreviousButton())
+    if (!Input::getDifficultyButton())
     {
         m_muteButtonDelay = 0;
-        m_muteButtonsPressed = false;
+        m_muteButtonPressed = false;
     }
 
     playNextAudioClipNote();

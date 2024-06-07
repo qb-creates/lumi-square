@@ -17,13 +17,25 @@ ISR(PCINT0_vect)
     SleepManager::Instance().resetSleepTimer();
 }
 
+ISR(PCINT3_vect)
+{
+    if (SleepManager::Instance().isSleep())
+    {
+        SleepManager::Instance().wakeUpInterruptHandler();
+        return;
+    }
+
+    SleepManager::Instance().resetSleepTimer();
+}
+
 SleepManager::SleepManager()
     : FixedUpdateEventListener(), m_isSleep(false), m_sleepTimer(0), m_sleepTimeout(45000)
 
 {
     // Enable Pin control interrupts PC4 - PC7
-    PCICR = _BV(PCIE0);
+    PCICR = _BV(PCIE3) | _BV(PCIE0);
     PCMSK0 = _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
+    PCMSK3 = _BV(PCINT26) | _BV(PCINT27);
 
     // Set the sleep mode to PWR_DOWN.
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);

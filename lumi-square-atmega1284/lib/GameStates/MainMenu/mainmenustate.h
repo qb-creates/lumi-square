@@ -19,8 +19,6 @@ private:
     int8_t countdownCounter;
     bool isStartingGame;
     int8_t gameIndex;
-    int8_t previousButtonDelay;
-    int8_t nextButtonDelay;
     void queueGameState(int8_t gameIndex);
     void increaseDifficulty();
     void resetDifficulty();

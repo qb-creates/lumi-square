@@ -27,7 +27,7 @@ private:
     bool m_isPlayingAudioClip;
     bool m_isPlayingMusicNote;
     bool m_isMute;
-    bool m_muteButtonsPressed;
+    bool m_muteButtonPressed;
     int16_t m_audioPlayTime;
     uint16_t m_audioClipBeatDuration;
     int16_t m_muteButtonDelay;

@@ -11,9 +11,7 @@ MainMenuState::MainMenuState()
       countdownTimer(1000),
       countdownCounter(3),
       isStartingGame(false),
-      gameIndex(0),
-      previousButtonDelay(0),
-      nextButtonDelay(0) {}
+      gameIndex(0) {}
 
 void MainMenuState::enterState()
 {
@@ -33,46 +31,33 @@ void MainMenuState::updateState()
 {
     if (!isStartingGame)
     {
-        if (previousButtonDelay < 100 && Input::getPreviousButton() && !AudioSource::Instance().isMuteButtonsPressed())
+        if (Input::getDifficultyButtonUp() && !AudioSource::Instance().isMuteButtonsPressed())
         {
-            previousButtonDelay += FixedUpdateTimer::DELTA_TIME;
+            increaseDifficulty();
+        }
 
-            if (previousButtonDelay >= 100)
+        if (Input::getPreviousButtonDown())
+        {
+            --gameIndex;
+
+            if (gameIndex < 0)
             {
-                --gameIndex;
-
-                if (gameIndex < 0)
-                {
-                    gameIndex = 2;
-                }
-
-                queueGameState(gameIndex);
+                gameIndex = 2;
             }
-        }
-        else if (!Input::getNextButton())
-        {
-            nextButtonDelay = 0;
+
+            queueGameState(gameIndex);
         }
 
-        if (nextButtonDelay < 100 && Input::getNextButton() && !AudioSource::Instance().isMuteButtonsPressed())
+        if (Input::getNextButtonDown())
         {
-            nextButtonDelay += FixedUpdateTimer::DELTA_TIME;
+            ++gameIndex;
 
-            if (nextButtonDelay >= 100)
+            if (gameIndex > 2)
             {
-                ++gameIndex;
-
-                if (gameIndex > 2)
-                {
-                    gameIndex = 0;
-                }
-
-                queueGameState(gameIndex);
+                gameIndex = 0;
             }
-        }
-        else if (!Input::getPreviousButton())
-        {
-            previousButtonDelay = 0;
+
+            queueGameState(gameIndex);
         }
     }
 
@@ -81,7 +66,10 @@ void MainMenuState::updateState()
 
 void MainMenuState::onButtonPressed(int8_t buttonIndex)
 {
-    startCountdownTimer();
+    if (!isStartingGame)
+    {
+        startCountdownTimer();
+    }
 }
 
 void MainMenuState::queueGameState(int8_t gameIndex)

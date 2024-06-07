@@ -18,6 +18,9 @@ public:
     static bool getPreviousButton();
     static bool getPreviousButtonUp();
     static bool getPreviousButtonDown();
+    static bool getDifficultyButton();
+    static bool getDifficultyButtonUp();
+    static bool getDifficultyButtonDown();
 
 private:
     class Button
@@ -41,6 +44,9 @@ private:
     static volatile bool previousButtonPressed;
     static volatile bool previousButtonUp;
     static volatile bool previousButtonDown;
+    static volatile bool difficultyButtonPressed;
+    static volatile bool difficultyButtonUp;
+    static volatile bool difficultyButtonDown;
     static Button buttons[];
 };
 #endif

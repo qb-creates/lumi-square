@@ -9,6 +9,9 @@ volatile bool Input::nextButtonDown = false;
 volatile bool Input::previousButtonPressed = false;
 volatile bool Input::previousButtonUp = false;
 volatile bool Input::previousButtonDown = false;
+volatile bool Input::difficultyButtonPressed = false;
+volatile bool Input::difficultyButtonUp = false;
+volatile bool Input::difficultyButtonDown = false;
 volatile uint32_t Input::buttonData = 0;
 
 Input::Button Input::buttons[16] = {
@@ -48,8 +51,8 @@ Input::Button::Button(uint8_t buttonIndex)
 void Input::configureButtonPins()
 {
     // Enable pullup resistor for next and previous buttons
-    DDRD &= ~(_BV(PD2) | _BV(PD3));
-    PORTD |= _BV(PD2) | _BV(PD3);
+    DDRD &= ~(_BV(PD2) | _BV(PD3) | _BV(PD7));
+    PORTD |= _BV(PD2) | _BV(PD3) | _BV(PD7);
 
     // Configure output/inputs for button matrix
     DDRA = 0x0F;
@@ -81,6 +84,13 @@ void Input::updateSystemButtonStates()
         nextButtonPressed = !(PIND & _BV(PD2));
         nextButtonDown = nextButtonPressed;
         nextButtonUp = !nextButtonPressed;
+    }
+
+    if (difficultyButtonPressed != !(PIND & _BV(PD7)))
+    {
+        difficultyButtonPressed = !(PIND & _BV(PD7));
+        difficultyButtonDown = difficultyButtonPressed;
+        difficultyButtonUp = !difficultyButtonPressed;
     }
 }
 
@@ -242,5 +252,24 @@ bool Input::getPreviousButtonDown()
 {
     bool buttonState = previousButtonDown;
     previousButtonDown = false;
+    return buttonState;
+}
+
+bool Input::getDifficultyButton()
+{
+    return difficultyButtonPressed;
+}
+
+bool Input::getDifficultyButtonUp()
+{
+    bool buttonState = difficultyButtonUp;
+    difficultyButtonUp = false;
+    return buttonState;
+}
+
+bool Input::getDifficultyButtonDown()
+{
+    bool buttonState = difficultyButtonDown;
+    difficultyButtonDown = false;
     return buttonState;
 }
