@@ -2,7 +2,7 @@
 #include "buttons.h"
 #include "leds.h"
 #include "random.h"
-#include "sleepmanager.h"
+#include "shutdownutility.h"
 #include "statemanager.h"
 #include <avr/interrupt.h>
 #include <avr/io.h>
@@ -18,8 +18,9 @@ int main(void)
     LCD::Instance().displayPower(true);    
     Random::configureRNG();
     Input::configureButtonPins();
-    Output::configureLeds();
-    FixedUpdateTimer::registerEventHandler(&SleepManager::Instance());
+    Output::configureLeds();    
+    _delay_ms(100);
+    FixedUpdateTimer::registerEventHandler(&ShutdownUtility::Instance());
     FixedUpdateTimer::registerEventHandler(&StateManager::Instance());
     FixedUpdateTimer::registerEventHandler(&AudioSource::Instance());
     FixedUpdateTimer::configureFixedUpdate();
@@ -38,7 +39,7 @@ int main(void)
         
         if (FixedUpdateTimer::fixedUpdate)
         {
-            LCD::Instance().writeString(0, 0, "it is true");
+            // LCD::Instance().writeString(0, 0, "it is true");
         }
     }
 }

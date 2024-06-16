@@ -22,6 +22,8 @@ public:
     static bool getLedStatus(uint8_t ledIndex);
     static double getLedIntensity(uint8_t ledIndex);
     static void setLedIntensity(uint8_t ledIndex, double intensity);
+    static void enableSimonLights(bool all);
+    static void enableMemoryMatchLights();
 
 private:
     class LED

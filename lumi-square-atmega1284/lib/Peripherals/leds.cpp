@@ -151,16 +151,10 @@ void Output::ledOn(uint8_t ledIndex)
 void Output::ledOn(uint8_t ledIndex, const Color &color, double intensity)
 {
     LED *led = &leds[ledIndex];
-
-    if (!led->isLedOn)
-    {
-        onSetLedColor(*led, led->color, led->intensity);
-
-        led->isLedOn = true;
-    }
-
-    setLedColor(ledIndex, color);
-    setLedIntensity(ledIndex, intensity);
+    led->color = color;
+    led->isLedOn = true;
+    led->intensity = intensity;
+    onSetLedColor(*led, led->color, led->intensity);
 }
 
 void Output::ledOn(const uint8_t *range, uint8_t count, const Color &color, double intensity)
@@ -198,16 +192,10 @@ void Output::ledOff(uint8_t ledIndex)
 void Output::ledOff(uint8_t ledIndex, const Color &color, double intensity)
 {
     LED *led = &leds[ledIndex];
-
-    if (led->isLedOn)
-    {
-        onSetLedColor(*led, Color(), 0);
-
-        led->isLedOn = false;
-    }
-
-    setLedColor(ledIndex, color);
-    setLedIntensity(ledIndex, intensity);
+    led->color = color;
+    led->isLedOn = false;
+    led->intensity = intensity;
+    onSetLedColor(*led, Color(), 0);
 }
 
 void Output::ledOff(const uint8_t *range, uint8_t count, const Color &color, double intensity)
@@ -257,6 +245,45 @@ void Output::setLedIntensity(uint8_t ledIndex, double intensity)
     }
 
     led->intensity = intensity;
+}
+
+void Output::enableSimonLights(bool all)
+{
+    uint8_t gameSelectButtons[] = {0, 1, 2, 3, 4, 7, 8, 11, 12, 13, 14, 15};
+    Output::ledOff(gameSelectButtons, 12, Colors::azure, .5);
+
+    if (all)
+    {
+        Output::ledOn(0, Colors::aquamarine, .1);
+        Output::ledOn(3, Colors::purple, .1);
+        Output::ledOn(12, Colors::orange, .1);
+        Output::ledOn(15, Colors::azure, .1);
+    }
+
+    Output::ledOn(5, Colors::green, .1);
+    Output::ledOn(6, Colors::red, .1);
+    Output::ledOn(9, Colors::yellow, .1);
+    Output::ledOn(10, Colors::blue, .1);
+}
+
+void Output::enableMemoryMatchLights()
+{
+    Output::ledOn(0, Colors::red, .4);
+    Output::ledOn(1, Colors::pink, .4);
+    Output::ledOn(2, Colors::cyan, .4);
+    Output::ledOn(3, Colors::azure, .4);
+    Output::ledOn(4, Colors::orange, .4);
+    Output::ledOn(5, Colors::aquamarine, .4);
+    Output::ledOn(6, Colors::cyan, .4);
+    Output::ledOn(7, Colors::pink, .4);
+    Output::ledOn(8, Colors::yellow, .4);
+    Output::ledOn(9, Colors::purple, .4);
+    Output::ledOn(10, Colors::orange, .4);
+    Output::ledOn(11, Colors::azure, .4);
+    Output::ledOn(12, Colors::purple, .4);
+    Output::ledOn(13, Colors::red, .4);
+    Output::ledOn(14, Colors::aquamarine, .4);
+    Output::ledOn(15, Colors::yellow, .4);
 }
 
 void Output::onSetLedColor(const LED &led, const Color &color, double intensity)

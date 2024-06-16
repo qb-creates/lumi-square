@@ -18,18 +18,6 @@ SimonState::SimonState()
 
 void SimonState::enterState()
 {
-    if (GameProperties::Instance().gameDifficulty != Difficulty::Easy)
-    {
-        Output::ledOn(0, Colors::aquamarine, .1);
-        Output::ledOn(3, Colors::purple, .1);
-        Output::ledOn(12, Colors::orange, .1);
-        Output::ledOn(15, Colors::azure, .1);
-    }
-
-    Output::ledOn(5, Colors::green, .1);
-    Output::ledOn(6, Colors::red, .1);
-    Output::ledOn(9, Colors::yellow, .1);
-    Output::ledOn(10, Colors::blue, .1);
     LCD::Instance().writeString(0, 0, " Round  Lives ");
     LCD::Instance().writeString(1, 0, "    1           ");
 

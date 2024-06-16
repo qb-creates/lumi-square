@@ -68,6 +68,11 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
 {
     if (!isStartingGame)
     {
+        if (queuedState == GameState::Simon)
+        {
+            Output::enableSimonLights(GameProperties::Instance().gameDifficulty != Difficulty::Easy);
+        }
+
         startCountdownTimer();
     }
 }
@@ -93,37 +98,26 @@ void MainMenuState::queueGameState(int8_t gameIndex)
         break;
     }
 
-    resetDifficulty();
+    LCD::Instance().writeString(0, 0, "\x04\x07"); // Write Easy difficulty to lcd
+    GameProperties::Instance().setDifficulty(Difficulty::Easy);
+    displayHighScore();
 }
 
 void MainMenuState::increaseDifficulty()
 {
-    if (GameProperties::Instance().gameDifficulty == maxDifficulty)
-    {
-        resetDifficulty();
-        return;
-    }
-
     switch (GameProperties::Instance().increaseDifficulty())
     {
     case Difficulty::Easy:
-        LCD::Instance().writeString(0, 0, "\x04\x07");
+        LCD::Instance().writeString(0, 0, "\x04\x07"); // Write Easy difficulty to lcd
         break;
     case Difficulty::Medium:
-        LCD::Instance().writeString(0, 0, "\x05\x07");
+        LCD::Instance().writeString(0, 0, "\x05\x07"); // Write Medium difficulty to lcd
         break;
     case Difficulty::Hard:
-        LCD::Instance().writeString(0, 0, "\x06\x07");
+        LCD::Instance().writeString(0, 0, "\x06\x07"); // Write Hard difficulty to lcd
         break;
     }
 
-    displayHighScore();
-}
-
-void MainMenuState::resetDifficulty()
-{
-    LCD::Instance().writeString(0, 0, "\x04\x07");
-    GameProperties::Instance().setDifficulty(Difficulty::Easy);
     displayHighScore();
 }
 

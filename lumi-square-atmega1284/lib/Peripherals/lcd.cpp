@@ -58,7 +58,8 @@ void LCD::displayPower(bool on)
 {
     if (on)
     {
-        DDRC = _BV(PC2) | _BV(PC3);
+        DDRC |= _BV(PC2);
+        DDRC &= ~(_BV(PC0) | _BV(PC1));
         PORTC |= _BV(PC2);
         _delay_ms(100);
 
@@ -69,7 +70,7 @@ void LCD::displayPower(bool on)
     }
 
     TWCR = 0;
-    DDRC|= _BV(PC0) | _BV(PC1) | _BV(PC2) | _BV(PC3);
+    DDRC |= _BV(PC0) | _BV(PC1) | _BV(PC2);
     PORTC &= ~_BV(PC2);
 }
 
