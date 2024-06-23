@@ -4,36 +4,13 @@
 #include "audioclip.h"
 #include <stdint.h>
 
-const int16_t tetrisTheme[] = { 
-  static_cast<int16_t>(MusicNote::E4), 4,  static_cast<int16_t>(MusicNote::B3),8,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::D4),4,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::B3),8,
-  static_cast<int16_t>(MusicNote::A3), 4,  static_cast<int16_t>(MusicNote::A3),8,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::E4),4,  static_cast<int16_t>(MusicNote::D4),8,  static_cast<int16_t>(MusicNote::C4),8,
-  static_cast<int16_t>(MusicNote::B3), -4,  static_cast<int16_t>(MusicNote::C4),8,  static_cast<int16_t>(MusicNote::D4),4,  static_cast<int16_t>(MusicNote::E4),4,
-  static_cast<int16_t>(MusicNote::C4), 4,  static_cast<int16_t>(MusicNote::A3),4,  static_cast<int16_t>(MusicNote::A3),8,  static_cast<int16_t>(MusicNote::A3),4,  static_cast<int16_t>(MusicNote::B3),8,  static_cast<int16_t>(MusicNote::C4),8,
-
-  static_cast<int16_t>(MusicNote::D5), -4,  static_cast<int16_t>(MusicNote::F5),8,  static_cast<int16_t>(MusicNote::A5),4,  static_cast<int16_t>(MusicNote::G5),8,  static_cast<int16_t>(MusicNote::F5),8,
-  static_cast<int16_t>(MusicNote::E5), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),4, static_cast<int16_t>(MusicNote::Rest), 4,
-
-  static_cast<int16_t>(MusicNote::E5), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::B4),8,
-  static_cast<int16_t>(MusicNote::A4), 4,  static_cast<int16_t>(MusicNote::A4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),8,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,
-
-  static_cast<int16_t>(MusicNote::D5), -4,  static_cast<int16_t>(MusicNote::F5),8,  static_cast<int16_t>(MusicNote::A5),4,  static_cast<int16_t>(MusicNote::G5),8,  static_cast<int16_t>(MusicNote::F5),8,
-  static_cast<int16_t>(MusicNote::E5), -4,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::D5),8,  static_cast<int16_t>(MusicNote::C5),8,
-  static_cast<int16_t>(MusicNote::B4), 4,  static_cast<int16_t>(MusicNote::B4),8,  static_cast<int16_t>(MusicNote::C5),8,  static_cast<int16_t>(MusicNote::D5),4,  static_cast<int16_t>(MusicNote::E5),4,
-  static_cast<int16_t>(MusicNote::C5), 4,  static_cast<int16_t>(MusicNote::A4),4,  static_cast<int16_t>(MusicNote::A4),4, static_cast<int16_t>(MusicNote::Rest), 4,
-  
-
-  static_cast<int16_t>(MusicNote::E5),2,  static_cast<int16_t>(MusicNote::C5),2,
-  static_cast<int16_t>(MusicNote::D5),2,   static_cast<int16_t>(MusicNote::B4),2,
-  static_cast<int16_t>(MusicNote::C5),2,   static_cast<int16_t>(MusicNote::A4),2,
-  static_cast<int16_t>(MusicNote::Ab4),2,  static_cast<int16_t>(MusicNote::B4),4,  static_cast<int16_t>(MusicNote::Rest),8, 
-  static_cast<int16_t>(MusicNote::E5),2,   static_cast<int16_t>(MusicNote::C5),2,
-  static_cast<int16_t>(MusicNote::D5),2,   static_cast<int16_t>(MusicNote::B4),2,
-  static_cast<int16_t>(MusicNote::C5),4,   static_cast<int16_t>(MusicNote::E5),4,  static_cast<int16_t>(MusicNote::A5),2,
-  static_cast<int16_t>(MusicNote::Ab4),2,
+const MusicNote POWER_UP_SOUND_EFFECT_DATA[] = {
+    MusicNote::C4, MusicNote::Eighth,
+    MusicNote::E4, MusicNote::Eighth,
+    MusicNote::G4, MusicNote::Eighth,
+    MusicNote::C5, MusicNote::Eighth,
+    MusicNote::E5, MusicNote::Eighth,
+    MusicNote::END
 };
 
 const MusicNote FAILURE_SOUND_EFFECT_DATA[] = {
@@ -43,5 +20,6 @@ const MusicNote FAILURE_SOUND_EFFECT_DATA[] = {
 };
 
 const AudioClip FAILURE_AUDIO_CLIP(FAILURE_SOUND_EFFECT_DATA, 130);
+const AudioClip POWER_UP_AUDIO_CLIP(POWER_UP_SOUND_EFFECT_DATA, 240);
 
 #endif

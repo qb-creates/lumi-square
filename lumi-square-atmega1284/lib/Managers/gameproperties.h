@@ -6,7 +6,7 @@
 enum class GameState
 {
     None = -1,
-    Previous = 0,
+    PowerOn = 0,
     GameOver = 1,
     Menu = 2,
     MemoryMatching = 3,

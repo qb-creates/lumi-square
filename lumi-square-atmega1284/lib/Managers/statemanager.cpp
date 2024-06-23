@@ -3,14 +3,23 @@
 #include "fixedupdate.h"
 
 StateManager::StateManager()
-    : FixedUpdateEventListener(), currentState(), gameOverState(), mainMenuState(), memoryMatchingState(), lightSpeedState(), simonState(), stateDictionary{}
+    : FixedUpdateEventListener(),
+      currentState(),
+      powerOnState(),
+      gameOverState(),
+      mainMenuState(),
+      memoryMatchingState(),
+      lightSpeedState(),
+      simonState(),
+      stateDictionary{}
 {
+    stateDictionary[0] = &powerOnState;
     stateDictionary[1] = &gameOverState;
     stateDictionary[2] = &mainMenuState;
     stateDictionary[3] = &memoryMatchingState;
     stateDictionary[5] = &lightSpeedState;
     stateDictionary[6] = &simonState;
-    currentState = &mainMenuState;
+    currentState = &powerOnState;
     currentState->enterState();
 }
 

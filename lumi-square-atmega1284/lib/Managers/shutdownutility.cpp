@@ -17,7 +17,7 @@ ISR(PCINT3_vect)
 }
 
 ShutdownUtility::ShutdownUtility()
-    : FixedUpdateEventListener(), m_sleepTimer(0), m_sleepTimeout(45000)
+    : FixedUpdateEventListener(), m_shutdownTimer(0), m_shutdownTime(300000)
 
 {
     // Enable Pin control interrupts PC4 - PC7
@@ -47,9 +47,9 @@ ShutdownUtility &ShutdownUtility::Instance()
  *
  * @return void
  */
-void ShutdownUtility::setShutdownTimeout(uint16_t timeout)
+void ShutdownUtility::setShutdownTimeout(uint32_t timeout)
 {
-    m_sleepTimeout = timeout;
+    m_shutdownTime = timeout;
 }
 
 /**
@@ -66,9 +66,9 @@ void ShutdownUtility::setShutdownTimeout(uint16_t timeout)
  */
 void ShutdownUtility::updateShutdownTimer()
 {
-    m_sleepTimer += FixedUpdateTimer::DELTA_TIME;
+    m_shutdownTimer += FixedUpdateTimer::DELTA_TIME;
 
-    if (m_sleepTimer >= m_sleepTimeout)
+    if (m_shutdownTimer >= m_shutdownTime)
     {
         PORTC |= _BV(PC3);
     }
@@ -85,7 +85,7 @@ void ShutdownUtility::updateShutdownTimer()
  */
 void ShutdownUtility::resetShutdownTimer()
 {
-    m_sleepTimer = 0;
+    m_shutdownTimer = 0;
 }
 
 void ShutdownUtility::onFixedUpdate()

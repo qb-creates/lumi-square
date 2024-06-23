@@ -6,6 +6,7 @@
 #include "MainMenu/mainmenustate.h"
 #include "MemoryMatching/matchingstate.h"
 #include "Simon/simonstate.h"
+#include "PowerOn/poweronstate.h"
 #include "basestate.h"
 #include "fixedupdate.h"
 
@@ -24,6 +25,7 @@ private:
 
 private:
     GameBaseState *currentState;
+    PowerOnState powerOnState;
     GameOverState gameOverState;
     MainMenuState mainMenuState;
     MemoryMatchingState memoryMatchingState;

@@ -8,13 +8,13 @@ class ShutdownUtility : public FixedUpdateEventListener
 {
 public:
     static ShutdownUtility& Instance();
-    void setShutdownTimeout(uint16_t timeout);
+    void setShutdownTimeout(uint32_t timeout);
     void resetShutdownTimer();
     void onFixedUpdate() override;
 
 private:
-    volatile uint16_t m_sleepTimer;
-    uint16_t m_sleepTimeout;
+    volatile uint32_t m_shutdownTimer;
+    uint32_t m_shutdownTime;
 
 private:
     ShutdownUtility();

@@ -46,6 +46,7 @@ void MainMenuState::updateState()
             }
 
             queueGameState(gameIndex);
+            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);            
         }
 
         if (Input::getNextButtonDown())
@@ -58,6 +59,7 @@ void MainMenuState::updateState()
             }
 
             queueGameState(gameIndex);
+            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);            
         }
     }
 
