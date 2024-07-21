@@ -36,16 +36,17 @@ void PowerOnState::enterState()
 {
     for (int i = 0; i < 16; ++i)
     {
-        Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], .7);
+        Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
 
-    LCD::Instance().displayPower(true);
-    LCD::Instance().writeString(0, 0, "   LUMISQUARE   ");
+    LCD::Instance().initializeDisplay();
+    LCD::Instance().writeStringToTitleBuffer("LUMISQUARE");
     AudioSource::Instance().playAudioClip(POWER_UP_AUDIO_CLIP);
 }
 
 void PowerOnState::exitState()
 {
+    LCD::Instance().writeToSpeakerBuffer(unmuteImageData);
 }
 
 void PowerOnState::updateState()

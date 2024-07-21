@@ -15,7 +15,6 @@ MainMenuState::MainMenuState()
 
 void MainMenuState::enterState()
 {
-    LCD::Instance().clearDisplay();
     queueGameState(gameIndex);
 }
 
@@ -86,21 +85,22 @@ void MainMenuState::queueGameState(int8_t gameIndex)
     case 0:
         queuedState = GameState::MemoryMatching;
         this->maxDifficulty = Difficulty::Easy;
-        LCD::Instance().writeString(0, 3, "Matching   ");
+        LCD::Instance().writeStringToTitleBuffer(" Matching ");
+        LCD::Instance().writeStringToScoreBuffer("HiScr: 399");
         break;
     case 1:
         queuedState = GameState::Simon;
         this->maxDifficulty = Difficulty::Hard;
-        LCD::Instance().writeString(0, 3, "Simon Says ");
+        LCD::Instance().writeStringToTitleBuffer("Simon Says");
         break;
     case 2:
         queuedState = GameState::LightDash;
-        this->maxDifficulty = Difficulty::Hard;
-        LCD::Instance().writeString(0, 3, "Light Dash ");
+        this->maxDifficulty = Difficulty::Hard;    
+        LCD::Instance().writeStringToTitleBuffer("Light Dash");
         break;
     }
 
-    LCD::Instance().writeString(0, 0, "\x04\x07"); // Write Easy difficulty to lcd
+    LCD::Instance().writeToDifficultyBuffer(easyImageData);
     GameProperties::Instance().setDifficulty(Difficulty::Easy);
     displayHighScore();
 }
@@ -110,13 +110,13 @@ void MainMenuState::increaseDifficulty()
     switch (GameProperties::Instance().increaseDifficulty())
     {
     case Difficulty::Easy:
-        LCD::Instance().writeString(0, 0, "\x04\x07"); // Write Easy difficulty to lcd
+        LCD::Instance().writeToDifficultyBuffer(easyImageData);
         break;
     case Difficulty::Medium:
-        LCD::Instance().writeString(0, 0, "\x05\x07"); // Write Medium difficulty to lcd
+        LCD::Instance().writeToDifficultyBuffer(mediumImageData);
         break;
     case Difficulty::Hard:
-        LCD::Instance().writeString(0, 0, "\x06\x07"); // Write Hard difficulty to lcd
+        LCD::Instance().writeToDifficultyBuffer(hardImageData);
         break;
     }
 
@@ -126,8 +126,8 @@ void MainMenuState::increaseDifficulty()
 void MainMenuState::displayHighScore()
 {
     int8_t savedHighScore = HighScoreManager::getHighScore(queuedState, GameProperties::Instance().gameDifficulty);
-    LCD::Instance().writeString(1, 0, "   HiScr:");
-    LCD::Instance().writeNumber(1, 10, savedHighScore, true);
+    // LCD::Instance().writeString(1, 0, "   HiScr:");
+    // LCD::Instance().writeNumber(1, 10, savedHighScore, true);
 }
 
 void MainMenuState::startCountdownTimer()
@@ -135,8 +135,8 @@ void MainMenuState::startCountdownTimer()
     isStartingGame = true;
 
     // Show countdown text
-    LCD::Instance().writeString(0, 0, "   Starting.. ");
-    LCD::Instance().writeString(1, 0, "       3        ");
+    // LCD::Instance().writeString(0, 0, "   Starting.. ");
+    // LCD::Instance().writeString(1, 0, "       3        ");
 
     AudioSource::Instance().playMusicNote(MusicNote::C5, 200);
 }
@@ -157,7 +157,7 @@ void MainMenuState::updateCountdownTimer()
             return;
         }
 
-        LCD::Instance().writeNumber(1, 7, countdownCounter, true);
+        // LCD::Instance().writeNumber(1, 7, countdownCounter, true);
         AudioSource::Instance().playMusicNote(countdownCounter == 0 ? MusicNote::E5 : MusicNote::C5, 200);
     }
 }

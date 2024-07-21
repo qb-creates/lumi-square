@@ -15,17 +15,13 @@
 
 int main(void)
 {
-    LCD::Instance().displayPower(true);    
     Random::configureRNG();
     Input::configureButtonPins();
     Output::configureLeds();    
-    _delay_ms(100);
     FixedUpdateTimer::registerEventHandler(&ShutdownUtility::Instance());
     FixedUpdateTimer::registerEventHandler(&StateManager::Instance());
     FixedUpdateTimer::registerEventHandler(&AudioSource::Instance());
     FixedUpdateTimer::configureFixedUpdate();
-    LCD::Instance().writeByte(0, 14, 0x00);
-    LCD::Instance().writeByte(0, 15, 0x01);
 
     sei();
 

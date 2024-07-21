@@ -18,15 +18,15 @@ SimonState::SimonState()
 
 void SimonState::enterState()
 {
-    LCD::Instance().writeString(0, 0, " Round  Lives ");
-    LCD::Instance().writeString(1, 0, "    1           ");
+    // LCD::Instance().writeString(0, 0, " Round  Lives ");
+    // LCD::Instance().writeString(1, 0, "    1           ");
 
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
 
     for (int i = 0; i < lives; ++i)
     {
-        LCD::Instance().writeByte(1, 11 - i, 0x03);
+        // LCD::Instance().writeByte(1, 11 - i, 0x03);
     }
 
     startNextRoundSequence();
@@ -113,7 +113,8 @@ void SimonState::startNextRoundSequence()
         listeningForPlayerInput = false;
         simonButtonSequence[currentRound] = buttonMapArray[randomIndex];
         simonMusicNoteSequence[currentRound] = musicNoteMapArray[randomIndex];
-        LCD::Instance().writeNumber(1, 2, ++currentRound);
+        ++currentRound;
+        // LCD::Instance().writeNumber(1, 2, ++currentRound);
         break;
     }
 }
@@ -144,7 +145,7 @@ void SimonState::playNextSequenceElement()
 void SimonState::removeLifePoint()
 {
     --lives;
-    LCD::Instance().writeByte(1, (11 - lives), 0x20);
+    // LCD::Instance().writeByte(1, (11 - lives), 0x20);
     AudioSource::Instance().playAudioClip(FAILURE_AUDIO_CLIP);
 }
 

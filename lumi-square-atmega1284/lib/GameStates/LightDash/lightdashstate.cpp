@@ -56,8 +56,8 @@ void LightDashState::enterState()
         ++i;
     }
 
-    LCD::Instance().writeString(0, 0, " Score   Time  ");
-    LCD::Instance().writeString(1, 0, "    0     30    ");
+    // LCD::Instance().writeString(0, 0, " Score   Time  ");
+    // LCD::Instance().writeString(1, 0, "    0     30    ");
 }
 
 void LightDashState::exitState()
@@ -127,7 +127,7 @@ void LightDashState::updateGameTimer()
         }
 
         gameTimer = 1000;
-        LCD::Instance().writeNumber(1, 9, remainingGameTime);
+        // LCD::Instance().writeNumber(1, 9, remainingGameTime);
     }
 }
 
@@ -182,7 +182,7 @@ void LightDashState::deductPointsFromScore()
         score = 0;
     }
 
-    LCD::Instance().writeNumber(1, 2, score);
+    // LCD::Instance().writeNumber(1, 2, score);
 }
 
 void LightDashState::addPointsToScore(int8_t buttonIndex)
@@ -190,7 +190,7 @@ void LightDashState::addPointsToScore(int8_t buttonIndex)
     Color buttonColor = Output::getLedColor(buttonIndex);
     int points = buttonColor == Colors::azure ? 1 : bonusLedPointValue;
     score += points;
-    LCD::Instance().writeNumber(1, 2, score);
+    // LCD::Instance().writeNumber(1, 2, score);
 }
 
 void LightDashState::playMusicNote(int8_t buttonIndex)

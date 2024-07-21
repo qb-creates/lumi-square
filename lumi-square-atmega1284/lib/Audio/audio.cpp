@@ -179,7 +179,7 @@ void AudioSource::muteAudioSource(bool mute)
 {
     m_isMute = mute;
 
-    mute ? LCD::Instance().writeByte(0, 15, 0x02) : LCD::Instance().writeByte(0, 15, 0x01);
+    mute ? LCD::Instance().writeToSpeakerBuffer(muteImageData) : LCD::Instance().writeToSpeakerBuffer(unmuteImageData);;
 
     if (mute)
     {

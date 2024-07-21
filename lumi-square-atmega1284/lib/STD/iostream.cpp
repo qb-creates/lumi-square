@@ -1,8 +1,3 @@
-/*
- *  SPI.cpp
- *  Author: Quentin Baker
- *
- */
 #include "iostream.h"
 
 void std::SPI::configure() const
@@ -47,9 +42,8 @@ I2C &I2C::Instance()
 
 void I2C::initialize()
 {
-    TWSR = 0;
-    TWBR = 17;
-    TWCR = 0x04;
+    TWSR &= ~((1 << TWPS1) | (1 << TWPS0)); // pre-scalar 1
+    TWBR = ((F_CPU / 400000) - 16) / 2;     // baud rate factor 12
 }
 
 void I2C::start(uint8_t sAddress)
