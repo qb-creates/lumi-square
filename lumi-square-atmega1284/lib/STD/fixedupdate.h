@@ -3,7 +3,8 @@
 
 #include <stdint.h>
 
-class FixedUpdateEventListener {
+class FixedUpdateEventListener
+{
 public:
     virtual void onFixedUpdate() = 0;
 };
@@ -14,12 +15,12 @@ public:
     static const int8_t DELTA_TIME;
     static volatile bool fixedUpdate;
     static void configureFixedUpdate();
-    static void registerEventHandler(FixedUpdateEventListener* listener);
+    static void registerEventHandler(FixedUpdateEventListener *listener);
     static void triggerFixedUpdateEvent();
 
 private:
     static int8_t numHandlers;
-    static const int8_t MAX_HANDLERS;    
+    static const int8_t MAX_HANDLERS;
     static FixedUpdateEventListener *eventListeners[10];
 };
 #endif

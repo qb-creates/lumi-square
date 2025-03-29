@@ -43,7 +43,7 @@ Input::Button::Button(uint8_t buttonIndex)
 /**
  * @brief Configures pins for system buttons and button matrix.
  *
- * This function configures PD2 and PD3 as inputs for the next and previous buttons, respectively.
+ * This function configures PC4 and PC5 as inputs for the next and previous buttons, respectively.
  * Additionally, it configures DDRA as inputs and outputs for the button matrix.
  *
  * @return void
@@ -51,8 +51,11 @@ Input::Button::Button(uint8_t buttonIndex)
 void Input::configureButtonPins()
 {
     // Enable pullup resistor for next and previous buttons
-    DDRD &= ~(_BV(PD2) | _BV(PD3) | _BV(PD7));
-    PORTD |= _BV(PD2) | _BV(PD3) | _BV(PD7);
+    DDRD &= ~( _BV(PD7));
+    PORTD |= _BV(PD7);
+
+    DDRC &= ~(_BV(PC4) | _BV(PC5));
+    PORTC |= _BV(PC4) | _BV(PC5);
 
     // Configure output/inputs for button matrix
     DDRA = 0x0F;
@@ -73,15 +76,15 @@ void Input::configureButtonPins()
  */
 void Input::updateSystemButtonStates()
 {
-    if (previousButtonPressed != !(PIND & _BV(PD3)))
+    if (previousButtonPressed != !(PINC & _BV(PD5)))
     {
-        previousButtonPressed = !(PIND & _BV(PD3));
+        previousButtonPressed = !(PINC & _BV(PD5));
         previousButtonDown = previousButtonPressed;
     }
 
-    if (nextButtonPressed != !(PIND & _BV(PD2)))
+    if (nextButtonPressed != !(PINC & _BV(PD4)))
     {
-        nextButtonPressed = !(PIND & _BV(PD2));
+        nextButtonPressed = !(PINC & _BV(PD4));
         nextButtonDown = nextButtonPressed;
         nextButtonUp = !nextButtonPressed;
     }

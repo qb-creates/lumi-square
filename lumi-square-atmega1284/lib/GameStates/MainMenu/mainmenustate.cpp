@@ -1,7 +1,8 @@
 #include "mainmenustate.h"
 #include "buttons.h"
-#include "lcd.h"
 #include "leds.h"
+#include "voiceover.h"
+#include "voiceovermanager.h"
 #include <random.h>
 
 MainMenuState::MainMenuState()
@@ -11,11 +12,15 @@ MainMenuState::MainMenuState()
       countdownTimer(1000),
       countdownCounter(3),
       isStartingGame(false),
-      gameIndex(0) {}
+      gameIndex(0),
+      firstEntry(true) { }
 
 void MainMenuState::enterState()
 {
-    queueGameState(gameIndex);
+    Output::ledOn(0);
+    Output::setLedColor(0, Colors::red, 1);
+    queueGameState(gameIndex, firstEntry);
+    firstEntry = false;
 }
 
 void MainMenuState::exitState()
@@ -44,8 +49,8 @@ void MainMenuState::updateState()
                 gameIndex = 2;
             }
 
-            queueGameState(gameIndex);
-            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);            
+            queueGameState(gameIndex, true);
+            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);
         }
 
         if (Input::getNextButtonDown())
@@ -57,8 +62,8 @@ void MainMenuState::updateState()
                 gameIndex = 0;
             }
 
-            queueGameState(gameIndex);
-            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);            
+            queueGameState(gameIndex, true);
+            AudioSource::Instance().playMusicNote(MusicNote::Ab3, 50);
         }
     }
 
@@ -78,31 +83,28 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     }
 }
 
-void MainMenuState::queueGameState(int8_t gameIndex)
+void MainMenuState::queueGameState(int8_t gameIndex, bool playAudio)
 {
     switch (gameIndex)
     {
     case 0:
         queuedState = GameState::MemoryMatching;
         this->maxDifficulty = Difficulty::Easy;
-        LCD::Instance().writeStringToTitleBuffer(" Matching ");
-        LCD::Instance().writeStringToScoreBuffer("HiScr: 399");
+        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::MemoryMatching);
         break;
     case 1:
         queuedState = GameState::Simon;
         this->maxDifficulty = Difficulty::Hard;
-        LCD::Instance().writeStringToTitleBuffer("Simon Says");
+        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::Simon);
         break;
     case 2:
         queuedState = GameState::LightDash;
-        this->maxDifficulty = Difficulty::Hard;    
-        LCD::Instance().writeStringToTitleBuffer("Light Dash");
+        this->maxDifficulty = Difficulty::Hard;
+        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::LightDash);
         break;
     }
 
-    LCD::Instance().writeToDifficultyBuffer(easyImageData);
     GameProperties::Instance().setDifficulty(Difficulty::Easy);
-    displayHighScore();
 }
 
 void MainMenuState::increaseDifficulty()
@@ -110,40 +112,26 @@ void MainMenuState::increaseDifficulty()
     switch (GameProperties::Instance().increaseDifficulty())
     {
     case Difficulty::Easy:
-        LCD::Instance().writeToDifficultyBuffer(easyImageData);
+        VoiceOverManager::PlayVoiceOver(VoiceOver::Easy);
         break;
     case Difficulty::Medium:
-        LCD::Instance().writeToDifficultyBuffer(mediumImageData);
+        VoiceOverManager::PlayVoiceOver(VoiceOver::Medium);
         break;
     case Difficulty::Hard:
-        LCD::Instance().writeToDifficultyBuffer(hardImageData);
+        VoiceOverManager::PlayVoiceOver(VoiceOver::Hard);
         break;
     }
-
-    displayHighScore();
-}
-
-void MainMenuState::displayHighScore()
-{
-    int8_t savedHighScore = HighScoreManager::getHighScore(queuedState, GameProperties::Instance().gameDifficulty);
-    // LCD::Instance().writeString(1, 0, "   HiScr:");
-    // LCD::Instance().writeNumber(1, 10, savedHighScore, true);
 }
 
 void MainMenuState::startCountdownTimer()
 {
     isStartingGame = true;
-
-    // Show countdown text
-    // LCD::Instance().writeString(0, 0, "   Starting.. ");
-    // LCD::Instance().writeString(1, 0, "       3        ");
-
     AudioSource::Instance().playMusicNote(MusicNote::C5, 200);
 }
 
 void MainMenuState::updateCountdownTimer()
 {
-    countdownTimer -= isStartingGame ? 16 : 0;
+    countdownTimer -= isStartingGame ? FixedUpdateTimer::DELTA_TIME : 0;
 
     if (countdownTimer <= 0)
     {
@@ -157,7 +145,6 @@ void MainMenuState::updateCountdownTimer()
             return;
         }
 
-        // LCD::Instance().writeNumber(1, 7, countdownCounter, true);
         AudioSource::Instance().playMusicNote(countdownCounter == 0 ? MusicNote::E5 : MusicNote::C5, 200);
     }
 }

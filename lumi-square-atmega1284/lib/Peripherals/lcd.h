@@ -11,10 +11,14 @@ public:
     static LCD &Instance();
     void initializeDisplay(void);
     void clearDisplay();
+    void clearTopBuffer();
+    void clearBottomBuffer();
     void writeToDifficultyBuffer(const uint8_t imageData[33]);
     void writeToSpeakerBuffer(const uint8_t imageData[27]);
-    void writeStringToTitleBuffer(const char *data);
-    void writeStringToScoreBuffer(const char *data);
+    void writeToTopBuffer(const char *data);
+    void writeToBottomBuffer(const char *data);
+    void writeToBottomLeftBuffer(uint8_t value);
+    void writeToBottomRightBuffer(uint8_t value);
 
 private:
     LCD();
@@ -25,9 +29,12 @@ private:
     const uint8_t LAST_WRITE_CONTROL_BYTE;
     const OLEDBuffer difficultyBuffer;
     const OLEDBuffer speakerBuffer;
-    const OLEDBuffer titleBuffer;
-    const OLEDBuffer scoreBuffer;
+    const OLEDBuffer topBuffer;
+    const OLEDBuffer bottomBuffer;
+    uint8_t bottomLeftBufferLength;
+    uint8_t bottomRightBufferLength;
     void writeStringToBuffer(OLEDBuffer buffer, const char *data);
+    void writeNumberToBuffer(OLEDBuffer buffer, uint8_t value, uint8_t *test);
     void writeToBuffer(OLEDBuffer buffer, const uint8_t *imageData, uint8_t columnOffset);
     void oledSendCommand(uint8_t command, uint8_t controlByte);
 };

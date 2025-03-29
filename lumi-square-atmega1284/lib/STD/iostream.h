@@ -16,9 +16,20 @@ private:
     void latch() const;
 };
 
-
 static const SPI cout;
 } // namespace std
+
+class USART
+{
+public:
+    USART();
+    USART(const USART &) = delete;
+    void operator=(const USART &) = delete;
+    static USART &Instance();
+    void initialize(void);
+    void usartTransmit(const uint8_t data[]);
+};
+
 class I2C
 {
 public:

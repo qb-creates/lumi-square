@@ -1,7 +1,6 @@
 #include "shutdownutility.h"
 #include "audio.h"
 #include "buttons.h"
-#include "lcd.h"
 #include "random.h"
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
@@ -21,9 +20,9 @@ ShutdownUtility::ShutdownUtility()
 
 {
     // Enable Pin control interrupts PC4 - PC7
-    PCICR = _BV(PCIE3) | _BV(PCIE0);
-    PCMSK0 = _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
-    PCMSK3 = _BV(PCINT26) | _BV(PCINT27);
+    PCICR |= _BV(PCIE3) | _BV(PCIE0);
+    PCMSK0 |= _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
+    PCMSK3 |= _BV(PCINT26) | _BV(PCINT27);
 
     DDRC |= _BV(PC3);
     PORTC &= ~_BV(PC3);

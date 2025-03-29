@@ -19,10 +19,10 @@ private:
     int8_t countdownCounter;
     bool isStartingGame;
     int8_t gameIndex;
-    void queueGameState(int8_t gameIndex);
+    bool firstEntry;
+    void queueGameState(int8_t gameIndex, bool playAudio);
     void increaseDifficulty();
     void resetDifficulty();
-    void displayHighScore();
     void startCountdownTimer();
     void updateCountdownTimer();
 };

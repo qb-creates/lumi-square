@@ -1,5 +1,4 @@
 #include "audio.h"
-#include "../Peripherals/lcd.h"
 #include "../STD/fixedupdate.h"
 #include "buttons.h"
 
@@ -178,8 +177,6 @@ void AudioSource::playMusicNote(MusicNote note, int16_t time)
 void AudioSource::muteAudioSource(bool mute)
 {
     m_isMute = mute;
-
-    mute ? LCD::Instance().writeToSpeakerBuffer(muteImageData) : LCD::Instance().writeToSpeakerBuffer(unmuteImageData);;
 
     if (mute)
     {

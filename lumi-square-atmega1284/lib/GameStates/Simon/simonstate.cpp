@@ -1,5 +1,4 @@
 #include "simonstate.h"
-#include "lcd.h"
 #include "leds.h"
 #include "random.h"
 
@@ -18,17 +17,8 @@ SimonState::SimonState()
 
 void SimonState::enterState()
 {
-    // LCD::Instance().writeString(0, 0, " Round  Lives ");
-    // LCD::Instance().writeString(1, 0, "    1           ");
-
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
-
-    for (int i = 0; i < lives; ++i)
-    {
-        // LCD::Instance().writeByte(1, 11 - i, 0x03);
-    }
-
     startNextRoundSequence();
 }
 
@@ -53,7 +43,7 @@ void SimonState::updateState()
         return;
         
     // Subtract 16 milliseconds from the delay timer if it is greater than 0
-    delayTimer -= (delayTimer > 0) ? 16 : 0;
+    delayTimer -= (delayTimer > 0) ? FixedUpdateTimer::DELTA_TIME : 0;
 
     if (delayTimer > 0)
         return;
@@ -114,7 +104,6 @@ void SimonState::startNextRoundSequence()
         simonButtonSequence[currentRound] = buttonMapArray[randomIndex];
         simonMusicNoteSequence[currentRound] = musicNoteMapArray[randomIndex];
         ++currentRound;
-        // LCD::Instance().writeNumber(1, 2, ++currentRound);
         break;
     }
 }
@@ -145,7 +134,6 @@ void SimonState::playNextSequenceElement()
 void SimonState::removeLifePoint()
 {
     --lives;
-    // LCD::Instance().writeByte(1, (11 - lives), 0x20);
     AudioSource::Instance().playAudioClip(FAILURE_AUDIO_CLIP);
 }
 

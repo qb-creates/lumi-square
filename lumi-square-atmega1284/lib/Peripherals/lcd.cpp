@@ -9,10 +9,12 @@ LCD::LCD()
       LAST_COMMAND_CONTROL_BYTE(0x00),
       WRITE_CONTROL_BYTE_CONTINUATION(0xC0),
       LAST_WRITE_CONTROL_BYTE(0x40),
-      difficultyBuffer(0, 10, 0, 2, 33),
+      difficultyBuffer(117, 127, 0, 2, 33),
       speakerBuffer(119, 127, 0, 2, 27),
-      titleBuffer(15, 22, 0, 3, 32),
-      scoreBuffer(15, 22, 4, 7, 32) {}
+      topBuffer(0, 7, 0, 3, 32),
+      bottomBuffer(0, 7, 4, 7, 32),
+      bottomLeftBufferLength(0),
+      bottomRightBufferLength(0) {}
 
 /**
  * @brief Returns the singleton instance of the LCD class.
@@ -97,6 +99,31 @@ void LCD::clearDisplay()
     I2C::Instance().stop();
 }
 
+void LCD::clearTopBuffer()
+{
+    writeToTopBuffer("             ");
+}
+
+void LCD::clearBottomBuffer()
+{
+    I2C::Instance().start(OLED_SLAVE_ADDRESS);
+    oledSendCommand(0x21, COMMAND_CONTROL_BYTE_CONTINUATION);
+    oledSendCommand(0, COMMAND_CONTROL_BYTE_CONTINUATION);
+    oledSendCommand(127, COMMAND_CONTROL_BYTE_CONTINUATION);
+
+    oledSendCommand(0x22, COMMAND_CONTROL_BYTE_CONTINUATION);
+    oledSendCommand(4, COMMAND_CONTROL_BYTE_CONTINUATION);
+    oledSendCommand(7, COMMAND_CONTROL_BYTE_CONTINUATION);
+
+    for (int i = 0; i < 512; i++) // Write Zeros to clear the display
+    {
+        uint8_t controlByte = i != 512 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
+        oledSendCommand(0, controlByte);
+    }
+
+    I2C::Instance().stop();
+}
+
 void LCD::writeToDifficultyBuffer(const uint8_t imageData[33])
 {
     writeToBuffer(difficultyBuffer, imageData, 0);
@@ -107,14 +134,24 @@ void LCD::writeToSpeakerBuffer(const uint8_t imageData[27])
     writeToBuffer(speakerBuffer, imageData, 0);
 }
 
-void LCD::writeStringToTitleBuffer(const char *data)
+void LCD::writeToTopBuffer(const char *data)
 {
-    writeStringToBuffer(titleBuffer, data);
+    writeStringToBuffer(topBuffer, data);
 }
 
-void LCD::writeStringToScoreBuffer(const char *data)
+void LCD::writeToBottomBuffer(const char *data)
 {
-    writeStringToBuffer(scoreBuffer, data);
+    writeStringToBuffer(bottomBuffer, data);
+}
+
+void LCD::writeToBottomLeftBuffer(uint8_t value)
+{
+    writeNumberToBuffer(bottomBuffer, value, &bottomLeftBufferLength);
+}
+
+void LCD::writeToBottomRightBuffer(uint8_t value)
+{
+    writeNumberToBuffer(bottomBuffer, value, &bottomRightBufferLength);
 }
 
 void LCD::writeStringToBuffer(OLEDBuffer buffer, const char *data)
@@ -128,10 +165,36 @@ void LCD::writeStringToBuffer(OLEDBuffer buffer, const char *data)
     }
 }
 
+void LCD::writeNumberToBuffer(OLEDBuffer buffer, uint8_t value, uint8_t *test)
+{
+    char digits[4];
+    sprintf(digits, "%u", value);
+    size_t len = strlen(digits);
+    uint8_t offset = test == &bottomLeftBufferLength ? 10 : 80;
+
+    if (*test != len)
+    {
+        for (uint8_t i = 0; i < 4; i++)
+        {
+            writeToBuffer(buffer, letterData[0], (i * 8) + offset);
+        }
+
+        *test = len;
+    }
+
+    offset += (3 - len) * 5;
+
+    for (size_t i = 0; i < len; i++)
+    {
+        uint8_t charIndex = digits[i] - 32;
+        writeToBuffer(buffer, letterData[charIndex], (i * 10) + offset);
+    }
+}
+
 void LCD::writeToBuffer(OLEDBuffer buffer, const uint8_t *imageData, uint8_t columnOffset)
 {
     I2C::Instance().start(OLED_SLAVE_ADDRESS);
-    
+
     // Set the starting and ending column address
     oledSendCommand(0x21, COMMAND_CONTROL_BYTE_CONTINUATION);
     oledSendCommand(buffer.columnStartAddress + columnOffset, COMMAND_CONTROL_BYTE_CONTINUATION);
@@ -156,53 +219,3 @@ void LCD::oledSendCommand(uint8_t command, uint8_t controlByte)
     I2C::Instance().transmit(controlByte);
     I2C::Instance().transmit(command);
 }
-
-/**
- * @brief Writes an integer value to the specified row and column on the LCD.
- *
- * This function writes the integer value to the LCD starting at the specified
- * row and column coordinates. The integer is formatted as characters and
- * displayed on the LCD.
- *
- * @param row The row index on the LCD where the writing should start.
- * @param col The column index on the LCD where the writing should start.
- * @param value The integer value to be displayed on the LCD.
- * @param leftAlign If true, the numbers will be left-aligned; if false, they will be right-aligned.
- */
-// void LCD::writeNumber(int8_t row, int8_t column, uint8_t value, bool leftAlign)
-// {
-//     I2C::Instance().start(LCD_SLAVE_ADDRESS);
-//     uint8_t digits[3];
-
-//     // Extract, hundreds, tens, and ones place
-//     digits[0] = (value / 100) + ASCII_ZERO;
-//     digits[1] = ((value / 10) % 10) + ASCII_ZERO;
-//     digits[2] = (value % 10) + ASCII_ZERO;
-
-//     // Replace leading zeros with spaces to ensure leading zeros are not displayed. Will also left or right align the numbers
-//     if (digits[0] == ASCII_ZERO)
-//     {
-//         if (!leftAlign)
-//         {
-//             digits[0] = ASCII_SPACE;
-//             digits[1] = digits[1] == ASCII_ZERO ? ASCII_SPACE : digits[1];
-//         }
-//         else
-//         {
-//             digits[0] = digits[1] != ASCII_ZERO ? digits[1] : digits[2];
-//             digits[1] = digits[1] != ASCII_ZERO ? digits[2] : ASCII_SPACE;
-//             digits[2] = ASCII_SPACE;
-//         }
-//     }
-
-//     int address = getRAMAddress(row, column);
-
-//     for (int i = 0; i < 3; ++i)
-//     {
-//         displayContentCache[row][column + i] = digits[i];
-//         uint8_t controlByte = i != 2 ? WRITE_CONTROL_BYTE_CONTINUATION : LAST_WRITE_CONTROL_BYTE;
-//         writeDataToRAM(address + i, digits[i], controlByte);
-//     }
-
-//     I2C::Instance().stop();
-// }

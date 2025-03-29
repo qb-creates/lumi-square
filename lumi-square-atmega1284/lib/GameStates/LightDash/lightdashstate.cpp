@@ -1,7 +1,7 @@
 #include "lightdashstate.h"
-#include "lcd.h"
 #include "leds.h"
 #include "random.h"
+#include "voiceovermanager.h"
 
 LightDashState::LightDashState()
     : GameBaseState(GameState::LightDash),
@@ -50,14 +50,11 @@ void LightDashState::enterState()
         if (Output::getLedStatus(ledIndex))
             continue;
 
-        Output::setLedColor(ledIndex, Colors::azure, .5);
+        Output::setLedColor(ledIndex, Colors::azure, .8);
         Output::ledOn(ledIndex);
         ledTurnOffTimers[ledIndex] = Random::range(minLedTurnOffTime, maxLedTurnOffTime);
         ++i;
     }
-
-    // LCD::Instance().writeString(0, 0, " Score   Time  ");
-    // LCD::Instance().writeString(1, 0, "    0     30    ");
 }
 
 void LightDashState::exitState()
@@ -70,6 +67,12 @@ void LightDashState::exitState()
 
 void LightDashState::updateState()
 {
+    if (remainingGameTime == 0 && VoiceOverManager::IsVoiceOverPlaying())
+        return;
+
+    if (remainingGameTime == 0 && !VoiceOverManager::IsVoiceOverPlaying())
+        nextState = GameState::GameOver;
+
     updateLedOffTimers();
     updateGameTimer();
 }
@@ -123,11 +126,11 @@ void LightDashState::updateGameTimer()
 
         if (remainingGameTime == 0)
         {
-            nextState = GameState::GameOver;
+            VoiceOverManager::QueueVoiceOver(VoiceOver::Score);
+            VoiceOverManager::QueueNumberVoiceOver(score);
         }
 
         gameTimer = 1000;
-        // LCD::Instance().writeNumber(1, 9, remainingGameTime);
     }
 }
 
@@ -155,7 +158,7 @@ void LightDashState::turnOnRandomLed()
         int16_t turnOffTime = ledColor != Colors::azure ? bonusLedTurnOffTime : Random::range(minLedTurnOffTime, maxLedTurnOffTime);
         ledTurnOffTimers[ledIndex] = turnOffTime;
 
-        Output::setLedColor(ledIndex, ledColor, .5);
+        Output::setLedColor(ledIndex, ledColor, .8);
         Output::ledOn(ledIndex);
         break;
     }
@@ -181,8 +184,6 @@ void LightDashState::deductPointsFromScore()
     {
         score = 0;
     }
-
-    // LCD::Instance().writeNumber(1, 2, score);
 }
 
 void LightDashState::addPointsToScore(int8_t buttonIndex)
@@ -190,7 +191,6 @@ void LightDashState::addPointsToScore(int8_t buttonIndex)
     Color buttonColor = Output::getLedColor(buttonIndex);
     int points = buttonColor == Colors::azure ? 1 : bonusLedPointValue;
     score += points;
-    // LCD::Instance().writeNumber(1, 2, score);
 }
 
 void LightDashState::playMusicNote(int8_t buttonIndex)

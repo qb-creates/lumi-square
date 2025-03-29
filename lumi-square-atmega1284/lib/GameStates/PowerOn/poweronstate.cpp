@@ -1,5 +1,4 @@
 #include "poweronstate.h"
-#include "../Peripherals/lcd.h"
 #include "leds.h"
 
 PowerOnState::PowerOnState()
@@ -38,16 +37,11 @@ void PowerOnState::enterState()
     {
         Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
-
-    LCD::Instance().initializeDisplay();
-    LCD::Instance().writeStringToTitleBuffer("LUMISQUARE");
+    
     AudioSource::Instance().playAudioClip(POWER_UP_AUDIO_CLIP);
 }
 
-void PowerOnState::exitState()
-{
-    LCD::Instance().writeToSpeakerBuffer(unmuteImageData);
-}
+void PowerOnState::exitState() {}
 
 void PowerOnState::updateState()
 {
