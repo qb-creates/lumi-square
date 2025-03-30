@@ -7,7 +7,7 @@ class SimonState : public GameBaseState
 {
 public:
     SimonState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);

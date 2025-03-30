@@ -7,7 +7,6 @@ LightDashState::LightDashState()
     : GameBaseState(GameState::LightDash),
       gameTimer(1000),
       remainingGameTime(30),
-      score(0),
       scoreDeductionAmount(0),
       bonusLedPointValue(0),
       maxLedTurnOffTime(1500),
@@ -16,8 +15,9 @@ LightDashState::LightDashState()
       bonusLedActive(false),
       ledTurnOffTimers{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} {}
 
-void LightDashState::enterState()
+void LightDashState::enterState(GameState previousState)
 {
+    GameBaseState::enterState(previousState);
     Difficulty difficulty = GameProperties::Instance().gameDifficulty;
 
     switch (difficulty)
@@ -59,7 +59,6 @@ void LightDashState::enterState()
 
 void LightDashState::exitState()
 {
-    score = 0;
     gameTimer = 1000;
     remainingGameTime = 30;
     nextState = GameState::None;
@@ -67,12 +66,6 @@ void LightDashState::exitState()
 
 void LightDashState::updateState()
 {
-    if (remainingGameTime == 0 && VoiceOverManager::IsVoiceOverPlaying())
-        return;
-
-    if (remainingGameTime == 0 && !VoiceOverManager::IsVoiceOverPlaying())
-        nextState = GameState::GameOver;
-
     updateLedOffTimers();
     updateGameTimer();
 }
@@ -120,18 +113,15 @@ void LightDashState::updateGameTimer()
 {
     gameTimer -= FixedUpdateTimer::DELTA_TIME;
 
-    if (gameTimer <= 0)
-    {
-        --remainingGameTime;
+    if (gameTimer > 0)
+        return;
 
-        if (remainingGameTime == 0)
-        {
-            VoiceOverManager::QueueVoiceOver(VoiceOver::Score);
-            VoiceOverManager::QueueNumberVoiceOver(score);
-        }
+    --remainingGameTime;
 
-        gameTimer = 1000;
-    }
+    if (remainingGameTime == 0)
+        nextState = GameState::GameOver;
+
+    gameTimer = 1000;
 }
 
 void LightDashState::turnOnRandomLed()
@@ -178,19 +168,14 @@ void LightDashState::turnOffSelectedLed(int8_t buttonIndex)
 
 void LightDashState::deductPointsFromScore()
 {
-    score -= scoreDeductionAmount;
-
-    if (score < 0)
-    {
-        score = 0;
-    }
+    ScoreManager::subtractFromScore(scoreDeductionAmount);
 }
 
 void LightDashState::addPointsToScore(int8_t buttonIndex)
 {
     Color buttonColor = Output::getLedColor(buttonIndex);
     int points = buttonColor == Colors::azure ? 1 : bonusLedPointValue;
-    score += points;
+    ScoreManager::addToScore(points);
 }
 
 void LightDashState::playMusicNote(int8_t buttonIndex)

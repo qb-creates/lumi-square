@@ -7,7 +7,7 @@ class GameOverState : public GameBaseState
 {
 public:
     GameOverState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);

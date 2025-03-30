@@ -8,7 +8,7 @@ class MemoryMatchingState : public GameBaseState
 {
 public:
     MemoryMatchingState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);

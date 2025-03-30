@@ -7,7 +7,7 @@ class MainMenuState : public GameBaseState
 {
 public:
     MainMenuState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);

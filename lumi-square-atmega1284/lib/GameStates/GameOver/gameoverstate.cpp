@@ -1,11 +1,18 @@
 #include "gameoverstate.h"
 #include "leds.h"
+#include "voiceovermanager.h"
 
 GameOverState::GameOverState()
-    : GameBaseState(GameState::GameOver), flashAnimationTimer(200), transitionToMainTimer(0), flashCount(7), onLED{} {}
+    : GameBaseState(GameState::GameOver),
+      flashAnimationTimer(200),
+      transitionToMainTimer(2000),
+      flashCount(7),
+      onLED{} {}
 
-void GameOverState::enterState()
+void GameOverState::enterState(GameState previousState)
 {
+    GameBaseState::enterState(previousState);
+    
     for (int i = 0; i < 16; i++)
     {
         onLED[i] = Output::getLedStatus(i);
@@ -21,13 +28,23 @@ void GameOverState::exitState()
     }
 
     flashAnimationTimer = 200;
-    transitionToMainTimer = 0;
+    transitionToMainTimer = 2000;
     flashCount = 7;
     nextState = GameState::None;
+    ScoreManager::resetScore();
 }
 
 void GameOverState::updateState()
 {
+    if (transitionToMainTimer <= 0 && VoiceOverManager::IsVoiceOverPlaying())
+        return;
+
+    if (transitionToMainTimer <= 0 && !VoiceOverManager::IsVoiceOverPlaying())
+    {
+        nextState = GameState::Menu;
+        return;
+    }
+
     if (flashAnimationTimer > 0)
     {
         flashAnimationTimer -= FixedUpdateTimer::DELTA_TIME;
@@ -57,11 +74,9 @@ void GameOverState::updateState()
                 flashCount--;
                 flashAnimationTimer = 300;
             }
-            else
-            {
-                transitionToMainTimer = 2000;
-            }
         }
+
+        return;
     }
 
     if (transitionToMainTimer > 0)
@@ -70,7 +85,16 @@ void GameOverState::updateState()
 
         if (transitionToMainTimer <= 0)
         {
-            nextState = GameState::Menu;
+            if (previousState == GameState::MemoryMatching)
+            {
+                nextState = GameState::Menu;
+                return;
+            }
+
+            int8_t score = ScoreManager::getScore();            
+            if (ScoreManager::newHighScore) VoiceOverManager::QueueVoiceOver(VoiceOver::NewHighScore);
+            VoiceOverManager::QueueVoiceOver(VoiceOver::Score);
+            VoiceOverManager::QueueNumberVoiceOver(score);
         }
     }
 }

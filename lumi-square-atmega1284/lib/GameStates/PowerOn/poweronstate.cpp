@@ -31,13 +31,15 @@ PowerOnState::PowerOnState()
 {
 }
 
-void PowerOnState::enterState()
+void PowerOnState::enterState(GameState previousState)
 {
+    GameBaseState::enterState(previousState);
+    
     for (int i = 0; i < 16; ++i)
     {
         Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
-    
+
     AudioSource::Instance().playAudioClip(POWER_UP_AUDIO_CLIP);
 }
 

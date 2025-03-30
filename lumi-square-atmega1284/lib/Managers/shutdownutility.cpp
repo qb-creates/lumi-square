@@ -34,7 +34,6 @@ ShutdownUtility &ShutdownUtility::Instance()
     return instance;
 }
 
-
 /**
  * @brief Sets the time duration for the microcontroller to go to sleep.
  *
@@ -71,6 +70,7 @@ void ShutdownUtility::updateShutdownTimer()
     {
         PORTC |= _BV(PC3);
     }
+    
 }
 
 /**

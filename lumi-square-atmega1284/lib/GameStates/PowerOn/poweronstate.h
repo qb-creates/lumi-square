@@ -7,7 +7,7 @@ class PowerOnState : public GameBaseState
 {
 public:
     PowerOnState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);

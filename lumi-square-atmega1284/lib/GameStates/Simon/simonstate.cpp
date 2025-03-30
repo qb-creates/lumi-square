@@ -15,8 +15,9 @@ SimonState::SimonState()
       delayTimer(0),
       highScoreAddress((uint8_t *)0) {}
 
-void SimonState::enterState()
+void SimonState::enterState(GameState previousState)
 {
+    GameBaseState::enterState(previousState);
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
     startNextRoundSequence();

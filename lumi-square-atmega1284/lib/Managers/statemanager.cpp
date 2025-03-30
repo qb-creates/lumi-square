@@ -20,7 +20,7 @@ StateManager::StateManager()
     stateDictionary[5] = &lightSpeedState;
     stateDictionary[6] = &simonState;
     currentState = &powerOnState;
-    currentState->enterState();
+    currentState->enterState(GameState::None);
 }
 
 StateManager &StateManager::Instance()
@@ -46,9 +46,10 @@ void StateManager::update()
 
         if (currentState != nextState)
         {
+            GameState previousState = currentState->currentState;
             currentState->exitState();
             currentState = nextState;
-            currentState->enterState();
+            currentState->enterState(previousState);
         }
     }
 }

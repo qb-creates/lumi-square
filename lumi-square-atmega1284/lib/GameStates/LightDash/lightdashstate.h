@@ -8,7 +8,7 @@ class LightDashState : public GameBaseState
 {
 public:
     LightDashState();
-    void enterState();
+    void enterState(GameState previousState);
     void exitState();
     void updateState();
     void onButtonPressed(int8_t buttonIndex);
@@ -16,7 +16,6 @@ public:
 private:
     int16_t gameTimer;
     int8_t remainingGameTime;
-    int16_t score;
     int8_t scoreDeductionAmount;
     int8_t bonusLedPointValue;
     int16_t maxLedTurnOffTime;

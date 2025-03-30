@@ -15,10 +15,11 @@ MainMenuState::MainMenuState()
       gameIndex(0),
       firstEntry(true) { }
 
-void MainMenuState::enterState()
+void MainMenuState::enterState(GameState previousState)
 {
-    Output::ledOn(0);
-    Output::setLedColor(0, Colors::red, 1);
+    GameBaseState::enterState(previousState);
+    // Output::ledOn(0);
+    // Output::setLedColor(0, Colors::red, 1);
     queueGameState(gameIndex, firstEntry);
     firstEntry = false;
 }
