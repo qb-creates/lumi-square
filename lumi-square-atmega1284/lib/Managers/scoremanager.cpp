@@ -1,7 +1,12 @@
 #include "scoremanager.h"
 
-int16_t ScoreManager::score = 0;
-bool ScoreManager::newHighScore = false;
+ScoreManager::ScoreManager() : score(0), newHighScore(false) {}
+
+ScoreManager &ScoreManager::Instance()
+{
+    static ScoreManager instance;
+    return instance;
+}
 
 int16_t ScoreManager::getScore()
 {

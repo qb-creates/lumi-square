@@ -1,6 +1,5 @@
 #include "gameoverstate.h"
 #include "leds.h"
-#include "voiceovermanager.h"
 
 GameOverState::GameOverState()
     : GameBaseState(GameState::GameOver),
@@ -31,15 +30,15 @@ void GameOverState::exitState()
     transitionToMainTimer = 2000;
     flashCount = 7;
     nextState = GameState::None;
-    ScoreManager::resetScore();
+    ScoreManager::Instance().resetScore();
 }
 
 void GameOverState::updateState()
 {
-    if (transitionToMainTimer <= 0 && VoiceOverManager::IsVoiceOverPlaying())
+    if (transitionToMainTimer <= 0 && AudioSource::Instance().isVoiceOverPlaying())
         return;
 
-    if (transitionToMainTimer <= 0 && !VoiceOverManager::IsVoiceOverPlaying())
+    if (transitionToMainTimer <= 0 && !AudioSource::Instance().isVoiceOverPlaying())
     {
         nextState = GameState::Menu;
         return;
@@ -91,10 +90,10 @@ void GameOverState::updateState()
                 return;
             }
 
-            int8_t score = ScoreManager::getScore();            
-            if (ScoreManager::newHighScore) VoiceOverManager::QueueVoiceOver(VoiceOver::NewHighScore);
-            VoiceOverManager::QueueVoiceOver(VoiceOver::Score);
-            VoiceOverManager::QueueNumberVoiceOver(score);
+            int8_t score = ScoreManager::Instance().getScore();            
+            if (ScoreManager::Instance().newHighScore) AudioSource::Instance().queueVoiceOver(DFPlayerCommand::NewHighScore);
+            AudioSource::Instance().queueVoiceOver(DFPlayerCommand::Score);
+            AudioSource::Instance().queueNumberVoiceOver(score);
         }
     }
 }

@@ -1,7 +1,6 @@
 #include "lightdashstate.h"
 #include "leds.h"
 #include "random.h"
-#include "voiceovermanager.h"
 
 LightDashState::LightDashState()
     : GameBaseState(GameState::LightDash),
@@ -168,14 +167,14 @@ void LightDashState::turnOffSelectedLed(int8_t buttonIndex)
 
 void LightDashState::deductPointsFromScore()
 {
-    ScoreManager::subtractFromScore(scoreDeductionAmount);
+    ScoreManager::Instance().subtractFromScore(scoreDeductionAmount);
 }
 
 void LightDashState::addPointsToScore(int8_t buttonIndex)
 {
     Color buttonColor = Output::getLedColor(buttonIndex);
     int points = buttonColor == Colors::azure ? 1 : bonusLedPointValue;
-    ScoreManager::addToScore(points);
+    ScoreManager::Instance().addToScore(points);
 }
 
 void LightDashState::playMusicNote(int8_t buttonIndex)

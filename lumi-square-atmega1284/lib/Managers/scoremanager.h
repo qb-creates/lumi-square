@@ -6,16 +6,17 @@
 class ScoreManager
 {
 public:
-    static bool newHighScore;
+    bool newHighScore;
 
 private:
-    static int16_t score;
+    int16_t score;
 
 public:
-    static int16_t getScore();
-    static void addToScore(uint8_t value);
-    static void subtractFromScore(uint8_t value);
-    static void resetScore();
+    static ScoreManager &Instance();
+    int16_t getScore();
+    void addToScore(uint8_t value);
+    void subtractFromScore(uint8_t value);
+    void resetScore();
 
 private:
     ScoreManager();

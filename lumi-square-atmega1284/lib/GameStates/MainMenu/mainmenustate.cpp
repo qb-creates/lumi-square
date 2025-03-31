@@ -1,8 +1,6 @@
 #include "mainmenustate.h"
 #include "buttons.h"
 #include "leds.h"
-#include "voiceover.h"
-#include "voiceovermanager.h"
 #include <random.h>
 
 MainMenuState::MainMenuState()
@@ -13,7 +11,7 @@ MainMenuState::MainMenuState()
       countdownCounter(3),
       isStartingGame(false),
       gameIndex(0),
-      firstEntry(true) { }
+      firstEntry(true) {}
 
 void MainMenuState::enterState(GameState previousState)
 {
@@ -91,17 +89,20 @@ void MainMenuState::queueGameState(int8_t gameIndex, bool playAudio)
     case 0:
         queuedState = GameState::MemoryMatching;
         this->maxDifficulty = Difficulty::Easy;
-        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::MemoryMatching);
+        if (playAudio)
+            AudioSource::Instance().playVoiceOver(DFPlayerCommand::MemoryMatching);
         break;
     case 1:
         queuedState = GameState::Simon;
         this->maxDifficulty = Difficulty::Hard;
-        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::Simon);
+        if (playAudio)
+            AudioSource::Instance().playVoiceOver(DFPlayerCommand::Simon);
         break;
     case 2:
         queuedState = GameState::LightDash;
         this->maxDifficulty = Difficulty::Hard;
-        if (playAudio) VoiceOverManager::PlayVoiceOver(VoiceOver::LightDash);
+        if (playAudio)
+            AudioSource::Instance().playVoiceOver(DFPlayerCommand::LightDash);
         break;
     }
 
@@ -113,13 +114,13 @@ void MainMenuState::increaseDifficulty()
     switch (GameProperties::Instance().increaseDifficulty())
     {
     case Difficulty::Easy:
-        VoiceOverManager::PlayVoiceOver(VoiceOver::Easy);
+        AudioSource::Instance().playVoiceOver(DFPlayerCommand::Easy);
         break;
     case Difficulty::Medium:
-        VoiceOverManager::PlayVoiceOver(VoiceOver::Medium);
+        AudioSource::Instance().playVoiceOver(DFPlayerCommand::Medium);
         break;
     case Difficulty::Hard:
-        VoiceOverManager::PlayVoiceOver(VoiceOver::Hard);
+        AudioSource::Instance().playVoiceOver(DFPlayerCommand::Hard);
         break;
     }
 }

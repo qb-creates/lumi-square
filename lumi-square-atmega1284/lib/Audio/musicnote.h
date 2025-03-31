@@ -1,5 +1,5 @@
-#ifndef MUSICNOTES_H
-#define MUSICNOTES_H
+#ifndef MUSICNOTESEQUENCE_H
+#define MUSICNOTESEQUENCE_H
 
 #include <stdint.h>
 
@@ -124,5 +124,32 @@ enum class MusicNote : int16_t
     DottedEighth = -8,
     END = -100
 };
+
+class MusicNoteSequence
+{
+public:
+    const MusicNote *audioData;
+    uint8_t bpm;
+    MusicNoteSequence(const MusicNote *audioData, uint8_t bpm);
+    void operator=(const MusicNoteSequence &) = delete;
+};
+
+const MusicNote POWER_UP_SOUND_EFFECT_DATA[] = {
+    MusicNote::C4, MusicNote::Eighth,
+    MusicNote::E4, MusicNote::Eighth,
+    MusicNote::G4, MusicNote::Eighth,
+    MusicNote::C5, MusicNote::Eighth,
+    MusicNote::E5, MusicNote::Eighth,
+    MusicNote::END
+};
+
+const MusicNote FAILURE_SOUND_EFFECT_DATA[] = {
+    MusicNote::D3, MusicNote::Eighth,
+    MusicNote::B2, MusicNote::Quarter,
+    MusicNote::END
+};
+
+const MusicNoteSequence FAILURE_AUDIO_CLIP(FAILURE_SOUND_EFFECT_DATA, 130);
+const MusicNoteSequence POWER_UP_AUDIO_CLIP(POWER_UP_SOUND_EFFECT_DATA, 240);
 
 #endif

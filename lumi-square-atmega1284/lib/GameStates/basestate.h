@@ -5,7 +5,6 @@
 #include "gameproperties.h"
 #include "highscoremanager.h"
 #include "scoremanager.h"
-#include "soundeffects.h"
 #include <stdint.h>
 
 class GameBaseState

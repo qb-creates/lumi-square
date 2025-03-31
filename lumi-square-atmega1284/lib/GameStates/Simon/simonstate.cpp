@@ -40,7 +40,7 @@ void SimonState::updateState()
         return;
     }
 
-    if (AudioSource::Instance().isPlayingAudioClip())
+    if (AudioSource::Instance().isMusicNoteSequencePlaying())
         return;
         
     // Subtract 16 milliseconds from the delay timer if it is greater than 0

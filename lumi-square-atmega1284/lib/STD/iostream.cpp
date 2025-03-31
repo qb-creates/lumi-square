@@ -67,31 +67,3 @@ void I2C::transmit(char data)
     TWCR = _BV(TWINT) | _BV(TWEN);
     loop_until_bit_is_set(TWCR, TWINT);
 }
-
-USART::USART() {}
-
-USART &USART::Instance()
-{
-    static USART instance;
-    return instance;
-}
-
-void USART::initialize(void)
-{
-    UBRR1L = 119;
-    UCSR1B = _BV(RXEN1) | _BV(TXEN1) | _BV(RXCIE1);
-    UCSR1C = _BV(UCSZ11) | _BV(UCSZ10);
-
-    const uint8_t data[] = {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF};
-    usartTransmit(data);
-}
-
-void USART::usartTransmit(const uint8_t data[])
-{
-    for (uint8_t i = 0; i < 10; ++i)
-    {
-        // Wait until the Transmitter is ready
-        loop_until_bit_is_set(UCSR1A, UDRE1);
-        UDR1 = data[i];
-    }
-}
