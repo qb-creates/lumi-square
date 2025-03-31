@@ -39,4 +39,19 @@ private:
     void oledSendCommand(uint8_t command, uint8_t controlByte);
 };
 
+class I2C
+{
+public:
+    I2C(const I2C &) = delete;
+    void operator=(const I2C &) = delete;
+    static I2C &Instance();
+    void initialize();
+    void start(uint8_t sAddress);
+    void stop();
+    void transmit(char data);
+
+private:
+    I2C();
+};
+
 #endif

@@ -19,6 +19,9 @@ public:
     static void triggerFixedUpdateEvent();
 
 private:
+    FixedUpdateTimer() = delete;
+    FixedUpdateTimer(const FixedUpdateTimer &) = delete;
+    void operator = (const FixedUpdateTimer &) = delete;
     static int8_t numHandlers;
     static const int8_t MAX_HANDLERS;
     static FixedUpdateEventListener *eventListeners[10];

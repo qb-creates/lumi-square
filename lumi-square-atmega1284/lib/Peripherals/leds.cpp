@@ -38,9 +38,17 @@ Output::LED::LED(uint8_t r, uint8_t c, uint16_t baseAddress)
  */
 void Output::configureLeds()
 {
+    // Configure outputs for leds
     DDRB |= 0x0F;
     PORTB |= 0x01;
-    std::cout.configure();
+
+    // Configure spi for communication with led driver
+    /* Set SS, SCK, and MOSI as outputs. Set MISO as input */
+    DDRB |= _BV(PB4) | _BV(PB5) | _BV(PB6) | _BV(PB7);
+
+    /* Enable SPI, Master, set clock rate fck/16 */
+    SPSR = _BV(SPI2X);
+    SPCR = _BV(SPE) | _BV(MSTR) | _BV(CPOL);
 }
 
 /**
@@ -58,15 +66,19 @@ void Output::refreshLeds()
 
     for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
     {
-        std::cout << ledColorData[led->column][led->row][colorDataIndex];
-
+        Output::transmitLedData(ledColorData[led->column][led->row][colorDataIndex] >> 8);
+        Output::transmitLedData(ledColorData[led->column][led->row][colorDataIndex] & 0xFF);
+        Output::latchLedData();
+        
         for (int j = 0; j < _BV(colorDataIndex); ++j)
         {
             asm("NOP");
         }
     }
 
-    std::cout << 0x0000;
+    Output::transmitLedData(0x00);
+    Output::transmitLedData(0x00);
+    Output::latchLedData();
 
     ++currentLedIndex;
 
@@ -308,4 +320,19 @@ void Output::onSetLedColor(const LED &led, const Color &color, double intensity)
     }
 
     sei();
+}
+
+void Output::transmitLedData(char dData)
+{
+    /* Start transmission */
+    SPDR = dData;
+
+    /* Wait for transmission complete */
+    loop_until_bit_is_set(SPSR, SPIF);
+}
+
+void Output::latchLedData()
+{
+    PORTB |= _BV(PB4);
+    PORTB &= ~_BV(PB4);
 }

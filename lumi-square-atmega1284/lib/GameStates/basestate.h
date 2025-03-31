@@ -3,7 +3,7 @@
 
 #include "audio.h"
 #include "gameproperties.h"
-#include "highscoremanager.h"
+#include "storageservice.h"
 #include "scoremanager.h"
 #include <stdint.h>
 

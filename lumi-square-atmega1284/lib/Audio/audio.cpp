@@ -1,5 +1,5 @@
 #include "audio.h"
-#include "../STD/fixedupdate.h"
+#include "../Utilities/fixedupdate.h"
 #include "buttons.h"
 #include <avr/interrupt.h>
 
@@ -361,13 +361,14 @@ void AudioSource::muteAudioSource(bool mute)
     if (mute)
     {
         TCCR1A &= ~_BV(COM1B1);        
-        sendDFPlayerCommand(DF_PLAYER_COMMANDS[DFPlayerCommand::Mute]);
     }
     else if (m_isPlayingMusicNote)
     {
         TCCR1A |= _BV(COM1B1);
-        sendDFPlayerCommand(DF_PLAYER_COMMANDS[DFPlayerCommand::Unmute]);
     }
+
+    DFPlayerCommand command = mute ? DFPlayerCommand::Mute : DFPlayerCommand::Unmute;
+    sendDFPlayerCommand(DF_PLAYER_COMMANDS[command]);
 }
 
 void AudioSource::onFixedUpdate()

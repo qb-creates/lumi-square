@@ -140,10 +140,10 @@ void SimonState::removeLifePoint()
 
 void SimonState::saveHighScore()
 {
-    uint8_t highscore = HighScoreManager::getHighScore(currentState, GameProperties::Instance().gameDifficulty);
+    uint8_t highscore = StorageService::getHighScore(currentState, GameProperties::Instance().gameDifficulty);
 
     if (highscore < currentRound)
     {
-        HighScoreManager::saveHighScore(currentState, GameProperties::Instance().gameDifficulty, currentRound);
+        StorageService::saveHighScore(currentState, GameProperties::Instance().gameDifficulty, currentRound);
     }
 }

@@ -1,6 +1,6 @@
 #include "scoremanager.h"
 
-ScoreManager::ScoreManager() : score(0), newHighScore(false) {}
+ScoreManager::ScoreManager() : newHighScore(false), score(0) {}
 
 ScoreManager &ScoreManager::Instance()
 {
