@@ -21,18 +21,18 @@ ISR(TIMER3_OVF_vect)
 
 ISR(TIMER0_OVF_vect)
 {
-    // gives us an overflow timer of .75ms.
-    TCNT0 = 201;
+    // gives us an overflow timer of .22222ms.
+    TCNT0 = 240;
 
     Output::refreshLeds();
 }
 
 void FixedUpdateTimer::configureFixedUpdate()
 {
-    // Timer 0 is configured in normal mode with a prescaler of 256. Overflow interrupt will be triggered every .75ms.
+    // Timer 0 is configured in normal mode with a prescaler of 256. Overflow interrupt will be triggered every .22222ms.
     TCCR0B = _BV(CS02);
     TIMSK0 |= _BV(TOIE0);
-    TCNT0 = 201;
+    TCNT0 = 240;
 
     // Timer 3 is configured in normal mode with a prescaler of 256. Overflow interrupt will be triggered every 33ms.
     TCCR3B |= _BV(CS32);

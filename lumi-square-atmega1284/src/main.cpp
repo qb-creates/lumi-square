@@ -10,9 +10,15 @@
 #include <avr/sleep.h>
 #include <stdlib.h>
 #include <util/delay.h>
+#include <avr/wdt.h>
 
 int main(void)
 {
+    _delay_ms(1000);
+    DDRC &= ~_BV(PC6);
+    PORTC &= ~_BV(PC6);
+
+    wdt_enable(WDTO_4S);
     Random::configureRNG();
     Input::configureButtonPins();
     Output::configureLeds();
@@ -25,12 +31,12 @@ int main(void)
 
     while (true)
     {
-        if (!FixedUpdateTimer::fixedUpdate)
+        if (!FixedUpdateTimer::fixedUpdate || (PINC & _BV(PC6)))
             continue;
 
         FixedUpdateTimer::fixedUpdate = false;
-        FixedUpdateTimer::triggerFixedUpdateEvent();
-
+        FixedUpdateTimer::triggerFixedUpdateEvent();        
+        wdt_enable(WDTO_2S);
         // if (FixedUpdateTimer::fixedUpdate)
         // {
         //     LCD::Instance().writeStringToScoreBuffer("did it");

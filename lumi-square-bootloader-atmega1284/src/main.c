@@ -20,7 +20,7 @@ int main(void)
     PORTD = 0x00;
 
     // Return to application section.
-    if (applicationExist && (PIND & _BV(PD6)))
+    if (applicationExist && !(PIND & _BV(PD6)))
     {
         asm("jmp 0x000");
     }
