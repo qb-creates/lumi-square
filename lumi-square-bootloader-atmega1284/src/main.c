@@ -1,26 +1,26 @@
+#include "BootloadUtility.h"
 #include <avr/eeprom.h>
 #include <string.h>
-#include "BootloadUtility.h"
 
 const uint8_t ack[] = {'\r'};
 const uint8_t ctu[] = {'C', 'T', 'U'};
+uint8_t dataBuffer[259];
 
 int main(void)
 {
-    // Clear watchdog reset flag and disable watchdog timer.
-    MCUSR &= ~(1 << WDRF);
+    MCUSR = 0;
     wdt_disable();
 
-    uint8_t dataBuffer[259];
     uint16_t bufferCounter = 0;
+    bool deviceRecognized = false;
     bool writeToFlash = false;
     bool applicationExist = eeprom_read_byte(bootloaderStatusAddress) == uploadCompleteCode;
-
+    bool enterApplication = eeprom_read_byte(applicationEntryStatusAddress) == enterApplicationCode;
     DDRD = 0x00;
     PORTD = 0x00;
 
     // Return to application section.
-    if (applicationExist && !(PIND & _BV(PD6)))
+    if (applicationExist && enterApplication)
     {
         asm("jmp 0x000");
     }
@@ -28,7 +28,12 @@ int main(void)
     // Continue to bootloader section.
     enableUSART();
     startBootloadIndicator();
-    usartTransmit(ctu, 3);
+
+    if (applicationExist)
+    {
+        eeprom_update_byte(applicationEntryStatusAddress, enterApplicationCode);
+        wdt_enable(WDTO_8S);
+    }
 
     while (true)
     {
@@ -43,15 +48,20 @@ int main(void)
         ++bufferCounter;
 
         // Check the data buffer for the "RTU\0" command.
-        if (dataStruct.data == '\0' && !writeToFlash)
+        if (dataStruct.data == '\0' && (!writeToFlash || !deviceRecognized))
         {
             bufferCounter = 0;
 
-            if (!memcmp(dataBuffer, "RTU", 4))
+            if (!memcmp(dataBuffer, "RECOGNIZE", 9))
+            {
+                usartTransmit(ctu, 3);
+                wdt_enable(WDTO_8S);
+                deviceRecognized = true;
+            }
+            else if (!memcmp(dataBuffer, "RTU", 3))
             {
                 writeToFlash = true;
                 startBootloadProcess();
-                wdt_enable(WDTO_8S);
             }
 
             continue;

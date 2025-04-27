@@ -2,7 +2,8 @@
 #include "BootloadUtility.h"
 
 // Bootloader Status
-uint8_t *bootloaderStatusAddress = (uint8_t *)46;
+const uint8_t enterBootloaderCode = 'b';
+const uint8_t enterApplicationCode = 'a';
 const uint8_t uploadCompleteCode = 'c';
 const uint8_t uploadeFailedCode = 'w';
 
@@ -11,6 +12,9 @@ const uint8_t pageAck[] = {'P', 'a', 'g', 'e'};
 
 // Page status
 const uint8_t lastPageIndicator = 0xFE;
+
+uint8_t *applicationEntryStatusAddress = (uint8_t *)45;
+uint8_t *bootloaderStatusAddress = (uint8_t *)46;
 
 /**
  * @brief Starts the bootload process. The devices signature, high fuse bits, and 'CTS' is
@@ -22,11 +26,12 @@ void startBootloadProcess(void)
     // Get the devices signature
     uint8_t signature[] = {boot_signature_byte_get(0x00), boot_signature_byte_get(0x02), boot_signature_byte_get(0x04)};
     
-    // Store the devices signature, high fuse bits, and "CTU" in an array.
+    // Store the devices signature, high fuse bits, and "CTS" in an array.
     uint8_t ack[] = {signature[0], signature[1], signature[2], boot_lock_fuse_bits_get(GET_HIGH_FUSE_BITS), 'C', 'T', 'S'};
 
     OCR1A = (F_CPU / (2 * 1024 * 2)) - 1;
-    eeprom_update_byte(bootloaderStatusAddress, uploadeFailedCode);    
+    eeprom_update_byte(bootloaderStatusAddress, uploadeFailedCode);
+    eeprom_update_byte(applicationEntryStatusAddress, enterBootloaderCode);
     usartTransmit(ack, 7);
 }
 
@@ -94,6 +99,7 @@ void writePageDataToFlash(uint8_t *buf)
     if (*buf == lastPageIndicator)
     {
         eeprom_update_byte(bootloaderStatusAddress, uploadCompleteCode);
+        eeprom_update_byte(applicationEntryStatusAddress, enterApplicationCode);
         wdt_disable();
         wdt_enable(WDTO_1S);
     }

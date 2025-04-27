@@ -15,7 +15,7 @@
  */
 void enableUSART(void)
 {
-    UBRR0L = 59;
+    UBRR0L = 119;
     UCSR0B = _BV(RXEN0) | _BV(TXEN0);
     UCSR0C = _BV(UCSZ01) | _BV(UCSZ00);
 }

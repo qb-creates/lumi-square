@@ -8,7 +8,10 @@
 const uint8_t lastPageIndicator;
 const uint8_t uploadCompleteCode;
 const uint8_t uploadeFailedCode;
+const uint8_t enterBootloaderCode;
+const uint8_t enterApplicationCode;
 uint8_t *bootloaderStatusAddress;
+uint8_t *applicationEntryStatusAddress;
 
 void startBootloadProcess(void);
 void startBootloadIndicator(void);
