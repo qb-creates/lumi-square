@@ -76,15 +76,15 @@ void Input::configureButtonPins()
  */
 void Input::updateSystemButtonStates()
 {
-    if (previousButtonPressed != !(PINC & _BV(PD5)))
+    if (previousButtonPressed != !(PINC & _BV(PC5)))
     {
-        previousButtonPressed = !(PINC & _BV(PD5));
+        previousButtonPressed = !(PINC & _BV(PC5));
         previousButtonDown = previousButtonPressed;
     }
 
-    if (nextButtonPressed != !(PINC & _BV(PD4)))
+    if (nextButtonPressed != !(PINC & _BV(PC4)))
     {
-        nextButtonPressed = !(PINC & _BV(PD4));
+        nextButtonPressed = !(PINC & _BV(PC4));
         nextButtonDown = nextButtonPressed;
         nextButtonUp = !nextButtonPressed;
     }

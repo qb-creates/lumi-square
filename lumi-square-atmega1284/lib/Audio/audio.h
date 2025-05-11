@@ -48,43 +48,46 @@ enum DFPlayerCommand
     Easy = 38,
     Medium = 39,
     Hard = 40,
-    Mute = 41,
-    Unmute = 42,
+    Countdown = 41,
+    MuteVoiceOver = 42,
+    UnmuteVoiceOver = 43,
+    Mute = 44,
+    Unmute = 45,
     None = 255
 };
 
 class AudioSource : public FixedUpdateEventListener
 {
 private:
-    const MusicNote *m_pQueuedAudioData;
-    bool m_isPlayingAudioClip;
+    const MusicNote *m_pQueuedNoteSequenceData;
+    bool m_isPlayingNoteSequence;
     bool m_isPlayingMusicNote;
     bool m_isMute;
     bool m_muteButtonPressed;
-    int16_t m_audioPlayTime;
-    uint16_t m_audioClipBeatDuration;
+    int16_t m_notePlayTime;
+    uint16_t m_noteSequenceBeatDuration;
     int16_t m_muteButtonDelay;
 
 public:
     static AudioSource &Instance();
+    void onFixedUpdate() override;
     bool isMusicNoteSequencePlaying();
     bool isMusicNotePlaying();
     bool isVoiceOverPlaying();
-    bool isMuteButtonsPressed();
-    void updateMusicNoteTimer();
-    void playAudioClip(MusicNoteSequence audioClip);
-    void playNextAudioClipNote();
+    bool isMuteButtonPressed();
+    void playNoteSequence(MusicNoteSequence musicNoteSequence);
+    void playNextMusicSequenceNote();
     void playMusicNote(MusicNote note, int16_t time);
     void playVoiceOver(DFPlayerCommand voiceOver);
     void queueNumberVoiceOver(uint16_t number);
     void queueVoiceOver(DFPlayerCommand voiceOver);
     void muteAudioSource(bool mute);
-    void onFixedUpdate() override;
-
-private:
+    
+    private:
     AudioSource();
     AudioSource(const AudioSource &) = delete;
     void operator=(const AudioSource &) = delete;
+    void updateMusicNoteTimer();
     void sendDFPlayerCommand(const uint8_t data[]);
 };
 

@@ -40,6 +40,19 @@ void FixedUpdateTimer::configureFixedUpdate()
     TCNT3 = 63159;
 }
 
+void FixedUpdateTimer::disableFixedUpdate()
+{
+    // Disable Timer0
+    TCCR0B = 0;
+    TIMSK0 = 0;
+
+    // Disable Timer3
+    TCCR3B = 0;
+    TIMSK3 = 0;
+
+    FixedUpdateTimer::fixedUpdate = false;
+}
+
 void FixedUpdateTimer::registerEventHandler(FixedUpdateEventListener *listener)
 {
     if (numHandlers < 10)

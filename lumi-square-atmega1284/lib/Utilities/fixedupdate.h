@@ -15,6 +15,7 @@ public:
     static const int8_t DELTA_TIME;
     static volatile bool fixedUpdate;
     static void configureFixedUpdate();
+    static void disableFixedUpdate();
     static void registerEventHandler(FixedUpdateEventListener *listener);
     static void triggerFixedUpdateEvent();
 

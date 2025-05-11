@@ -20,6 +20,7 @@ void SimonState::enterState(GameState previousState)
     GameBaseState::enterState(previousState);
     highScoreAddress = (uint8_t *)static_cast<int16_t>(GameProperties::Instance().gameDifficulty) + 6;
     lives = GameProperties::Instance().gameDifficulty == Difficulty::Hard ? 1 : 3;
+    ScoreManager::Instance().resetScore(currentState, GameProperties::Instance().gameDifficulty);
     startNextRoundSequence();
 }
 
@@ -135,7 +136,7 @@ void SimonState::playNextSequenceElement()
 void SimonState::removeLifePoint()
 {
     --lives;
-    AudioSource::Instance().playAudioClip(FAILURE_AUDIO_CLIP);
+    AudioSource::Instance().playNoteSequence(FAILURE_AUDIO_CLIP);
 }
 
 void SimonState::saveHighScore()

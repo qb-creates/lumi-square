@@ -11,7 +11,7 @@ GameOverState::GameOverState()
 void GameOverState::enterState(GameState previousState)
 {
     GameBaseState::enterState(previousState);
-    
+
     for (int i = 0; i < 16; i++)
     {
         onLED[i] = Output::getLedStatus(i);
@@ -30,7 +30,6 @@ void GameOverState::exitState()
     transitionToMainTimer = 2000;
     flashCount = 7;
     nextState = GameState::None;
-    ScoreManager::Instance().resetScore();
 }
 
 void GameOverState::updateState()
@@ -90,8 +89,10 @@ void GameOverState::updateState()
                 return;
             }
 
-            int8_t score = ScoreManager::Instance().getScore();            
-            if (ScoreManager::Instance().newHighScore) AudioSource::Instance().queueVoiceOver(DFPlayerCommand::NewHighScore);
+            if (ScoreManager::Instance().newHighScoreAchieved())
+                AudioSource::Instance().queueVoiceOver(DFPlayerCommand::NewHighScore);
+
+            uint8_t score = ScoreManager::Instance().getScore();
             AudioSource::Instance().queueVoiceOver(DFPlayerCommand::Score);
             AudioSource::Instance().queueNumberVoiceOver(score);
         }

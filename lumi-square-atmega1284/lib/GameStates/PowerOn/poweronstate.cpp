@@ -40,7 +40,7 @@ void PowerOnState::enterState(GameState previousState)
         Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
 
-    AudioSource::Instance().playAudioClip(POWER_UP_AUDIO_CLIP);
+    AudioSource::Instance().playNoteSequence(POWER_UP_AUDIO_CLIP);
 }
 
 void PowerOnState::exitState() {}

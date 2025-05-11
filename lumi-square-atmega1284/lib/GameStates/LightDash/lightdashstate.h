@@ -1,9 +1,9 @@
 #ifndef LIGHTDASH_H
 #define LIGHTDASH_H
 
+#include "Timer.h"
 #include "basestate.h"
 #include "colors.h"
-
 class LightDashState : public GameBaseState
 {
 public:
@@ -14,8 +14,7 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    int16_t gameTimer;
-    int8_t remainingGameTime;
+    Timer timer;
     int8_t scoreDeductionAmount;
     int8_t bonusLedPointValue;
     int16_t maxLedTurnOffTime;
@@ -23,7 +22,7 @@ private:
     int16_t bonusLedTurnOffTime;
     bool enablePowerUps;
     bool bonusLedActive;
-    int16_t ledTurnOffTimers[16];
+    Timer ledTurnOffTimers[16];
     void updateLedOffTimers();
     void updateGameTimer();
     void turnOnRandomLed();

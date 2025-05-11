@@ -1,22 +1,27 @@
 #ifndef SCOREMANAGER_H
 #define SCOREMANAGER_H
 
+#include "gameproperties.h"
 #include "stdio.h"
+#include "storageservice.h"
 
 class ScoreManager
 {
-public:
-    bool newHighScore;
-
 private:
+    bool newHighScore;
     int16_t score;
+    uint8_t highScoreMatrix[6][3];
+    GameState gameState;
+    Difficulty difficulty;
 
 public:
     static ScoreManager &Instance();
-    int16_t getScore();
-    void addToScore(uint8_t value);
-    void subtractFromScore(uint8_t value);
-    void resetScore();
+    uint8_t getScore();
+    void addToScore(int8_t value);
+    void resetScore(GameState gameState, Difficulty difficulty); // Rename this
+    void setHighScore(); // rename this
+    bool newHighScoreAchieved();
+    uint8_t getHighScore(GameState gameState, Difficulty difficulty); // possibly remove
 
 private:
     ScoreManager();

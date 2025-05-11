@@ -32,7 +32,7 @@ void MainMenuState::updateState()
 {
     if (!isStartingGame)
     {
-        if (Input::getDifficultyButtonUp() && !AudioSource::Instance().isMuteButtonsPressed())
+        if (Input::getDifficultyButtonUp() && !AudioSource::Instance().isMuteButtonPressed())
         {
             increaseDifficulty();
         }
@@ -62,7 +62,11 @@ void MainMenuState::updateState()
         }
     }
 
-    updateCountdownTimer();
+    if (!isStartingGame || AudioSource::Instance().isVoiceOverPlaying())
+        return;
+    
+    Random::seedRNG();
+    nextState = queuedState;
 }
 
 void MainMenuState::onButtonPressed(int8_t buttonIndex)
@@ -122,9 +126,9 @@ void MainMenuState::increaseDifficulty()
 }
 
 void MainMenuState::startCountdownTimer()
-{
+{    
+    AudioSource::Instance().playVoiceOver(DFPlayerCommand::Countdown);
     isStartingGame = true;
-    AudioSource::Instance().playMusicNote(MusicNote::C5, 200);
 }
 
 void MainMenuState::updateCountdownTimer()
