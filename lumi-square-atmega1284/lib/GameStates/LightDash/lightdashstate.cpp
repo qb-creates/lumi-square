@@ -4,7 +4,7 @@
 
 LightDashState::LightDashState()
     : GameBaseState(GameState::LightDash),
-      timer(30),
+      timer(30000),
       scoreDeductionAmount(0),
       bonusLedPointValue(0),
       maxLedTurnOffTime(1500),

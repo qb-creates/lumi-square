@@ -2,7 +2,7 @@
 #define GAMEOVERSTATE_H
 
 #include "basestate.h"
-
+#include "timer.h"
 class GameOverState : public GameBaseState
 {
 public:
@@ -13,8 +13,8 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    int16_t flashAnimationTimer;
-    int16_t transitionToMainTimer;
+    Timer flashAnimationTimer;
+    Timer transitionToMainTimer;
     int8_t flashCount;
     bool onLED[16];
 };

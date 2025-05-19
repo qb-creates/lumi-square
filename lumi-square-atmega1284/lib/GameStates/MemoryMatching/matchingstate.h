@@ -3,7 +3,7 @@
 
 #include "../basestate.h"
 #include "../../Colors/colors.h"
-
+#include "timer.h"
 class MemoryMatchingState : public GameBaseState
 {
 public:
@@ -14,7 +14,7 @@ public:
     void onButtonPressed(int8_t buttonIndex);
 
 private:
-    int16_t ledBrightnessAdjustTimer;
+    Timer ledBrightnessAdjustTimer;
     int8_t correctMatches;
     int8_t selectedLedIndex1;
     int8_t selectedLedIndex2;

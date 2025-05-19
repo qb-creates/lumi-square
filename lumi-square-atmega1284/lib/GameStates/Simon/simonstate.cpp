@@ -12,7 +12,7 @@ SimonState::SimonState()
       simonButtonSequence{},
       simonMusicNoteSequence{},
       listeningForPlayerInput(false),
-      delayTimer(0),
+      timer(30),
       highScoreAddress((uint8_t *)0) {}
 
 void SimonState::enterState(GameState previousState)
@@ -43,17 +43,18 @@ void SimonState::updateState()
 
     if (AudioSource::Instance().isMusicNoteSequencePlaying())
         return;
-        
-    // Subtract 16 milliseconds from the delay timer if it is greater than 0
-    delayTimer -= (delayTimer > 0) ? FixedUpdateTimer::DELTA_TIME : 0;
 
-    if (delayTimer > 0)
+    // Subtract 16 milliseconds from the delay timer if it is greater than 0
+    uint8_t time = !timer.isComplete() ? FixedUpdateTimer::DELTA_TIME : 0;
+    timer.updateTimer(time);
+
+    if (!timer.isComplete())
         return;
 
     // Deactive the button led if it is active
     if (Output::getLedIntensity(activeButtonIndex) == 1)
     {
-        delayTimer = 200;
+        timer.setTargetTime(200);
         Output::setLedIntensity(activeButtonIndex, .1);
 
         if (sequenceIndex == currentRound)
@@ -100,7 +101,7 @@ void SimonState::startNextRoundSequence()
                 continue;
         }
 
-        delayTimer = 500;
+        timer.setTargetTime(500);
         sequenceIndex = 0;
         listeningForPlayerInput = false;
         simonButtonSequence[currentRound] = buttonMapArray[randomIndex];
@@ -112,21 +113,21 @@ void SimonState::startNextRoundSequence()
 
 void SimonState::replayRoundSequence()
 {
-    delayTimer = 700;
+    timer.setTargetTime(700);
     sequenceIndex = 0;
     listeningForPlayerInput = false;
 }
 
 void SimonState::listenForPlayerInput()
 {
-    delayTimer = 0;
+    timer.setTargetTime(0);
     sequenceIndex = 0;
     listeningForPlayerInput = true;
 }
 
 void SimonState::playNextSequenceElement()
 {
-    delayTimer = 300;
+    timer.setTargetTime(300);
     activeButtonIndex = simonButtonSequence[sequenceIndex];
     Output::setLedIntensity(simonButtonSequence[sequenceIndex], 1);
     AudioSource::Instance().playMusicNote(simonMusicNoteSequence[sequenceIndex], 200);

@@ -18,7 +18,7 @@ ShutdownUtility::ShutdownUtility()
     // Enable Pin control interrupts PC4 - PC7
     PCICR |= _BV(PCIE3) | _BV(PCIE2) | _BV(PCIE0);
     PCMSK0 |= _BV(PCINT4) | _BV(PCINT5) | _BV(PCINT6) | _BV(PCINT7);
-    PCMSK2 |= _BV(PCINT20) | _BV(PCINT21) | _BV(PCINT22);
+    PCMSK2 |= _BV(PCINT20) | _BV(PCINT21);
 
     DDRC |= _BV(PC3);
     PORTC &= ~_BV(PC3);

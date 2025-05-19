@@ -35,7 +35,7 @@ void MemoryMatchingState::enterState(GameState previousState)
 
 void MemoryMatchingState::exitState()
 {
-    ledBrightnessAdjustTimer = 0;
+    ledBrightnessAdjustTimer.setTargetTime(0);
     correctMatches = 0;
     selectedLedIndex1 = -1;
     selectedLedIndex2 = -1;
@@ -45,12 +45,12 @@ void MemoryMatchingState::exitState()
 
 void MemoryMatchingState::updateState()
 {
-    if (ledBrightnessAdjustTimer <= 0)
+    if (ledBrightnessAdjustTimer.isComplete())
         return;
 
-    ledBrightnessAdjustTimer -= FixedUpdateTimer::DELTA_TIME;
+    ledBrightnessAdjustTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
 
-    if (ledBrightnessAdjustTimer >= 0)
+    if (!ledBrightnessAdjustTimer.isComplete())
         return;
 
     adjustLedBrightness();
@@ -63,7 +63,7 @@ void MemoryMatchingState::updateState()
 
 void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
 {
-    if (ledBrightnessAdjustTimer > 0 || Output::getLedStatus(buttonIndex))
+    if (!ledBrightnessAdjustTimer.isComplete() || Output::getLedStatus(buttonIndex))
         return;
 
     if (selectedLedIndex1 == -1)
@@ -104,12 +104,12 @@ void MemoryMatchingState::evaluateGuess()
     if (Output::getLedColor(selectedLedIndex1) == Output::getLedColor(selectedLedIndex2))
     {
         isGuessCorrect = true;
-        ledBrightnessAdjustTimer = 300;
+        ledBrightnessAdjustTimer.setTargetTime(300);
     }
     else
     {
         isGuessCorrect = false;
-        ledBrightnessAdjustTimer = 600;
+        ledBrightnessAdjustTimer.setTargetTime(600);
     }
 }
 

@@ -11,7 +11,7 @@ class Timer
         bool timerComplete;
 
     public:
-        Timer(uint8_t seconds);
+        Timer(uint16_t miliSeconds);
         void updateTimer(uint8_t timePassed);
         void setTargetTime(uint16_t miliSeconds);
         void resetTimer();

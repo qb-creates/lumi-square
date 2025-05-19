@@ -2,6 +2,7 @@
 #define SIMON_H
 
 #include "basestate.h"
+#include "timer.h"
 
 class SimonState : public GameBaseState
 {
@@ -21,7 +22,7 @@ private:
     int8_t simonButtonSequence[100];
     MusicNote simonMusicNoteSequence[100];
     bool listeningForPlayerInput;
-    int16_t delayTimer;
+    Timer timer;
     int8_t lives;
     uint8_t *highScoreAddress;
     void startNextRoundSequence();

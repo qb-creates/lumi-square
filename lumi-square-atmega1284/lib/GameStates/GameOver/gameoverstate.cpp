@@ -6,7 +6,7 @@ GameOverState::GameOverState()
       flashAnimationTimer(200),
       transitionToMainTimer(2000),
       flashCount(7),
-      onLED{} {}
+      onLED{false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false} {}
 
 void GameOverState::enterState(GameState previousState)
 {
@@ -26,28 +26,28 @@ void GameOverState::exitState()
         onLED[i] = false;
     }
 
-    flashAnimationTimer = 200;
-    transitionToMainTimer = 2000;
+    flashAnimationTimer.setTargetTime(200);
+    transitionToMainTimer.setTargetTime(2000);
     flashCount = 7;
     nextState = GameState::None;
 }
 
 void GameOverState::updateState()
 {
-    if (transitionToMainTimer <= 0 && AudioSource::Instance().isVoiceOverPlaying())
+    if (transitionToMainTimer.isComplete() && AudioSource::Instance().isVoiceOverPlaying())
         return;
 
-    if (transitionToMainTimer <= 0 && !AudioSource::Instance().isVoiceOverPlaying())
+    if (transitionToMainTimer.isComplete() && !AudioSource::Instance().isVoiceOverPlaying())
     {
         nextState = GameState::Menu;
         return;
     }
 
-    if (flashAnimationTimer > 0)
+    if (!flashAnimationTimer.isComplete())
     {
-        flashAnimationTimer -= FixedUpdateTimer::DELTA_TIME;
+        flashAnimationTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
 
-        if (flashAnimationTimer <= 0)
+        if (flashAnimationTimer.isComplete())
         {
             for (int i = 0; i < 16; i++)
             {
@@ -70,18 +70,18 @@ void GameOverState::updateState()
             if (flashCount != 0)
             {
                 flashCount--;
-                flashAnimationTimer = 300;
+                flashAnimationTimer.setTargetTime(300);
             }
         }
 
         return;
     }
 
-    if (transitionToMainTimer > 0)
+    if (!transitionToMainTimer.isComplete())
     {
-        transitionToMainTimer -= FixedUpdateTimer::DELTA_TIME;
+        transitionToMainTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
 
-        if (transitionToMainTimer <= 0)
+        if (transitionToMainTimer.isComplete())
         {
             if (previousState == GameState::MemoryMatching)
             {

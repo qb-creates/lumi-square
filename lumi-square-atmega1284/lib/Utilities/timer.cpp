@@ -1,6 +1,6 @@
 #include "timer.h"
 
-Timer::Timer(uint8_t seconds) : targetTime(seconds * 1000), currentTime(0), timerComplete(false) {}
+Timer::Timer(uint16_t miliSeconds) : targetTime(miliSeconds), currentTime(0), timerComplete(false) {}
 
 void Timer::updateTimer(uint8_t timePassed)
 {
