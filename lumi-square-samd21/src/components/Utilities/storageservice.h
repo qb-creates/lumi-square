@@ -1,0 +1,19 @@
+#ifndef STORAGESERVICE_H
+#define STORAGESERVICE_H
+
+#include <stdint.h>
+#include "gameproperties.h"
+
+class StorageService
+{
+public:
+    static uint8_t getHighScore(GameState gameState, Difficulty difficulty);
+    static void saveHighScore(GameState gameState, Difficulty difficulty, uint8_t highScore);
+private:
+    StorageService() = delete;
+    StorageService(const StorageService &) = delete;
+    void operator=(const StorageService &) = delete;
+    static uint32_t getHighScoreAddress(GameState gameState, Difficulty difficulty);
+};
+
+#endif

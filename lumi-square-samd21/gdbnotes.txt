@@ -1,0 +1,69 @@
+GDB Syntax for Examine Memory (`x`) Command:
+-------------------------------------
+x/[count][format][size] address
+
+Parts:
+- count   = number of units to display (e.g., 4, 16)
+- format  = how to display values:
+    x = hexadecimal
+    t = binary
+    u = unsigned decimal
+    d = signed decimal
+    c = character
+    f = float
+    s = string
+- size    = size of each unit:
+    b = byte (1 byte)
+    h = halfword (2 bytes)
+    w = word (4 bytes)
+    g = giant (8 bytes)
+
+Tips:
+-----
+- Omitting the format defaults to hexadecimal (e.g., x/4b == x/4xb).
+- `p` evaluates expressions in C-style (e.g., pointer math, struct fields).
+- Use `x` for raw memory, `p` for variables and symbolic access.
+- To print flash or memory values at a specific offset: use `x/Nub` where N is number of bytes.
+
+Common Usage Summary:
+---------------------
+| Command      | Meaning                               |
+|--------------|----------------------------------------|
+| x/4xb addr   | 4 bytes, hex                           |
+| x/4ub addr   | 4 bytes, unsigned decimal              |
+| x/4db addr   | 4 bytes, signed decimal                |
+| x/4xh addr   | 4 halfwords, hex                       |
+| x/4xw addr   | 4 words (4 bytes each), hex            |
+
+
+GDB Syntax for print (`p`) Command:
+--------------
+  p[/format] expression       → Evaluate C expression and print in given format
+
+-----------------------
+`p` (print) Format Options
+-----------------------
+You can use these `/` format specifiers with the `p` command:
+
+Format | Meaning                   | Example Output
+-------|---------------------------|--------------------------
+ /x    | Hexadecimal               | 0x2a
+ /d    | Signed decimal (default)  | 42
+ /u    | Unsigned decimal          | 42
+ /o    | Octal                     | 052
+ /t    | Binary                    | 0b101010
+ /c    | ASCII character           | 'A'
+ /f    | Floating-point            | 3.14
+ /s    | Null-terminated string    | "hello"
+
+Examples:
+---------
+  p/x 42             → $1 = 0x2a
+  p/t 5              → $2 = 0b101
+  p/c 65             → $3 = 'A'
+  p/s (char*)ptr     → $4 = "Hello, world"
+  p/d var            → Print var in signed decimal
+
+NOTE:
+- You **cannot use size modifiers** like `b`, `h`, `w`, or `g` with `p`.
+- Use `p` for evaluating **C-style expressions** (with casting, math, dereferencing, etc.).

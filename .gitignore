@@ -1,8 +1,9 @@
 .pio
-.vscode
+lumi-square-bootloader-atmega1284/.vscode
 **/.gitignore
 **/*-backups
 package.json
+.Build
 
 #Build Directories
 [Dd]ebug/

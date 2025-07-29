@@ -1,0 +1,26 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "cmake_generate_debug",
+            "displayName": "Generate Debug Build Files",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/.build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "description": "Generate the build files"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "cmake_build_debug",
+            "displayName": "CMake Build Debug",
+            "description": "Build the elf, hex, and bin file with debug symbols and no optimization.",
+            "configurePreset": "cmake_generate_debug",
+            "cleanFirst": true,
+            "verbose": true
+        }
+    ]
+}

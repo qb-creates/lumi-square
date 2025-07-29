@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "samd21j18a.h": "c",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "ranges": "cpp",
+        "cmath": "cpp"
+    }
+}

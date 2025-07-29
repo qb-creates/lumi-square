@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Generate (Debug)",
+            "command": "cmake",
+            "args": ["--preset=cmake_generate_debug"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Generate the build files using Cmake and MinGW Makefiles."
+        },
+        {
+            "label": "CMake Build (Debug)",
+            "command": "cmake",
+            "args": ["--build", "--preset=cmake_build_debug"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": "CMake Generate (Debug)",
+            "detail": "Build the solution and generate an elf, bin, and hex file with debug symbols and no optimization."
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/src/third-party/CMSIS/Core",
+                "${workspaceFolder}/src/third-party/SAMD21J18A/include",
+                "${workspaceFolder}/src/third-party/SAMD21J18A/include/component",
+                "${workspaceFolder}/src/third-party/SAMD21J18A/include/instance",
+                "${workspaceFolder}/src/third-party/SAMD21J18A/include/pio",
+                "${workspaceFolder}/src/components/Colors",
+                "${workspaceFolder}/src/components/Utilities",
+                "${workspaceFolder}/src/components/Peripherals",
+                "${workspaceFolder}/src/components/Managers",
+                "${workspaceFolder}/src/components/GameStates",
+                "${workspaceFolder}/src/components/Audio"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "F_CPU=48000000"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "\"C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-g++.exe\"",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "windows-gcc-arm"
+        }
+    ],
+    "version": 4
+}
