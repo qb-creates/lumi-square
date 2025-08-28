@@ -1,0 +1,22 @@
+ATSAMD21J18A Pinout
+- pb0 - Led Column 1
+- pb1 - Led Column 2
+- pb2 - Led Column 3
+- pb3 - Led Column 4
+- pb4 - button matrix output gnd 4
+- pb5 - button matrix output gnd 3
+- pb6 - button matrix output gnd 2
+- pb7 - button matrix output gnd 1
+- pb8 - button matrix input switch 1
+- pb9 - button matrix input switch 2
+- pb10 - button matrix input switch 3
+- pb11 - button matrix input switch 4
+- pb12 - SPI Dout
+- pb13 - SPI Clock
+- pb14 - SPI Latch
+- pb16 - Previous button
+- pb17 - Next Button
+- pb22 - difficulty/mute button
+- pa20 - Usart Tx
+- pa21 - Usart rx
+- pb23 - TC7 pwm

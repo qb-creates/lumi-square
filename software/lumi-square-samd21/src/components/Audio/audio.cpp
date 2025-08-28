@@ -119,7 +119,7 @@ AudioSource::AudioSource()
     PORT_REGS->GROUP[0].PORT_PINCFG[20] = PORT_PINCFG_PMUXEN_Msk;
     PORT_REGS->GROUP[0].PORT_PMUX[10] |= PORT_PMUX_PMUXE_C;
 
-    // Enable pin multiplexer for PA12 and configure it to be function C Pad 0
+    // Enable pin multiplexer for PA21 and configure it to be function C Pad 0
     PORT_REGS->GROUP[0].PORT_PINCFG[21] = PORT_PINCFG_PMUXEN_Msk;
     PORT_REGS->GROUP[0].PORT_PMUX[10] |= PORT_PMUX_PMUXO_C;
 

@@ -8,6 +8,8 @@ uint8_t dataBuffer[259];
 
 int main(void)
 {
+    bool brownoutResetDetected = (MCUSR & _BV(BORF)) && !(MCUSR & _BV(PORF));
+    
     MCUSR = 0;
     wdt_disable();
 
@@ -20,7 +22,7 @@ int main(void)
     PORTD = 0x00;
 
     // Return to application section.
-    if (applicationExist && enterApplication)
+    if (applicationExist && enterApplication && !brownoutResetDetected)
     {
         asm("jmp 0x000");
     }
@@ -32,7 +34,9 @@ int main(void)
     if (applicationExist)
     {
         eeprom_update_byte(applicationEntryStatusAddress, enterApplicationCode);
-        wdt_enable(WDTO_8S);
+
+        if (!brownoutResetDetected)
+            wdt_enable(WDTO_8S);
     }
 
     while (true)
