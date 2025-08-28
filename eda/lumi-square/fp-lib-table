@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Button_Pad_Breakout-v05")(type "KiCad")(uri "$(KIPRJMOD)/LumiSquare.pretty")(options "")(descr ""))
+)
