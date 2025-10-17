@@ -1,4 +1,13 @@
 cmake_minimum_required(VERSION 3.20)
+
+# Check if building for desktop simulation
+if(DESKTOP_SIMULATION)
+    # Include the desktop-specific CMakeLists
+    include(CMakeLists-desktop.txt)
+    return()
+endif()
+
+# Hardware build configuration below
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
 
@@ -15,7 +24,7 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 # project settings
 project(samd_project C CXX)
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 17)
 
 set(MCPU cortex-m0plus)
 

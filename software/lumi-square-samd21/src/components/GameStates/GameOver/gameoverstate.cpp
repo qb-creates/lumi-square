@@ -45,7 +45,7 @@ void GameOverState::updateState()
 
     if (!flashAnimationTimer.isComplete())
     {
-        flashAnimationTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
+        flashAnimationTimer.updateTimer(DeviceUtility::DELTA_TIME);
 
         if (flashAnimationTimer.isComplete())
         {
@@ -79,7 +79,7 @@ void GameOverState::updateState()
 
     if (!transitionToMainTimer.isComplete())
     {
-        transitionToMainTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
+        transitionToMainTimer.updateTimer(DeviceUtility::DELTA_TIME);
 
         if (transitionToMainTimer.isComplete())
         {

@@ -67,7 +67,7 @@ void LightDashState::updateState()
 {
     updateLedOffTimers();
 
-    timer.updateTimer(FixedUpdateTimer::DELTA_TIME);
+    timer.updateTimer(DeviceUtility::DELTA_TIME);
 
     if (timer.isComplete())
     {
@@ -100,7 +100,7 @@ void LightDashState::updateLedOffTimers()
             continue;
         }
 
-        ledTurnOffTimers[ledIndex].updateTimer(FixedUpdateTimer::DELTA_TIME);
+        ledTurnOffTimers[ledIndex].updateTimer(DeviceUtility::DELTA_TIME);
 
         if (ledTurnOffTimers[ledIndex].isComplete())
         {

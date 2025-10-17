@@ -4,6 +4,7 @@
 #include "audio.h"
 #include "gameproperties.h"
 #include "scoremanager.h"
+#include "deviceutility.h"
 #include <stdint.h>
 
 class GameBaseState

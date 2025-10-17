@@ -1,14 +1,13 @@
 #ifndef SERIALCOMMANDMANAGER_H
 #define SERIALCOMMANDMANAGER_H
 
-#include "fixedupdate.h"
 #include <stdint.h>
 
-class SerialCommandManager : public FixedUpdateEventListener
+class SerialCommandManager
 {
 public:
     static SerialCommandManager &Instance(void);
-    void onFixedUpdate() override;
+    static void onFixedUpdate();
     void enableUART(bool enable);
     void usartTransmit(uint8_t data);
 

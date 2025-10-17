@@ -1,10 +1,8 @@
 #include "statemanager.h"
 #include "buttons.h"
-#include "fixedupdate.h"
 
 StateManager::StateManager()
-    : FixedUpdateEventListener(),
-      currentState(),
+    : currentState(),
       powerOnState(),
       gameOverState(),
       mainMenuState(),

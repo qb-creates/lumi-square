@@ -2,15 +2,14 @@
 #define SLEEPMANAGER_H
 
 #include <stdint.h>
-#include "fixedupdate.h"
 
-class ShutdownUtility : public FixedUpdateEventListener
+class ShutdownUtility
 {
 public:
     static ShutdownUtility& Instance();
     void setShutdownTimeout(uint32_t timeout);
     void resetShutdownTimer();
-    void onFixedUpdate() override;
+    void onFixedUpdate();
 
 private:
     volatile uint32_t m_shutdownTimer;

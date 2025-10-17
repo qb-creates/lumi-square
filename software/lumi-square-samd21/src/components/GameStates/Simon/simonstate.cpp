@@ -45,7 +45,7 @@ void SimonState::updateState()
         return;
 
     // Subtract 16 milliseconds from the delay timer if it is greater than 0
-    uint8_t time = !timer.isComplete() ? FixedUpdateTimer::DELTA_TIME : 0;
+    uint8_t time = !timer.isComplete() ? DeviceUtility::DELTA_TIME : 0;
     timer.updateTimer(time);
 
     if (!timer.isComplete())

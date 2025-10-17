@@ -1,6 +1,6 @@
 #include "audio.h"
 #include "buttons.h"
-#include "fixedupdate.h"
+#include "deviceutility.h"
 #include "samd21j18a.h"
 #include <string.h>
 
@@ -84,8 +84,7 @@ extern "C" void SERCOM5_Handler(void)
 }
 
 AudioSource::AudioSource()
-    : FixedUpdateEventListener(),
-      m_pQueuedNoteSequenceData(nullptr),
+    : m_pQueuedNoteSequenceData(nullptr),
       m_isPlayingNoteSequence(false),
       m_isPlayingMusicNote(false),
       m_isMute(false),
@@ -169,7 +168,7 @@ void AudioSource::onFixedUpdate()
 
     if (Input::getDifficultyButton() && m_muteButtonDelay < 1000)
     {
-        m_muteButtonDelay += FixedUpdateTimer::DELTA_TIME;
+        m_muteButtonDelay += DeviceUtility::DELTA_TIME;
 
         if (m_muteButtonDelay >= 1000)
         {
@@ -421,7 +420,7 @@ void AudioSource::updateMusicNoteTimer()
     if (!m_isPlayingMusicNote)
         return;
 
-    m_notePlayTime -= FixedUpdateTimer::DELTA_TIME;
+    m_notePlayTime -= DeviceUtility::DELTA_TIME;
 
     if (m_notePlayTime <= 0)
     {

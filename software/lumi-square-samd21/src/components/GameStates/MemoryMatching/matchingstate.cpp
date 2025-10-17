@@ -48,7 +48,7 @@ void MemoryMatchingState::updateState()
     if (ledBrightnessAdjustTimer.isComplete())
         return;
 
-    ledBrightnessAdjustTimer.updateTimer(FixedUpdateTimer::DELTA_TIME);
+    ledBrightnessAdjustTimer.updateTimer(DeviceUtility::DELTA_TIME);
 
     if (!ledBrightnessAdjustTimer.isComplete())
         return;

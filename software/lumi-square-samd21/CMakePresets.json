@@ -11,6 +11,18 @@
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             },
             "description": "Generate the build files"
+        },
+        {
+            "name": "cmake_generate_desktop",
+            "displayName": "Generate Desktop Simulation Build Files",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/.build-desktop",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "DESKTOP_SIMULATION": "ON"
+            },
+            "description": "Generate build files for desktop simulation"
         }
     ],
     "buildPresets": [
@@ -19,6 +31,14 @@
             "displayName": "CMake Build Debug",
             "description": "Build the elf, hex, and bin file with debug symbols and no optimization.",
             "configurePreset": "cmake_generate_debug",
+            "cleanFirst": true,
+            "verbose": true
+        },
+        {
+            "name": "cmake_build_desktop",
+            "displayName": "CMake Build Desktop Simulation",
+            "description": "Build desktop simulation executable with ImGui support.",
+            "configurePreset": "cmake_generate_desktop",
             "cleanFirst": true,
             "verbose": true
         }

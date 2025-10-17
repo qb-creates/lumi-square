@@ -49,7 +49,7 @@ void PowerOnState::updateState()
 {
     if (!m_animationComplete)
     {
-        m_animationTimer += FixedUpdateTimer::DELTA_TIME;
+        m_animationTimer += DeviceUtility::DELTA_TIME;
 
         if (m_animationTimer >= m_animationTransitionTime)
         {
@@ -72,7 +72,7 @@ void PowerOnState::updateState()
     }
     else
     {
-        m_nextStateDelayTimer += FixedUpdateTimer::DELTA_TIME;
+        m_nextStateDelayTimer += DeviceUtility::DELTA_TIME;
 
         if (m_nextStateDelayTimer >= m_nextStateDelayTime)
         {

@@ -75,7 +75,7 @@ SerialCommandManager &SerialCommandManager::Instance(void)
     return instance;
 }
 
-SerialCommandManager::SerialCommandManager() : FixedUpdateEventListener() 
+SerialCommandManager::SerialCommandManager()
 {
     // Enable usb connected pin as input wit no pull up resistor
     // DDRC &= ~USB_PIN_MASK;

@@ -1,10 +1,6 @@
 #include "buttons.h"
-#include "samd21j18a.h"
+#include "deviceutility.h"
 
-const uint32_t Input::rowOneBaseAddress = 0x0001;
-const uint32_t Input::rowTwoBaseAddress = 0x0010;
-const uint32_t Input::rowThreeBaseAddress = 0x0100;
-const uint32_t Input::rowFourBaseAddress = 0x1000;
 volatile bool Input::nextButtonPressed = false;
 volatile bool Input::nextButtonUp = false;
 volatile bool Input::nextButtonDown = false;
@@ -42,114 +38,29 @@ Input::Button Input::buttons[16] = {
 Input::Button::Button(uint8_t buttonIndex)
     : address((1 << buttonIndex)), pressed(false) {}
 
-/**
- * @brief Configures pins for system buttons and button matrix.
- *
- * This function configures PC4 and PC5 as inputs for the next and previous buttons, respectively.
- * Additionally, it configures DDRA as inputs and outputs for the button matrix.
- *
- * @return void
- */
-void Input::configureButtonPins()
+void Input::pollButtons()
 {
-    // Enable pullup resistor for next and previous buttons
-    // Enable input and pull up resisotrs
-    PORT_REGS->GROUP[1].PORT_PINCFG[16] |= 0x06;
-    PORT_REGS->GROUP[1].PORT_PINCFG[17] |= 0x06;
-    PORT_REGS->GROUP[1].PORT_PINCFG[22] |= 0x06;
+    buttonData = DeviceUtility::Instance().scanButtonMatrix();
 
-    // Configure as input and connect to pull up resistor
-    PORT_REGS->GROUP[1].PORT_DIR &= ~(PORT_PB16 | PORT_PB17 | PORT_PB22);
-    PORT_REGS->GROUP[1].PORT_OUT |= PORT_PB16 | PORT_PB17 | PORT_PB22;
-
-    // Configure output/inputs for button matrix
-    // Enanle input and pull up resistors
-    PORT_REGS->GROUP[1].PORT_PINCFG[8] |= 0x06;
-    PORT_REGS->GROUP[1].PORT_PINCFG[9] |= 0x06;
-    PORT_REGS->GROUP[1].PORT_PINCFG[10] |= 0x06;
-    PORT_REGS->GROUP[1].PORT_PINCFG[11] |= 0x06;
-
-    // Configure as input and connect to pull up resistor
-    PORT_REGS->GROUP[1].PORT_DIR &= ~(PORT_PB08 | PORT_PB09 | PORT_PB10 | PORT_PB11);
-    PORT_REGS->GROUP[1].PORT_OUT |= PORT_PB08 | PORT_PB09 | PORT_PB10 | PORT_PB11;
-
-    // Configure as outputs
-    PORT_REGS->GROUP[1].PORT_DIR |= PORT_PB04 | PORT_PB05 | PORT_PB06 | PORT_PB07;
-    PORT_REGS->GROUP[1].PORT_OUT &= ~(PORT_PB04 | PORT_PB05 | PORT_PB06 | PORT_PB07);
-}
-
-/**
- * @brief Updates the states of system buttons for the current frame.
- *
- * This function updates boolean values to reflect the current status of all system buttons for
- * the current frame. It checks if the buttons have been pressed down or released in the current
- * frame and updates their states accordingly.
- *
- * It is important to call this function frequently or at the beginning of each frame to ensure
- * proper detection of system button presses.
- *
- * @return void
- */
-void Input::updateSystemButtonStates()
-{
-    if (previousButtonPressed != !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB16))
+    if (previousButtonPressed != DeviceUtility::Instance().getPreviousButtonState())
     {
-        previousButtonPressed = !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB16);
+        previousButtonPressed = DeviceUtility::Instance().getPreviousButtonState();
         previousButtonDown = previousButtonPressed;
         previousButtonUp = !previousButtonPressed;
     }
-
-    if (nextButtonPressed != !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB17))
+    
+    if (nextButtonPressed != DeviceUtility::Instance().getNextButtonState())
     {
-        nextButtonPressed = !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB17);
+        nextButtonPressed = DeviceUtility::Instance().getNextButtonState();
         nextButtonDown = nextButtonPressed;
         nextButtonUp = !nextButtonPressed;
     }
-
-    if (difficultyButtonPressed != !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB22))
+    
+    if (difficultyButtonPressed != DeviceUtility::Instance().getDifficultyButtonState())
     {
-        difficultyButtonPressed = !(PORT_REGS->GROUP[1].PORT_IN & PORT_PB22);
+        difficultyButtonPressed = DeviceUtility::Instance().getDifficultyButtonState();
         difficultyButtonDown = difficultyButtonPressed;
         difficultyButtonUp = !difficultyButtonPressed;
-    }
-}
-
-/**
- * @brief Scans the button matrix to detect pressed buttons.
- *
- * This function scans a button matrix connected to the microcontroller,
- * detecting if any buttons have been pressed. It iterates through the rows
- * and columns of the matrix to determine the status of each button.
- *
- * It is important to call this function frequently to ensure proper
- * detection of button presses.
- *
- * @return void
- */
-void Input::scanButtonMatrix()
-{
-    buttonData = 0;
-
-    for (uint16_t columnAddress = 0x10; columnAddress < 0x100; columnAddress <<= 1)
-    {
-        PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFF0F) | ~columnAddress;
-
-        for (int i = 0; i < 144; i++)
-        {
-            __NOP();
-        }
-
-        if (!(PORT_REGS->GROUP[1].PORT_IN & PORT_PB08))
-            buttonData |= rowOneBaseAddress * (columnAddress >> 4);
-
-        if (!(PORT_REGS->GROUP[1].PORT_IN & PORT_PB09))
-            buttonData |= rowTwoBaseAddress * (columnAddress >> 4);
-
-        if (!(PORT_REGS->GROUP[1].PORT_IN & PORT_PB10))
-            buttonData |= rowThreeBaseAddress * (columnAddress >> 4);
-
-        if (!(PORT_REGS->GROUP[1].PORT_IN & PORT_PB11))
-            buttonData |= rowFourBaseAddress * (columnAddress >> 4);
     }
 }
 

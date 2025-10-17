@@ -8,13 +8,12 @@
 #include "Simon/simonstate.h"
 #include "PowerOn/poweronstate.h"
 #include "basestate.h"
-#include "fixedupdate.h"
 
-class StateManager : public FixedUpdateEventListener
+class StateManager
 {
 public:
     static StateManager &Instance();
-    void onFixedUpdate() override;
+    void onFixedUpdate();
 
 private:
     StateManager();

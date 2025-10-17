@@ -133,7 +133,7 @@ void MainMenuState::startCountdownTimer()
 
 void MainMenuState::updateCountdownTimer()
 {
-    countdownTimer -= isStartingGame ? FixedUpdateTimer::DELTA_TIME : 0;
+    countdownTimer -= isStartingGame ? DeviceUtility::DELTA_TIME : 0;
 
     if (countdownTimer <= 0)
     {

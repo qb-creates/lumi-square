@@ -1,7 +1,6 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
-#include "fixedupdate.h"
 #include "musicnote.h"
 
 enum DFPlayerCommand
@@ -55,7 +54,7 @@ enum DFPlayerCommand
     None = 255
 };
 
-class AudioSource : public FixedUpdateEventListener
+class AudioSource
 {
 private:
     const MusicNote *m_pQueuedNoteSequenceData;
@@ -69,7 +68,7 @@ private:
 
 public:
     static AudioSource &Instance();
-    void onFixedUpdate() override;
+    void onFixedUpdate();
     bool isMusicNoteSequencePlaying();
     bool isMusicNotePlaying();
     bool isVoiceOverPlaying();

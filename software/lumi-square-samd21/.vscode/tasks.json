@@ -22,6 +22,28 @@
             "problemMatcher": "$gcc",
             "dependsOn": "CMake Generate (Debug)",
             "detail": "Build the solution and generate an elf, bin, and hex file with debug symbols and no optimization."
+        },
+        {
+            "label": "CMake Generate (Desktop)",
+            "command": "cmake",
+            "args": ["--preset=cmake_generate_desktop"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Generate the build files for desktop simulation."
+        },
+        {
+            "label": "CMake Build (Desktop)",
+            "command": "cmake",
+            "args": ["--build", "--preset=cmake_build_desktop"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$gcc",
+            "dependsOn": "CMake Generate (Desktop)",
+            "detail": "Build desktop simulation executable with ImGui support."
         }
     ]
 }

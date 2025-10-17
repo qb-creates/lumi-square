@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "SAMD21 Hardware",
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src/**",
@@ -25,9 +25,33 @@
             ],
             "windowsSdkVersion": "10.0.22621.0",
             "compilerPath": "\"C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-g++.exe\"",
-            "cStandard": "c11",
-            "cppStandard": "c++11",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-arm"
+        },
+        {
+            "name": "Desktop Simulation",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/src/components/Colors",
+                "${workspaceFolder}/src/components/Utilities",
+                "${workspaceFolder}/src/components/Peripherals",
+                "${workspaceFolder}/src/components/Managers",
+                "${workspaceFolder}/src/components/GameStates",
+                "${workspaceFolder}/src/components/Audio"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "DESKTOP_SIMULATION"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}"
         }
     ],
     "version": 4

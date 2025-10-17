@@ -6,9 +6,19 @@
 class Input
 {
 public:
-    static void configureButtonPins();
-    static void updateSystemButtonStates();
-    static void scanButtonMatrix();
+    /**
+     * @brief Polls all button inputs and updates their current states.
+     *
+     * This function performs a complete button input cycle by scanning the 4x4 button matrix
+     * and reading the system buttons (Previous, Next, Difficulty). It updates the internal
+     * button state variables that can be queried by other parts of the system.
+     *
+     * @note This function should be called regularly in the main loop to maintain responsive button input detection.
+     *
+     * @return void
+     *
+     */
+    static void pollButtons();
     static bool getButton(uint8_t buttonIndex);
     static bool getButtonDown(uint8_t buttonIndex);
     static bool getNextButton();
@@ -32,10 +42,6 @@ private:
 
 private:
     Input();
-    static const uint32_t rowOneBaseAddress;
-    static const uint32_t rowTwoBaseAddress;
-    static const uint32_t rowThreeBaseAddress;
-    static const uint32_t rowFourBaseAddress;
     static volatile uint32_t buttonData;
     static volatile bool nextButtonPressed;
     static volatile bool nextButtonUp;

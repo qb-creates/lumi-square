@@ -10,7 +10,7 @@
 
 
 ShutdownUtility::ShutdownUtility()
-    : FixedUpdateEventListener(), m_shutdownTimer(0), m_shutdownTime(300000)
+    : m_shutdownTimer(0), m_shutdownTime(300000)
 
 {
     // Enable Pin control interrupts PC4 - PC7
