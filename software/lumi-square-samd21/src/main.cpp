@@ -1,7 +1,7 @@
 #include "audio.h"
 #include "buttons.h"
 #include "deviceutility.h"
-#include "leds.h"
+#include "ledmatrix.h"
 #include "random.h"
 #include "serialcommandmanager.h"
 #include "shutdownutility.h"
@@ -30,14 +30,11 @@ int main(void)
     delayMS(1000);
 
     // Configure
-    Random::configureRNG();
-    Output::configureLeds();    
-    DeviceUtility::Instance().configureButtonPins();
-    DeviceUtility::Instance().configureFixedUpdateTimer();
+    DeviceUtility::Instance().configure();
 
     while (true)
     {
-        Output::refreshLeds();
+        LEDMatrix::refreshLeds();
 
         if (!DeviceUtility::fixedUpdate)
             continue;
@@ -49,7 +46,6 @@ int main(void)
         AudioSource::Instance().onFixedUpdate();
         ShutdownUtility::Instance().onFixedUpdate();
         SerialCommandManager::Instance().onFixedUpdate();
-        // triggerFixedUpdateEvent();
     }
 
     return 1;

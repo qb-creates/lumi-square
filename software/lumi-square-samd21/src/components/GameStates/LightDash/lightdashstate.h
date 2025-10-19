@@ -1,7 +1,7 @@
 #ifndef LIGHTDASH_H
 #define LIGHTDASH_H
 
-#include "Timer.h"
+#include "timer.h"
 #include "basestate.h"
 #include "colors.h"
 class LightDashState : public GameBaseState

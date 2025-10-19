@@ -1,5 +1,5 @@
 #include "poweronstate.h"
-#include "leds.h"
+#include "ledmatrix.h"
 
 PowerOnState::PowerOnState()
     : GameBaseState(GameState::PowerOn),
@@ -37,7 +37,7 @@ void PowerOnState::enterState(GameState previousState)
     
     for (int i = 0; i < 16; ++i)
     {
-        Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
+        LEDMatrix::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
 
     AudioSource::Instance().playNoteSequence(POWER_UP_AUDIO_CLIP);
@@ -55,7 +55,7 @@ void PowerOnState::updateState()
         {
             m_animationTimer = 0;
 
-            m_reverseAnimation ? Output::ledOff(m_buttonIndexList[m_currentLedIndex]) : Output::ledOn(m_buttonIndexList[m_currentLedIndex]);
+            m_reverseAnimation ? LEDMatrix::ledOff(m_buttonIndexList[m_currentLedIndex]) : LEDMatrix::ledOn(m_buttonIndexList[m_currentLedIndex]);
 
             ++m_currentLedIndex;
 

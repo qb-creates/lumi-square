@@ -17,20 +17,8 @@ public:
     static const int8_t DELTA_TIME;
     static volatile bool fixedUpdate;
 
-    virtual void configureFixedUpdateTimer() = 0;
-    /**
-     * @brief Configures pins for system buttons and button matrix.
-     *
-     * This function configures PC4 and PC5 as inputs for the next and previous buttons, respectively.
-     * Additionally, it configures DDRA as inputs and outputs for the button matrix.
-     *
-     * @return void
-     */
-    virtual void configureButtonPins() = 0;
-    virtual bool getPreviousButtonState() = 0;
-    virtual bool getNextButtonState() = 0;
-    virtual bool getDifficultyButtonState() = 0;
-
+    virtual void configure() = 0;
+    
     /**
      * @brief Scans the button matrix to detect pressed buttons.
      *
@@ -44,7 +32,32 @@ public:
      * @return void
      */
     virtual uint32_t scanButtonMatrix() = 0;
+    virtual bool getPreviousButtonState() = 0;
+    virtual bool getNextButtonState() = 0;
+    virtual bool getDifficultyButtonState() = 0;
+    virtual void refreshButtonColor(volatile uint16_t ledColorData[4][4][8]) = 0;
 
+private:
+    virtual void configureFixedUpdateTimer() = 0;
+
+    /**
+     * @brief Configures pins for system buttons and button matrix.
+     *
+     * This function configures PC4 and PC5 as inputs for the next and previous buttons, respectively.
+     * Additionally, it configures DDRA as inputs and outputs for the button matrix.
+     *
+     * @return void
+     */
+    virtual void configureButtonPins() = 0;
+
+    /**
+    * @brief Configures the led communication.
+    *
+    */
+    virtual void configureLeds() = 0;
+
+    virtual void configureRNG() = 0;
+    
 public:
     DeviceUtility();
 

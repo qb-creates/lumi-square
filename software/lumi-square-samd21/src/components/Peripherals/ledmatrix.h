@@ -1,36 +1,14 @@
-#ifndef LEDS_H
-#define LEDS_H
-#include "../Colors/colors.h"
-// #include <avr/interrupt.h>
-// #include <util/delay.h>
+#ifndef LEDMATRIX_H
+#define LEDMATRIX_H
+#include "led.h"
 
-class Output
+class LEDMatrix
 {
 private:
-    class LED
-    {
-    public:
-        LED();
-        LED(uint8_t r, uint8_t c, uint16_t baseAddress);
-        const uint8_t row;
-        const uint8_t column;
-        const uint16_t rAddress;
-        const uint16_t gAddress;
-        const uint16_t bAddress;
-        Color color;
-        bool isLedOn;
-        double intensity;
-    };
-
-private:
     static volatile uint16_t ledColorData[4][4][8];
-    static volatile uint8_t currentLedIndex;
-    static volatile bool isDisplayRefreshing;
-    static LED leds[];
 
 public:
     static void refreshLeds(void);
-    static void configureLeds(void);
     static Color getLedColor(uint8_t ledIndex);
     static void setLedColor(uint8_t ledIndex, const Color &color);
     static void setLedColor(uint8_t ledIndex, const Color &color, double intensity);
@@ -47,12 +25,10 @@ public:
     static void enableMemoryMatchLights();
 
 private:
-    Output() = delete;
-    Output(const Output &) = delete;
-    void operator=(const Output &) = delete;
+    LEDMatrix() = delete;
+    LEDMatrix(const LEDMatrix &) = delete;
+    void operator=(const LEDMatrix &) = delete;
     static void onSetLedColor(const LED &led, const Color &color, double intensity);
-    static void transmitLedData(uint16_t data);
-    static void latchLedData(void);
 };
 
 #endif

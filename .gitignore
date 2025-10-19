@@ -3,7 +3,7 @@ lumi-square-bootloader-atmega1284/.vscode
 **/.gitignore
 **/*-backups
 package.json
-.Build
+.build
 
 #Build Directories
 [Dd]ebug/

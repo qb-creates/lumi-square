@@ -1,5 +1,5 @@
 #include "simonstate.h"
-#include "leds.h"
+#include "ledmatrix.h"
 #include "random.h"
 
 SimonState::SimonState()
@@ -29,7 +29,7 @@ void SimonState::exitState()
     currentRound = 0;
     sequenceIndex = 0;
     nextState = GameState::None;
-    Output::ledOn(buttonMapArray, 8, Colors::red, .8);
+    LEDMatrix::ledOn(buttonMapArray, 8, Colors::red, .8);
 }
 
 void SimonState::updateState()
@@ -52,10 +52,10 @@ void SimonState::updateState()
         return;
 
     // Deactive the button led if it is active
-    if (Output::getLedIntensity(activeButtonIndex) == 1)
+    if (LEDMatrix::getLedIntensity(activeButtonIndex) == 1)
     {
         timer.setTargetTime(200);
-        Output::setLedIntensity(activeButtonIndex, .1);
+        LEDMatrix::setLedIntensity(activeButtonIndex, .1);
 
         if (sequenceIndex == currentRound)
         {
@@ -74,7 +74,7 @@ void SimonState::updateState()
 void SimonState::onButtonPressed(int8_t buttonIndex)
 {
     // Return if not currently listening for player input, the selected button is off, or a button is active (active == intensity of 1)
-    if (!listeningForPlayerInput || Output::getLedIntensity(activeButtonIndex) == 1 || !Output::getLedStatus(buttonIndex))
+    if (!listeningForPlayerInput || LEDMatrix::getLedIntensity(activeButtonIndex) == 1 || !LEDMatrix::getLedStatus(buttonIndex))
         return;
 
     if (simonButtonSequence[sequenceIndex] == buttonIndex)
@@ -129,7 +129,7 @@ void SimonState::playNextSequenceElement()
 {
     timer.setTargetTime(300);
     activeButtonIndex = simonButtonSequence[sequenceIndex];
-    Output::setLedIntensity(simonButtonSequence[sequenceIndex], 1);
+    LEDMatrix::setLedIntensity(simonButtonSequence[sequenceIndex], 1);
     AudioSource::Instance().playMusicNote(simonMusicNoteSequence[sequenceIndex], 200);
     ++sequenceIndex;
 }
