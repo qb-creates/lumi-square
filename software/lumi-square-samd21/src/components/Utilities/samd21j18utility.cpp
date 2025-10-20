@@ -96,19 +96,9 @@ void SAMD21J18Utility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8
         currentLedIndex = 0;
 }
 
-void SAMD21J18Utility::transmitLedData(uint16_t data)
-{    
-    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
-    SERCOM4_REGS->SPIM.SERCOM_DATA = data >> 8;
-
-    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
-    SERCOM4_REGS->SPIM.SERCOM_DATA = data & 0xFF;
-}
-
-void SAMD21J18Utility::latchLedData()
+uint16_t SAMD21J18Utility::getRNGSeedValue()
 {
-    PORT_REGS->GROUP[1].PORT_OUT |= PORT_PB14;
-    PORT_REGS->GROUP[1].PORT_OUT &= ~PORT_PB14;
+    TC5_REGS->COUNT16.TC_COUNT;
 }
 
 void SAMD21J18Utility::configureFixedUpdateTimer()
@@ -209,4 +199,19 @@ void SAMD21J18Utility::configureRNG()
     TC5_REGS->COUNT16.TC_INTENSET = TC_INTENSET_OVF_Msk;
     TC5_REGS->COUNT16.TC_CTRLA = TC_CTRLA_ENABLE_Msk | TC_CTRLA_MODE_COUNT8 | TC_CTRLA_WAVEGEN_NFRQ;
     while ((TC5_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+}
+
+void SAMD21J18Utility::transmitLedData(uint16_t data)
+{    
+    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
+    SERCOM4_REGS->SPIM.SERCOM_DATA = data >> 8;
+
+    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
+    SERCOM4_REGS->SPIM.SERCOM_DATA = data & 0xFF;
+}
+
+void SAMD21J18Utility::latchLedData()
+{
+    PORT_REGS->GROUP[1].PORT_OUT |= PORT_PB14;
+    PORT_REGS->GROUP[1].PORT_OUT &= ~PORT_PB14;
 }

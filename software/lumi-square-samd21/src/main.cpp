@@ -35,7 +35,7 @@ int main(void)
     while (true)
     {
         LEDMatrix::refreshLeds();
-
+        
         if (!DeviceUtility::fixedUpdate)
             continue;
 

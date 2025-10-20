@@ -36,7 +36,7 @@ public:
     virtual bool getNextButtonState() = 0;
     virtual bool getDifficultyButtonState() = 0;
     virtual void refreshButtonColor(volatile uint16_t ledColorData[4][4][8]) = 0;
-
+    virtual uint16_t getRNGSeedValue() = 0;
 private:
     virtual void configureFixedUpdateTimer() = 0;
 

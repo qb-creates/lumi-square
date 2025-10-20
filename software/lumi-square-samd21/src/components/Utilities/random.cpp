@@ -1,5 +1,5 @@
 #include "random.h"
-#include "samd21j18a.h"
+#include "deviceutility.h"
 
 /**
  * @brief 
@@ -7,7 +7,7 @@
  */
 void Random::seedRNG()
 {
-    srand(TC5_REGS->COUNT16.TC_COUNT);
+    srand(DeviceUtility::Instance().getRNGSeedValue());
 }
 
 /**

@@ -22,14 +22,13 @@ public:
     bool getDifficultyButtonState() override;
     uint32_t scanButtonMatrix() override;
     void refreshButtonColor(volatile uint16_t ledColorData[4][4][8]) override;
+    uint16_t getRNGSeedValue() override;
     
 private:
     void configureFixedUpdateTimer() override;
     void configureButtonPins() override;
     void configureLeds() override;
     void configureRNG() override;
-    
-private:
     void transmitLedData(uint16_t data);
     void latchLedData(void);
 };
