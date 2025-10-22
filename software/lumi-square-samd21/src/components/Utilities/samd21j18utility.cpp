@@ -190,6 +190,27 @@ void SAMD21J18Utility::processAudioCommand(DFPlayerCommand command, void (*callb
     }
 }
 
+void SAMD21J18Utility::setBeepNote(MusicNote note)
+{
+    TC7_REGS->COUNT16.TC_CC[0] = static_cast<uint16_t>(note);
+    TC7_REGS->COUNT16.TC_CC[1] = static_cast<uint16_t>(note) / 2;
+    TC7_REGS->COUNT16.TC_COUNT = 0;
+}
+
+void SAMD21J18Utility::enableBeep(bool enable)
+{
+    if (enable)
+    {
+        TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
+    }
+    else
+    {
+        TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
+    }
+    
+    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+}
+
 uint16_t SAMD21J18Utility::getRNGSeedValue()
 {
     TC5_REGS->COUNT16.TC_COUNT;

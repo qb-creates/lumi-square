@@ -23,8 +23,10 @@ public:
     uint32_t scanButtonMatrix() override;
     void refreshButtonColor(volatile uint16_t ledColorData[4][4][8]) override;
     void processAudioCommand(DFPlayerCommand command, void (*callback)(void) = nullptr) override;
+    void setBeepNote(MusicNote note) override;
+    void enableBeep(bool enable) override;
     uint16_t getRNGSeedValue() override;
-    
+
 private:
     void configureFixedUpdateTimer() override;
     void configureButtonPins() override;

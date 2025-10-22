@@ -1,7 +1,6 @@
 #include "audio.h"
 #include "buttons.h"
 #include "deviceutility.h"
-#include "samd21j18a.h"
 
 volatile DFPlayerCommand voiceOverQueue[10] = {DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None};
 volatile int8_t voiceOverQueueCount = 0;
@@ -146,7 +145,7 @@ void AudioSource::playNextMusicSequenceNote()
 {
     if (!m_isPlayingMusicNote && m_isPlayingNoteSequence)
     {
-        int16_t note = static_cast<int16_t>(*m_pQueuedNoteSequenceData++);
+        DeviceUtility::Instance().setBeepNote(*m_pQueuedNoteSequenceData++);
         int16_t noteDuration = static_cast<int16_t>(*m_pQueuedNoteSequenceData++);
 
         if (noteDuration < 0)
@@ -159,18 +158,10 @@ void AudioSource::playNextMusicSequenceNote()
             m_notePlayTime = (m_noteSequenceBeatDuration * 4) / noteDuration;
         }
 
-        // Configure pwm frequency
-        TC7_REGS->COUNT16.TC_CC[0] = static_cast<uint16_t>(note);
-        TC7_REGS->COUNT16.TC_CC[1] = static_cast<uint16_t>(note) / 2;
-        TC7_REGS->COUNT16.TC_COUNT = 0;
 
         if (!m_isMute)
         {
-            // Enable PWM output
-            TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-            while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
-            {
-            }
+            DeviceUtility::Instance().enableBeep(true);
         }
 
         m_isPlayingMusicNote = true;
@@ -188,17 +179,11 @@ void AudioSource::playNextMusicSequenceNote()
  */
 void AudioSource::playMusicNote(MusicNote note, int16_t time)
 {
-    TC7_REGS->COUNT16.TC_CC[0] = static_cast<uint16_t>(note);
-    TC7_REGS->COUNT16.TC_CC[1] = static_cast<uint16_t>(note) / 2;
-    TC7_REGS->COUNT16.TC_COUNT = 0;
+    DeviceUtility::Instance().setBeepNote(note);
 
     if (!m_isMute)
     {
-        // Enable PWM output
-        TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
-        {
-        }
+        DeviceUtility::Instance().enableBeep(true);
     }
 
     m_notePlayTime = time;
@@ -216,7 +201,8 @@ void AudioSource::playVoiceOver(DFPlayerCommand voiceOver)
         return;
 
     isPlayingVoiceOver = true;
-    DeviceUtility::Instance().processAudioCommand(voiceOver, [](){ isPlayingVoiceOver = false; });
+    DeviceUtility::Instance().processAudioCommand(voiceOver, []()
+                                                  { isPlayingVoiceOver = false; });
 }
 
 /**
@@ -277,20 +263,14 @@ void AudioSource::muteAudioSource(bool mute)
 
     if (mute)
     {
-        TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
-        {
-        }
+        DeviceUtility::Instance().enableBeep(false);
         playVoiceOver(DFPlayerCommand::MuteVoiceOver);
         return;
     }
 
     if (m_isPlayingMusicNote)
     {
-        TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
-        {
-        }
+        DeviceUtility::Instance().enableBeep(true);
     }
 
     DeviceUtility::Instance().processAudioCommand(DFPlayerCommand::Unmute);
@@ -319,10 +299,6 @@ void AudioSource::updateMusicNoteTimer()
             m_isPlayingNoteSequence = false;
         }
 
-        // Disable PWM output
-        TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
-        {
-        }
+        DeviceUtility::Instance().enableBeep(false);
     }
 }
