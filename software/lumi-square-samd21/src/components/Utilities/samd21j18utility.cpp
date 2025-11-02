@@ -3,7 +3,9 @@
 #include "led.h"
 #include <string.h>
 
-const uint8_t DF_PLAYER_COMMANDS[46][10] = {
+#define DMA_CH_UART_TX 0;
+
+static const uint8_t DF_PLAYER_COMMANDS[46][10] = {
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x01, 0xFE, 0xEA, 0xEF}, // 0
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x02, 0xFE, 0xE9, 0xEF},
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x03, 0xFE, 0xE8, 0xEF},
@@ -49,12 +51,13 @@ const uint8_t DF_PLAYER_COMMANDS[46][10] = {
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0A, 0xFE, 0xDE, 0xEF},
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0B, 0xFE, 0xDD, 0xEF},
     {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x00, 0xFE, 0xF5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}};
-    
-const uint8_t MUTE_COMMAND_RESPONSE[20] = {0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF, 0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF};
-volatile uint8_t receiveBufferIndex = 0;
-volatile uint8_t voiceOverBuffer[20];
+    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}}; 
+static const uint8_t MUTE_COMMAND_RESPONSE[20] = {0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF, 0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF};
+static volatile uint8_t receiveBufferIndex = 0;
+static volatile uint8_t voiceOverBuffer[20];
 static void (*audioCompleteCallback)(void);
+static dmac_descriptor_registers_t dmaDescriptor[1] __attribute__((aligned(16)));
+static dmac_descriptor_registers_t dmaWriteBack[1] __attribute__((aligned(16)));
 
 extern "C" void TC3_Handler(void)
 {
@@ -107,6 +110,7 @@ void SAMD21J18Utility::configure()
     configureLeds();
     configureRNG();
     configureAudio();
+    configureAudioDMAC();
 }
 
 uint32_t SAMD21J18Utility::scanButtonMatrix()
@@ -183,11 +187,20 @@ void SAMD21J18Utility::processAudioCommand(DFPlayerCommand command, void (*callb
     audioCompleteCallback = callback;
     const uint8_t *data = DF_PLAYER_COMMANDS[command];
     
-    for (size_t i = 0; i < 10; i++)
-    {
-        while (!(SERCOM5_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_DRE_Msk)) {}        
-        SERCOM5_REGS->USART_INT.SERCOM_DATA = data[i];
-    }
+    // Select channel 0
+    DMAC_REGS->DMAC_CHID = DMA_CH_UART_TX;
+
+    // Disable the channel
+    DMAC_REGS->DMAC_CHCTRLA &= ~DMAC_CHCTRLA_ENABLE_Msk;
+
+    // Update descriptor
+    dmaDescriptor[0].DMAC_BTCNT = 10;
+    dmaDescriptor[0].DMAC_SRCADDR = (uint32_t)(data + 10);
+    dmaDescriptor[0].DMAC_DSTADDR = (uint32_t)&SERCOM5_REGS->USART_INT.SERCOM_DATA;
+    dmaDescriptor[0].DMAC_DESCADDR = 0; // no next descriptor
+
+    // Enable channel
+    DMAC_REGS->DMAC_CHCTRLA |= DMAC_CHCTRLA_ENABLE_Msk;
 }
 
 void SAMD21J18Utility::setBeepNote(MusicNote note)
@@ -354,6 +367,35 @@ void SAMD21J18Utility::configureRNG()
     TC5_REGS->COUNT16.TC_INTENSET = TC_INTENSET_OVF_Msk;
     TC5_REGS->COUNT16.TC_CTRLA = TC_CTRLA_ENABLE_Msk | TC_CTRLA_MODE_COUNT8 | TC_CTRLA_WAVEGEN_NFRQ;
     while ((TC5_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+}
+
+void SAMD21J18Utility::configureAudioDMAC()
+{
+    // Enable APB clock for DMAC
+    PM_REGS->PM_AHBMASK |= PM_AHBMASK_DMAC_Msk;
+    PM_REGS->PM_APBBMASK |= PM_APBBMASK_DMAC_Msk;
+
+    // Reset DMAC
+    DMAC_REGS->DMAC_CTRL = DMAC_CTRL_SWRST_Msk;
+
+    // Set base addresses for descriptor and writeback areas
+    DMAC_REGS->DMAC_BASEADDR = (uint32_t)dmaDescriptor;
+    DMAC_REGS->DMAC_WRBADDR = (uint32_t)dmaWriteBack;
+
+    // Enable DMAC
+    DMAC_REGS->DMAC_CTRL = DMAC_CTRL_DMAENABLE_Msk | DMAC_CTRL_LVLEN(0xF);
+
+    // Select channel 0
+    DMAC_REGS->DMAC_CHID = 0;
+
+    // Configure channel control
+    DMAC_REGS->DMAC_CHCTRLA = 0; // disable before config
+
+    // trigger on SERCOM5 TX one beat per trigger
+    DMAC_REGS->DMAC_CHCTRLB = DMAC_CHCTRLB_TRIGSRC(SERCOM5_DMAC_ID_TX) | DMAC_CHCTRLB_TRIGACT_BEAT;
+
+    // Setup descriptor
+    dmaDescriptor[0].DMAC_BTCTRL = DMAC_BTCTRL_VALID_Msk | DMAC_BTCTRL_SRCINC_Msk | DMAC_BTCTRL_BEATSIZE_BYTE;
 }
 
 void SAMD21J18Utility::transmitLedData(uint16_t data)

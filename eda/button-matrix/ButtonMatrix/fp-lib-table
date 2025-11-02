@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Lumisquare_Library")(type "KiCad")(uri "F:/Portfolio/lumi-square/eda/footprints/Lumisquare_Library.pretty")(options "")(descr ""))
+)

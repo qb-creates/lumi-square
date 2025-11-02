@@ -33,6 +33,7 @@ private:
     void configureLeds() override;
     void configureAudio() override;
     void configureRNG() override;
+    void configureAudioDMAC();
     void transmitLedData(uint16_t data);
     void latchLedData(void);
 };
