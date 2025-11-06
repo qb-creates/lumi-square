@@ -4,6 +4,7 @@ lumi-square-bootloader-atmega1284/.vscode
 **/*-backups
 package.json
 .build
+.build-desktop
 
 #Build Directories
 [Dd]ebug/

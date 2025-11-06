@@ -5,7 +5,12 @@
 #include "musicnote.h"
 #include <stdint.h>
 
+#ifndef DESKTOP_SIMULATION
 #define FIXED_UPDATE_INTERVAL_MS 16
+#else
+#define FIXED_UPDATE_INTERVAL_MS 8
+#endif
+
 #define FIXED_UPDATE_TIMER_PRELOAD_VALUE (65536UL - ((F_CPU / 1024UL) * FIXED_UPDATE_INTERVAL_MS) / 1000UL)
 
 #define LED_UPDATE_INTERVAL_US 21845
@@ -14,7 +19,7 @@
 class DeviceUtility
 {
 
-public: 
+public:
     static const int8_t DELTA_TIME;
     static volatile bool fixedUpdate;
 
@@ -23,7 +28,7 @@ public:
      * @brief Gets the singleton instance of the DeviceUtility.
      *
      * Returns a reference to the single instance of the device utility.
-     * The concrete implementation (SAMD21J18Utility or DesktopUtility) 
+     * The concrete implementation (SAMD21J18Utility or DesktopUtility)
      * is determined at compile time based on build configuration.
      *
      * @return DeviceUtility& Reference to the singleton device utility instance
@@ -43,7 +48,7 @@ public:
      * Must be called once during system initialization before using any other functions.
      */
     virtual void configure() = 0;
-    
+
     /**
      * @brief Scans the 4x4 button matrix to detect pressed buttons.
      *
@@ -226,7 +231,7 @@ private:
      * For desktop: Initializes system random number facilities.
      */
     virtual void configureRNG() = 0;
-    
+
 public:
     /**
      * @brief Protected constructor for abstract base class.

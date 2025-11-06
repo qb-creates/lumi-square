@@ -4,7 +4,9 @@
         {
             "label": "CMake Generate (Debug)",
             "command": "cmake",
-            "args": ["--preset=cmake_generate_debug"],
+            "args": [
+                "--preset=cmake_generate_debug"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -14,10 +16,13 @@
         {
             "label": "CMake Build (Debug)",
             "command": "cmake",
-            "args": ["--build", "--preset=cmake_build_debug"],
+            "args": [
+                "--build",
+                "--preset=cmake_build_debug"
+            ],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "problemMatcher": "$gcc",
             "dependsOn": "CMake Generate (Debug)",
@@ -26,7 +31,9 @@
         {
             "label": "CMake Generate (Desktop)",
             "command": "cmake",
-            "args": ["--preset=cmake_generate_desktop"],
+            "args": [
+                "--preset=cmake_generate_desktop"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -36,14 +43,17 @@
         {
             "label": "CMake Build (Desktop)",
             "command": "cmake",
-            "args": ["--build", "--preset=cmake_build_desktop"],
+            "args": [
+                "--build",
+                "--preset=cmake_build_desktop"
+            ],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "problemMatcher": "$gcc",
             "dependsOn": "CMake Generate (Desktop)",
             "detail": "Build desktop simulation executable with ImGui support."
-        }
+        }      
     ]
 }

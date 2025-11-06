@@ -1,5 +1,11 @@
 #include "colors.h"
 
+#ifndef DESKTOP_SIMULATION
+#define RED_Multiplier .25
+#else
+#define RED_Multiplier 1
+#endif
+
 const Color Colors::red = Color(255, 0, 0);
 const Color Colors::pink = Color(255, 50, 200);
 const Color Colors::blue = Color(0, 0, 255);
@@ -26,7 +32,7 @@ Color::Color()
  * @param b Blue component value.
  */
 Color::Color(uint8_t r, uint8_t g, uint8_t b)
-    : r(r * .25), g(g), b(b) {}
+    : r(r * RED_Multiplier), g(g), b(b) {}
 
 /**
  * @brief Will compare the r,g,b component of the passed in coller object with this object.
@@ -42,7 +48,7 @@ bool Color::operator==(Color const &color) const
 }
 
 /**
- * @brief 
+ * @brief
  *
  * @param color The color we are comparing this object to.
  * @return true

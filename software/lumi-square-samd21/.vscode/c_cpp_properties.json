@@ -39,7 +39,8 @@
                 "${workspaceFolder}/src/components/Peripherals",
                 "${workspaceFolder}/src/components/Managers",
                 "${workspaceFolder}/src/components/GameStates",
-                "${workspaceFolder}/src/components/Audio"
+                "${workspaceFolder}/src/components/Audio",
+                "${workspaceFolder}/src/third-party/imgui"
             ],
             "defines": [
                 "_DEBUG",

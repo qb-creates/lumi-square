@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 # Check if building for desktop simulation
 if(DESKTOP_SIMULATION)
     # Include the desktop-specific CMakeLists
-    include(CMakeLists-desktop.txt)
+    include(desktop.cmake)
     return()
 endif()
 

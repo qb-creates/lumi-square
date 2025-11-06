@@ -1,6 +1,6 @@
 #include "samd21j18utility.h"
-#include "samd21j18a.h"
 #include "led.h"
+#include "samd21j18a.h"
 #include <string.h>
 
 #define DMA_CH_UART_TX 0;
@@ -51,7 +51,7 @@ static const uint8_t DF_PLAYER_COMMANDS[46][10] = {
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0A, 0xFE, 0xDE, 0xEF},
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0B, 0xFE, 0xDD, 0xEF},
     {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x00, 0xFE, 0xF5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}}; 
+    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}};
 static const uint8_t MUTE_COMMAND_RESPONSE[20] = {0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF, 0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF};
 static volatile uint8_t receiveBufferIndex = 0;
 static volatile uint8_t voiceOverBuffer[20];
@@ -73,14 +73,14 @@ extern "C" void SERCOM5_Handler(void)
         uint8_t data = SERCOM5_REGS->USART_INT.SERCOM_DATA;
         voiceOverBuffer[receiveBufferIndex] = data;
         receiveBufferIndex++;
-    
+
         if (receiveBufferIndex == 20 && data == 0xEF)
         {
             if (memcmp((const void *)voiceOverBuffer, MUTE_COMMAND_RESPONSE, sizeof(voiceOverBuffer)) == 0)
             {
                 DeviceUtility::Instance().processAudioCommand(DFPlayerCommand::Mute);
             }
-    
+
             receiveBufferIndex = 0;
 
             if (audioCompleteCallback != nullptr)
@@ -93,13 +93,14 @@ extern "C" void SERCOM5_Handler(void)
     }
 }
 
-SAMD21J18Utility::SAMD21J18Utility() : DeviceUtility(), 
-rowOneBaseAddress(0x001), 
-rowTwoBaseAddress(0x0010), 
-rowThreeBaseAddress(0x0100),
-rowFourBaseAddress(0x1000),
-currentLedIndex(0),
-ledColorData{}
+SAMD21J18Utility::SAMD21J18Utility()
+    : DeviceUtility(),
+      rowOneBaseAddress(0x001),
+      rowTwoBaseAddress(0x0010),
+      rowThreeBaseAddress(0x0100),
+      rowFourBaseAddress(0x1000),
+      currentLedIndex(0),
+      ledColorData{}
 {
 }
 
@@ -161,10 +162,10 @@ void SAMD21J18Utility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8
 {
     LED *led = &LED::leds[currentLedIndex];
     PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0) | (1 << led->column);
-    
+
     for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
-    {        
-        transmitLedData(ledColorData[led->column][led->row][colorDataIndex]);        
+    {
+        transmitLedData(ledColorData[led->column][led->row][colorDataIndex]);
         latchLedData();
 
         for (int j = 0; j < (1 << colorDataIndex); ++j)
@@ -186,7 +187,7 @@ void SAMD21J18Utility::processAudioCommand(DFPlayerCommand command, void (*callb
 {
     audioCompleteCallback = callback;
     const uint8_t *data = DF_PLAYER_COMMANDS[command];
-    
+
     // Select channel 0
     DMAC_REGS->DMAC_CHID = DMA_CH_UART_TX;
 
@@ -220,8 +221,10 @@ void SAMD21J18Utility::enableBeep(bool enable)
     {
         TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
     }
-    
-    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+
+    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
+    {
+    }
 }
 
 uint16_t SAMD21J18Utility::getRNGSeedValue()
@@ -242,7 +245,9 @@ void SAMD21J18Utility::configureFixedUpdateTimer()
     TC3_REGS->COUNT16.TC_COUNT = FIXED_UPDATE_TIMER_PRELOAD_VALUE;
     TC3_REGS->COUNT16.TC_INTENSET = TC_INTENSET_OVF_Msk;
     TC3_REGS->COUNT16.TC_CTRLA = TC_CTRLA_ENABLE_Msk | TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_NFRQ | TC_CTRLA_PRESCALER_DIV1024;
-    while ((TC3_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+    while ((TC3_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
+    {
+    }
     NVIC_EnableIRQ(TC3_IRQn);
 }
 
@@ -316,18 +321,20 @@ void SAMD21J18Utility::configureLeds()
 
 void SAMD21J18Utility::configureAudio()
 {
-        // Configure PWM for music tones
+    // Configure PWM for music tones
     // Power Manager
     PM_REGS->PM_APBCMASK |= PM_APBCMASK_TC7_Msk;
-    
+
     // Generic Clock Controller
     GCLK_REGS->GCLK_CLKCTRL = GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID_TC6_TC7 | GCLK_CLKCTRL_CLKEN_Msk;
 
     PORT_REGS->GROUP[1].PORT_PINCFG[23] = PORT_PINCFG_PMUXEN_Msk;
     PORT_REGS->GROUP[1].PORT_PMUX[11] = PORT_PMUX_PMUXO_E;
-    
+
     TC7_REGS->COUNT16.TC_CTRLA = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MPWM | TC_CTRLA_PRESCALER_DIV256;
-    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
+    {
+    }
 
     // // Configure SERCOM5 USart for DFPlayer mini
     // Turn on clock for usart
@@ -345,8 +352,10 @@ void SAMD21J18Utility::configureAudio()
     PORT_REGS->GROUP[0].PORT_PMUX[10] |= PORT_PMUX_PMUXO_C;
 
     SERCOM5_REGS->USART_INT.SERCOM_CTRLB = SERCOM_USART_INT_CTRLB_TXEN_Msk | SERCOM_USART_INT_CTRLB_RXEN_Msk;
-    while ((SERCOM5_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U) { }
-    
+    while ((SERCOM5_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U)
+    {
+    }
+
     // Sets the baud rate to 9600
     SERCOM5_REGS->USART_INT.SERCOM_BAUD = 0xFF2E;
     SERCOM5_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk;
@@ -363,10 +372,12 @@ void SAMD21J18Utility::configureRNG()
     // Generic Clock Controller
     GCLK_REGS->GCLK_CLKCTRL = GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID_TC4_TC5 | GCLK_CLKCTRL_CLKEN_Msk;
 
-    // 8 bit timer configuration    
+    // 8 bit timer configuration
     TC5_REGS->COUNT16.TC_INTENSET = TC_INTENSET_OVF_Msk;
     TC5_REGS->COUNT16.TC_CTRLA = TC_CTRLA_ENABLE_Msk | TC_CTRLA_MODE_COUNT8 | TC_CTRLA_WAVEGEN_NFRQ;
-    while ((TC5_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+    while ((TC5_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk)
+    {
+    }
 }
 
 void SAMD21J18Utility::configureAudioDMAC()
@@ -399,11 +410,15 @@ void SAMD21J18Utility::configureAudioDMAC()
 }
 
 void SAMD21J18Utility::transmitLedData(uint16_t data)
-{    
-    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
+{
+    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk))
+    {
+    }
     SERCOM4_REGS->SPIM.SERCOM_DATA = data >> 8;
 
-    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk)) { }
+    while (!(SERCOM4_REGS->SPIM.SERCOM_INTFLAG & SERCOM_SPIM_INTFLAG_DRE_Msk))
+    {
+    }
     SERCOM4_REGS->SPIM.SERCOM_DATA = data & 0xFF;
 }
 

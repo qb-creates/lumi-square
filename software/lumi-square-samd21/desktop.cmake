@@ -13,19 +13,21 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/src/components/Managers
     ${CMAKE_SOURCE_DIR}/src/components/GameStates
     ${CMAKE_SOURCE_DIR}/src/components/Audio
-    ${CMAKE_SOURCE_DIR}/src/components/imgui
-    ${CMAKE_SOURCE_DIR}/src/components/imgui/GLFW
+    ${CMAKE_SOURCE_DIR}/src/third-party/imgui
+    ${CMAKE_SOURCE_DIR}/src/third-party/imgui/GLFW
 )
 
 # Collect all .cpp files from your components
 file(GLOB_RECURSE SOURCES 
     src/components/*.cpp
+    src/third-party/imgui/*.cpp
     src/main.cpp
 )
 
 # Remove hardware-specific files for desktop build
 list(FILTER SOURCES EXCLUDE REGEX "samd21j18utility\\.cpp$")
-list(FILTER SOURCES EXCLUDE REGEX "third-party/.*")
+list(FILTER SOURCES EXCLUDE REGEX "third-party/CMSIS/.*")
+list(FILTER SOURCES EXCLUDE REGEX "third-party/SAMD21J18A/.*")
 
 # Add compile definitions
 add_compile_definitions(DESKTOP_SIMULATION)
@@ -35,13 +37,11 @@ add_executable(lumi-square-desktop ${SOURCES})
 
 # Link against GLFW library
 # You'll need to adjust this path to where you have GLFW
-# target_link_libraries(lumi-square-desktop "${CMAKE_SOURCE_DIR}/lib/libglfw3.a")
+target_link_libraries(lumi-square-desktop "${CMAKE_SOURCE_DIR}/src/lib/libglfw3.a")
 
 # Additional libraries required for GLFW on Windows
 if(WIN32)
     target_link_libraries(lumi-square-desktop opengl32 gdi32)
 endif()
 
-# If you have ImGui sources, add them here
-# file(GLOB IMGUI_SOURCES src/components/imgui/*.cpp)
-# target_sources(lumi-square-desktop PRIVATE ${IMGUI_SOURCES})
+# ImGui sources are now included in the main SOURCES glob above

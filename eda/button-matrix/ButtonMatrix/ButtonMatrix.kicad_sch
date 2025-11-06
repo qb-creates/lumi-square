@@ -1,13 +1,15 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e")
 	(paper "A4")
 	(lib_symbols
 		(symbol "Device:LED_RGBA"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -73,8 +75,8 @@
 				)
 			)
 			(symbol "LED_RGBA_0_0"
-				(text "B"
-					(at -1.905 -6.35 0)
+				(text "R"
+					(at -1.905 3.81 0)
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -89,8 +91,8 @@
 						)
 					)
 				)
-				(text "R"
-					(at -1.905 3.81 0)
+				(text "B"
+					(at -1.905 -6.35 0)
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -101,31 +103,7 @@
 			(symbol "LED_RGBA_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -5.08) (xy -2.54 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -5.08) (xy 1.27 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -3.81) (xy -1.27 -6.35)
+						(xy -1.27 6.35) (xy -1.27 3.81)
 					)
 					(stroke
 						(width 0.254)
@@ -137,22 +115,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 0) (xy -2.54 0)
+						(xy -1.27 6.35) (xy -1.27 3.81) (xy -1.27 3.81)
 					)
 					(stroke
 						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -185,10 +151,199 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 6.35) (xy -1.27 3.81)
+						(xy -1.27 1.27) (xy -1.27 -1.27)
 					)
 					(stroke
 						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy -1.27 -6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -2.54 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy 1.27 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 6.35) (xy 0.508 7.874) (xy -0.254 7.874) (xy 0.508 7.874) (xy 0.508 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 1.27) (xy 0.508 2.794) (xy -0.254 2.794) (xy 0.508 2.794) (xy 0.508 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -3.81) (xy 0.508 -2.286) (xy -0.254 -2.286) (xy 0.508 -2.286) (xy 0.508 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 1.524 7.874) (xy 0.762 7.874) (xy 1.524 7.874) (xy 1.524 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 1.524 2.794) (xy 0.762 2.794) (xy 1.524 2.794) (xy 1.524 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 1.524 -2.286) (xy 0.762 -2.286) (xy 1.524 -2.286) (xy 1.524 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.35) (xy 1.27 3.81) (xy -1.27 5.08) (xy 1.27 6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 6.35)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 3.81)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 1.27)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -219,34 +374,9 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 6.35) (xy -1.27 3.81) (xy -1.27 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 2.032 -5.08) (xy 2.032 5.08) (xy 1.27 5.08)
-					)
+				(rectangle
+					(start 1.27 -1.27)
+					(end 1.27 1.27)
 					(stroke
 						(width 0)
 						(type default)
@@ -269,136 +399,8 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy 1.27 -5.08) (xy 2.032 -5.08) (xy 2.032 5.08) (xy 1.27 5.08)
 					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 6.35) (xy 1.27 3.81) (xy -1.27 5.08) (xy 1.27 6.35)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 -3.81) (xy 0.508 -2.286) (xy -0.254 -2.286) (xy 0.508 -2.286) (xy 0.508 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.27) (xy 0.508 2.794) (xy -0.254 2.794) (xy 0.508 2.794) (xy 0.508 2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 6.35) (xy 0.508 7.874) (xy -0.254 7.874) (xy 0.508 7.874) (xy 0.508 7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -3.81) (xy 1.524 -2.286) (xy 0.762 -2.286) (xy 1.524 -2.286) (xy 1.524 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 1.524 2.794) (xy 0.762 2.794) (xy 1.524 2.794) (xy 1.524 2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 6.35) (xy 1.524 7.874) (xy 0.762 7.874) (xy 1.524 7.874) (xy 1.524 7.112)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 -1.27)
-					(end 1.27 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 1.27)
-					(end 1.27 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 3.81)
-					(end 1.27 6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 1.27 6.35)
-					(end 1.27 6.35)
 					(stroke
 						(width 0)
 						(type default)
@@ -504,11 +506,183 @@
 					)
 				)
 			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N4148"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4148"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "100V 0.15A standard switching diode, DO-35"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?35*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4148_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N4148_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
 		)
 		(symbol "Switch:SW_Omron_B3FS"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -598,10 +772,9 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
 					(stroke
 						(width 0)
 						(type default)
@@ -610,9 +783,10 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
 					(stroke
 						(width 0)
 						(type default)
@@ -658,529 +832,949 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
-		(at 72.39 97.79)
+		(at 88.9 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "00d1830f-ddd3-4142-8383-9ed485f50be6")
+		(uuid "1f166e51-3f9c-41b9-80eb-4d8024608893")
 	)
 	(junction
-		(at 118.11 114.3)
+		(at 243.84 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0704d41d-f27d-40b2-a539-e4aff3326e02")
+		(uuid "497f3b3a-536f-45ec-ba63-8e050f493b99")
 	)
 	(junction
-		(at 93.98 114.3)
+		(at 189.23 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1493d002-10d5-4741-adb1-473bd7111786")
+		(uuid "59041787-4efb-4079-8361-949f5cf82e17")
 	)
 	(junction
-		(at 118.11 66.04)
+		(at 88.9 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "304e15ce-8732-4084-9ab7-5668c13d6360")
+		(uuid "5d8a7d30-619a-4160-8fd5-1d47e480f24f")
 	)
 	(junction
-		(at 93.98 97.79)
+		(at 189.23 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3a9a84e8-83e8-4604-a39b-f1e713cf677d")
+		(uuid "9bbbf3dc-32f5-4ccf-bcbc-786dc8825290")
 	)
 	(junction
-		(at 118.11 97.79)
+		(at 138.43 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "48bb7e25-9eba-4d37-92ca-ccc42ccb5e15")
+		(uuid "a2b5e7f3-3d6e-414f-8c72-7e1f473c387b")
 	)
 	(junction
-		(at 93.98 82.55)
+		(at 88.9 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "85197294-9226-4f68-984a-cc3669baeb8f")
+		(uuid "b421338e-a793-4a6f-8a8b-7f7badddb57d")
 	)
 	(junction
-		(at 72.39 66.04)
+		(at 243.84 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "97a8d23b-d892-4fe6-bd19-cccf45f79039")
+		(uuid "de48aef2-457e-4be1-bc10-56da7216b47e")
 	)
 	(junction
-		(at 135.89 97.79)
+		(at 189.23 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a12b039e-f6a5-4f54-96fd-38eeb1361527")
+		(uuid "e614703c-68c1-48f8-8626-d9e2973e6e74")
 	)
 	(junction
-		(at 72.39 114.3)
+		(at 138.43 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a4b7f0f0-b8f2-4951-a963-e55a388ae078")
+		(uuid "eb4f8a44-0893-42a2-898a-50bfd8ac3376")
 	)
 	(junction
-		(at 135.89 82.55)
+		(at 243.84 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b0186990-5e58-43aa-a86c-fff62ce9449e")
+		(uuid "eb773069-d99a-498e-a12e-37755f856b3c")
 	)
 	(junction
-		(at 72.39 82.55)
+		(at 138.43 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ccfe454a-5739-44d2-919e-ef162790dfa1")
-	)
-	(junction
-		(at 118.11 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d177b435-d262-4259-9a3d-4eef9667156a")
-	)
-	(junction
-		(at 93.98 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d75cb225-ecdf-4c68-a8b4-84cbf42f6975")
+		(uuid "f54672dc-7e98-4f66-a8d6-b3beacaa21af")
 	)
 	(wire
 		(pts
-			(xy 93.98 82.55) (xy 100.33 82.55)
+			(xy 189.23 72.39) (xy 184.15 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0bae6cd3-d8f2-4e46-b95c-cbb1e8d1380d")
+		(uuid "037f76a3-c0d7-4cb5-bc1c-28688c6a85f8")
 	)
 	(wire
 		(pts
-			(xy 72.39 97.79) (xy 78.74 97.79)
+			(xy 52.07 72.39) (xy 58.42 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0d68b675-1b47-4bbe-935b-7847aaf515ff")
+		(uuid "06486133-bbbe-4125-b1f4-09c73c8408de")
 	)
 	(wire
 		(pts
-			(xy 67.31 97.79) (xy 72.39 97.79)
+			(xy 138.43 104.14) (xy 138.43 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0e6c0ba6-1ded-47dc-b559-0353896059b0")
+		(uuid "0747e2f8-b262-4271-8f28-02eba6a8ab65")
 	)
 	(wire
 		(pts
-			(xy 93.98 66.04) (xy 100.33 66.04)
+			(xy 243.84 72.39) (xy 238.76 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a3a0c5f-0a54-47b3-8ba9-3a26311da872")
+		(uuid "087d4417-0adc-4116-b967-79642b47f1c6")
 	)
 	(wire
 		(pts
-			(xy 135.89 66.04) (xy 135.89 82.55)
+			(xy 167.64 55.88) (xy 176.53 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2104c48f-f4cd-4e89-8428-91dee0df4105")
+		(uuid "0af4ff02-00e2-4c64-9fa1-afdfc4cd78a0")
 	)
 	(wire
 		(pts
-			(xy 72.39 114.3) (xy 78.74 114.3)
+			(xy 68.58 72.39) (xy 74.93 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2abb958b-2836-4431-bf93-bb02de0b414a")
+		(uuid "0bae1a45-243c-45e2-886f-e257e72a6503")
 	)
 	(wire
 		(pts
-			(xy 67.31 114.3) (xy 72.39 114.3)
+			(xy 152.4 72.39) (xy 157.48 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "31660b8e-392a-4cfc-a3da-7948f03630fa")
+		(uuid "0bb551d0-a02a-495f-aae1-596a964ca657")
 	)
 	(wire
 		(pts
-			(xy 72.39 82.55) (xy 78.74 82.55)
+			(xy 138.43 87.63) (xy 138.43 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "418971bf-d893-4d6b-9fca-8626d70aed93")
+		(uuid "0c8b804d-c8cb-4aee-bf95-ae583380c687")
 	)
 	(wire
 		(pts
-			(xy 110.49 114.3) (xy 118.11 114.3)
+			(xy 119.38 87.63) (xy 125.73 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "47c58787-a0ca-4869-8884-ae28c09ce1ac")
+		(uuid "0df7f922-6e47-46f7-98a1-99d9ec449a49")
 	)
 	(wire
 		(pts
-			(xy 110.49 97.79) (xy 118.11 97.79)
+			(xy 167.64 104.14) (xy 176.53 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5739c8d8-0dca-4236-ac29-fa4ad2be816a")
+		(uuid "1a7bac48-6b4f-4066-b948-bfa823eff9da")
 	)
 	(wire
 		(pts
-			(xy 72.39 66.04) (xy 78.74 66.04)
+			(xy 205.74 55.88) (xy 212.09 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "62bd0002-50a0-423b-a827-82db56382fa5")
+		(uuid "1c65a76d-3fdb-4507-be21-d0e638fc58fd")
 	)
 	(wire
 		(pts
-			(xy 72.39 82.55) (xy 72.39 97.79)
+			(xy 205.74 72.39) (xy 212.09 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "62f09ff3-a7b4-42cd-be78-559ce34c4fa9")
+		(uuid "2286fe94-4b34-41fc-983d-9cb26179e0b3")
 	)
 	(wire
 		(pts
-			(xy 93.98 66.04) (xy 93.98 82.55)
+			(xy 205.74 87.63) (xy 212.09 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6abb3fce-e785-4fe7-bf2a-c4ca7c120c87")
+		(uuid "26065f04-8142-4ae7-a0fe-8bbb38a2d114")
 	)
 	(wire
 		(pts
-			(xy 88.9 97.79) (xy 93.98 97.79)
+			(xy 52.07 87.63) (xy 58.42 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6d5c09c4-dde2-4845-93c9-8b36e1d680fa")
+		(uuid "2bf0735e-98f1-4e09-9c86-bb2f6a8b55fd")
 	)
 	(wire
 		(pts
-			(xy 118.11 97.79) (xy 123.19 97.79)
+			(xy 222.25 55.88) (xy 231.14 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6fd837c3-ab17-433d-84ac-838b7c879c2a")
+		(uuid "2d122b58-a4ce-4459-aa89-ad2e3ef9ad26")
 	)
 	(wire
 		(pts
-			(xy 88.9 66.04) (xy 93.98 66.04)
+			(xy 243.84 55.88) (xy 243.84 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "70c58304-85f0-4b06-8ecc-b77113fa8de5")
+		(uuid "43c76d3f-3428-4d7a-8dd8-41dddac650cc")
 	)
 	(wire
 		(pts
-			(xy 88.9 114.3) (xy 93.98 114.3)
+			(xy 243.84 104.14) (xy 243.84 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "71b29080-1324-4b87-9c50-ddd3c7b9f6f0")
+		(uuid "488068ea-faa8-4408-a224-7da5f076fc0e")
 	)
 	(wire
 		(pts
-			(xy 118.11 114.3) (xy 123.19 114.3)
+			(xy 184.15 87.63) (xy 189.23 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "74881358-da47-4bb6-ae6c-e3dad0cede76")
+		(uuid "49c7713a-b997-4a7d-83a9-d63e5859c5ef")
 	)
 	(wire
 		(pts
-			(xy 118.11 66.04) (xy 118.11 82.55)
+			(xy 184.15 104.14) (xy 189.23 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "78ea4321-29e8-40c8-97b0-dec34420d33f")
+		(uuid "52889255-ec76-4856-b5e3-baf1a575c927")
 	)
 	(wire
 		(pts
-			(xy 135.89 82.55) (xy 133.35 82.55)
+			(xy 152.4 55.88) (xy 157.48 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7ca7df43-27cd-4daa-b71a-06ccb6d6ba2d")
+		(uuid "55989794-762a-4028-809c-639c02da6c74")
 	)
 	(wire
 		(pts
-			(xy 118.11 82.55) (xy 118.11 97.79)
+			(xy 82.55 104.14) (xy 88.9 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7f07d6b9-eb58-40b3-b9a6-d42ac5dedffd")
+		(uuid "5fae42a8-cbcf-4ca6-9087-254dfc2d12be")
 	)
 	(wire
 		(pts
-			(xy 93.98 114.3) (xy 93.98 97.79)
+			(xy 152.4 87.63) (xy 157.48 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "85041fd4-94ee-4544-9a88-26589409f462")
+		(uuid "6316f0c8-3c08-4772-99c1-1628dd7b2403")
 	)
 	(wire
 		(pts
-			(xy 67.31 66.04) (xy 72.39 66.04)
+			(xy 88.9 55.88) (xy 88.9 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "86dbae01-1fd3-4132-a523-5b3924697119")
+		(uuid "64cb5752-a73b-405e-933f-528fe27905da")
 	)
 	(wire
 		(pts
-			(xy 135.89 97.79) (xy 135.89 82.55)
+			(xy 238.76 104.14) (xy 243.84 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "878c5b05-4654-4901-874d-0734a95fbb70")
+		(uuid "66687440-60d3-474a-8271-d78c3a9bab19")
 	)
 	(wire
 		(pts
-			(xy 93.98 114.3) (xy 100.33 114.3)
+			(xy 189.23 104.14) (xy 189.23 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "929e7563-4e14-49c1-8e30-77bf18a5c2ce")
+		(uuid "6766e780-b573-435a-873e-c976327eace0")
 	)
 	(wire
 		(pts
-			(xy 93.98 82.55) (xy 93.98 97.79)
+			(xy 167.64 87.63) (xy 176.53 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "952396cf-142a-4f50-bf3f-72f342903ce2")
+		(uuid "6cfe341c-dd0f-4c2b-a97c-65f9844358e5")
 	)
 	(wire
 		(pts
-			(xy 118.11 97.79) (xy 118.11 114.3)
+			(xy 52.07 104.14) (xy 58.42 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "984b4ac3-2a30-49a9-b1bf-6a43220eb0f7")
+		(uuid "6f95c711-b281-4e23-85e5-87846feec0a3")
 	)
 	(wire
 		(pts
-			(xy 135.89 114.3) (xy 135.89 97.79)
+			(xy 119.38 104.14) (xy 125.73 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9bf4340e-a8e7-458c-8944-588b31d24c3b")
+		(uuid "721bf10b-6c2d-4e12-81fb-c2614cc33700")
 	)
 	(wire
 		(pts
-			(xy 110.49 82.55) (xy 118.11 82.55)
+			(xy 222.25 104.14) (xy 231.14 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9c1fb3a7-9c40-4139-a177-3c26be253360")
+		(uuid "73451644-d834-486c-8eba-54da0ddfb08a")
 	)
 	(wire
 		(pts
-			(xy 110.49 66.04) (xy 118.11 66.04)
+			(xy 189.23 104.14) (xy 189.23 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a7a15970-10fa-4175-acfb-af1b8f88f98d")
+		(uuid "766c3061-a5e1-4a0c-8356-dfa89206e190")
 	)
 	(wire
 		(pts
-			(xy 133.35 114.3) (xy 135.89 114.3)
+			(xy 133.35 87.63) (xy 138.43 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b3a55765-c6d9-490a-87fc-620ac2ac5e4e")
+		(uuid "76b72d2a-425f-4cb3-8e6c-b22c040e1ee8")
 	)
 	(wire
 		(pts
-			(xy 118.11 82.55) (xy 123.19 82.55)
+			(xy 243.84 104.14) (xy 243.84 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c257b2bd-da11-42d4-8b9c-09e962c17cd6")
+		(uuid "80a64c28-7df0-4c02-b0c9-584dbdcc6e31")
 	)
 	(wire
 		(pts
-			(xy 93.98 97.79) (xy 100.33 97.79)
+			(xy 68.58 104.14) (xy 74.93 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cb8e69f9-86e1-488c-818e-21d4419b65eb")
+		(uuid "8114c797-abc8-4052-8df2-0b77e5d7fa50")
 	)
 	(wire
 		(pts
-			(xy 67.31 82.55) (xy 72.39 82.55)
+			(xy 102.87 55.88) (xy 109.22 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d32cfed6-d1b1-4af4-86dd-5393600c92d6")
+		(uuid "81421a03-f2fa-4303-aca1-e44f9670862f")
 	)
 	(wire
 		(pts
-			(xy 133.35 97.79) (xy 135.89 97.79)
+			(xy 88.9 104.14) (xy 88.9 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d932c494-8a71-4654-9154-b4ac06a1f738")
+		(uuid "828d23e6-271a-45e1-b418-1dbc0c8df4dd")
 	)
 	(wire
 		(pts
-			(xy 72.39 97.79) (xy 72.39 114.3)
+			(xy 119.38 72.39) (xy 125.73 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e42697ef-8903-4904-9d84-dfd5d311682d")
+		(uuid "8641a231-60d5-4157-81ef-282425e018ca")
 	)
 	(wire
 		(pts
-			(xy 88.9 82.55) (xy 93.98 82.55)
+			(xy 68.58 87.63) (xy 74.93 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e6ce5827-c077-4b3b-85e3-77370fcab7cb")
+		(uuid "89756c1e-35b3-4e2f-a025-9bfbe35ddcc6")
 	)
 	(wire
 		(pts
-			(xy 118.11 66.04) (xy 123.19 66.04)
+			(xy 82.55 55.88) (xy 88.9 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "efeffcec-663a-4ecd-8b52-779a3f73c431")
+		(uuid "8d553f16-96a5-4340-85dd-ea53ab0947ac")
 	)
 	(wire
 		(pts
-			(xy 72.39 66.04) (xy 72.39 82.55)
+			(xy 238.76 55.88) (xy 243.84 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f98b7502-1829-4a25-80fe-911f083e26b8")
+		(uuid "901f8b94-3c24-4dea-b0ae-4ef41fc62f48")
 	)
 	(wire
 		(pts
-			(xy 133.35 66.04) (xy 135.89 66.04)
+			(xy 88.9 72.39) (xy 82.55 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fce076ab-e8af-4615-a843-e2d1cb1c6670")
+		(uuid "91fd471a-5ed3-4764-b2bc-b2a2a7a90285")
+	)
+	(wire
+		(pts
+			(xy 205.74 104.14) (xy 212.09 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929bedde-3b4e-4163-8336-c762482d03bb")
+	)
+	(wire
+		(pts
+			(xy 133.35 55.88) (xy 138.43 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93686dd2-95dd-437d-b9b1-e5d5f487c42e")
+	)
+	(wire
+		(pts
+			(xy 138.43 104.14) (xy 138.43 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d8e72e6-6d81-4a7b-bce6-f48079726e69")
+	)
+	(wire
+		(pts
+			(xy 88.9 104.14) (xy 88.9 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa4cadc-53d7-47cb-bfd0-f9177dfd6b64")
+	)
+	(wire
+		(pts
+			(xy 152.4 104.14) (xy 157.48 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a218a5a2-92db-4c52-9cee-7d398815875c")
+	)
+	(wire
+		(pts
+			(xy 238.76 87.63) (xy 243.84 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6fb682e-1e0e-475e-961c-d1e71b02256c")
+	)
+	(wire
+		(pts
+			(xy 189.23 87.63) (xy 189.23 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a92321d2-28d0-4ac1-9fae-b1438be05761")
+	)
+	(wire
+		(pts
+			(xy 243.84 87.63) (xy 243.84 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab09e82c-cb1c-4b01-bc0d-5467ea700f81")
+	)
+	(wire
+		(pts
+			(xy 102.87 72.39) (xy 109.22 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adf71ad2-8bb0-4e66-a90e-c3a9bceebe32")
+	)
+	(wire
+		(pts
+			(xy 102.87 87.63) (xy 109.22 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b06f0ff0-8f9c-4520-9559-4da334c23b00")
+	)
+	(wire
+		(pts
+			(xy 138.43 55.88) (xy 138.43 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1205e3f-416b-4ba2-b249-64c6f3cb3cc8")
+	)
+	(wire
+		(pts
+			(xy 222.25 87.63) (xy 231.14 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9707406-092f-4442-8635-1f1d4d6a8d39")
+	)
+	(wire
+		(pts
+			(xy 102.87 104.14) (xy 109.22 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc13b655-0e28-4cc0-a35f-cf93348adf0e")
+	)
+	(wire
+		(pts
+			(xy 222.25 72.39) (xy 231.14 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01b0da3-daf9-4bf7-b933-1eae2122efbe")
+	)
+	(wire
+		(pts
+			(xy 133.35 104.14) (xy 138.43 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5ec1939-b423-4668-b390-62dcedbd8452")
+	)
+	(wire
+		(pts
+			(xy 88.9 87.63) (xy 88.9 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd023ac6-c59a-47d3-b473-5c769c97b20b")
+	)
+	(wire
+		(pts
+			(xy 52.07 55.88) (xy 58.42 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f5c284-5681-4ac0-b93f-89a881148878")
+	)
+	(wire
+		(pts
+			(xy 189.23 55.88) (xy 189.23 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e211e8de-3374-406b-8a7a-fffead438c1f")
+	)
+	(wire
+		(pts
+			(xy 119.38 55.88) (xy 125.73 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edcac87d-c835-4317-b3fb-cf9bd0920f66")
+	)
+	(wire
+		(pts
+			(xy 138.43 72.39) (xy 133.35 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee6b8f53-6f57-4987-91c0-721c6b05d336")
+	)
+	(wire
+		(pts
+			(xy 82.55 87.63) (xy 88.9 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f551c7f6-8e86-46d0-b72c-e61d3d97be88")
+	)
+	(wire
+		(pts
+			(xy 184.15 55.88) (xy 189.23 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6e7870f-4e8a-43a8-8d86-d78b8e802722")
+	)
+	(wire
+		(pts
+			(xy 68.58 55.88) (xy 74.93 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f849ef07-61bd-46a6-9b98-27753c44626c")
+	)
+	(wire
+		(pts
+			(xy 167.64 72.39) (xy 176.53 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8b87eea-79bf-48a7-8717-5a7494c68ea6")
+	)
+	(label "SW_COL3"
+		(at 189.23 109.22 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0388b57b-295a-4551-a747-942d1a0ebab8")
+	)
+	(label "SW_ROW1"
+		(at 152.4 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "104495c1-6c7c-4a45-8755-30450ffd91bd")
+	)
+	(label "SW_COL2"
+		(at 138.43 109.22 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1d7edaa0-49c6-46b7-971c-84b86e37df6e")
+	)
+	(label "SW_ROW4"
+		(at 102.87 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "247193f6-bdd5-419d-aaf7-01ccb93f27be")
+	)
+	(label "SW_ROW1"
+		(at 102.87 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31d3a1f6-4202-4e1b-a083-9ffcfe5063b3")
+	)
+	(label "SW_ROW3"
+		(at 205.74 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3c4e0a45-2c2a-4a2f-93a6-ab41c43a48d1")
+	)
+	(label "SW_ROW3"
+		(at 102.87 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d140608-e675-4f92-9165-f95af1dd2f7c")
+	)
+	(label "SW_COL4"
+		(at 243.84 109.22 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d2b6740-4636-4d80-8e4f-0d482e5969ad")
+	)
+	(label "SW_ROW2"
+		(at 205.74 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "68ced424-7b4c-4d5e-b9da-c719950029a9")
+	)
+	(label "SW_ROW4"
+		(at 52.07 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "79119e3a-5771-477b-a712-976edc4c8f9d")
+	)
+	(label "SW_ROW1"
+		(at 52.07 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7f319379-48ac-4a9b-bcc8-4f62fb278d2a")
+	)
+	(label "SW_ROW4"
+		(at 152.4 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "915f18ff-d55f-4ad6-adf5-add87603e687")
+	)
+	(label "SW_ROW2"
+		(at 52.07 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "abd4c3ef-61c3-40fe-92f2-69ff2a22208a")
+	)
+	(label "SW_ROW2"
+		(at 152.4 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b1692b90-1fab-444e-aec0-7b0e67366cf4")
+	)
+	(label "SW_ROW4"
+		(at 205.74 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c5ab8793-5ac8-48dc-8d75-ef302b092bc2")
+	)
+	(label "SW_ROW1"
+		(at 205.74 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e46593ef-04cb-42dd-8372-03cf0593cd6c")
+	)
+	(label "SW_ROW3"
+		(at 52.07 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e6638c00-aee1-4df6-ba54-d9f49ee85494")
+	)
+	(label "SW_ROW2"
+		(at 102.87 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6466bef-373d-4304-8cd1-6f29e7138d46")
+	)
+	(label "SW_COL1"
+		(at 88.9 109.22 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f98f8e76-6112-496d-8a8a-df5e12d7117f")
+	)
+	(label "SW_ROW3"
+		(at 152.4 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe0c32d2-cd54-4444-9097-a8a4a37b9eee")
 	)
 	(symbol
-		(lib_id "Device:LED_RGBA")
-		(at 19.05 91.44 0)
+		(lib_id "Diode:1N4148")
+		(at 180.34 87.63 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "18422244-21ff-4a98-b8f9-7826105c5da3")
-		(property "Reference" "D3"
-			(at 19.05 77.47 0)
+		(uuid "0b8e8bc8-41ca-4920-94a0-b83a27c94442")
+		(property "Reference" "D11"
+			(at 180.34 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED_RGBA"
-			(at 19.05 80.01 0)
+		(property "Value" "1N4148"
+			(at 180.34 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 19.05 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 19.05 92.71 0)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 180.34 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1188,8 +1782,35 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, red/green/blue/anode"
-			(at 19.05 91.44 0)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 180.34 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 180.34 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 180.34 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 180.34 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1198,21 +1819,445 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b2d4517-1925-4755-8108-60c5003a3780")
-		)
-		(pin "4"
-			(uuid "ca0427ff-b6c9-4e68-8907-95673005a195")
-		)
-		(pin "3"
-			(uuid "4239f767-05c8-47d1-bd47-2b98e89c1f90")
+			(uuid "00ddb04b-d14a-44cf-9ce2-2b50dd3cb594")
 		)
 		(pin "1"
-			(uuid "a7236f2f-fb84-479a-bbb4-39593f64214b")
+			(uuid "3c1c927a-9328-4786-82f0-910cd06787ee")
 		)
 		(instances
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
-					(reference "D3")
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 78.74 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e207aab-694e-420c-8b01-704e8571d6b5")
+		(property "Reference" "D1"
+			(at 78.74 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 78.74 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 78.74 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 78.74 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 78.74 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 78.74 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 78.74 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c0588660-d912-4c8f-b180-67cf1b3530d7")
+		)
+		(pin "1"
+			(uuid "c82661b2-9f45-42cb-8c8b-5bb029df8248")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 234.95 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f596b80-d77a-4bed-9368-966ef3be3de0")
+		(property "Reference" "D16"
+			(at 234.95 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 234.95 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 234.95 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 234.95 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 234.95 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 234.95 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 234.95 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4b1b4fc2-cff6-46dc-99c3-33fbccad38fb")
+		)
+		(pin "1"
+			(uuid "955f6ccc-b5fa-4f5d-917c-32be0cdc86df")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 180.34 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "201b12aa-542d-48ee-9c76-1c098e812898")
+		(property "Reference" "D15"
+			(at 180.34 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 180.34 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4c9e940d-0b68-4397-aa08-9661fd018a94")
+		)
+		(pin "1"
+			(uuid "f717cd54-1145-4c0b-b5dc-eb2192e302e4")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 234.95 87.63 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21faa56e-5c7b-48bd-a425-ff128e990cd7")
+		(property "Reference" "D12"
+			(at 234.95 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 234.95 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 234.95 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d49e03ff-399c-4e81-b4a1-5a95e4939539")
+		)
+		(pin "1"
+			(uuid "953d3098-d0da-48e7-b262-97aaa800342f")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 129.54 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26c83e56-972c-42f1-895c-67f1c70f7fe5")
+		(property "Reference" "D14"
+			(at 129.54 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 129.54 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 129.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 129.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 129.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 129.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 129.54 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4707a74d-119e-4632-aded-d53c223b017e")
+		)
+		(pin "1"
+			(uuid "928291cf-fdae-43f4-a352-660e07bcff45")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -1220,7 +2265,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 83.82 114.3 0)
+		(at 114.3 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1229,7 +2274,7 @@
 		(fields_autoplaced yes)
 		(uuid "27ec019d-6304-423a-98d8-7b79ec019e65")
 		(property "Reference" "SW14"
-			(at 83.82 106.68 0)
+			(at 114.3 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1237,7 +2282,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 83.82 109.22 0)
+			(at 114.3 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1245,7 +2290,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 83.82 109.22 0)
+			(at 114.3 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1254,7 +2299,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 83.82 109.22 0)
+			(at 114.3 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1263,7 +2308,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 83.82 114.3 0)
+			(at 114.3 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1288,16 +2333,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_RGBA")
-		(at 34.29 81.28 0)
+		(at 237.49 143.51 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "31b3e4bb-b913-4bc5-9e51-17503a110e07")
-		(property "Reference" "D1"
-			(at 34.29 67.31 0)
+		(uuid "2b37bbfd-5904-42f2-a6fc-d96b892699df")
+		(property "Reference" "D18"
+			(at 237.49 130.048 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1305,7 +2349,7 @@
 			)
 		)
 		(property "Value" "LED_RGBA"
-			(at 34.29 69.85 0)
+			(at 237.49 132.588 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1313,7 +2357,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
-			(at 34.29 82.55 0)
+			(at 237.49 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1322,7 +2366,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 34.29 82.55 0)
+			(at 237.49 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1331,7 +2375,7 @@
 			)
 		)
 		(property "Description" "RGB LED, red/green/blue/anode"
-			(at 34.29 81.28 0)
+			(at 237.49 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1340,21 +2384,21 @@
 			)
 		)
 		(pin "2"
-			(uuid "4bcd0865-9bef-456e-acce-0a34fa07db2a")
+			(uuid "d7c4b6ba-460b-4417-b586-fc1f04b8394d")
 		)
 		(pin "4"
-			(uuid "d04eb6c3-f365-4e56-8b96-6b233e823ba9")
+			(uuid "6e9b7f62-e3d0-4dc7-8375-f62391cee0a1")
 		)
 		(pin "3"
-			(uuid "9e1efcf6-a17e-4d8a-9f54-bc16d248f5b2")
+			(uuid "e1f498ff-dc7c-4c63-ab50-732620e1ffdf")
 		)
 		(pin "1"
-			(uuid "1dd9c2b3-85df-4cf2-8d22-e73c3adee248")
+			(uuid "002b2c16-0a8f-4cc2-8780-d3fd3f7e0644")
 		)
 		(instances
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
-					(reference "D1")
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -1362,7 +2406,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 105.41 114.3 0)
+		(at 162.56 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1371,7 +2415,7 @@
 		(fields_autoplaced yes)
 		(uuid "354374f5-abc2-47e7-9bdb-5abaeaeb641c")
 		(property "Reference" "SW15"
-			(at 105.41 106.68 0)
+			(at 162.56 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1379,7 +2423,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 105.41 109.22 0)
+			(at 162.56 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1387,7 +2431,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 105.41 109.22 0)
+			(at 162.56 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1396,7 +2440,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 105.41 109.22 0)
+			(at 162.56 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1405,7 +2449,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 105.41 114.3 0)
+			(at 162.56 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1429,8 +2473,266 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 78.74 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36def472-8984-4b11-9121-fe8633424295")
+		(property "Reference" "D13"
+			(at 78.74 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 78.74 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 78.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 78.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 78.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 78.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 78.74 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b3022db4-00c6-4d40-b46a-955aee50c8af")
+		)
+		(pin "1"
+			(uuid "9d88ab11-e15a-4426-a771-97ac9e575100")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 78.74 87.63 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3913712d-b0f7-4522-8f65-0c51ac69ae03")
+		(property "Reference" "D9"
+			(at 78.74 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 78.74 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 78.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 78.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 78.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 78.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 78.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2bf6b6db-a368-4aa3-b5f2-20268f4e29d5")
+		)
+		(pin "1"
+			(uuid "67f84540-87bc-4f78-af23-62b1e5ccea29")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 180.34 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4907cf3c-d3af-4146-b0aa-ac06050e818d")
+		(property "Reference" "D7"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 180.34 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e201cc03-f9a1-49e3-9fbc-ad78ec940aea")
+		)
+		(pin "1"
+			(uuid "22ea938f-ded1-4974-ab9c-175bd980431b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 83.82 66.04 0)
+		(at 114.3 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1439,7 +2741,7 @@
 		(fields_autoplaced yes)
 		(uuid "568f0afb-714a-4591-b4b9-573c1136ece0")
 		(property "Reference" "SW2"
-			(at 83.82 58.42 0)
+			(at 114.3 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1447,7 +2749,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 83.82 60.96 0)
+			(at 114.3 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1455,7 +2757,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 83.82 60.96 0)
+			(at 114.3 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1464,7 +2766,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 83.82 60.96 0)
+			(at 114.3 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1473,7 +2775,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 83.82 66.04 0)
+			(at 114.3 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1498,7 +2800,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 128.27 66.04 0)
+		(at 217.17 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1507,7 +2809,7 @@
 		(fields_autoplaced yes)
 		(uuid "5eb50ecb-d4d8-4e92-9ac5-ff49f437d5c0")
 		(property "Reference" "SW4"
-			(at 128.27 58.42 0)
+			(at 217.17 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1515,7 +2817,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 128.27 60.96 0)
+			(at 217.17 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1523,7 +2825,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 128.27 60.96 0)
+			(at 217.17 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1532,7 +2834,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 128.27 60.96 0)
+			(at 217.17 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1541,7 +2843,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 128.27 66.04 0)
+			(at 217.17 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1566,7 +2868,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 62.23 114.3 0)
+		(at 63.5 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1575,7 +2877,7 @@
 		(fields_autoplaced yes)
 		(uuid "60f12715-86e2-4dd5-8e9c-98e6ae397bbf")
 		(property "Reference" "SW13"
-			(at 62.23 106.68 0)
+			(at 63.5 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1583,15 +2885,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 62.23 109.22 0)
+			(at 63.5 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 62.23 109.22 0)
+			(at 63.5 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1600,7 +2903,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 62.23 109.22 0)
+			(at 63.5 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1609,7 +2912,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 62.23 114.3 0)
+			(at 63.5 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1634,7 +2937,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 62.23 66.04 0)
+		(at 63.5 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1643,7 +2946,7 @@
 		(fields_autoplaced yes)
 		(uuid "6a87cdbe-62b1-4173-9776-012977393a48")
 		(property "Reference" "SW1"
-			(at 62.23 58.42 0)
+			(at 63.5 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1651,7 +2954,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 62.23 60.96 0)
+			(at 63.5 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1659,7 +2962,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 62.23 60.96 0)
+			(at 63.5 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1668,7 +2971,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 62.23 60.96 0)
+			(at 63.5 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1677,7 +2980,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 62.23 66.04 0)
+			(at 63.5 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1702,7 +3005,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 128.27 97.79 0)
+		(at 217.17 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1711,7 +3014,7 @@
 		(fields_autoplaced yes)
 		(uuid "72ec881d-c012-4d93-a8fe-d766086f594a")
 		(property "Reference" "SW12"
-			(at 128.27 90.17 0)
+			(at 217.17 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1719,15 +3022,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 128.27 92.71 0)
+			(at 217.17 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 128.27 92.71 0)
+			(at 217.17 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1736,7 +3040,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 128.27 92.71 0)
+			(at 217.17 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1745,7 +3049,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 128.27 97.79 0)
+			(at 217.17 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1770,7 +3074,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 128.27 82.55 0)
+		(at 217.17 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1779,7 +3083,7 @@
 		(fields_autoplaced yes)
 		(uuid "81ff17e2-d6fe-4444-bafb-36be2e4bde65")
 		(property "Reference" "SW8"
-			(at 128.27 74.93 0)
+			(at 217.17 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1787,15 +3091,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 128.27 77.47 0)
+			(at 217.17 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 128.27 77.47 0)
+			(at 217.17 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1804,7 +3109,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 128.27 77.47 0)
+			(at 217.17 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1813,7 +3118,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 128.27 82.55 0)
+			(at 217.17 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1838,7 +3143,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 105.41 82.55 0)
+		(at 162.56 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1847,7 +3152,7 @@
 		(fields_autoplaced yes)
 		(uuid "83ab39aa-b250-4549-9fd1-a7b51bf73770")
 		(property "Reference" "SW7"
-			(at 105.41 74.93 0)
+			(at 162.56 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1855,7 +3160,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 105.41 77.47 0)
+			(at 162.56 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1863,7 +3168,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 105.41 77.47 0)
+			(at 162.56 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1872,7 +3177,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 105.41 77.47 0)
+			(at 162.56 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1881,7 +3186,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 105.41 82.55 0)
+			(at 162.56 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1905,8 +3210,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 129.54 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "890ed240-c290-4010-bf43-8d5879cbc03b")
+		(property "Reference" "D2"
+			(at 129.54 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 129.54 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 129.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 129.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 129.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 129.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 129.54 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "768b3251-c0c8-4e05-af84-465f4f6f6a02")
+		)
+		(pin "1"
+			(uuid "ca01533d-273e-4972-8a02-44c7fca86d07")
+		)
+		(instances
+			(project ""
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 128.27 114.3 0)
+		(at 217.17 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1915,7 +3306,7 @@
 		(fields_autoplaced yes)
 		(uuid "89f0ab51-2b10-4a90-ac65-aef6c26dfd8e")
 		(property "Reference" "SW16"
-			(at 128.27 106.68 0)
+			(at 217.17 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1923,15 +3314,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 128.27 109.22 0)
+			(at 217.17 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 128.27 109.22 0)
+			(at 217.17 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1940,7 +3332,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 128.27 109.22 0)
+			(at 217.17 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1949,7 +3341,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 128.27 114.3 0)
+			(at 217.17 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1973,8 +3365,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 180.34 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8eb0252d-a23a-49e8-86f7-b879deed929c")
+		(property "Reference" "D3"
+			(at 180.34 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 180.34 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 180.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 180.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 180.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 180.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 180.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "979cc6e5-f24c-4d9d-bc78-0ee624ab9338")
+		)
+		(pin "1"
+			(uuid "41e1c27a-e150-4231-8801-aac439615015")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 83.82 97.79 0)
+		(at 114.3 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1983,7 +3461,7 @@
 		(fields_autoplaced yes)
 		(uuid "a1945059-2c31-4c7f-9e39-76582cbd4516")
 		(property "Reference" "SW10"
-			(at 83.82 90.17 0)
+			(at 114.3 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1991,7 +3469,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 83.82 92.71 0)
+			(at 114.3 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1999,7 +3477,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 83.82 92.71 0)
+			(at 114.3 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2008,7 +3486,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 83.82 92.71 0)
+			(at 114.3 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2017,7 +3495,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 83.82 97.79 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2041,8 +3519,180 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 129.54 87.63 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a29b23e1-1f29-4101-9b71-284a47f1f218")
+		(property "Reference" "D10"
+			(at 129.54 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 129.54 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 129.54 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 129.54 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 129.54 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 129.54 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 129.54 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b33e3ce7-2a19-40eb-b480-3be482a789cc")
+		)
+		(pin "1"
+			(uuid "55fdac4b-6173-44fa-82a3-8f41dcfe4597")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 129.54 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "accd1ee7-fa09-4daf-ab11-86e8c2e60ec1")
+		(property "Reference" "D6"
+			(at 129.54 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 129.54 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 129.54 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 129.54 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 129.54 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 129.54 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 129.54 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "db6d4736-b743-4d8d-a9f0-75cdf2e211b5")
+		)
+		(pin "1"
+			(uuid "3097382a-6cc4-4edb-b1ff-f19b69e33519")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 62.23 82.55 0)
+		(at 63.5 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2051,7 +3701,7 @@
 		(fields_autoplaced yes)
 		(uuid "b290e56f-b692-4261-b5ef-71c882288567")
 		(property "Reference" "SW5"
-			(at 62.23 74.93 0)
+			(at 63.5 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2059,15 +3709,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 62.23 77.47 0)
+			(at 63.5 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 62.23 77.47 0)
+			(at 63.5 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2076,7 +3727,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 62.23 77.47 0)
+			(at 63.5 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2085,7 +3736,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 62.23 82.55 0)
+			(at 63.5 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2110,7 +3761,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 83.82 82.55 0)
+		(at 114.3 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2119,7 +3770,7 @@
 		(fields_autoplaced yes)
 		(uuid "b53efb74-06b5-4c22-90fb-1ab5c04be579")
 		(property "Reference" "SW6"
-			(at 83.82 74.93 0)
+			(at 114.3 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2127,7 +3778,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 83.82 77.47 0)
+			(at 114.3 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2135,7 +3786,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 83.82 77.47 0)
+			(at 114.3 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2144,7 +3795,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 83.82 77.47 0)
+			(at 114.3 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2153,7 +3804,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 83.82 82.55 0)
+			(at 114.3 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2177,8 +3828,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 234.95 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6eea2a5-d053-4600-9b96-7809384b81ee")
+		(property "Reference" "D4"
+			(at 234.95 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 234.95 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "59aef07f-8db8-4961-b46a-41d02fefd6ab")
+		)
+		(pin "1"
+			(uuid "ef5ef9c6-c1d6-4232-8b4d-f5f1c4084d09")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 105.41 66.04 0)
+		(at 162.56 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2187,7 +3924,7 @@
 		(fields_autoplaced yes)
 		(uuid "b7871110-6216-40a6-8a8e-42eca5c2f9e0")
 		(property "Reference" "SW3"
-			(at 105.41 58.42 0)
+			(at 162.56 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2195,7 +3932,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 105.41 60.96 0)
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2203,7 +3940,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 105.41 60.96 0)
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2212,7 +3949,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 105.41 60.96 0)
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2221,7 +3958,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 105.41 66.04 0)
+			(at 162.56 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2245,8 +3982,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_RGBA")
+		(at 222.25 153.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cfe8c4e2-05e0-4c87-9f27-e61ed6689dea")
+		(property "Reference" "D17"
+			(at 222.25 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_RGBA"
+			(at 222.25 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 222.25 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 222.25 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, red/green/blue/anode"
+			(at 222.25 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f6508b24-60ed-4936-8c95-07cd446ee9d7")
+		)
+		(pin "4"
+			(uuid "180d3763-328f-4e9e-9d33-7592beaa064f")
+		)
+		(pin "3"
+			(uuid "f434fc89-7b03-4d25-9903-58f22b15a169")
+		)
+		(pin "1"
+			(uuid "85a9c4ce-5f95-43ca-871a-a8906c3d39b3")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 62.23 97.79 0)
+		(at 63.5 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2255,7 +4066,7 @@
 		(fields_autoplaced yes)
 		(uuid "d6c93c24-e29d-4ffb-b76f-6b941d663abc")
 		(property "Reference" "SW9"
-			(at 62.23 90.17 0)
+			(at 63.5 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2263,15 +4074,16 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 62.23 92.71 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 62.23 92.71 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2280,7 +4092,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 62.23 92.71 0)
+			(at 63.5 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2289,7 +4101,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 62.23 97.79 0)
+			(at 63.5 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2313,8 +4125,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 78.74 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e411b896-1828-49c2-9999-9f86b19090d6")
+		(property "Reference" "D5"
+			(at 78.74 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 78.74 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 78.74 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 78.74 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 78.74 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 78.74 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 78.74 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7ab43fc2-44e1-4c31-8cb3-c59295c1a178")
+		)
+		(pin "1"
+			(uuid "787fbb98-7972-4ea8-b297-208575d0c608")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 105.41 97.79 0)
+		(at 162.56 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2323,7 +4221,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed0518e6-0302-4149-a934-6a011a67a529")
 		(property "Reference" "SW11"
-			(at 105.41 90.17 0)
+			(at 162.56 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2331,7 +4229,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 105.41 92.71 0)
+			(at 162.56 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2339,7 +4237,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 105.41 92.71 0)
+			(at 162.56 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2348,7 +4246,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 105.41 92.71 0)
+			(at 162.56 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2357,7 +4255,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 105.41 97.79 0)
+			(at 162.56 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2380,9 +4278,96 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 234.95 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f7e57d08-2852-49fb-a8d7-8056f0bf3c9d")
+		(property "Reference" "D8"
+			(at 234.95 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 234.95 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a5f9e435-4f4b-4fb0-b5b5-a4f346938d5a")
+		)
+		(pin "1"
+			(uuid "b0ea6018-4b7b-4bf3-b31d-e2a493d8da5f")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
