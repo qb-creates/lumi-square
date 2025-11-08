@@ -5,7 +5,7 @@
 	(uuid "a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Device:LED_RGBA"
+		(symbol "Device:LED_BGAR"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -21,7 +21,7 @@
 					)
 				)
 			)
-			(property "Value" "LED_RGBA"
+			(property "Value" "LED_BGAR"
 				(at 0 -8.89 0)
 				(effects
 					(font
@@ -47,7 +47,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "RGB LED, red/green/blue/anode"
+			(property "Description" "RGB LED, blue/green/anode/red"
 				(at 0 0 0)
 				(effects
 					(font
@@ -74,7 +74,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_RGBA_0_0"
+			(symbol "LED_BGAR_0_0"
 				(text "R"
 					(at -1.905 3.81 0)
 					(effects
@@ -100,7 +100,7 @@
 					)
 				)
 			)
-			(symbol "LED_RGBA_0_1"
+			(symbol "LED_BGAR_0_1"
 				(polyline
 					(pts
 						(xy -1.27 6.35) (xy -1.27 3.81)
@@ -432,7 +432,7 @@
 					)
 				)
 			)
-			(symbol "LED_RGBA_1_1"
+			(symbol "LED_BGAR_1_1"
 				(pin passive line
 					(at -5.08 5.08 0)
 					(length 2.54)
@@ -443,7 +443,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -479,7 +479,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -497,7 +497,7 @@
 							)
 						)
 					)
-					(number "4"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1748,6 +1748,154 @@
 		(uuid "fe0c32d2-cd54-4444-9097-a8a4a37b9eee")
 	)
 	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 118.11 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "042047ba-21c8-4a33-b374-22bcced9bfaa")
+		(property "Reference" "D22"
+			(at 118.11 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 118.11 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 118.11 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 118.11 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 118.11 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "faafb6dc-671c-41de-bba4-5afd6f97b45f")
+		)
+		(pin "2"
+			(uuid "0a5ef3c3-e361-4e04-a7dd-7cc468838fe1")
+		)
+		(pin "1"
+			(uuid "8a999206-edeb-4a7a-89f8-b605fd85fe16")
+		)
+		(pin "3"
+			(uuid "085b3ebf-64e4-42f5-b54b-a63dfb36b7f9")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 38.1 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0755cb63-1a5f-4f56-a9db-67d8d0846507")
+		(property "Reference" "D25"
+			(at 38.1 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 38.1 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 38.1 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 38.1 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "d39c19e3-ba22-423b-aad0-5307cad6c445")
+		)
+		(pin "2"
+			(uuid "0f1527b3-a99a-4750-b66f-d94a1495691f")
+		)
+		(pin "1"
+			(uuid "b91a7583-c830-46ba-9819-1f0893752c10")
+		)
+		(pin "3"
+			(uuid "26f1757c-785c-4954-bfcc-92cd4da182df")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N4148")
 		(at 180.34 87.63 180)
 		(unit 1)
@@ -1914,6 +2062,154 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 149.86 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e3a1fbd-7e90-4cca-bb96-ce8be02be045")
+		(property "Reference" "D24"
+			(at 149.86 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 149.86 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 149.86 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 149.86 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "fd3dd824-6f33-4ed9-9592-41fc14570f9c")
+		)
+		(pin "2"
+			(uuid "4ee7f817-0f7b-40a8-bfb0-81935685f2ad")
+		)
+		(pin "1"
+			(uuid "4b298b23-4d9f-42ec-b9c8-2957010f5390")
+		)
+		(pin "3"
+			(uuid "f8102016-a8da-4ff1-9dec-71abc66a185a")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 71.12 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e65fb84-c8d9-411c-ad93-3dcef1fa4147")
+		(property "Reference" "D27"
+			(at 71.12 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 71.12 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 71.12 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 71.12 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "89cd90f2-442f-4f59-8733-18c0ff1f0981")
+		)
+		(pin "2"
+			(uuid "e6d1b56d-a963-4904-9a77-00f099a2005a")
+		)
+		(pin "1"
+			(uuid "4d64d4c5-7e50-42d5-b121-790fb9a92018")
+		)
+		(pin "3"
+			(uuid "11d8fbcb-b23e-409a-b78c-8a18d99abe1b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D27")
 					(unit 1)
 				)
 			)
@@ -2332,79 +2628,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_RGBA")
-		(at 237.49 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2b37bbfd-5904-42f2-a6fc-d96b892699df")
-		(property "Reference" "D18"
-			(at 237.49 130.048 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED_RGBA"
-			(at 237.49 132.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
-			(at 237.49 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 237.49 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED, red/green/blue/anode"
-			(at 237.49 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d7c4b6ba-460b-4417-b586-fc1f04b8394d")
-		)
-		(pin "4"
-			(uuid "6e9b7f62-e3d0-4dc7-8375-f62391cee0a1")
-		)
-		(pin "3"
-			(uuid "e1f498ff-dc7c-4c63-ab50-732620e1ffdf")
-		)
-		(pin "1"
-			(uuid "002b2c16-0a8f-4cc2-8780-d3fd3f7e0644")
-		)
-		(instances
-			(project "ButtonMatrix"
-				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
-					(reference "D18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
 		(at 162.56 104.14 0)
 		(unit 1)
@@ -2559,6 +2782,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 38.1 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37dfa1ed-7c6d-4eb2-802f-43ff57808390")
+		(property "Reference" "D17"
+			(at 38.1 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 38.1 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 38.1 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 38.1 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 38.1 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8ee53db0-ca36-4309-9a7c-23125d265475")
+		)
+		(pin "2"
+			(uuid "a62fa9f9-1e64-4b2f-a764-2fa0ea56cb88")
+		)
+		(pin "1"
+			(uuid "5b83ca90-8d18-46ed-b7e4-5e63d1b6cb54")
+		)
+		(pin "3"
+			(uuid "41d8f2da-9a13-4ab3-837a-918e3853a4b8")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N4148")
 		(at 78.74 87.63 180)
 		(unit 1)
@@ -2639,6 +2936,80 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 54.61 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "425641dd-eac3-48ef-9130-5e95b3c18ba4")
+		(property "Reference" "D18"
+			(at 54.61 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 54.61 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 54.61 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 54.61 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8727e9b2-56d4-4814-bcc2-be8282114f43")
+		)
+		(pin "2"
+			(uuid "66c86fab-3744-4880-b6f4-5d4a7100effd")
+		)
+		(pin "1"
+			(uuid "8083ec66-bf8d-4cb9-b429-c16f3b45c1bf")
+		)
+		(pin "3"
+			(uuid "b35b4357-07d3-49a3-b525-7af792993bf8")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -3204,6 +3575,154 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 118.11 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8447dd95-5215-426c-8ecc-234d2b878f4e")
+		(property "Reference" "D30"
+			(at 118.11 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 118.11 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 118.11 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 118.11 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 118.11 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "6292cf45-f36e-4509-9ad0-234acf1ca0da")
+		)
+		(pin "2"
+			(uuid "e88ce5d8-3734-4e99-bdce-30c4b62f2cbf")
+		)
+		(pin "1"
+			(uuid "a78bd924-bda1-4433-b577-7864e2390a75")
+		)
+		(pin "3"
+			(uuid "e3c89bbe-8961-40da-8267-2a7e22aec24d")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 54.61 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88bfab41-16a6-4b30-9731-62eec93db0a0")
+		(property "Reference" "D26"
+			(at 54.61 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 54.61 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 54.61 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 54.61 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8ccf6e84-4a15-4dcc-8455-569efa9cadd9")
+		)
+		(pin "2"
+			(uuid "6dfa18d4-c4e1-4231-97b4-19aa1d772849")
+		)
+		(pin "1"
+			(uuid "959e4fd6-dea0-43dd-95d1-6848a3af1778")
+		)
+		(pin "3"
+			(uuid "724ec5de-3da7-447b-a18d-b46660781990")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D26")
 					(unit 1)
 				)
 			)
@@ -3982,25 +4501,25 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_RGBA")
-		(at 222.25 153.67 0)
+		(lib_id "Device:LED_BGAR")
+		(at 71.12 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "cfe8c4e2-05e0-4c87-9f27-e61ed6689dea")
-		(property "Reference" "D17"
-			(at 222.25 139.7 0)
+		(uuid "bc3f3593-15f0-4528-ad69-ea26bc73557b")
+		(property "Reference" "D19"
+			(at 71.12 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "LED_RGBA"
-			(at 222.25 142.24 0)
+		(property "Value" "LED_BGAR"
+			(at 71.12 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4008,7 +4527,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 222.25 154.94 0)
+			(at 71.12 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4017,7 +4536,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 222.25 154.94 0)
+			(at 71.12 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4025,31 +4544,253 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, red/green/blue/anode"
-			(at 222.25 153.67 0)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 71.12 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "f6508b24-60ed-4936-8c95-07cd446ee9d7")
 		)
 		(pin "4"
-			(uuid "180d3763-328f-4e9e-9d33-7592beaa064f")
+			(uuid "57321288-f310-4137-b1b6-4a11373cc1f3")
 		)
-		(pin "3"
-			(uuid "f434fc89-7b03-4d25-9903-58f22b15a169")
+		(pin "2"
+			(uuid "f8991353-0288-4136-afb3-05da5a725e68")
 		)
 		(pin "1"
-			(uuid "85a9c4ce-5f95-43ca-871a-a8906c3d39b3")
+			(uuid "e06926f2-ab42-4735-b01e-4a4f7a0897ea")
+		)
+		(pin "3"
+			(uuid "e4bcce93-4187-49e7-84e7-46c3e8230f29")
 		)
 		(instances
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
-					(reference "D17")
+					(reference "D19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 86.36 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c22dcb52-06e8-49ee-9d74-67608a7de6f5")
+		(property "Reference" "D20"
+			(at 86.36 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 86.36 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 86.36 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 86.36 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "9211ba9a-fa32-4417-a3c7-4d86ce95b40a")
+		)
+		(pin "2"
+			(uuid "5fb6d8ea-462c-42c7-8f8a-c4ad1a50afbe")
+		)
+		(pin "1"
+			(uuid "4e8ce8f0-0769-4d7c-80e7-efe7f3c6f1bc")
+		)
+		(pin "3"
+			(uuid "1743e615-e142-4014-964b-e4f86a46ad59")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 134.62 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3f80c33-ba33-42e0-b29e-e801cd491a86")
+		(property "Reference" "D23"
+			(at 134.62 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 134.62 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 134.62 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 134.62 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "38c7941a-1730-4f08-9657-04c9a1a5890b")
+		)
+		(pin "2"
+			(uuid "1ea4b621-fa8c-41eb-8eec-d864020cede5")
+		)
+		(pin "1"
+			(uuid "37bd0cec-48b0-4e3d-8ad5-1be1b5f65c0c")
+		)
+		(pin "3"
+			(uuid "4c3b6bde-afd3-475b-a0c8-540051592c57")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 149.86 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca63503a-3ffb-41db-bd78-a7e1a31532b5")
+		(property "Reference" "D32"
+			(at 149.86 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 149.86 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 149.86 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 149.86 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "11295e82-ab11-4405-903a-0672453f2cb2")
+		)
+		(pin "2"
+			(uuid "57810fb9-cab5-4e61-88b5-9905b4e54058")
+		)
+		(pin "1"
+			(uuid "dd2a7733-2641-47d0-a54a-bebb2836b3d7")
+		)
+		(pin "3"
+			(uuid "296a6bda-c95a-4fdc-974f-fd1049698468")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D32")
 					(unit 1)
 				)
 			)
@@ -4119,6 +4860,80 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "SW9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 86.36 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d997e2e3-ce06-46e7-9f1d-4aba52e80038")
+		(property "Reference" "D28"
+			(at 86.36 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 86.36 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 86.36 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 86.36 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "736b331b-b5dd-447d-bdf9-63dfe34b14b6")
+		)
+		(pin "2"
+			(uuid "2a1f7645-efba-4fca-88ba-d16b4ad58bcd")
+		)
+		(pin "1"
+			(uuid "079a1177-7e0c-421c-9acc-da6ca01914d7")
+		)
+		(pin "3"
+			(uuid "e959ea64-8209-43f3-8b21-98ed8fe474e3")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D28")
 					(unit 1)
 				)
 			)
@@ -4211,6 +5026,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 101.6 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e783f796-2f26-4977-aab2-e3e171671a03")
+		(property "Reference" "D29"
+			(at 101.6 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 101.6 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 101.6 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 101.6 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 101.6 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "bc58c942-8d3c-4893-8266-48ece7c31b5c")
+		)
+		(pin "2"
+			(uuid "069020f7-ece2-4893-9f77-6756cb3665d5")
+		)
+		(pin "1"
+			(uuid "71706f08-e1b1-4c99-84b1-1b284a73a44a")
+		)
+		(pin "3"
+			(uuid "274dd219-f2e6-4de6-97ce-a57488822719")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
 		(at 162.56 87.63 0)
 		(unit 1)
@@ -4273,6 +5162,80 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "SW11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 134.62 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef618154-b985-44f6-9923-112f978be34c")
+		(property "Reference" "D31"
+			(at 134.62 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 134.62 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 134.62 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 134.62 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "05c578be-699c-4b38-b4fc-7e4dc0c069ce")
+		)
+		(pin "2"
+			(uuid "8ddce421-1e9f-42ae-84f2-1b3d11bb10c2")
+		)
+		(pin "1"
+			(uuid "f56840d7-139f-42c8-8e07-a83aab54b30d")
+		)
+		(pin "3"
+			(uuid "74cd608c-6486-49e8-8682-233673a0e00b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D31")
 					(unit 1)
 				)
 			)
@@ -4359,6 +5322,80 @@
 			(project "ButtonMatrix"
 				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
 					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 101.6 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fcbd0d1e-6a42-4b3a-a802-494fe8664baa")
+		(property "Reference" "D21"
+			(at 101.6 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 101.6 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 101.6 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 101.6 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 101.6 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "0598448d-f238-474a-acd9-82ae54041788")
+		)
+		(pin "2"
+			(uuid "1c5488ef-4c9b-4747-840c-4a8d1709f0de")
+		)
+		(pin "1"
+			(uuid "8103739d-791b-417f-8be2-db70c2f377d1")
+		)
+		(pin "3"
+			(uuid "b81335b8-d2f2-4834-922c-634d750076ff")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D21")
 					(unit 1)
 				)
 			)
