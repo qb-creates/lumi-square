@@ -1268,80 +1268,162 @@
 		)
 	)
 	(junction
-		(at 88.9 87.63)
+		(at 157.48 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "18a85955-e3d4-4ba1-aa97-4a5ce574ef29")
+	)
+	(junction
+		(at 69.85 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1f166e51-3f9c-41b9-80eb-4d8024608893")
 	)
 	(junction
-		(at 243.84 87.63)
+		(at 52.07 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "44166cc5-6b78-4987-8ad5-d25eeeb999ed")
+	)
+	(junction
+		(at 224.79 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "497f3b3a-536f-45ec-ba63-8e050f493b99")
 	)
 	(junction
-		(at 189.23 87.63)
+		(at 170.18 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "59041787-4efb-4079-8361-949f5cf82e17")
 	)
 	(junction
-		(at 88.9 72.39)
+		(at 69.85 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5d8a7d30-619a-4160-8fd5-1d47e480f24f")
 	)
 	(junction
-		(at 189.23 104.14)
+		(at 120.65 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f8ba5a1-d2dc-4150-a9a6-73b5309dab1c")
+	)
+	(junction
+		(at 120.65 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89f06678-e642-4fd6-ad9f-bec2dfe6d4ed")
+	)
+	(junction
+		(at 52.07 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "90554c6d-e649-418a-be49-7971d0ce5036")
+	)
+	(junction
+		(at 170.18 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9bbbf3dc-32f5-4ccf-bcbc-786dc8825290")
 	)
 	(junction
-		(at 138.43 104.14)
+		(at 120.65 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a0ccec48-135f-4b1b-b05e-6d156f71c959")
+	)
+	(junction
+		(at 157.48 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a10b27bf-00f2-4795-9a31-9eeabacd4933")
+	)
+	(junction
+		(at 119.38 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a2b5e7f3-3d6e-414f-8c72-7e1f473c387b")
 	)
 	(junction
-		(at 88.9 104.14)
+		(at 69.85 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b421338e-a793-4a6f-8a8b-7f7badddb57d")
 	)
 	(junction
-		(at 243.84 72.39)
+		(at 85.09 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b606cb5a-286a-4693-99a1-bb9a4a64fd9a")
+	)
+	(junction
+		(at 52.07 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b745b78c-8396-4963-ad67-3f70bbb7ebf5")
+	)
+	(junction
+		(at 224.79 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "de48aef2-457e-4be1-bc10-56da7216b47e")
 	)
 	(junction
-		(at 189.23 72.39)
+		(at 85.09 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e399a2dc-15e4-45b4-a482-548d458b62cf")
+	)
+	(junction
+		(at 170.18 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e614703c-68c1-48f8-8626-d9e2973e6e74")
 	)
 	(junction
-		(at 138.43 87.63)
+		(at 119.38 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb4f8a44-0893-42a2-898a-50bfd8ac3376")
 	)
 	(junction
-		(at 243.84 104.14)
+		(at 224.79 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb773069-d99a-498e-a12e-37755f856b3c")
 	)
 	(junction
-		(at 138.43 72.39)
+		(at 157.48 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f27b7fae-f7a8-4d70-868f-cb108dc881f6")
+	)
+	(junction
+		(at 119.38 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f54672dc-7e98-4f66-a8d6-b3beacaa21af")
 	)
+	(junction
+		(at 85.09 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f70ae98d-81c2-4422-8811-c40b1d6c50a1")
+	)
 	(wire
 		(pts
-			(xy 189.23 72.39) (xy 184.15 72.39)
+			(xy 135.89 162.56) (xy 140.97 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03337127-098e-4167-83b4-279ddf4d9b32")
+	)
+	(wire
+		(pts
+			(xy 170.18 40.64) (xy 165.1 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1351,7 +1433,27 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 72.39) (xy 58.42 72.39)
+			(xy 30.48 132.08) (xy 35.56 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "042db72e-f25e-4091-a606-db554bdaece4")
+	)
+	(wire
+		(pts
+			(xy 157.48 105.41) (xy 157.48 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "050f2f5d-cfa9-4f61-bc99-3bd005e793a4")
+	)
+	(wire
+		(pts
+			(xy 33.02 40.64) (xy 39.37 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1361,7 +1463,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 104.14) (xy 138.43 109.22)
+			(xy 119.38 72.39) (xy 119.38 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1371,7 +1473,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 72.39) (xy 238.76 72.39)
+			(xy 224.79 40.64) (xy 219.71 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1381,7 +1483,37 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 55.88) (xy 176.53 55.88)
+			(xy 31.75 152.4) (xy 35.56 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09e05990-946b-4eea-bce1-4c50be95f56c")
+	)
+	(wire
+		(pts
+			(xy 195.58 152.4) (xy 201.93 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a9e905c-b2fa-456b-b0cb-6e93b70e1d7a")
+	)
+	(wire
+		(pts
+			(xy 234.95 142.24) (xy 241.3 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ae731f0-e540-4de2-ac5a-1bbf8f4c18dc")
+	)
+	(wire
+		(pts
+			(xy 148.59 24.13) (xy 157.48 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1391,7 +1523,17 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 72.39) (xy 74.93 72.39)
+			(xy 30.48 184.15) (xy 35.56 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b5c5155-c65d-45ea-94fb-3dca6c18871a")
+	)
+	(wire
+		(pts
+			(xy 49.53 40.64) (xy 55.88 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1401,7 +1543,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 72.39) (xy 157.48 72.39)
+			(xy 133.35 40.64) (xy 138.43 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1411,7 +1553,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 87.63) (xy 138.43 72.39)
+			(xy 119.38 55.88) (xy 119.38 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1421,7 +1563,17 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 87.63) (xy 125.73 87.63)
+			(xy 195.58 144.78) (xy 201.93 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d139e34-8bb1-46c0-9e8d-0356b7a812be")
+	)
+	(wire
+		(pts
+			(xy 100.33 55.88) (xy 106.68 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1431,7 +1583,77 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 104.14) (xy 176.53 104.14)
+			(xy 52.07 184.15) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1017baad-e70d-4476-bbdb-c88adbca933b")
+	)
+	(wire
+		(pts
+			(xy 99.06 184.15) (xy 104.14 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10e2c2ea-f492-4ac7-aa3a-8c44d37a0c39")
+	)
+	(wire
+		(pts
+			(xy 114.3 157.48) (xy 120.65 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1109a46a-f60b-48d9-aeba-ef5962480fff")
+	)
+	(wire
+		(pts
+			(xy 234.95 137.16) (xy 241.3 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "156292d0-c84e-449a-9b12-3f90af17e030")
+	)
+	(wire
+		(pts
+			(xy 151.13 184.15) (xy 157.48 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15d11309-3a3b-4283-b188-d094f17440c0")
+	)
+	(wire
+		(pts
+			(xy 85.09 184.15) (xy 85.09 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18e9df20-563f-43c2-8e19-3faacaa532eb")
+	)
+	(wire
+		(pts
+			(xy 234.95 144.78) (xy 241.3 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "192d24cd-7a97-4670-a241-2e2950ebf997")
+	)
+	(wire
+		(pts
+			(xy 148.59 72.39) (xy 157.48 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1441,7 +1663,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 55.88) (xy 212.09 55.88)
+			(xy 186.69 24.13) (xy 193.04 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1451,7 +1673,37 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 72.39) (xy 212.09 72.39)
+			(xy 120.65 132.08) (xy 114.3 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c96f09f-e3f9-457e-b9fb-ba00e580d794")
+	)
+	(wire
+		(pts
+			(xy 234.95 154.94) (xy 241.3 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "208a499c-cb94-4916-acbe-26cedd3cb7c5")
+	)
+	(wire
+		(pts
+			(xy 30.48 127) (xy 35.56 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21a5c75f-a9fc-4385-8720-542a18ae9838")
+	)
+	(wire
+		(pts
+			(xy 186.69 40.64) (xy 193.04 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1461,7 +1713,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 87.63) (xy 212.09 87.63)
+			(xy 186.69 55.88) (xy 193.04 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1471,7 +1723,27 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 87.63) (xy 58.42 87.63)
+			(xy 85.09 157.48) (xy 80.01 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2648c8fc-1130-4cbb-89f2-6e83883f7bfc")
+	)
+	(wire
+		(pts
+			(xy 64.77 132.08) (xy 69.85 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "281baa23-bb24-422e-8a75-2afc04e9c3c9")
+	)
+	(wire
+		(pts
+			(xy 33.02 55.88) (xy 39.37 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1481,7 +1753,27 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 55.88) (xy 231.14 55.88)
+			(xy 31.75 157.48) (xy 35.56 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c536550-aaec-44d0-954a-aed5fd4849aa")
+	)
+	(wire
+		(pts
+			(xy 80.01 184.15) (xy 85.09 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cd63c4d-10de-4ed6-aca9-603a39a608e7")
+	)
+	(wire
+		(pts
+			(xy 203.2 24.13) (xy 212.09 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1491,7 +1783,97 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 55.88) (xy 243.84 72.39)
+			(xy 137.16 137.16) (xy 140.97 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb370f8-662a-4dcf-b51c-a9e7c5668df5")
+	)
+	(wire
+		(pts
+			(xy 45.72 184.15) (xy 52.07 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31174f28-2745-46f1-b2ab-b34d3791460d")
+	)
+	(wire
+		(pts
+			(xy 234.95 152.4) (xy 241.3 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31bb076f-eb86-4381-96a6-de987d0fef9a")
+	)
+	(wire
+		(pts
+			(xy 157.48 157.48) (xy 157.48 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32b763c0-4892-436b-919f-405127228002")
+	)
+	(wire
+		(pts
+			(xy 64.77 137.16) (xy 69.85 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33497b4b-228a-48cc-998d-8162941e8900")
+	)
+	(wire
+		(pts
+			(xy 100.33 132.08) (xy 104.14 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "367d48ec-0ecb-42bb-87fa-a3685d533a3a")
+	)
+	(wire
+		(pts
+			(xy 195.58 129.54) (xy 201.93 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "399513bd-c975-486f-b97d-513593c68d30")
+	)
+	(wire
+		(pts
+			(xy 234.95 129.54) (xy 241.3 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ca43eb9-094d-49e8-bea7-f21588054adc")
+	)
+	(wire
+		(pts
+			(xy 151.13 105.41) (xy 157.48 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cdeee7e-60a1-4de6-adcf-3fed8e215682")
+	)
+	(wire
+		(pts
+			(xy 224.79 24.13) (xy 224.79 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1501,7 +1883,37 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 104.14) (xy 243.84 109.22)
+			(xy 120.65 184.15) (xy 120.65 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43f2b88d-969a-459c-a84a-486c3815c239")
+	)
+	(wire
+		(pts
+			(xy 30.48 179.07) (xy 35.56 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "469bc79e-a794-49f2-a790-21911c852aa2")
+	)
+	(wire
+		(pts
+			(xy 195.58 154.94) (xy 201.93 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4829e508-c540-474b-8877-e4fde394af66")
+	)
+	(wire
+		(pts
+			(xy 224.79 72.39) (xy 224.79 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1511,7 +1923,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 87.63) (xy 189.23 87.63)
+			(xy 165.1 55.88) (xy 170.18 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1521,7 +1933,27 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 104.14) (xy 189.23 104.14)
+			(xy 80.01 132.08) (xy 85.09 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cd7f6ba-152e-4101-98dc-e27ed58f62d9")
+	)
+	(wire
+		(pts
+			(xy 100.33 127) (xy 104.14 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e44cc71-dc67-4c41-9ffb-c2082054b8b8")
+	)
+	(wire
+		(pts
+			(xy 165.1 72.39) (xy 170.18 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1531,7 +1963,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 55.88) (xy 157.48 55.88)
+			(xy 133.35 24.13) (xy 138.43 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1541,7 +1973,27 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 104.14) (xy 88.9 104.14)
+			(xy 234.95 139.7) (xy 241.3 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c3d4cba-eb0c-4c6d-9674-8048894dd9c1")
+	)
+	(wire
+		(pts
+			(xy 195.58 139.7) (xy 201.93 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5da17ef1-7c30-4c8b-93f4-88c13f3e1a81")
+	)
+	(wire
+		(pts
+			(xy 63.5 72.39) (xy 69.85 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1551,203 +2003,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 87.63) (xy 157.48 87.63)
+			(xy 114.3 184.15) (xy 120.65 184.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6316f0c8-3c08-4772-99c1-1628dd7b2403")
-	)
-	(wire
-		(pts
-			(xy 88.9 55.88) (xy 88.9 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64cb5752-a73b-405e-933f-528fe27905da")
-	)
-	(wire
-		(pts
-			(xy 238.76 104.14) (xy 243.84 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66687440-60d3-474a-8271-d78c3a9bab19")
-	)
-	(wire
-		(pts
-			(xy 189.23 104.14) (xy 189.23 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6766e780-b573-435a-873e-c976327eace0")
-	)
-	(wire
-		(pts
-			(xy 167.64 87.63) (xy 176.53 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6cfe341c-dd0f-4c2b-a97c-65f9844358e5")
-	)
-	(wire
-		(pts
-			(xy 52.07 104.14) (xy 58.42 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f95c711-b281-4e23-85e5-87846feec0a3")
-	)
-	(wire
-		(pts
-			(xy 119.38 104.14) (xy 125.73 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "721bf10b-6c2d-4e12-81fb-c2614cc33700")
-	)
-	(wire
-		(pts
-			(xy 222.25 104.14) (xy 231.14 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73451644-d834-486c-8eba-54da0ddfb08a")
-	)
-	(wire
-		(pts
-			(xy 189.23 104.14) (xy 189.23 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "766c3061-a5e1-4a0c-8356-dfa89206e190")
-	)
-	(wire
-		(pts
-			(xy 133.35 87.63) (xy 138.43 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76b72d2a-425f-4cb3-8e6c-b22c040e1ee8")
-	)
-	(wire
-		(pts
-			(xy 243.84 104.14) (xy 243.84 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80a64c28-7df0-4c02-b0c9-584dbdcc6e31")
-	)
-	(wire
-		(pts
-			(xy 68.58 104.14) (xy 74.93 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8114c797-abc8-4052-8df2-0b77e5d7fa50")
-	)
-	(wire
-		(pts
-			(xy 102.87 55.88) (xy 109.22 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81421a03-f2fa-4303-aca1-e44f9670862f")
-	)
-	(wire
-		(pts
-			(xy 88.9 104.14) (xy 88.9 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "828d23e6-271a-45e1-b418-1dbc0c8df4dd")
-	)
-	(wire
-		(pts
-			(xy 119.38 72.39) (xy 125.73 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8641a231-60d5-4157-81ef-282425e018ca")
-	)
-	(wire
-		(pts
-			(xy 68.58 87.63) (xy 74.93 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89756c1e-35b3-4e2f-a025-9bfbe35ddcc6")
-	)
-	(wire
-		(pts
-			(xy 82.55 55.88) (xy 88.9 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d553f16-96a5-4340-85dd-ea53ab0947ac")
-	)
-	(wire
-		(pts
-			(xy 238.76 55.88) (xy 243.84 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "901f8b94-3c24-4dea-b0ae-4ef41fc62f48")
-	)
-	(wire
-		(pts
-			(xy 88.9 72.39) (xy 82.55 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91fd471a-5ed3-4764-b2bc-b2a2a7a90285")
-	)
-	(wire
-		(pts
-			(xy 205.74 104.14) (xy 212.09 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "929bedde-3b4e-4163-8336-c762482d03bb")
+		(uuid "6214c409-d079-4ea0-b0d0-b117943376d8")
 	)
 	(wire
 		(pts
@@ -1757,11 +2019,481 @@
 			(width 0)
 			(type default)
 		)
+		(uuid "6316f0c8-3c08-4772-99c1-1628dd7b2403")
+	)
+	(wire
+		(pts
+			(xy 99.06 162.56) (xy 104.14 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6395488f-6328-42de-8d22-ba854c365915")
+	)
+	(wire
+		(pts
+			(xy 69.85 24.13) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64cb5752-a73b-405e-933f-528fe27905da")
+	)
+	(wire
+		(pts
+			(xy 52.07 132.08) (xy 45.72 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64f7a75d-8b87-4f54-93f2-5f3cf2e6a716")
+	)
+	(wire
+		(pts
+			(xy 219.71 72.39) (xy 224.79 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66687440-60d3-474a-8271-d78c3a9bab19")
+	)
+	(wire
+		(pts
+			(xy 52.07 132.08) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66a8ed91-8339-461b-804b-8f35a96cd330")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 170.18 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6766e780-b573-435a-873e-c976327eace0")
+	)
+	(wire
+		(pts
+			(xy 30.48 110.49) (xy 35.56 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68937f4c-2c8d-4a76-8673-7a84aae1a998")
+	)
+	(wire
+		(pts
+			(xy 66.04 100.33) (xy 69.85 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69437f96-f513-49b8-bfe3-e94ef4a3ee79")
+	)
+	(wire
+		(pts
+			(xy 148.59 55.88) (xy 157.48 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cfe341c-dd0f-4c2b-a97c-65f9844358e5")
+	)
+	(wire
+		(pts
+			(xy 195.58 134.62) (xy 201.93 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f0ff0f8-bcd8-45fd-a023-4248e1cc6ab8")
+	)
+	(wire
+		(pts
+			(xy 33.02 72.39) (xy 39.37 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f95c711-b281-4e23-85e5-87846feec0a3")
+	)
+	(wire
+		(pts
+			(xy 114.3 105.41) (xy 120.65 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fae35b9-eb17-444e-b2ee-34a56dad7775")
+	)
+	(wire
+		(pts
+			(xy 137.16 100.33) (xy 140.97 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7216cdc2-329f-4388-b194-571a6823a69c")
+	)
+	(wire
+		(pts
+			(xy 100.33 72.39) (xy 106.68 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "721bf10b-6c2d-4e12-81fb-c2614cc33700")
+	)
+	(wire
+		(pts
+			(xy 203.2 72.39) (xy 212.09 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73451644-d834-486c-8eba-54da0ddfb08a")
+	)
+	(wire
+		(pts
+			(xy 120.65 157.48) (xy 120.65 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "758ac4f1-86d7-4908-a55e-71ba2952218c")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 170.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "766c3061-a5e1-4a0c-8356-dfa89206e190")
+	)
+	(wire
+		(pts
+			(xy 114.3 55.88) (xy 119.38 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b72d2a-425f-4cb3-8e6c-b22c040e1ee8")
+	)
+	(wire
+		(pts
+			(xy 234.95 149.86) (xy 241.3 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79f961de-35c4-49d1-bca7-78e1ad5528d8")
+	)
+	(wire
+		(pts
+			(xy 45.72 157.48) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7dc9e898-1252-4a6e-a50c-c41607a45560")
+	)
+	(wire
+		(pts
+			(xy 195.58 157.48) (xy 201.93 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f68ff7a-f4a2-4c88-bf2b-671229c711b3")
+	)
+	(wire
+		(pts
+			(xy 224.79 72.39) (xy 224.79 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80a64c28-7df0-4c02-b0c9-584dbdcc6e31")
+	)
+	(wire
+		(pts
+			(xy 49.53 72.39) (xy 55.88 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8114c797-abc8-4052-8df2-0b77e5d7fa50")
+	)
+	(wire
+		(pts
+			(xy 83.82 24.13) (xy 90.17 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81421a03-f2fa-4303-aca1-e44f9670862f")
+	)
+	(wire
+		(pts
+			(xy 30.48 137.16) (xy 35.56 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "815737e0-b091-4d18-84cb-98509f7bf95c")
+	)
+	(wire
+		(pts
+			(xy 69.85 72.39) (xy 69.85 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "828d23e6-271a-45e1-b418-1dbc0c8df4dd")
+	)
+	(wire
+		(pts
+			(xy 195.58 137.16) (xy 201.93 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85445db8-c63c-414b-bef1-8f77bb643bcd")
+	)
+	(wire
+		(pts
+			(xy 157.48 132.08) (xy 151.13 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "858003f4-14a4-4f87-a417-ca651e5230b5")
+	)
+	(wire
+		(pts
+			(xy 100.33 40.64) (xy 106.68 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8641a231-60d5-4157-81ef-282425e018ca")
+	)
+	(wire
+		(pts
+			(xy 30.48 189.23) (xy 35.56 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "874632f3-a800-42ec-8014-316c5c073131")
+	)
+	(wire
+		(pts
+			(xy 49.53 55.88) (xy 55.88 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89756c1e-35b3-4e2f-a025-9bfbe35ddcc6")
+	)
+	(wire
+		(pts
+			(xy 157.48 157.48) (xy 157.48 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89f2e925-b24f-4f42-aa2b-eecc9f38d5a3")
+	)
+	(wire
+		(pts
+			(xy 63.5 24.13) (xy 69.85 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d553f16-96a5-4340-85dd-ea53ab0947ac")
+	)
+	(wire
+		(pts
+			(xy 99.06 152.4) (xy 104.14 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d81a045-376c-4084-9653-1dc1cbf1e36f")
+	)
+	(wire
+		(pts
+			(xy 219.71 24.13) (xy 224.79 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "901f8b94-3c24-4dea-b0ae-4ef41fc62f48")
+	)
+	(wire
+		(pts
+			(xy 64.77 157.48) (xy 69.85 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90c1edd3-c9a9-4370-b057-fe4668579fbd")
+	)
+	(wire
+		(pts
+			(xy 69.85 40.64) (xy 63.5 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91fd471a-5ed3-4764-b2bc-b2a2a7a90285")
+	)
+	(wire
+		(pts
+			(xy 186.69 72.39) (xy 193.04 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929bedde-3b4e-4163-8336-c762482d03bb")
+	)
+	(wire
+		(pts
+			(xy 135.89 189.23) (xy 140.97 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93346ac0-c391-4380-a213-c54e5789eed3")
+	)
+	(wire
+		(pts
+			(xy 114.3 24.13) (xy 119.38 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
 		(uuid "93686dd2-95dd-437d-b9b1-e5d5f487c42e")
 	)
 	(wire
 		(pts
-			(xy 138.43 104.14) (xy 138.43 87.63)
+			(xy 137.16 110.49) (xy 140.97 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "980bf1c9-ea8b-44ac-8bcf-ba2a52c1dac9")
+	)
+	(wire
+		(pts
+			(xy 195.58 149.86) (xy 201.93 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9982b14b-d428-4753-8204-a7ba7e4afbcb")
+	)
+	(wire
+		(pts
+			(xy 137.16 127) (xy 140.97 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99f72e2c-3dbd-499b-b3a1-a6f41fc4683d")
+	)
+	(wire
+		(pts
+			(xy 80.01 105.41) (xy 85.09 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a46c8f0-774c-49de-8462-ac6d603ea621")
+	)
+	(wire
+		(pts
+			(xy 234.95 147.32) (xy 241.3 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a63b0a9-9126-4a03-a4c2-bcb742aadad5")
+	)
+	(wire
+		(pts
+			(xy 45.72 105.41) (xy 52.07 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c87ed63-2cdc-4474-8127-fb011bebf8f9")
+	)
+	(wire
+		(pts
+			(xy 64.77 189.23) (xy 69.85 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d4defb8-4496-4c90-9a15-0d839643cc02")
+	)
+	(wire
+		(pts
+			(xy 119.38 72.39) (xy 119.38 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1771,7 +2503,27 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 104.14) (xy 88.9 87.63)
+			(xy 64.77 162.56) (xy 69.85 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e4ce803-eb88-461a-872e-f9f7989b58c4")
+	)
+	(wire
+		(pts
+			(xy 99.06 179.07) (xy 104.14 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e71d272-f6cf-4bc5-9fa3-81f83e384175")
+	)
+	(wire
+		(pts
+			(xy 69.85 72.39) (xy 69.85 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1781,7 +2533,17 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 104.14) (xy 157.48 104.14)
+			(xy 234.95 132.08) (xy 241.3 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a185f094-c1a4-40cc-9907-db23e8ce2b7c")
+	)
+	(wire
+		(pts
+			(xy 133.35 72.39) (xy 138.43 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1791,7 +2553,27 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 87.63) (xy 243.84 87.63)
+			(xy 99.06 157.48) (xy 104.14 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4fc58be-3715-450d-89de-820a612c3e95")
+	)
+	(wire
+		(pts
+			(xy 30.48 105.41) (xy 35.56 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5bfc10a-8206-4355-a94b-e92dab91fc2e")
+	)
+	(wire
+		(pts
+			(xy 219.71 55.88) (xy 224.79 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1801,7 +2583,27 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 87.63) (xy 189.23 72.39)
+			(xy 52.07 184.15) (xy 52.07 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6ffaf90-bbb6-47f6-bb02-c791361cf9cd")
+	)
+	(wire
+		(pts
+			(xy 137.16 105.41) (xy 140.97 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a780fc22-32a2-4634-8841-6738d534eec8")
+	)
+	(wire
+		(pts
+			(xy 170.18 55.88) (xy 170.18 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1811,7 +2613,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 87.63) (xy 243.84 72.39)
+			(xy 224.79 55.88) (xy 224.79 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1821,7 +2623,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 72.39) (xy 109.22 72.39)
+			(xy 83.82 40.64) (xy 90.17 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1831,7 +2633,17 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 87.63) (xy 109.22 87.63)
+			(xy 120.65 105.41) (xy 120.65 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae85a678-14d0-4321-b655-806578e60c2a")
+	)
+	(wire
+		(pts
+			(xy 83.82 55.88) (xy 90.17 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1841,7 +2653,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 55.88) (xy 138.43 72.39)
+			(xy 119.38 24.13) (xy 119.38 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1851,7 +2663,37 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 87.63) (xy 231.14 87.63)
+			(xy 66.04 105.41) (xy 69.85 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b54f255e-b503-4ef5-bd50-59b953545dde")
+	)
+	(wire
+		(pts
+			(xy 31.75 162.56) (xy 35.56 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5e87f29-072f-446e-98d4-0364ee90349e")
+	)
+	(wire
+		(pts
+			(xy 195.58 132.08) (xy 201.93 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b61e093e-00b1-4d81-be62-02d7569b5536")
+	)
+	(wire
+		(pts
+			(xy 203.2 55.88) (xy 212.09 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1861,7 +2703,27 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 104.14) (xy 109.22 104.14)
+			(xy 85.09 132.08) (xy 85.09 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba237b4f-1219-4453-9f9f-8a723de4903e")
+	)
+	(wire
+		(pts
+			(xy 135.89 179.07) (xy 140.97 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbc75ce5-941d-45b5-8be1-adfc42d1522a")
+	)
+	(wire
+		(pts
+			(xy 83.82 72.39) (xy 90.17 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1871,7 +2733,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 72.39) (xy 231.14 72.39)
+			(xy 203.2 40.64) (xy 212.09 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1881,7 +2743,87 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 104.14) (xy 138.43 104.14)
+			(xy 100.33 105.41) (xy 104.14 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0daf7ca-fcdd-494c-83cc-dc7920b0ad07")
+	)
+	(wire
+		(pts
+			(xy 135.89 152.4) (xy 140.97 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c799a429-d8ed-48c0-85d4-ee97cf17dce1")
+	)
+	(wire
+		(pts
+			(xy 100.33 110.49) (xy 104.14 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c96bf3b3-7ed7-4c8f-a1a5-ce5a01697b94")
+	)
+	(wire
+		(pts
+			(xy 64.77 152.4) (xy 69.85 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9a9e948-b89b-4ee3-9d0b-9fa3daf0c451")
+	)
+	(wire
+		(pts
+			(xy 66.04 110.49) (xy 69.85 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9c63b9d-246b-4a10-a3d0-c28e57412a3c")
+	)
+	(wire
+		(pts
+			(xy 100.33 137.16) (xy 104.14 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf88b3f4-13bf-4d9c-8e99-12cc8617247c")
+	)
+	(wire
+		(pts
+			(xy 64.77 127) (xy 69.85 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33d8fca-4e42-4a16-95f5-9fc5ba95e9bb")
+	)
+	(wire
+		(pts
+			(xy 120.65 184.15) (xy 120.65 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d58a2fd0-9485-4728-8381-8eac3f43f4e0")
+	)
+	(wire
+		(pts
+			(xy 114.3 72.39) (xy 119.38 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1891,7 +2833,27 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 87.63) (xy 88.9 72.39)
+			(xy 64.77 184.15) (xy 69.85 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d728716f-d919-4383-be68-447699fcd844")
+	)
+	(wire
+		(pts
+			(xy 135.89 157.48) (xy 140.97 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da072557-a567-431d-b795-dc3d97950a9d")
+	)
+	(wire
+		(pts
+			(xy 69.85 55.88) (xy 69.85 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1901,7 +2863,27 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 55.88) (xy 58.42 55.88)
+			(xy 30.48 100.33) (xy 35.56 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd7a5670-586d-43d5-b59c-196a920275a1")
+	)
+	(wire
+		(pts
+			(xy 64.77 179.07) (xy 69.85 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfa2a32c-2e6d-4b92-b290-3b4679a6c6a7")
+	)
+	(wire
+		(pts
+			(xy 33.02 24.13) (xy 39.37 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1911,7 +2893,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 55.88) (xy 189.23 72.39)
+			(xy 170.18 24.13) (xy 170.18 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1921,7 +2903,57 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 55.88) (xy 125.73 55.88)
+			(xy 151.13 157.48) (xy 157.48 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e278db18-7931-4d8c-849d-88a0672c4440")
+	)
+	(wire
+		(pts
+			(xy 99.06 189.23) (xy 104.14 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5a37fc7-d294-4c5d-9190-cfd0bb7274a5")
+	)
+	(wire
+		(pts
+			(xy 195.58 142.24) (xy 201.93 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecdf4516-f240-4ddf-a548-e05f3fcae860")
+	)
+	(wire
+		(pts
+			(xy 85.09 105.41) (xy 85.09 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed548379-b410-4373-abfe-4a58cee24c1f")
+	)
+	(wire
+		(pts
+			(xy 137.16 132.08) (xy 140.97 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed668a87-a63e-43c7-8287-7e1abfedcb44")
+	)
+	(wire
+		(pts
+			(xy 100.33 24.13) (xy 106.68 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1931,7 +2963,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 72.39) (xy 133.35 72.39)
+			(xy 119.38 40.64) (xy 114.3 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1941,7 +2973,57 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 87.63) (xy 88.9 87.63)
+			(xy 135.89 184.15) (xy 140.97 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef14975d-daec-4aed-88b4-c923ba081085")
+	)
+	(wire
+		(pts
+			(xy 52.07 105.41) (xy 52.07 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0fd99b4-27f1-4a08-b6fc-d39f11e7d00e")
+	)
+	(wire
+		(pts
+			(xy 195.58 147.32) (xy 201.93 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f11f7b4c-a940-4382-a7ed-93e6cf9377c0")
+	)
+	(wire
+		(pts
+			(xy 157.48 184.15) (xy 157.48 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f27a5bb8-5148-4e0d-868e-16fd6cc6e020")
+	)
+	(wire
+		(pts
+			(xy 234.95 134.62) (xy 241.3 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2837f06-f145-4cb5-875a-136d75b0a7f7")
+	)
+	(wire
+		(pts
+			(xy 63.5 55.88) (xy 69.85 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1951,7 +3033,17 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 55.88) (xy 189.23 55.88)
+			(xy 85.09 157.48) (xy 85.09 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5a53920-33ce-4909-b3c2-55a3f6ece44e")
+	)
+	(wire
+		(pts
+			(xy 165.1 24.13) (xy 170.18 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1961,7 +3053,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 55.88) (xy 74.93 55.88)
+			(xy 49.53 24.13) (xy 55.88 24.13)
 		)
 		(stroke
 			(width 0)
@@ -1971,7 +3063,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 72.39) (xy 176.53 72.39)
+			(xy 148.59 40.64) (xy 157.48 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1979,8 +3071,38 @@
 		)
 		(uuid "f8b87eea-79bf-48a7-8717-5a7494c68ea6")
 	)
+	(wire
+		(pts
+			(xy 100.33 100.33) (xy 104.14 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe2f7d88-1fae-41b2-a6d3-76fd56c3929d")
+	)
+	(wire
+		(pts
+			(xy 234.95 157.48) (xy 241.3 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feb5d0ae-d1fb-41cc-8e46-24ad20bfa811")
+	)
+	(label "LED_R3"
+		(at 99.06 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "027417a6-fa13-48ce-8171-857a12462ef4")
+	)
 	(label "SW_COL3"
-		(at 189.23 109.22 270)
+		(at 170.18 77.47 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1989,8 +3111,28 @@
 		)
 		(uuid "0388b57b-295a-4551-a747-942d1a0ebab8")
 	)
+	(label "LED_B4"
+		(at 135.89 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "069defa8-47aa-45c0-a154-858c0ca35f03")
+	)
+	(label "LED_R3"
+		(at 135.89 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0a1ac049-09a5-4898-9568-241fec66b0d0")
+	)
 	(label "SW_ROW1"
-		(at 152.4 55.88 180)
+		(at 133.35 24.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1999,8 +3141,58 @@
 		)
 		(uuid "104495c1-6c7c-4a45-8755-30450ffd91bd")
 	)
+	(label "LED_G4"
+		(at 99.06 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "17b0f5ec-660b-4414-9702-c83091faa671")
+	)
+	(label "LED_B2"
+		(at 64.77 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "185917ed-e92e-4019-8f0e-2063c829177f")
+	)
+	(label "LED_B4"
+		(at 64.77 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "195bf4a2-9fff-4edc-a0db-bc2374779bc8")
+	)
+	(label "SW_ROW3"
+		(at 195.58 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b02f5b5-d5b5-4afa-8812-3c6bccc7cc4d")
+	)
+	(label "LED_R2"
+		(at 64.77 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b72889a-aa45-42f0-b300-66517a41558b")
+	)
 	(label "SW_COL2"
-		(at 138.43 109.22 270)
+		(at 119.38 77.47 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2009,8 +3201,28 @@
 		)
 		(uuid "1d7edaa0-49c6-46b7-971c-84b86e37df6e")
 	)
+	(label "LED_G1"
+		(at 234.95 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1db4069e-1c40-4b94-b9dd-fc17e0cfbaad")
+	)
+	(label "LED_G2"
+		(at 137.16 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2266e2b7-6010-460f-ace3-2c55f64c360a")
+	)
 	(label "SW_ROW4"
-		(at 102.87 104.14 180)
+		(at 83.82 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2019,8 +3231,48 @@
 		)
 		(uuid "247193f6-bdd5-419d-aaf7-01ccb93f27be")
 	)
+	(label "LED_G1"
+		(at 30.48 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2789d2ab-bb89-4259-9d80-1573db8b1db4")
+	)
+	(label "LED_B2"
+		(at 234.95 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "27d65a90-fd32-49e3-a4d2-fecdde15d490")
+	)
+	(label "SW_COL4"
+		(at 195.58 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2889d45c-e70f-4560-90f1-5ca3fbe585e8")
+	)
+	(label "LED_R2"
+		(at 234.95 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2d569569-c636-462d-b8b7-e3f6c0d816f8")
+	)
 	(label "SW_ROW1"
-		(at 102.87 55.88 180)
+		(at 83.82 24.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2029,8 +3281,58 @@
 		)
 		(uuid "31d3a1f6-4202-4e1b-a083-9ffcfe5063b3")
 	)
+	(label "LED_G3"
+		(at 31.75 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "32fcd413-68da-445d-94f5-b9b0f70ba85f")
+	)
+	(label "LED_B2"
+		(at 30.48 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3335e3ae-060f-4831-9588-a51db455ac9c")
+	)
+	(label "LED_R4"
+		(at 135.89 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "352f1621-7f18-432a-b5a9-249c4aecd995")
+	)
+	(label "LED_R4"
+		(at 64.77 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "35630bf4-cf36-4240-8836-90390e052d1e")
+	)
+	(label "SW_COL3"
+		(at 195.58 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3a609fbb-6294-45df-bab3-d215a8df8bc6")
+	)
 	(label "SW_ROW3"
-		(at 205.74 87.63 180)
+		(at 186.69 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2039,8 +3341,108 @@
 		)
 		(uuid "3c4e0a45-2c2a-4a2f-93a6-ab41c43a48d1")
 	)
+	(label "LED_B1"
+		(at 234.95 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3cc8654f-da39-4cfe-ab2d-aa065705c092")
+	)
+	(label "LED_COL2"
+		(at 85.09 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3f2a5707-5361-4898-af03-7ddf0fa2254e")
+	)
+	(label "LED_B3"
+		(at 64.77 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3fd5c077-505e-49f2-883d-f26beb25e47e")
+	)
+	(label "LED_G3"
+		(at 234.95 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "41234753-a165-4c6f-82ce-dc62068a6625")
+	)
+	(label "SW_COL2"
+		(at 195.58 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "441f32a6-e6e3-481a-b44e-6f8888ecfcf4")
+	)
+	(label "LED_G4"
+		(at 135.89 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4e8cd647-53f3-42be-aca3-52d73c424f0b")
+	)
+	(label "SW_ROW4"
+		(at 195.58 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "524c8f7a-0393-4162-84d5-30b73ac69a3b")
+	)
+	(label "LED_G4"
+		(at 30.48 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "54e3d90a-cfe1-4a90-811d-e5176c9d0e3c")
+	)
+	(label "LED_G3"
+		(at 64.77 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5a3903cc-adc2-4d65-a632-7383a818814b")
+	)
+	(label "LED_G1"
+		(at 66.04 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5bf2689b-35a6-483f-8ebe-6014ac9ed851")
+	)
 	(label "SW_ROW3"
-		(at 102.87 87.63 180)
+		(at 83.82 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2050,7 +3452,7 @@
 		(uuid "5d140608-e675-4f92-9165-f95af1dd2f7c")
 	)
 	(label "SW_COL4"
-		(at 243.84 109.22 270)
+		(at 224.79 77.47 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2059,8 +3461,18 @@
 		)
 		(uuid "5d2b6740-4636-4d80-8e4f-0d482e5969ad")
 	)
+	(label "LED_COL3"
+		(at 120.65 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6014c68f-c4d3-434e-9787-2dc0ed90db08")
+	)
 	(label "SW_ROW2"
-		(at 205.74 72.39 180)
+		(at 186.69 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2069,8 +3481,48 @@
 		)
 		(uuid "68ced424-7b4c-4d5e-b9da-c719950029a9")
 	)
+	(label "LED_COL4"
+		(at 195.58 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "70deeb94-2bbc-44fc-bb14-e7f562ab00a9")
+	)
+	(label "LED_G4"
+		(at 234.95 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "71f119e9-5efb-42cd-aadf-b6aeaceeb83c")
+	)
+	(label "LED_B3"
+		(at 135.89 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "73ffac7c-913a-4a1f-9722-8240d69661a5")
+	)
+	(label "LED_G3"
+		(at 99.06 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "780be331-068c-452c-b066-f3f180a1cb63")
+	)
 	(label "SW_ROW4"
-		(at 52.07 104.14 180)
+		(at 33.02 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2079,8 +3531,38 @@
 		)
 		(uuid "79119e3a-5771-477b-a712-976edc4c8f9d")
 	)
+	(label "SW_COL1"
+		(at 195.58 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7ac1d804-0f40-4fa0-9c25-766fb6ad10dc")
+	)
+	(label "LED_R2"
+		(at 100.33 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7bbe08b7-82fb-400e-8fcc-c5dfc484c77e")
+	)
+	(label "LED_B4"
+		(at 99.06 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7de048a4-977d-461d-a52a-1af598c4e531")
+	)
 	(label "SW_ROW1"
-		(at 52.07 55.88 180)
+		(at 33.02 24.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2089,8 +3571,78 @@
 		)
 		(uuid "7f319379-48ac-4a9b-bcc8-4f62fb278d2a")
 	)
+	(label "LED_B3"
+		(at 31.75 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7f8f5b06-1f19-4146-9ccb-f12d69c2aed8")
+	)
+	(label "LED_R3"
+		(at 64.77 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82c6bdd0-c179-4bc6-8039-86d06dac4146")
+	)
+	(label "LED_G1"
+		(at 100.33 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8413ab92-ffd1-4655-adf5-9c9048200e89")
+	)
+	(label "LED_G2"
+		(at 234.95 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8773967d-1b79-42d1-8028-05c1f9f2a6fb")
+	)
+	(label "LED_B3"
+		(at 234.95 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "891c6bde-c649-42ce-9fbe-4766976a8ad3")
+	)
+	(label "LED_R3"
+		(at 234.95 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "893e5621-e464-4e2c-993b-129727a2be0a")
+	)
+	(label "LED_B3"
+		(at 99.06 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8e975a5a-2938-4e48-8d29-d8f6df8406f9")
+	)
 	(label "SW_ROW4"
-		(at 152.4 104.14 180)
+		(at 133.35 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2099,8 +3651,78 @@
 		)
 		(uuid "915f18ff-d55f-4ad6-adf5-add87603e687")
 	)
+	(label "LED_B1"
+		(at 137.16 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "917383b4-b491-4aba-b637-6d30b3eacc14")
+	)
+	(label "LED_COL1"
+		(at 52.07 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "93880f84-9a79-4280-88da-268d6ada12cd")
+	)
+	(label "LED_R2"
+		(at 30.48 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "953e49e2-be42-4442-912d-e85975cc73ed")
+	)
 	(label "SW_ROW2"
-		(at 52.07 72.39 180)
+		(at 195.58 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "956b6857-5bbf-4577-96a9-d0ba537b29be")
+	)
+	(label "LED_COL1"
+		(at 195.58 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9603e213-bc6b-4589-a52c-7a5f61c66481")
+	)
+	(label "LED_R4"
+		(at 99.06 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9a32ad57-1a00-44d4-a07a-1e92c77c668b")
+	)
+	(label "LED_G4"
+		(at 64.77 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a1f408dd-4bf8-423a-900f-e0a017ad22f0")
+	)
+	(label "SW_ROW2"
+		(at 33.02 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2109,8 +3731,28 @@
 		)
 		(uuid "abd4c3ef-61c3-40fe-92f2-69ff2a22208a")
 	)
+	(label "LED_B2"
+		(at 137.16 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ad6277e2-aba3-459e-930f-95126193d52a")
+	)
+	(label "SW_ROW1"
+		(at 195.58 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "afe1487f-117d-44c0-bff6-c631eded5a27")
+	)
 	(label "SW_ROW2"
-		(at 152.4 72.39 180)
+		(at 133.35 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2119,8 +3761,58 @@
 		)
 		(uuid "b1692b90-1fab-444e-aec0-7b0e67366cf4")
 	)
+	(label "LED_G2"
+		(at 30.48 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b1cc472a-8b0c-486b-87ff-c638f9833812")
+	)
+	(label "LED_B1"
+		(at 100.33 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2d40660-8772-4c43-b6fd-5294b7e2bd40")
+	)
+	(label "LED_R1"
+		(at 100.33 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2fa66b3-1597-4210-b833-f335daf191bb")
+	)
+	(label "LED_COL2"
+		(at 195.58 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b54e4dc3-6374-46b8-a5ac-7b03fd68f016")
+	)
+	(label "LED_R1"
+		(at 30.48 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bed5b95a-6147-47d6-89ee-31602ba1f4ea")
+	)
 	(label "SW_ROW4"
-		(at 205.74 104.14 180)
+		(at 186.69 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2129,8 +3821,128 @@
 		)
 		(uuid "c5ab8793-5ac8-48dc-8d75-ef302b092bc2")
 	)
+	(label "LED_R2"
+		(at 137.16 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c7c8db77-b94b-488f-85a5-0a834239bf51")
+	)
+	(label "LED_R1"
+		(at 234.95 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca2234f8-b156-443f-98c0-f6b9d1208373")
+	)
+	(label "LED_R4"
+		(at 234.95 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca45f8c2-7e30-4c8c-b507-7eb2e40ad94f")
+	)
+	(label "LED_B4"
+		(at 234.95 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cc6496a2-1014-4f5d-9b9d-315eace4b26c")
+	)
+	(label "LED_R4"
+		(at 30.48 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cf5abe3b-d465-48a3-80f2-83be63d1709d")
+	)
+	(label "LED_B2"
+		(at 100.33 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d10bc18d-2298-4066-972d-4bfbd3e1572c")
+	)
+	(label "LED_G3"
+		(at 135.89 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d199a6a8-c68a-42cc-9896-7f354e821418")
+	)
+	(label "LED_B1"
+		(at 30.48 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d3513683-f2c3-47d4-82e4-797c42abcd45")
+	)
+	(label "LED_G2"
+		(at 64.77 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d72c6a7b-d131-432f-9139-682938dde5ad")
+	)
+	(label "LED_G1"
+		(at 137.16 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d8e31543-2bde-414d-985c-c92892703b72")
+	)
+	(label "LED_R1"
+		(at 66.04 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d989ab3f-4793-4d6e-9c74-ccfa5a439911")
+	)
+	(label "LED_R1"
+		(at 137.16 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dcc3167c-a672-480c-8424-a10843770e59")
+	)
 	(label "SW_ROW1"
-		(at 205.74 55.88 180)
+		(at 186.69 24.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2139,8 +3951,38 @@
 		)
 		(uuid "e46593ef-04cb-42dd-8372-03cf0593cd6c")
 	)
+	(label "LED_R3"
+		(at 31.75 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e4d4d8d6-2160-4358-af2e-c5b0538055d1")
+	)
+	(label "LED_G2"
+		(at 100.33 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e5862ca1-b491-4ab5-8152-0049c17bd0f2")
+	)
+	(label "LED_COL4"
+		(at 157.48 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e59a2189-7a42-4997-9be6-1152c7aa9525")
+	)
 	(label "SW_ROW3"
-		(at 52.07 87.63 180)
+		(at 33.02 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2149,8 +3991,18 @@
 		)
 		(uuid "e6638c00-aee1-4df6-ba54-d9f49ee85494")
 	)
+	(label "LED_B1"
+		(at 66.04 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f61b034e-31d3-492a-9553-627fe6ed9dee")
+	)
 	(label "SW_ROW2"
-		(at 102.87 72.39 180)
+		(at 83.82 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2160,7 +4012,7 @@
 		(uuid "f6466bef-373d-4304-8cd1-6f29e7138d46")
 	)
 	(label "SW_COL1"
-		(at 88.9 109.22 270)
+		(at 69.85 77.47 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2169,8 +4021,28 @@
 		)
 		(uuid "f98f8e76-6112-496d-8a8a-df5e12d7117f")
 	)
+	(label "LED_B4"
+		(at 30.48 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fb3da4fb-8636-4e10-9829-ba13a083cda6")
+	)
+	(label "LED_COL3"
+		(at 195.58 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fdc0fad2-c5a5-4cce-903f-a66f35176fc9")
+	)
 	(label "SW_ROW3"
-		(at 152.4 87.63 180)
+		(at 133.35 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2181,7 +4053,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 118.11 154.94 0)
+		(at 74.93 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2190,7 +4062,7 @@
 		(fields_autoplaced yes)
 		(uuid "042047ba-21c8-4a33-b374-22bcced9bfaa")
 		(property "Reference" "D22"
-			(at 118.11 140.97 0)
+			(at 74.93 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2198,7 +4070,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 118.11 143.51 0)
+			(at 74.93 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2206,7 +4078,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 118.11 156.21 0)
+			(at 74.93 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2215,7 +4087,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.11 156.21 0)
+			(at 74.93 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2224,7 +4096,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 118.11 154.94 0)
+			(at 74.93 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2255,16 +4127,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 38.1 181.61 0)
+		(at 40.64 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0755cb63-1a5f-4f56-a9db-67d8d0846507")
 		(property "Reference" "D25"
-			(at 38.1 167.64 0)
+			(at 40.64 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2272,7 +4143,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 38.1 170.18 0)
+			(at 40.64 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2280,7 +4151,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 38.1 182.88 0)
+			(at 40.64 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2289,7 +4160,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 38.1 182.88 0)
+			(at 40.64 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2298,7 +4169,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 38.1 181.61 0)
+			(at 40.64 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2329,7 +4200,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 180.34 87.63 180)
+		(at 161.29 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2338,7 +4209,7 @@
 		(fields_autoplaced yes)
 		(uuid "0b8e8bc8-41ca-4920-94a0-b83a27c94442")
 		(property "Reference" "D11"
-			(at 180.34 81.28 0)
+			(at 161.29 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2346,7 +4217,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 180.34 83.82 0)
+			(at 161.29 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2354,7 +4225,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 180.34 87.63 0)
+			(at 161.29 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2363,7 +4234,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 180.34 87.63 0)
+			(at 161.29 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2372,7 +4243,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 180.34 87.63 0)
+			(at 161.29 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2381,7 +4252,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 180.34 87.63 0)
+			(at 161.29 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2390,7 +4261,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 180.34 87.63 0)
+			(at 161.29 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2415,7 +4286,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 78.74 55.88 180)
+		(at 59.69 24.13 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2424,7 +4295,7 @@
 		(fields_autoplaced yes)
 		(uuid "0e207aab-694e-420c-8b01-704e8571d6b5")
 		(property "Reference" "D1"
-			(at 78.74 49.53 0)
+			(at 59.69 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2432,7 +4303,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 78.74 52.07 0)
+			(at 59.69 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2440,7 +4311,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 78.74 55.88 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2449,7 +4320,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 78.74 55.88 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2458,7 +4329,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 78.74 55.88 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2467,7 +4338,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 78.74 55.88 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2476,7 +4347,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 78.74 55.88 0)
+			(at 59.69 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2501,7 +4372,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 149.86 154.94 0)
+		(at 146.05 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2510,7 +4381,7 @@
 		(fields_autoplaced yes)
 		(uuid "0e3a1fbd-7e90-4cca-bb96-ce8be02be045")
 		(property "Reference" "D24"
-			(at 149.86 140.97 0)
+			(at 146.05 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2518,7 +4389,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 149.86 143.51 0)
+			(at 146.05 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2526,7 +4397,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 149.86 156.21 0)
+			(at 146.05 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2535,7 +4406,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 156.21 0)
+			(at 146.05 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2544,7 +4415,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 149.86 154.94 0)
+			(at 146.05 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2575,16 +4446,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 71.12 181.61 0)
+		(at 109.22 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0e65fb84-c8d9-411c-ad93-3dcef1fa4147")
 		(property "Reference" "D27"
-			(at 71.12 167.64 0)
+			(at 109.22 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2592,7 +4462,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 71.12 170.18 0)
+			(at 109.22 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2600,7 +4470,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 71.12 182.88 0)
+			(at 109.22 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2609,7 +4479,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 182.88 0)
+			(at 109.22 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2618,7 +4488,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 71.12 181.61 0)
+			(at 109.22 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2649,7 +4519,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 234.95 104.14 180)
+		(at 215.9 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2658,7 +4528,7 @@
 		(fields_autoplaced yes)
 		(uuid "1f596b80-d77a-4bed-9368-966ef3be3de0")
 		(property "Reference" "D16"
-			(at 234.95 97.79 0)
+			(at 215.9 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2666,7 +4536,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 234.95 100.33 0)
+			(at 215.9 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2674,7 +4544,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 234.95 104.14 0)
+			(at 215.9 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2683,7 +4553,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 234.95 104.14 0)
+			(at 215.9 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2692,7 +4562,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 234.95 104.14 0)
+			(at 215.9 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2701,7 +4571,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 234.95 104.14 0)
+			(at 215.9 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2710,7 +4580,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 234.95 104.14 0)
+			(at 215.9 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2735,7 +4605,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 180.34 104.14 180)
+		(at 161.29 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2744,7 +4614,7 @@
 		(fields_autoplaced yes)
 		(uuid "201b12aa-542d-48ee-9c76-1c098e812898")
 		(property "Reference" "D15"
-			(at 180.34 97.79 0)
+			(at 161.29 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2752,7 +4622,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 180.34 100.33 0)
+			(at 161.29 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2760,7 +4630,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 180.34 104.14 0)
+			(at 161.29 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2769,7 +4639,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 180.34 104.14 0)
+			(at 161.29 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2778,7 +4648,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 180.34 104.14 0)
+			(at 161.29 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2787,7 +4657,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 180.34 104.14 0)
+			(at 161.29 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2796,7 +4666,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 180.34 104.14 0)
+			(at 161.29 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2821,7 +4691,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 234.95 87.63 180)
+		(at 215.9 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2830,7 +4700,7 @@
 		(fields_autoplaced yes)
 		(uuid "21faa56e-5c7b-48bd-a425-ff128e990cd7")
 		(property "Reference" "D12"
-			(at 234.95 81.28 0)
+			(at 215.9 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2838,7 +4708,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 234.95 83.82 0)
+			(at 215.9 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +4716,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 234.95 87.63 0)
+			(at 215.9 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2855,7 +4725,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 234.95 87.63 0)
+			(at 215.9 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2864,7 +4734,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 234.95 87.63 0)
+			(at 215.9 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2873,7 +4743,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 234.95 87.63 0)
+			(at 215.9 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2882,7 +4752,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 234.95 87.63 0)
+			(at 215.9 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2907,7 +4777,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 129.54 104.14 180)
+		(at 110.49 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2916,7 +4786,7 @@
 		(fields_autoplaced yes)
 		(uuid "26c83e56-972c-42f1-895c-67f1c70f7fe5")
 		(property "Reference" "D14"
-			(at 129.54 97.79 0)
+			(at 110.49 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2924,7 +4794,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 129.54 100.33 0)
+			(at 110.49 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2932,7 +4802,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 129.54 104.14 0)
+			(at 110.49 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2941,7 +4811,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 129.54 104.14 0)
+			(at 110.49 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2950,7 +4820,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 129.54 104.14 0)
+			(at 110.49 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2959,7 +4829,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 129.54 104.14 0)
+			(at 110.49 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2968,7 +4838,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 129.54 104.14 0)
+			(at 110.49 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2993,7 +4863,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 114.3 104.14 0)
+		(at 95.25 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3002,7 +4872,7 @@
 		(fields_autoplaced yes)
 		(uuid "27ec019d-6304-423a-98d8-7b79ec019e65")
 		(property "Reference" "SW14"
-			(at 114.3 96.52 0)
+			(at 95.25 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3010,7 +4880,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 114.3 99.06 0)
+			(at 95.25 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3018,7 +4888,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 114.3 99.06 0)
+			(at 95.25 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3027,7 +4897,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 114.3 99.06 0)
+			(at 95.25 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3036,7 +4906,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 114.3 104.14 0)
+			(at 95.25 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3061,7 +4931,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 162.56 104.14 0)
+		(at 143.51 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3070,7 +4940,7 @@
 		(fields_autoplaced yes)
 		(uuid "354374f5-abc2-47e7-9bdb-5abaeaeb641c")
 		(property "Reference" "SW15"
-			(at 162.56 96.52 0)
+			(at 143.51 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3078,7 +4948,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 162.56 99.06 0)
+			(at 143.51 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3086,7 +4956,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 162.56 99.06 0)
+			(at 143.51 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3095,7 +4965,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 162.56 99.06 0)
+			(at 143.51 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3104,7 +4974,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 162.56 104.14 0)
+			(at 143.51 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3129,7 +4999,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 78.74 104.14 180)
+		(at 59.69 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3138,7 +5008,7 @@
 		(fields_autoplaced yes)
 		(uuid "36def472-8984-4b11-9121-fe8633424295")
 		(property "Reference" "D13"
-			(at 78.74 97.79 0)
+			(at 59.69 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3146,7 +5016,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 78.74 100.33 0)
+			(at 59.69 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3154,7 +5024,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 78.74 104.14 0)
+			(at 59.69 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3163,7 +5033,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 78.74 104.14 0)
+			(at 59.69 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3172,7 +5042,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 78.74 104.14 0)
+			(at 59.69 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3181,7 +5051,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 78.74 104.14 0)
+			(at 59.69 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3190,7 +5060,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 78.74 104.14 0)
+			(at 59.69 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3215,7 +5085,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 38.1 154.94 0)
+		(at 40.64 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3224,7 +5094,7 @@
 		(fields_autoplaced yes)
 		(uuid "37dfa1ed-7c6d-4eb2-802f-43ff57808390")
 		(property "Reference" "D17"
-			(at 38.1 140.97 0)
+			(at 40.64 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3232,7 +5102,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 38.1 143.51 0)
+			(at 40.64 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3240,7 +5110,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 38.1 156.21 0)
+			(at 40.64 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3249,7 +5119,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 38.1 156.21 0)
+			(at 40.64 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3258,7 +5128,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 38.1 154.94 0)
+			(at 40.64 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3289,7 +5159,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 78.74 87.63 180)
+		(at 59.69 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3298,7 +5168,7 @@
 		(fields_autoplaced yes)
 		(uuid "3913712d-b0f7-4522-8f65-0c51ac69ae03")
 		(property "Reference" "D9"
-			(at 78.74 81.28 0)
+			(at 59.69 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3306,7 +5176,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 78.74 83.82 0)
+			(at 59.69 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3314,7 +5184,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 78.74 87.63 0)
+			(at 59.69 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3323,7 +5193,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 78.74 87.63 0)
+			(at 59.69 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3332,7 +5202,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 78.74 87.63 0)
+			(at 59.69 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3341,7 +5211,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 78.74 87.63 0)
+			(at 59.69 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3350,7 +5220,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 78.74 87.63 0)
+			(at 59.69 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3375,7 +5245,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 54.61 154.94 0)
+		(at 74.93 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3384,7 +5254,7 @@
 		(fields_autoplaced yes)
 		(uuid "425641dd-eac3-48ef-9130-5e95b3c18ba4")
 		(property "Reference" "D18"
-			(at 54.61 140.97 0)
+			(at 74.93 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3392,7 +5262,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 54.61 143.51 0)
+			(at 74.93 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3400,7 +5270,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 54.61 156.21 0)
+			(at 74.93 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3409,7 +5279,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 156.21 0)
+			(at 74.93 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3418,7 +5288,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 54.61 154.94 0)
+			(at 74.93 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3449,7 +5319,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 180.34 72.39 180)
+		(at 161.29 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3458,7 +5328,7 @@
 		(fields_autoplaced yes)
 		(uuid "4907cf3c-d3af-4146-b0aa-ac06050e818d")
 		(property "Reference" "D7"
-			(at 180.34 66.04 0)
+			(at 161.29 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3466,7 +5336,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 180.34 68.58 0)
+			(at 161.29 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3474,7 +5344,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 180.34 72.39 0)
+			(at 161.29 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3483,7 +5353,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 180.34 72.39 0)
+			(at 161.29 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3492,7 +5362,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 180.34 72.39 0)
+			(at 161.29 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3501,7 +5371,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 180.34 72.39 0)
+			(at 161.29 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3510,7 +5380,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 180.34 72.39 0)
+			(at 161.29 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3535,7 +5405,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 114.3 55.88 0)
+		(at 95.25 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3544,7 +5414,7 @@
 		(fields_autoplaced yes)
 		(uuid "568f0afb-714a-4591-b4b9-573c1136ece0")
 		(property "Reference" "SW2"
-			(at 114.3 48.26 0)
+			(at 95.25 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3552,7 +5422,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 114.3 50.8 0)
+			(at 95.25 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3560,7 +5430,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 114.3 50.8 0)
+			(at 95.25 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3569,7 +5439,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 114.3 50.8 0)
+			(at 95.25 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3578,7 +5448,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 114.3 55.88 0)
+			(at 95.25 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3603,7 +5473,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 217.17 55.88 0)
+		(at 198.12 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3612,7 +5482,7 @@
 		(fields_autoplaced yes)
 		(uuid "5eb50ecb-d4d8-4e92-9ac5-ff49f437d5c0")
 		(property "Reference" "SW4"
-			(at 217.17 48.26 0)
+			(at 198.12 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3620,7 +5490,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 217.17 50.8 0)
+			(at 198.12 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3628,7 +5498,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 217.17 50.8 0)
+			(at 198.12 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3637,7 +5507,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 217.17 50.8 0)
+			(at 198.12 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3646,7 +5516,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 217.17 55.88 0)
+			(at 198.12 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3671,7 +5541,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 63.5 104.14 0)
+		(at 44.45 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3680,7 +5550,7 @@
 		(fields_autoplaced yes)
 		(uuid "60f12715-86e2-4dd5-8e9c-98e6ae397bbf")
 		(property "Reference" "SW13"
-			(at 63.5 96.52 0)
+			(at 44.45 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3688,7 +5558,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 63.5 99.06 0)
+			(at 44.45 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3697,7 +5567,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 63.5 99.06 0)
+			(at 44.45 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3706,7 +5576,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 63.5 99.06 0)
+			(at 44.45 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3715,7 +5585,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 63.5 104.14 0)
+			(at 44.45 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3740,7 +5610,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 63.5 55.88 0)
+		(at 44.45 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3749,7 +5619,7 @@
 		(fields_autoplaced yes)
 		(uuid "6a87cdbe-62b1-4173-9776-012977393a48")
 		(property "Reference" "SW1"
-			(at 63.5 48.26 0)
+			(at 44.45 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3757,7 +5627,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 63.5 50.8 0)
+			(at 44.45 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3765,7 +5635,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 63.5 50.8 0)
+			(at 44.45 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3774,7 +5644,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 63.5 50.8 0)
+			(at 44.45 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3783,7 +5653,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 63.5 55.88 0)
+			(at 44.45 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3808,7 +5678,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 215.9 140.97 0)
+		(at 246.38 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3817,7 +5687,7 @@
 		(fields_autoplaced yes)
 		(uuid "71186948-22fa-429b-ae3c-50f9bb104434")
 		(property "Reference" "J2"
-			(at 218.44 140.9699 0)
+			(at 248.92 142.2399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3826,7 +5696,7 @@
 			)
 		)
 		(property "Value" "Conn_01x12"
-			(at 218.44 143.5099 0)
+			(at 248.92 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3834,8 +5704,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical"
-			(at 215.9 140.97 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
+			(at 246.38 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3844,7 +5714,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 215.9 140.97 0)
+			(at 246.38 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3853,7 +5723,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 215.9 140.97 0)
+			(at 246.38 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3908,7 +5778,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 217.17 87.63 0)
+		(at 198.12 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3917,7 +5787,7 @@
 		(fields_autoplaced yes)
 		(uuid "72ec881d-c012-4d93-a8fe-d766086f594a")
 		(property "Reference" "SW12"
-			(at 217.17 80.01 0)
+			(at 198.12 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3925,7 +5795,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 217.17 82.55 0)
+			(at 198.12 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3934,7 +5804,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 217.17 82.55 0)
+			(at 198.12 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3943,7 +5813,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 217.17 82.55 0)
+			(at 198.12 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3952,7 +5822,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 217.17 87.63 0)
+			(at 198.12 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3977,7 +5847,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 217.17 72.39 0)
+		(at 198.12 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3986,7 +5856,7 @@
 		(fields_autoplaced yes)
 		(uuid "81ff17e2-d6fe-4444-bafb-36be2e4bde65")
 		(property "Reference" "SW8"
-			(at 217.17 64.77 0)
+			(at 198.12 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3994,7 +5864,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 217.17 67.31 0)
+			(at 198.12 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4003,7 +5873,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 217.17 67.31 0)
+			(at 198.12 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4012,7 +5882,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 217.17 67.31 0)
+			(at 198.12 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4021,7 +5891,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 217.17 72.39 0)
+			(at 198.12 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4046,7 +5916,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 162.56 72.39 0)
+		(at 143.51 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4055,7 +5925,7 @@
 		(fields_autoplaced yes)
 		(uuid "83ab39aa-b250-4549-9fd1-a7b51bf73770")
 		(property "Reference" "SW7"
-			(at 162.56 64.77 0)
+			(at 143.51 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4063,7 +5933,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 162.56 67.31 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4071,7 +5941,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 162.56 67.31 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4080,7 +5950,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 162.56 67.31 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4089,7 +5959,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 162.56 72.39 0)
+			(at 143.51 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4114,16 +5984,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 118.11 181.61 0)
+		(at 74.93 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8447dd95-5215-426c-8ecc-234d2b878f4e")
 		(property "Reference" "D30"
-			(at 118.11 167.64 0)
+			(at 74.93 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4131,7 +6000,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 118.11 170.18 0)
+			(at 74.93 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4139,7 +6008,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 118.11 182.88 0)
+			(at 74.93 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4148,7 +6017,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.11 182.88 0)
+			(at 74.93 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4157,7 +6026,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 118.11 181.61 0)
+			(at 74.93 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4188,16 +6057,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 54.61 181.61 0)
+		(at 74.93 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "88bfab41-16a6-4b30-9731-62eec93db0a0")
 		(property "Reference" "D26"
-			(at 54.61 167.64 0)
+			(at 74.93 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4205,7 +6073,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 54.61 170.18 0)
+			(at 74.93 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4213,7 +6081,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 54.61 182.88 0)
+			(at 74.93 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4222,7 +6090,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 182.88 0)
+			(at 74.93 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4231,7 +6099,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 54.61 181.61 0)
+			(at 74.93 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4262,7 +6130,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 129.54 55.88 180)
+		(at 110.49 24.13 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4271,7 +6139,7 @@
 		(fields_autoplaced yes)
 		(uuid "890ed240-c290-4010-bf43-8d5879cbc03b")
 		(property "Reference" "D2"
-			(at 129.54 49.53 0)
+			(at 110.49 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4279,7 +6147,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 129.54 52.07 0)
+			(at 110.49 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4287,7 +6155,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 129.54 55.88 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4296,7 +6164,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 129.54 55.88 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4305,7 +6173,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 129.54 55.88 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4314,7 +6182,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 129.54 55.88 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4323,7 +6191,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 129.54 55.88 0)
+			(at 110.49 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4348,7 +6216,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 217.17 104.14 0)
+		(at 198.12 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4357,7 +6225,7 @@
 		(fields_autoplaced yes)
 		(uuid "89f0ab51-2b10-4a90-ac65-aef6c26dfd8e")
 		(property "Reference" "SW16"
-			(at 217.17 96.52 0)
+			(at 198.12 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4365,7 +6233,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 217.17 99.06 0)
+			(at 198.12 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4374,7 +6242,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 217.17 99.06 0)
+			(at 198.12 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4383,7 +6251,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 217.17 99.06 0)
+			(at 198.12 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4392,7 +6260,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 217.17 104.14 0)
+			(at 198.12 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4417,7 +6285,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 180.34 55.88 180)
+		(at 161.29 24.13 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4426,7 +6294,7 @@
 		(fields_autoplaced yes)
 		(uuid "8eb0252d-a23a-49e8-86f7-b879deed929c")
 		(property "Reference" "D3"
-			(at 180.34 49.53 0)
+			(at 161.29 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4434,7 +6302,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 180.34 52.07 0)
+			(at 161.29 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4442,7 +6310,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 180.34 55.88 0)
+			(at 161.29 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4451,7 +6319,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 180.34 55.88 0)
+			(at 161.29 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4460,7 +6328,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 180.34 55.88 0)
+			(at 161.29 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4469,7 +6337,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 180.34 55.88 0)
+			(at 161.29 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4478,7 +6346,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 180.34 55.88 0)
+			(at 161.29 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4503,7 +6371,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 114.3 87.63 0)
+		(at 95.25 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4512,7 +6380,7 @@
 		(fields_autoplaced yes)
 		(uuid "a1945059-2c31-4c7f-9e39-76582cbd4516")
 		(property "Reference" "SW10"
-			(at 114.3 80.01 0)
+			(at 95.25 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4520,7 +6388,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 114.3 82.55 0)
+			(at 95.25 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4528,7 +6396,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 114.3 82.55 0)
+			(at 95.25 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4537,7 +6405,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 114.3 82.55 0)
+			(at 95.25 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4546,7 +6414,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 114.3 87.63 0)
+			(at 95.25 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4571,7 +6439,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 129.54 87.63 180)
+		(at 110.49 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4580,7 +6448,7 @@
 		(fields_autoplaced yes)
 		(uuid "a29b23e1-1f29-4101-9b71-284a47f1f218")
 		(property "Reference" "D10"
-			(at 129.54 81.28 0)
+			(at 110.49 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4588,7 +6456,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 129.54 83.82 0)
+			(at 110.49 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4596,7 +6464,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 129.54 87.63 0)
+			(at 110.49 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4605,7 +6473,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 129.54 87.63 0)
+			(at 110.49 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4614,7 +6482,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 129.54 87.63 0)
+			(at 110.49 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4623,7 +6491,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 129.54 87.63 0)
+			(at 110.49 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4632,7 +6500,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 129.54 87.63 0)
+			(at 110.49 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4657,7 +6525,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 129.54 72.39 180)
+		(at 110.49 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4666,7 +6534,7 @@
 		(fields_autoplaced yes)
 		(uuid "accd1ee7-fa09-4daf-ab11-86e8c2e60ec1")
 		(property "Reference" "D6"
-			(at 129.54 66.04 0)
+			(at 110.49 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4674,7 +6542,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 129.54 68.58 0)
+			(at 110.49 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4682,7 +6550,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 129.54 72.39 0)
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4691,7 +6559,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 129.54 72.39 0)
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4700,7 +6568,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 129.54 72.39 0)
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4709,7 +6577,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 129.54 72.39 0)
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4718,7 +6586,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 129.54 72.39 0)
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4743,7 +6611,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 63.5 72.39 0)
+		(at 44.45 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4752,7 +6620,7 @@
 		(fields_autoplaced yes)
 		(uuid "b290e56f-b692-4261-b5ef-71c882288567")
 		(property "Reference" "SW5"
-			(at 63.5 64.77 0)
+			(at 44.45 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4760,7 +6628,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 63.5 67.31 0)
+			(at 44.45 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4769,7 +6637,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 63.5 67.31 0)
+			(at 44.45 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4778,7 +6646,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 63.5 67.31 0)
+			(at 44.45 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4787,7 +6655,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 63.5 72.39 0)
+			(at 44.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4812,7 +6680,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 114.3 72.39 0)
+		(at 95.25 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4821,7 +6689,7 @@
 		(fields_autoplaced yes)
 		(uuid "b53efb74-06b5-4c22-90fb-1ab5c04be579")
 		(property "Reference" "SW6"
-			(at 114.3 64.77 0)
+			(at 95.25 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4829,7 +6697,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 114.3 67.31 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4837,7 +6705,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 114.3 67.31 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4846,7 +6714,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 114.3 67.31 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4855,7 +6723,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 114.3 72.39 0)
+			(at 95.25 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4880,7 +6748,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 234.95 55.88 180)
+		(at 215.9 24.13 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4889,7 +6757,7 @@
 		(fields_autoplaced yes)
 		(uuid "b6eea2a5-d053-4600-9b96-7809384b81ee")
 		(property "Reference" "D4"
-			(at 234.95 49.53 0)
+			(at 215.9 17.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4897,7 +6765,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 234.95 52.07 0)
+			(at 215.9 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4905,7 +6773,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 234.95 55.88 0)
+			(at 215.9 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4914,7 +6782,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 234.95 55.88 0)
+			(at 215.9 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4923,7 +6791,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 234.95 55.88 0)
+			(at 215.9 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4932,7 +6800,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 234.95 55.88 0)
+			(at 215.9 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4941,7 +6809,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 234.95 55.88 0)
+			(at 215.9 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4966,7 +6834,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 162.56 55.88 0)
+		(at 143.51 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4975,7 +6843,7 @@
 		(fields_autoplaced yes)
 		(uuid "b7871110-6216-40a6-8a8e-42eca5c2f9e0")
 		(property "Reference" "SW3"
-			(at 162.56 48.26 0)
+			(at 143.51 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4983,7 +6851,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 162.56 50.8 0)
+			(at 143.51 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4991,7 +6859,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 162.56 50.8 0)
+			(at 143.51 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5000,7 +6868,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 162.56 50.8 0)
+			(at 143.51 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5009,7 +6877,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 162.56 55.88 0)
+			(at 143.51 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5034,7 +6902,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 71.12 154.94 0)
+		(at 109.22 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5043,7 +6911,7 @@
 		(fields_autoplaced yes)
 		(uuid "bc3f3593-15f0-4528-ad69-ea26bc73557b")
 		(property "Reference" "D19"
-			(at 71.12 140.97 0)
+			(at 109.22 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5051,7 +6919,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 71.12 143.51 0)
+			(at 109.22 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5059,7 +6927,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 71.12 156.21 0)
+			(at 109.22 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5068,7 +6936,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 156.21 0)
+			(at 109.22 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5077,7 +6945,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 71.12 154.94 0)
+			(at 109.22 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5108,7 +6976,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 86.36 154.94 0)
+		(at 146.05 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5117,7 +6985,7 @@
 		(fields_autoplaced yes)
 		(uuid "c22dcb52-06e8-49ee-9d74-67608a7de6f5")
 		(property "Reference" "D20"
-			(at 86.36 140.97 0)
+			(at 146.05 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5125,7 +6993,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 86.36 143.51 0)
+			(at 146.05 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5133,7 +7001,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 86.36 156.21 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5142,7 +7010,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 86.36 156.21 0)
+			(at 146.05 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5151,7 +7019,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 86.36 154.94 0)
+			(at 146.05 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5182,7 +7050,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 134.62 154.94 0)
+		(at 109.22 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5191,7 +7059,7 @@
 		(fields_autoplaced yes)
 		(uuid "c3f80c33-ba33-42e0-b29e-e801cd491a86")
 		(property "Reference" "D23"
-			(at 134.62 140.97 0)
+			(at 109.22 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5199,7 +7067,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 134.62 143.51 0)
+			(at 109.22 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5207,7 +7075,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 134.62 156.21 0)
+			(at 109.22 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5216,7 +7084,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 134.62 156.21 0)
+			(at 109.22 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5225,7 +7093,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 134.62 154.94 0)
+			(at 109.22 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5256,16 +7124,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 149.86 181.61 0)
+		(at 146.05 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ca63503a-3ffb-41db-bd78-a7e1a31532b5")
 		(property "Reference" "D32"
-			(at 149.86 167.64 0)
+			(at 146.05 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5273,7 +7140,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 149.86 170.18 0)
+			(at 146.05 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5281,7 +7148,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 149.86 182.88 0)
+			(at 146.05 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5290,7 +7157,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 182.88 0)
+			(at 146.05 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5299,7 +7166,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 149.86 181.61 0)
+			(at 146.05 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5330,7 +7197,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 63.5 87.63 0)
+		(at 44.45 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5339,7 +7206,7 @@
 		(fields_autoplaced yes)
 		(uuid "d6c93c24-e29d-4ffb-b76f-6b941d663abc")
 		(property "Reference" "SW9"
-			(at 63.5 80.01 0)
+			(at 44.45 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5347,7 +7214,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 63.5 82.55 0)
+			(at 44.45 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5356,7 +7223,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 63.5 82.55 0)
+			(at 44.45 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5365,7 +7232,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 63.5 82.55 0)
+			(at 44.45 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5374,7 +7241,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 63.5 87.63 0)
+			(at 44.45 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5399,16 +7266,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 86.36 181.61 0)
+		(at 146.05 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d997e2e3-ce06-46e7-9f1d-4aba52e80038")
 		(property "Reference" "D28"
-			(at 86.36 167.64 0)
+			(at 146.05 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5416,7 +7282,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 86.36 170.18 0)
+			(at 146.05 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5424,7 +7290,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 86.36 182.88 0)
+			(at 146.05 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5433,7 +7299,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 86.36 182.88 0)
+			(at 146.05 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5442,7 +7308,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 86.36 181.61 0)
+			(at 146.05 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5473,7 +7339,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 78.74 72.39 180)
+		(at 59.69 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5482,7 +7348,7 @@
 		(fields_autoplaced yes)
 		(uuid "e411b896-1828-49c2-9999-9f86b19090d6")
 		(property "Reference" "D5"
-			(at 78.74 66.04 0)
+			(at 59.69 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5490,7 +7356,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 78.74 68.58 0)
+			(at 59.69 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5498,7 +7364,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 78.74 72.39 0)
+			(at 59.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5507,7 +7373,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 78.74 72.39 0)
+			(at 59.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5516,7 +7382,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 78.74 72.39 0)
+			(at 59.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5525,7 +7391,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 78.74 72.39 0)
+			(at 59.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5534,7 +7400,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 78.74 72.39 0)
+			(at 59.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5559,16 +7425,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 101.6 181.61 0)
+		(at 40.64 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e783f796-2f26-4977-aab2-e3e171671a03")
 		(property "Reference" "D29"
-			(at 101.6 167.64 0)
+			(at 40.64 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5576,7 +7441,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 101.6 170.18 0)
+			(at 40.64 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5584,7 +7449,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 101.6 182.88 0)
+			(at 40.64 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5593,7 +7458,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 182.88 0)
+			(at 40.64 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5602,7 +7467,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 101.6 181.61 0)
+			(at 40.64 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5633,7 +7498,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Omron_B3FS")
-		(at 162.56 87.63 0)
+		(at 143.51 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5642,7 +7507,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed0518e6-0302-4149-a934-6a011a67a529")
 		(property "Reference" "SW11"
-			(at 162.56 80.01 0)
+			(at 143.51 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5650,7 +7515,7 @@
 			)
 		)
 		(property "Value" "SW_Omron_B3FS"
-			(at 162.56 82.55 0)
+			(at 143.51 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5658,7 +7523,7 @@
 			)
 		)
 		(property "Footprint" "Lumisquare_Library:lumisquare button"
-			(at 162.56 82.55 0)
+			(at 143.51 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5667,7 +7532,7 @@
 			)
 		)
 		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
-			(at 162.56 82.55 0)
+			(at 143.51 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5676,7 +7541,7 @@
 			)
 		)
 		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
-			(at 162.56 87.63 0)
+			(at 143.51 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5701,16 +7566,15 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 134.62 181.61 0)
+		(at 109.22 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ef618154-b985-44f6-9923-112f978be34c")
 		(property "Reference" "D31"
-			(at 134.62 167.64 0)
+			(at 109.22 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5718,7 +7582,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 134.62 170.18 0)
+			(at 109.22 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5726,7 +7590,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 134.62 182.88 0)
+			(at 109.22 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5735,7 +7599,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 134.62 182.88 0)
+			(at 109.22 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5744,7 +7608,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 134.62 181.61 0)
+			(at 109.22 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5775,7 +7639,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N4148")
-		(at 234.95 72.39 180)
+		(at 215.9 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5784,7 +7648,7 @@
 		(fields_autoplaced yes)
 		(uuid "f7e57d08-2852-49fb-a8d7-8056f0bf3c9d")
 		(property "Reference" "D8"
-			(at 234.95 66.04 0)
+			(at 215.9 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5792,7 +7656,7 @@
 			)
 		)
 		(property "Value" "1N4148"
-			(at 234.95 68.58 0)
+			(at 215.9 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5800,7 +7664,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 234.95 72.39 0)
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5809,7 +7673,7 @@
 			)
 		)
 		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 234.95 72.39 0)
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5818,7 +7682,7 @@
 			)
 		)
 		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 234.95 72.39 0)
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5827,7 +7691,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 234.95 72.39 0)
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5836,7 +7700,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 234.95 72.39 0)
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5861,7 +7725,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED_BGAR")
-		(at 101.6 154.94 0)
+		(at 40.64 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5870,7 +7734,7 @@
 		(fields_autoplaced yes)
 		(uuid "fcbd0d1e-6a42-4b3a-a802-494fe8664baa")
 		(property "Reference" "D21"
-			(at 101.6 140.97 0)
+			(at 40.64 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5878,7 +7742,7 @@
 			)
 		)
 		(property "Value" "LED_BGAR"
-			(at 101.6 143.51 0)
+			(at 40.64 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5886,7 +7750,7 @@
 			)
 		)
 		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
-			(at 101.6 156.21 0)
+			(at 40.64 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5895,7 +7759,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 156.21 0)
+			(at 40.64 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5904,7 +7768,7 @@
 			)
 		)
 		(property "Description" "RGB LED, blue/green/anode/red"
-			(at 101.6 154.94 0)
+			(at 40.64 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5935,7 +7799,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 184.15 139.7 0)
+		(at 207.01 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5944,7 +7808,7 @@
 		(fields_autoplaced yes)
 		(uuid "ff68264d-df1f-40f2-b4df-b46c8094c6c7")
 		(property "Reference" "J1"
-			(at 186.69 139.6999 0)
+			(at 209.55 142.2399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5953,7 +7817,7 @@
 			)
 		)
 		(property "Value" "Conn_01x12"
-			(at 186.69 142.2399 0)
+			(at 209.55 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5961,8 +7825,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical"
-			(at 184.15 139.7 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
+			(at 207.01 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5971,7 +7835,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 184.15 139.7 0)
+			(at 207.01 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5980,7 +7844,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 184.15 139.7 0)
+			(at 207.01 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
