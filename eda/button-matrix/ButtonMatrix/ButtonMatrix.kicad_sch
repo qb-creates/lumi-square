@@ -1493,7 +1493,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 152.4) (xy 201.93 152.4)
+			(xy 199.39 123.19) (xy 205.74 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1503,7 +1503,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 142.24) (xy 241.3 142.24)
+			(xy 238.76 113.03) (xy 245.11 113.03)
 		)
 		(stroke
 			(width 0)
@@ -1563,7 +1563,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 144.78) (xy 201.93 144.78)
+			(xy 199.39 115.57) (xy 205.74 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1613,7 +1613,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 137.16) (xy 241.3 137.16)
+			(xy 238.76 107.95) (xy 245.11 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1643,7 +1643,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 144.78) (xy 241.3 144.78)
+			(xy 238.76 115.57) (xy 245.11 115.57)
 		)
 		(stroke
 			(width 0)
@@ -1683,7 +1683,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 154.94) (xy 241.3 154.94)
+			(xy 238.76 125.73) (xy 245.11 125.73)
 		)
 		(stroke
 			(width 0)
@@ -1803,7 +1803,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 152.4) (xy 241.3 152.4)
+			(xy 238.76 123.19) (xy 245.11 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1843,7 +1843,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 129.54) (xy 201.93 129.54)
+			(xy 199.39 100.33) (xy 205.74 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1853,7 +1853,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 129.54) (xy 241.3 129.54)
+			(xy 238.76 100.33) (xy 245.11 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1903,7 +1903,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 154.94) (xy 201.93 154.94)
+			(xy 199.39 125.73) (xy 205.74 125.73)
 		)
 		(stroke
 			(width 0)
@@ -1973,7 +1973,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 139.7) (xy 241.3 139.7)
+			(xy 238.76 110.49) (xy 245.11 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1983,7 +1983,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 139.7) (xy 201.93 139.7)
+			(xy 199.39 110.49) (xy 205.74 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2113,7 +2113,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 134.62) (xy 201.93 134.62)
+			(xy 199.39 105.41) (xy 205.74 105.41)
 		)
 		(stroke
 			(width 0)
@@ -2203,7 +2203,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 149.86) (xy 241.3 149.86)
+			(xy 238.76 120.65) (xy 245.11 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2223,7 +2223,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 157.48) (xy 201.93 157.48)
+			(xy 199.39 128.27) (xy 205.74 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2283,7 +2283,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 137.16) (xy 201.93 137.16)
+			(xy 199.39 107.95) (xy 205.74 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2433,7 +2433,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 149.86) (xy 201.93 149.86)
+			(xy 199.39 120.65) (xy 205.74 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2463,7 +2463,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 147.32) (xy 241.3 147.32)
+			(xy 238.76 118.11) (xy 245.11 118.11)
 		)
 		(stroke
 			(width 0)
@@ -2533,7 +2533,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 132.08) (xy 241.3 132.08)
+			(xy 238.76 102.87) (xy 245.11 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2683,7 +2683,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 132.08) (xy 201.93 132.08)
+			(xy 199.39 102.87) (xy 205.74 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2923,7 +2923,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 142.24) (xy 201.93 142.24)
+			(xy 199.39 113.03) (xy 205.74 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2993,7 +2993,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 147.32) (xy 201.93 147.32)
+			(xy 199.39 118.11) (xy 205.74 118.11)
 		)
 		(stroke
 			(width 0)
@@ -3013,7 +3013,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 134.62) (xy 241.3 134.62)
+			(xy 238.76 105.41) (xy 245.11 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3083,7 +3083,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 157.48) (xy 241.3 157.48)
+			(xy 238.76 128.27) (xy 245.11 128.27)
 		)
 		(stroke
 			(width 0)
@@ -3172,7 +3172,7 @@
 		(uuid "195bf4a2-9fff-4edc-a0db-bc2374779bc8")
 	)
 	(label "SW_ROW3"
-		(at 195.58 134.62 180)
+		(at 199.39 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3202,7 +3202,7 @@
 		(uuid "1d7edaa0-49c6-46b7-971c-84b86e37df6e")
 	)
 	(label "LED_G1"
-		(at 234.95 132.08 180)
+		(at 238.76 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3242,7 +3242,7 @@
 		(uuid "2789d2ab-bb89-4259-9d80-1573db8b1db4")
 	)
 	(label "LED_B2"
-		(at 234.95 142.24 180)
+		(at 238.76 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3252,7 +3252,7 @@
 		(uuid "27d65a90-fd32-49e3-a4d2-fecdde15d490")
 	)
 	(label "SW_COL4"
-		(at 195.58 147.32 180)
+		(at 199.39 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3262,7 +3262,7 @@
 		(uuid "2889d45c-e70f-4560-90f1-5ca3fbe585e8")
 	)
 	(label "LED_R2"
-		(at 234.95 137.16 180)
+		(at 238.76 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3322,7 +3322,7 @@
 		(uuid "35630bf4-cf36-4240-8836-90390e052d1e")
 	)
 	(label "SW_COL3"
-		(at 195.58 144.78 180)
+		(at 199.39 115.57 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3342,7 +3342,7 @@
 		(uuid "3c4e0a45-2c2a-4a2f-93a6-ab41c43a48d1")
 	)
 	(label "LED_B1"
-		(at 234.95 134.62 180)
+		(at 238.76 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3372,7 +3372,7 @@
 		(uuid "3fd5c077-505e-49f2-883d-f26beb25e47e")
 	)
 	(label "LED_G3"
-		(at 234.95 147.32 180)
+		(at 238.76 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3382,7 +3382,7 @@
 		(uuid "41234753-a165-4c6f-82ce-dc62068a6625")
 	)
 	(label "SW_COL2"
-		(at 195.58 142.24 180)
+		(at 199.39 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3402,7 +3402,7 @@
 		(uuid "4e8cd647-53f3-42be-aca3-52d73c424f0b")
 	)
 	(label "SW_ROW4"
-		(at 195.58 137.16 180)
+		(at 199.39 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3482,7 +3482,7 @@
 		(uuid "68ced424-7b4c-4d5e-b9da-c719950029a9")
 	)
 	(label "LED_COL4"
-		(at 195.58 157.48 180)
+		(at 199.39 128.27 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3492,7 +3492,7 @@
 		(uuid "70deeb94-2bbc-44fc-bb14-e7f562ab00a9")
 	)
 	(label "LED_G4"
-		(at 234.95 154.94 180)
+		(at 238.76 125.73 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3532,7 +3532,7 @@
 		(uuid "79119e3a-5771-477b-a712-976edc4c8f9d")
 	)
 	(label "SW_COL1"
-		(at 195.58 139.7 180)
+		(at 199.39 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3602,7 +3602,7 @@
 		(uuid "8413ab92-ffd1-4655-adf5-9c9048200e89")
 	)
 	(label "LED_G2"
-		(at 234.95 139.7 180)
+		(at 238.76 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3612,7 +3612,7 @@
 		(uuid "8773967d-1b79-42d1-8028-05c1f9f2a6fb")
 	)
 	(label "LED_B3"
-		(at 234.95 149.86 180)
+		(at 238.76 120.65 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3622,7 +3622,7 @@
 		(uuid "891c6bde-c649-42ce-9fbe-4766976a8ad3")
 	)
 	(label "LED_R3"
-		(at 234.95 144.78 180)
+		(at 238.76 115.57 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3682,7 +3682,7 @@
 		(uuid "953e49e2-be42-4442-912d-e85975cc73ed")
 	)
 	(label "SW_ROW2"
-		(at 195.58 132.08 180)
+		(at 199.39 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3692,7 +3692,7 @@
 		(uuid "956b6857-5bbf-4577-96a9-d0ba537b29be")
 	)
 	(label "LED_COL1"
-		(at 195.58 149.86 180)
+		(at 199.39 120.65 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3742,7 +3742,7 @@
 		(uuid "ad6277e2-aba3-459e-930f-95126193d52a")
 	)
 	(label "SW_ROW1"
-		(at 195.58 129.54 180)
+		(at 199.39 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3792,7 +3792,7 @@
 		(uuid "b2fa66b3-1597-4210-b833-f335daf191bb")
 	)
 	(label "LED_COL2"
-		(at 195.58 152.4 180)
+		(at 199.39 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3832,7 +3832,7 @@
 		(uuid "c7c8db77-b94b-488f-85a5-0a834239bf51")
 	)
 	(label "LED_R1"
-		(at 234.95 129.54 180)
+		(at 238.76 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3842,7 +3842,7 @@
 		(uuid "ca2234f8-b156-443f-98c0-f6b9d1208373")
 	)
 	(label "LED_R4"
-		(at 234.95 152.4 180)
+		(at 238.76 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3852,7 +3852,7 @@
 		(uuid "ca45f8c2-7e30-4c8c-b507-7eb2e40ad94f")
 	)
 	(label "LED_B4"
-		(at 234.95 157.48 180)
+		(at 238.76 128.27 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4032,7 +4032,7 @@
 		(uuid "fb3da4fb-8636-4e10-9829-ba13a083cda6")
 	)
 	(label "LED_COL3"
-		(at 195.58 154.94 180)
+		(at 199.39 125.73 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4879,7 +4879,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 95.25 67.31 0)
 			(effects
 				(font
@@ -4947,7 +4947,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 143.51 67.31 0)
 			(effects
 				(font
@@ -5421,7 +5421,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 95.25 19.05 0)
 			(effects
 				(font
@@ -5489,7 +5489,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 198.12 19.05 0)
 			(effects
 				(font
@@ -5557,7 +5557,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 44.45 67.31 0)
 			(effects
 				(font
@@ -5626,7 +5626,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 44.45 19.05 0)
 			(effects
 				(font
@@ -5678,7 +5678,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 246.38 142.24 0)
+		(at 250.19 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5687,7 +5687,7 @@
 		(fields_autoplaced yes)
 		(uuid "71186948-22fa-429b-ae3c-50f9bb104434")
 		(property "Reference" "J2"
-			(at 248.92 142.2399 0)
+			(at 252.73 113.0299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5696,7 +5696,7 @@
 			)
 		)
 		(property "Value" "Conn_01x12"
-			(at 248.92 144.7799 0)
+			(at 252.73 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5705,7 +5705,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
-			(at 246.38 142.24 0)
+			(at 250.19 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5714,7 +5714,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 246.38 142.24 0)
+			(at 250.19 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5723,7 +5723,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 246.38 142.24 0)
+			(at 250.19 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5794,7 +5794,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 198.12 50.8 0)
 			(effects
 				(font
@@ -5863,7 +5863,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 198.12 35.56 0)
 			(effects
 				(font
@@ -5932,7 +5932,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 143.51 35.56 0)
 			(effects
 				(font
@@ -6232,7 +6232,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 198.12 67.31 0)
 			(effects
 				(font
@@ -6387,7 +6387,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 95.25 50.8 0)
 			(effects
 				(font
@@ -6627,7 +6627,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 44.45 35.56 0)
 			(effects
 				(font
@@ -6696,7 +6696,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 95.25 35.56 0)
 			(effects
 				(font
@@ -6850,7 +6850,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 143.51 19.05 0)
 			(effects
 				(font
@@ -7213,7 +7213,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 44.45 50.8 0)
 			(effects
 				(font
@@ -7514,7 +7514,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Omron_B3FS"
+		(property "Value" ""
 			(at 143.51 50.8 0)
 			(effects
 				(font
@@ -7799,7 +7799,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
-		(at 207.01 142.24 0)
+		(at 210.82 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7808,7 +7808,7 @@
 		(fields_autoplaced yes)
 		(uuid "ff68264d-df1f-40f2-b4df-b46c8094c6c7")
 		(property "Reference" "J1"
-			(at 209.55 142.2399 0)
+			(at 213.36 113.0299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7817,7 +7817,7 @@
 			)
 		)
 		(property "Value" "Conn_01x12"
-			(at 209.55 144.7799 0)
+			(at 213.36 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7826,7 +7826,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
-			(at 207.01 142.24 0)
+			(at 210.82 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7835,7 +7835,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 207.01 142.24 0)
+			(at 210.82 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7844,7 +7844,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 207.01 142.24 0)
+			(at 210.82 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
