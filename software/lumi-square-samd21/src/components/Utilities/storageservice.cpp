@@ -27,9 +27,10 @@ uint8_t read_flash_byte(uint32_t offset)
  */
 uint8_t StorageService::getHighScore(GameState gameState, Difficulty difficulty)
 {
-    uint32_t highScoreAddress = getHighScoreAddress(gameState, difficulty);
-    uint8_t *highScorePtr = (uint8_t *)highScoreAddress;
-    return *highScorePtr == 255 ? 0 : *highScorePtr;
+    // uint32_t highScoreAddress = getHighScoreAddress(gameState, difficulty);
+    // uint8_t *highScorePtr = (uint8_t *)highScoreAddress;
+    // return *highScorePtr == 255 ? 0 : *highScorePtr;
+    return 0;
 }
 
 /**

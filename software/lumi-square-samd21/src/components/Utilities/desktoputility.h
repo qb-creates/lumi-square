@@ -6,15 +6,22 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include <GLFW/glfw3.h>
+#include <miniaudio.h>
 
 class DesktopUtility : public DeviceUtility
 {
 private:
     GLFWwindow *window;
     uint32_t buttonData;
+    bool nextButtonState;
+    bool previousButtonState;
+    bool difficultyButtonState;
+    ma_engine audioEngine;
+    ma_result audioInitResult;
 
 public:
     DesktopUtility();
+    ~DesktopUtility();
     void configure() override;
     bool getPreviousButtonState() override;
     bool getNextButtonState() override;

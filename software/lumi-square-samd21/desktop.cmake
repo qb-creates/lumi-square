@@ -15,6 +15,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/src/components/Audio
     ${CMAKE_SOURCE_DIR}/src/third-party/imgui
     ${CMAKE_SOURCE_DIR}/src/third-party/imgui/GLFW
+    ${CMAKE_SOURCE_DIR}/src/third-party/miniaudio
 )
 
 # Collect all .cpp files from your components
@@ -22,6 +23,7 @@ file(GLOB_RECURSE SOURCES
     src/components/*.cpp
     src/third-party/imgui/*.cpp
     src/main.cpp
+    src/third-party/miniaudio/*.c
 )
 
 # Remove hardware-specific files for desktop build

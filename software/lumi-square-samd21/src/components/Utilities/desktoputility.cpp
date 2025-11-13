@@ -7,10 +7,25 @@
 #include <sstream>
 #include <thread>
 
+#define MA_ENABLE_MP3
+
 DesktopUtility::DesktopUtility()
     : DeviceUtility(),
-      window()
+      window(),
+      nextButtonState(false),
+      previousButtonState(false),
+      difficultyButtonState(false),
+      audioEngine(),
+      audioInitResult()
 {
+}
+
+DesktopUtility::~DesktopUtility()
+{
+    if (audioInitResult == MA_SUCCESS)
+    {
+        ma_engine_uninit(&audioEngine);
+    }
 }
 
 void DesktopUtility::configure()
@@ -24,17 +39,17 @@ void DesktopUtility::configure()
 
 bool DesktopUtility::getPreviousButtonState()
 {
-    return false;
+    return previousButtonState;
 }
 
 bool DesktopUtility::getNextButtonState()
 {
-    return false;
+    return nextButtonState;
 }
 
 bool DesktopUtility::getDifficultyButtonState()
 {
-    return false;
+    return difficultyButtonState;
 }
 
 uint32_t DesktopUtility::scanButtonMatrix()
@@ -73,7 +88,64 @@ void DesktopUtility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
                      ImGuiWindowFlags_NoMove |
                      ImGuiWindowFlags_NoCollapse |
                      ImGuiWindowFlags_NoScrollbar |
-                     ImGuiWindowFlags_NoBringToFrontOnFocus);
+                     ImGuiWindowFlags_NoBringToFrontOnFocus |
+                     ImGuiWindowFlags_NoBackground);
+
+    // --- small circular top buttons (3) ---
+    {
+        // size of each circular button and spacing
+        const float btnSize = 24.0f;
+        const float spacing = 8.0f;
+
+        // center the trio across the window
+        float totalWidth = (3.0f * btnSize) + (2.0f * spacing);
+        float startX = ((float)display_w - totalWidth) / 2.0f;
+        ImGui::SetCursorPosX(startX);
+        ImGui::SetCursorPosY(10.0f);
+
+        // make buttons round by increasing FrameRounding temporarily
+        ImGuiStyle &style_top = ImGui::GetStyle();
+        const float oldRounding = style_top.FrameRounding;
+        style_top.FrameRounding = btnSize * 0.5f; // half size -> circle
+
+        // gray colors for button states
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.5f, 0.5f, 0.5f, 1.0f));
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.58f, 0.58f, 0.58f, 1.0f));
+        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.42f, 0.42f, 0.42f, 1.0f));
+
+        for (int i = 0; i < 3; ++i)
+        {
+            ImGui::PushID(1000 + i); // unique ID for each top button
+
+            if (i > 0)
+                ImGui::SameLine(0.0f, spacing);
+
+            // invisible label so nothing is drawn on the button
+            char label[16];
+            sprintf(label, "##topbtn%d", i);
+
+            ImGui::Button(label, ImVec2(btnSize, btnSize));
+            bool topActive = ImGui::IsItemActive();
+
+            switch (i)
+            {
+            case 0:
+                previousButtonState = topActive;
+                break;
+            case 1:
+                nextButtonState = topActive;
+                break;
+            case 2:
+                difficultyButtonState = topActive;
+                break;
+            }
+
+            ImGui::PopID();
+        }
+
+        ImGui::PopStyleColor(3);
+        style_top.FrameRounding = oldRounding; // restore rounding
+    }
 
     // Calculate button size to make them square and fit nicely
     float available_width = (float)display_w - 60.0f;  // Leave some margin
@@ -155,7 +227,7 @@ void DesktopUtility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
     // Rendering
     ImGui::Render();
     glViewport(0, 0, display_w, display_h);
-    glClearColor(0.117f, 0.117f, 0.117f, 1.00f); // VS Code dark theme background (#1E1E1E)
+    glClearColor(0.117f, 0.117f, 0.117f, 1.00f);
     glClear(GL_COLOR_BUFFER_BIT);
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
@@ -164,6 +236,12 @@ void DesktopUtility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
 
 void DesktopUtility::processAudioCommand(DFPlayerCommand command, void (*callback)(void))
 {
+    if (audioInitResult == MA_SUCCESS && command != DFPlayerCommand::Mute && command != DFPlayerCommand::Unmute && command != DFPlayerCommand::None)
+    {
+        char filepath[64];
+        sprintf(filepath, "src/assets/audio/%d.mp3", (int)command);
+        ma_engine_play_sound(&audioEngine, filepath, NULL);
+    }
 }
 
 void DesktopUtility::setBeepNote(MusicNote note)
@@ -187,7 +265,7 @@ void threadFunction()
 {
     while (running)
     {
-        std::this_thread::sleep_for(std::chrono::milliseconds(8));
+        std::this_thread::sleep_for(std::chrono::milliseconds(DeviceUtility::DELTA_TIME));
         if (!DeviceUtility::fixedUpdate)
             DeviceUtility::fixedUpdate = true;
     }
@@ -252,6 +330,7 @@ void DesktopUtility::configureLeds()
 
 void DesktopUtility::configureAudio()
 {
+    audioInitResult = ma_engine_init(NULL, &audioEngine);
 }
 
 void DesktopUtility::configureRNG()
