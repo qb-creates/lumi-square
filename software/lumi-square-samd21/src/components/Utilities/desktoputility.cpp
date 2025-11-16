@@ -2,18 +2,84 @@
 #include <algorithm>
 #include <atomic>
 #include <chrono>
+#include <cmath>
 #include <iostream>
 #include <led.h>
+#include <random>
 #include <sstream>
 #include <thread>
-#include <random>
 
 #define MA_ENABLE_MP3
 
+// Atomic flag to control the thread
+std::atomic<bool> running{true};
+
+// Audio variables
 static void (*audioCompleteCallback)(void);
-ma_engine audioEngine;
-ma_sound audioSound;
-ma_result audioInitResult;
+static ma_engine audioEngine;
+static ma_sound audioSound;
+static ma_result audioInitResult;
+static ma_device device;
+
+static float g_freq = 0.0f;      // Frequency in Hz
+static float g_phase = 0.0f;     // Phase accumulator
+static int g_sampleRate = 48000; // Default (updated by device)
+
+// Function that will run in the thread
+void fixedUpdateThreadFunction()
+{
+    using namespace std::chrono;
+    auto nextTime = steady_clock::now();
+
+    while (running)
+    {
+        nextTime += milliseconds(DeviceUtility::DELTA_TIME);
+
+        // Signal fixedUpdate
+        if (!DeviceUtility::fixedUpdate)
+            DeviceUtility::fixedUpdate = true;
+
+        std::this_thread::sleep_until(nextTime);
+    }
+}
+
+void audioCallback(ma_device *device, void *output, const void *input, ma_uint32 frameCount)
+{
+    float *out = (float *)output;
+
+    float sr = (float)device->sampleRate;
+    g_sampleRate = device->sampleRate;
+
+    float phaseInc = (2.0f * 3.1415926f * g_freq) / sr;
+
+    for (uint32_t i = 0; i < frameCount; i++)
+    {
+
+        float sample = 0.0f;
+
+        if (g_freq > 0.0f)
+        {
+            // Square wave: +0.2 or -0.2 depending on sign of sin()
+            sample = (sinf(g_phase) > 0.0f ? 0.2f : -0.2f);
+            g_phase += phaseInc;
+            if (g_phase >= 2.0f * 3.1415926f)
+                g_phase -= 2.0f * 3.1415926f;
+        }
+
+        // Stereo
+        out[i * 2 + 0] = sample;
+        out[i * 2 + 1] = sample;
+    }
+}
+
+void setTone(float freq)
+{
+    // 0 = off
+    g_freq = freq;
+
+    if (freq == 0)
+        g_phase = 0; // reset phase so next beep is clean
+}
 
 void onMiniaudioComplete(void *pUserData, ma_sound *pSound)
 {
@@ -28,7 +94,8 @@ DesktopUtility::DesktopUtility()
       window(),
       nextButtonState(false),
       previousButtonState(false),
-      difficultyButtonState(false)
+      difficultyButtonState(false),
+      queueMusicNote(MusicNote::A0)
 {
 }
 
@@ -77,6 +144,15 @@ void DesktopUtility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
     // Main loop
     if (glfwWindowShouldClose(window))
     {
+        // Cleanup ImGui
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+
+        // Cleanup GLFW
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        running = false;
         return;
     }
 
@@ -202,19 +278,15 @@ void DesktopUtility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
                 ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(.73333f, .73333f, .73333f, 1.0f));
             }
 
-            // Create button with position label (no numbers)
-            char button_label[32];
-            sprintf(button_label, "(%d,%d)", row, col);
-
             // Square button with calculated size
-            ImGui::Button(button_label, ImVec2(button_size, button_size));
+            ImGui::Button("##", ImVec2(button_size, button_size));
 
             // Check if this specific button is being held down
             if (ImGui::IsItemActive())
             {
                 button_states[row][col] = true;
                 buttonData |= 1 << buttonIndex;
-                std::cout << "Button: " << buttonData << std::endl;
+                // std::cout << "Button: " << buttonData << std::endl;
             }
             else
             {
@@ -263,10 +335,20 @@ void DesktopUtility::processAudioCommand(DFPlayerCommand command, void (*callbac
 
 void DesktopUtility::setBeepNote(MusicNote note)
 {
+    queueMusicNote = note;
 }
 
 void DesktopUtility::enableBeep(bool enable)
 {
+    if (enable)
+    {
+        float noteFrequency = (float)(48000000 / ((static_cast<int>(queueMusicNote) + 1) * 256));
+        setTone(noteFrequency);
+    }
+    else
+    {
+        setTone(0.0f);
+    }
 }
 
 uint16_t DesktopUtility::getRNGSeedValue()
@@ -276,23 +358,9 @@ uint16_t DesktopUtility::getRNGSeedValue()
     return static_cast<uint8_t>(dist(rng));
 }
 
-// Atomic flag to control the thread
-std::atomic<bool> running{true};
-
-// Function that will run in the thread
-void threadFunction()
-{
-    while (running)
-    {
-        std::this_thread::sleep_for(std::chrono::milliseconds(DeviceUtility::DELTA_TIME));
-        if (!DeviceUtility::fixedUpdate)
-            DeviceUtility::fixedUpdate = true;
-    }
-}
-
 void DesktopUtility::configureFixedUpdateTimer()
 {
-    std::thread workerThread(threadFunction);
+    std::thread workerThread(fixedUpdateThreadFunction);
     workerThread.detach();
 }
 
@@ -349,7 +417,22 @@ void DesktopUtility::configureLeds()
 
 void DesktopUtility::configureAudio()
 {
+    // Configure audio engine for voice over playback
     audioInitResult = ma_engine_init(NULL, &audioEngine);
+
+    // Configure mini audio for beep sound playback
+    ma_device_config config = ma_device_config_init(ma_device_type_playback);
+    config.playback.format = ma_format_f32;
+    config.playback.channels = 2;
+    config.sampleRate = 48000;
+    config.dataCallback = audioCallback;
+
+    if (ma_device_init(NULL, &config, &device) != MA_SUCCESS)
+    {
+        printf("Failed to init audio device.\n");
+    }
+
+    ma_device_start(&device);
 }
 
 void DesktopUtility::configureRNG()

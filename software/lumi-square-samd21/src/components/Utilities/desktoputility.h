@@ -16,6 +16,7 @@ private:
     bool nextButtonState;
     bool previousButtonState;
     bool difficultyButtonState;
+    MusicNote queueMusicNote;
 
 public:
     DesktopUtility();
