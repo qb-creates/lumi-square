@@ -6,17 +6,29 @@
 #include <led.h>
 #include <sstream>
 #include <thread>
+#include <random>
 
 #define MA_ENABLE_MP3
+
+static void (*audioCompleteCallback)(void);
+ma_engine audioEngine;
+ma_sound audioSound;
+ma_result audioInitResult;
+
+void onMiniaudioComplete(void *pUserData, ma_sound *pSound)
+{
+    if (audioCompleteCallback != nullptr)
+    {
+        audioCompleteCallback();
+    }
+}
 
 DesktopUtility::DesktopUtility()
     : DeviceUtility(),
       window(),
       nextButtonState(false),
       previousButtonState(false),
-      difficultyButtonState(false),
-      audioEngine(),
-      audioInitResult()
+      difficultyButtonState(false)
 {
 }
 
@@ -238,9 +250,14 @@ void DesktopUtility::processAudioCommand(DFPlayerCommand command, void (*callbac
 {
     if (audioInitResult == MA_SUCCESS && command != DFPlayerCommand::Mute && command != DFPlayerCommand::Unmute && command != DFPlayerCommand::None)
     {
+        audioCompleteCallback = callback;
+
         char filepath[64];
         sprintf(filepath, "src/assets/audio/%d.mp3", (int)command);
-        ma_engine_play_sound(&audioEngine, filepath, NULL);
+        ma_sound_uninit(&audioSound);
+        ma_sound_init_from_file(&audioEngine, filepath, MA_SOUND_FLAG_DECODE, NULL, NULL, &audioSound);
+        ma_sound_set_end_callback(&audioSound, onMiniaudioComplete, NULL);
+        ma_sound_start(&audioSound);
     }
 }
 
@@ -254,7 +271,9 @@ void DesktopUtility::enableBeep(bool enable)
 
 uint16_t DesktopUtility::getRNGSeedValue()
 {
-    return 0;
+    thread_local std::mt19937 rng{std::random_device{}()};
+    std::uniform_int_distribution<int> dist(0, 255);
+    return static_cast<uint8_t>(dist(rng));
 }
 
 // Atomic flag to control the thread

@@ -16,8 +16,6 @@ private:
     bool nextButtonState;
     bool previousButtonState;
     bool difficultyButtonState;
-    ma_engine audioEngine;
-    ma_result audioInitResult;
 
 public:
     DesktopUtility();

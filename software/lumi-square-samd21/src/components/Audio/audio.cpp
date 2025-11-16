@@ -101,8 +101,7 @@ bool AudioSource::isMusicNotePlaying()
  */
 bool AudioSource::isVoiceOverPlaying()
 {
-    // return voiceOverQueueCount > 0 || isPlayingVoiceOver;
-    return false;
+    return voiceOverQueueCount > 0 || isPlayingVoiceOver;
 }
 
 /**
