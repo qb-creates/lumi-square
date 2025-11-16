@@ -5,6 +5,9 @@ project(lumi-square-desktop VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
+# Makes it so that errors appear in different colors when building.
+add_compile_options(-fdiagnostics-color=always)
+
 # Add the include directories to the project
 include_directories(
     ${CMAKE_SOURCE_DIR}/src/components/Colors

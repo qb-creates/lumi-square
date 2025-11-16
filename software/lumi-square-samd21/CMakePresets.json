@@ -15,7 +15,7 @@
         {
             "name": "cmake_generate_desktop",
             "displayName": "Generate Desktop Simulation Build Files",
-            "generator": "MinGW Makefiles",
+            "generator": "Ninja",
             "binaryDir": "${sourceDir}/.build-desktop",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",

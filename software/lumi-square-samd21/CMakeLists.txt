@@ -32,7 +32,7 @@ set(MCPU cortex-m0plus)
 # add_compile_options(-mfloat-abi=soft)
 add_compile_options(-mcpu=${MCPU} -mthumb)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
-
+add_compile_options(-fdiagnostics-color=always)
 add_compile_definitions(F_CPU=48000000UL)
 
 # uncomment to mitigate c++17 absolute addresses warnings
