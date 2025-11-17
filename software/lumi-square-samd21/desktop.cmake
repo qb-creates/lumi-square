@@ -12,6 +12,7 @@ add_compile_options(-fdiagnostics-color=always)
 include_directories(
     ${CMAKE_SOURCE_DIR}/src/components/Colors
     ${CMAKE_SOURCE_DIR}/src/components/Utilities
+    ${CMAKE_SOURCE_DIR}/src/components/Utilities/Desktop
     ${CMAKE_SOURCE_DIR}/src/components/Peripherals
     ${CMAKE_SOURCE_DIR}/src/components/Managers
     ${CMAKE_SOURCE_DIR}/src/components/GameStates
@@ -21,24 +22,34 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/src/third-party/miniaudio
 )
 
-# Collect all .cpp files from your components
-file(GLOB_RECURSE SOURCES 
-    src/components/*.cpp
-    src/third-party/imgui/*.cpp
-    src/main.cpp
-    src/third-party/miniaudio/*.c
+file(GLOB COMMON_SOURCES
+    src/components/Audio/*.cpp
+    src/components/Colors/*.cpp
+    src/components/GameStates/*.cpp
+    src/components/GameStates/GameOver/*.cpp
+    src/components/GameStates/LightDash/*.cpp
+    src/components/GameStates/MainMenu/*.cpp
+    src/components/GameStates/MemoryMatching/*.cpp
+    src/components/GameStates/PowerOn/*.cpp
+    src/components/GameStates/Simon/*.cpp
+    src/components/Managers/*.cpp
+    src/components/Peripherals/*.cpp
+    src/components/Utilities/*.cpp
 )
 
-# Remove hardware-specific files for desktop build
-list(FILTER SOURCES EXCLUDE REGEX "samd21j18utility\\.cpp$")
-list(FILTER SOURCES EXCLUDE REGEX "third-party/CMSIS/.*")
-list(FILTER SOURCES EXCLUDE REGEX "third-party/SAMD21J18A/.*")
+file(GLOB_RECURSE HARDWARE_SOURCES
+    src/third-party/miniaudio/*.cpp
+    src/third-party/miniaudio/*.c
+    src/third-party/imgui/*.cpp
+    src/third-party/imgui/*.c
+    src/components/Utilities/Desktop/*.cpp
+)
 
 # Add compile definitions
 add_compile_definitions(DESKTOP_SIMULATION)
 add_compile_options(-O0 -g)
 
-add_executable(lumi-square-desktop ${SOURCES})
+add_executable(lumi-square-desktop src/main.cpp ${COMMON_SOURCES} ${HARDWARE_SOURCES})
 
 # Link against GLFW library
 # You'll need to adjust this path to where you have GLFW
