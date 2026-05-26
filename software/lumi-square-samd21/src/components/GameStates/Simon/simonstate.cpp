@@ -55,7 +55,7 @@ void SimonState::updateState()
     if (LEDMatrix::getLedIntensity(activeButtonIndex) == 1)
     {
         timer.setTargetTime(200);
-        LEDMatrix::setLedIntensity(activeButtonIndex, .1);
+        LEDMatrix::setLedIntensity(activeButtonIndex, .5);
 
         if (sequenceIndex == currentRound)
         {

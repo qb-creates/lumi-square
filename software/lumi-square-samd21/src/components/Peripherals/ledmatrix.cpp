@@ -187,39 +187,39 @@ void LEDMatrix::setLedIntensity(uint8_t ledIndex, double intensity)
 void LEDMatrix::enableSimonLights(bool all)
 {
     uint8_t gameSelectButtons[] = {0, 1, 2, 3, 4, 7, 8, 11, 12, 13, 14, 15};
-    LEDMatrix::ledOff(gameSelectButtons, 12, Colors::azure, .5);
+    LEDMatrix::ledOff(gameSelectButtons, 12, Colors::turquoise, .5);
 
     if (all)
     {
-        LEDMatrix::ledOn(0, Colors::aquamarine, .1);
-        LEDMatrix::ledOn(3, Colors::purple, .1);
-        LEDMatrix::ledOn(12, Colors::orange, .1);
-        LEDMatrix::ledOn(15, Colors::azure, .1);
+        LEDMatrix::ledOn(0, Colors::purple, .5);
+        LEDMatrix::ledOn(3, Colors::pink, .5);
+        LEDMatrix::ledOn(12, Colors::orange, .5);
+        LEDMatrix::ledOn(15, Colors::turquoise, .5);
     }
 
-    LEDMatrix::ledOn(5, Colors::green, .1);
-    LEDMatrix::ledOn(6, Colors::red, .1);
-    LEDMatrix::ledOn(9, Colors::yellow, .1);
-    LEDMatrix::ledOn(10, Colors::blue, .1);
+    LEDMatrix::ledOn(5, Colors::green, .5);
+    LEDMatrix::ledOn(6, Colors::red, .5);
+    LEDMatrix::ledOn(9, Colors::yellow, .5);
+    LEDMatrix::ledOn(10, Colors::blue, .5);
 }
 
 void LEDMatrix::enableMemoryMatchLights()
 {
     LEDMatrix::ledOn(0, Colors::red, .4);
     LEDMatrix::ledOn(1, Colors::pink, .4);
-    LEDMatrix::ledOn(2, Colors::cyan, .4);
-    LEDMatrix::ledOn(3, Colors::azure, .4);
+    LEDMatrix::ledOn(2, Colors::blue, .4);
+    LEDMatrix::ledOn(3, Colors::turquoise, .4);
     LEDMatrix::ledOn(4, Colors::orange, .4);
-    LEDMatrix::ledOn(5, Colors::aquamarine, .4);
-    LEDMatrix::ledOn(6, Colors::cyan, .4);
+    LEDMatrix::ledOn(5, Colors::green, .4);
+    LEDMatrix::ledOn(6, Colors::blue, .4);
     LEDMatrix::ledOn(7, Colors::pink, .4);
     LEDMatrix::ledOn(8, Colors::yellow, .4);
     LEDMatrix::ledOn(9, Colors::purple, .4);
     LEDMatrix::ledOn(10, Colors::orange, .4);
-    LEDMatrix::ledOn(11, Colors::azure, .4);
+    LEDMatrix::ledOn(11, Colors::turquoise, .4);
     LEDMatrix::ledOn(12, Colors::purple, .4);
     LEDMatrix::ledOn(13, Colors::red, .4);
-    LEDMatrix::ledOn(14, Colors::aquamarine, .4);
+    LEDMatrix::ledOn(14, Colors::green, .4);
     LEDMatrix::ledOn(15, Colors::yellow, .4);
 }
 

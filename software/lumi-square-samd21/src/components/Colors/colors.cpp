@@ -1,20 +1,18 @@
 #include "colors.h"
 
 #ifndef DESKTOP_SIMULATION
-#define RED_Multiplier .25
+#define RED_Multiplier 1
 #else
 #define RED_Multiplier 1
 #endif
 
 const Color Colors::red = Color(255, 0, 0);
-const Color Colors::pink = Color(255, 50, 200);
+const Color Colors::pink = Color(255, 50, 100);
 const Color Colors::blue = Color(0, 0, 255);
-const Color Colors::azure = Color(0, 30, 255);
+const Color Colors::turquoise = Color(0, 255, 160);
 const Color Colors::purple = Color(130, 0, 255);
-const Color Colors::cyan = Color(0, 120, 240);
-const Color Colors::aquamarine = Color(0, 220, 170);
 const Color Colors::orange = Color(255, 100, 0);
-const Color Colors::yellow = Color(220, 250, 30);
+const Color Colors::yellow = Color(220, 255, 0);
 const Color Colors::green = Color(0, 255, 0);
 
 /**

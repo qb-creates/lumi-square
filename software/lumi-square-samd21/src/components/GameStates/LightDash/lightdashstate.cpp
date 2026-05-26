@@ -48,7 +48,7 @@ void LightDashState::enterState(GameState previousState)
         if (LEDMatrix::getLedStatus(ledIndex))
             continue;
 
-        LEDMatrix::setLedColor(ledIndex, Colors::azure, .8);
+        LEDMatrix::setLedColor(ledIndex, Colors::turquoise, .8);
         LEDMatrix::ledOn(ledIndex);
         ledTurnOffTimers[ledIndex].setTargetTime(Random::range(minLedTurnOffTime, maxLedTurnOffTime));
         ++i;
@@ -121,7 +121,7 @@ void LightDashState::turnOnRandomLed()
     while (1)
     {
         int ledIndex = Random::range(0, 15);
-        Color ledColor = Colors::azure;
+        Color ledColor = Colors::turquoise;
 
         if (LEDMatrix::getLedStatus(ledIndex))
             continue;
@@ -137,7 +137,7 @@ void LightDashState::turnOnRandomLed()
             }
         }
 
-        int16_t turnOffTime = ledColor != Colors::azure ? bonusLedTurnOffTime : Random::range(minLedTurnOffTime, maxLedTurnOffTime);
+        int16_t turnOffTime = ledColor != Colors::turquoise ? bonusLedTurnOffTime : Random::range(minLedTurnOffTime, maxLedTurnOffTime);
         ledTurnOffTimers[ledIndex].setTargetTime(turnOffTime);
 
         LEDMatrix::setLedColor(ledIndex, ledColor, .8);
@@ -166,13 +166,13 @@ void LightDashState::deductPointsFromScore()
 void LightDashState::addPointsToScore(int8_t buttonIndex)
 {
     Color buttonColor = LEDMatrix::getLedColor(buttonIndex);
-    int points = buttonColor == Colors::azure ? 1 : bonusLedPointValue;
+    int points = buttonColor == Colors::turquoise ? 1 : bonusLedPointValue;
     ScoreManager::Instance().addToScore(points);
 }
 
 void LightDashState::playMusicNote(int8_t buttonIndex)
 {
     Color buttonColor = LEDMatrix::getLedColor(buttonIndex);
-    MusicNote musicNote = buttonColor == Colors::azure ? MusicNote::G4 : MusicNote::A4;
+    MusicNote musicNote = buttonColor == Colors::turquoise ? MusicNote::G4 : MusicNote::A4;
     AudioSource::Instance().playMusicNote(musicNote, 50);
 }

@@ -161,8 +161,17 @@ bool SAMD21J18Utility::getDifficultyButtonState()
 void SAMD21J18Utility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8])
 {
     LED *led = &LED::leds[currentLedIndex];
-    PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0) | (1 << led->column);
 
+    PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0);
+    for (uint32_t j = 0; j < 700; ++j)
+    {
+        __NOP();
+    }
+    PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0) | (1 << led->column);
+    for (uint32_t j = 0; j < 200; ++j)
+    {
+        __NOP();
+    }
     for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
     {
         transmitLedData(ledColorData[led->column][led->row][colorDataIndex]);
