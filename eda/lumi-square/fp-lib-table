@@ -10,4 +10,8 @@
 	(lib (name "FTSH-105-01") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/FTSH-105-01.pretty") (options "") (descr ""))
 	(lib (name "FTSH-105-01-X-DV-P-K-X") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/FTSH-105-01-X-DV-P-K-X.pretty") (options "") (descr ""))
 	(lib (name "FTSH-105-01-X-DV-P-K-X") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/FTSH-105-01-X-DV-P-K-X.pretty") (options "") (descr ""))
+	(lib (name "DFR0299") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/DFR0299.pretty") (options "") (descr ""))
+	(lib (name "DFR0299") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/DFR0299.pretty") (options "") (descr ""))
+	(lib (name "RDT.pretty") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/RDT.pretty.pretty") (options "") (descr ""))
+	(lib (name "RDT.pretty") (type "KiCad") (uri "/home/qbaker/portfolio/lumi-square/eda/footprints/RDT.pretty.pretty") (options "") (descr ""))
 )
