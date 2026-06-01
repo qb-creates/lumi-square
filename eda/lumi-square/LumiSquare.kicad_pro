@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.25
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -746,7 +746,7 @@
         "uuid": "092b428a-5a5f-4f13-b55d-abd406e11b5b"
       }
     ],
-    "used_designators": "",
+    "used_designators": "J4,C22-23,C23234546",
     "variants": []
   },
   "sheets": [

@@ -2340,6 +2340,164 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x12"
 			(pin_names
 				(offset 1.016)
@@ -10654,6 +10812,12 @@
 		(uuid "92b4aeeb-62a6-4c1c-b000-b5e7b4a3af27")
 	)
 	(junction
+		(at 176.53 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "935401a5-b7cd-46cb-8fa6-16df139a918a")
+	)
+	(junction
 		(at 570.23 213.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10730,6 +10894,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b6f0a18d-5c8c-4fe3-b013-6a7eb521e2f0")
+	)
+	(junction
+		(at 176.53 191.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b83565fd-31c6-491f-86e0-14fffcde1b1e")
 	)
 	(junction
 		(at 391.16 222.25)
@@ -11237,6 +11407,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 189.23) (xy 176.53 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11c58323-4d8b-44da-9ad1-84d7266b1f08")
+	)
+	(wire
+		(pts
 			(xy 68.58 55.88) (xy 68.58 57.15)
 		)
 		(stroke
@@ -11394,16 +11574,6 @@
 			(type default)
 		)
 		(uuid "1683422e-c645-4908-bad7-a2dfb6946477")
-	)
-	(wire
-		(pts
-			(xy 173.99 189.23) (xy 177.8 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16b4ff58-99c8-4a17-bd96-3c0d0177bb5b")
 	)
 	(wire
 		(pts
@@ -12067,6 +12237,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 191.77) (xy 177.8 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "379172dd-c382-43ea-b076-e255b63cb9bf")
+	)
+	(wire
+		(pts
 			(xy 38.1 73.66) (xy 38.1 81.28)
 		)
 		(stroke
@@ -12164,6 +12344,16 @@
 			(type default)
 		)
 		(uuid "3dde6483-3e77-47d0-a39e-a5f914529526")
+	)
+	(wire
+		(pts
+			(xy 176.53 191.77) (xy 176.53 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e0fca5e-a4cc-4710-89b3-a11b53f27893")
 	)
 	(wire
 		(pts
@@ -13237,16 +13427,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 191.77) (xy 177.8 191.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d9385c8-d00c-4f4c-8725-52da79bfea0c")
-	)
-	(wire
-		(pts
 			(xy 194.31 255.27) (xy 214.63 255.27)
 		)
 		(stroke
@@ -13867,6 +14047,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 191.77) (xy 176.53 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e5997d9-9085-4bfe-b2e9-3ebb5ff69bcf")
+	)
+	(wire
+		(pts
 			(xy 55.88 48.26) (xy 53.34 48.26)
 		)
 		(stroke
@@ -13944,6 +14134,16 @@
 			(type default)
 		)
 		(uuid "a3848dd8-dd03-49bb-96ae-5ed9920f2fd8")
+	)
+	(wire
+		(pts
+			(xy 172.72 185.42) (xy 176.53 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3f2874c-9c0a-4bb3-88ec-2ba30d6d6552")
 	)
 	(wire
 		(pts
@@ -14737,6 +14937,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 185.42) (xy 176.53 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2c90a56-e759-4ff8-9355-dbd88a372ad2")
+	)
+	(wire
+		(pts
 			(xy 278.13 33.02) (xy 287.02 33.02)
 		)
 		(stroke
@@ -14934,6 +15144,16 @@
 			(type default)
 		)
 		(uuid "e1e251e0-22fc-48de-9991-f706b97de06b")
+	)
+	(wire
+		(pts
+			(xy 173.99 200.66) (xy 176.53 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2190f66-6e02-4f27-8680-e74c61359d08")
 	)
 	(wire
 		(pts
@@ -15194,6 +15414,16 @@
 			(type default)
 		)
 		(uuid "efafe61b-dc5d-4afb-a754-4c06f2101af7")
+	)
+	(wire
+		(pts
+			(xy 176.53 189.23) (xy 177.8 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f01444dd-dab3-4d79-972d-1e5b1026ca2c")
 	)
 	(wire
 		(pts
@@ -15616,7 +15846,7 @@
 		(uuid "48b364e9-63fe-4c8c-80dc-d5ff24b9a376")
 	)
 	(label "Speaker+"
-		(at 173.99 189.23 180)
+		(at 172.72 185.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16166,7 +16396,7 @@
 		(uuid "e925ef37-6754-4c89-9680-974ee062cab4")
 	)
 	(label "Speaker-"
-		(at 173.99 191.77 180)
+		(at 173.99 200.66 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17949,7 +18179,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36060515-4f01-4376-813e-ae37b3040d11")
-		(property "Reference" "C3245345"
+		(property "Reference" "C23"
 			(at 506.73 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18013,7 +18243,7 @@
 		(instances
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
-					(reference "C3245345")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -19387,7 +19617,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 134.62 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -20166,7 +20396,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 457.2 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -22435,7 +22665,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_THT:SW_TH_Tactile_Omron_B3F-100x"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_TL3342"
 			(at 459.74 222.25 0)
 			(hide yes)
 			(show_name no)
@@ -22762,7 +22992,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 453.39 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -22910,7 +23140,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8667cd8f-7a81-4d84-b345-6b06daf29a99")
-		(property "Reference" "C23234545"
+		(property "Reference" "C22"
 			(at 478.79 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22974,7 +23204,7 @@
 		(instances
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
-					(reference "C23234545")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -23050,6 +23280,88 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "U$1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 168.91 189.23 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "883d1acd-dcd2-4d5a-885e-da32be9b52c5")
+		(property "Reference" "J4"
+			(at 166.37 189.2299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 175.006 195.834 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
+			(at 168.91 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 168.91 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 168.91 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9861ff91-36c0-43b4-ad54-8f92e1a76345")
+		)
+		(pin "2"
+			(uuid "42cfdc7d-aa8e-4967-9267-68345ae3e379")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -23496,7 +23808,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_1206_3216Metric"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 523.24 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -27649,7 +27961,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 378.46 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -27728,7 +28040,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical"
 			(at 535.94 157.48 0)
 			(hide yes)
 			(show_name no)
