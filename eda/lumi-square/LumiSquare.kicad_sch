@@ -1210,6 +1210,135 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -6535,6 +6664,105 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Power_Supervisor_Custom:TPS3840"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -9104,6 +9332,18 @@
 		(uuid "d2beadce-5b2e-49ec-b5dd-f716a9fb86d5")
 	)
 	(rectangle
+		(start 508 198.12)
+		(end 566.42 248.92)
+		(stroke
+			(width 0.4)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "e015304d-889d-456f-915e-32d9e1bcc000")
+	)
+	(rectangle
 		(start 13.97 217.17)
 		(end 224.536 327.66)
 		(stroke
@@ -9142,6 +9382,20 @@
 			(justify left bottom)
 		)
 		(uuid "3b30e6b5-16fd-49c7-ae40-9af67e924ece")
+	)
+	(text "Mounting Holes"
+		(exclude_from_sim no)
+		(at 512.826 206.756 0)
+		(effects
+			(font
+				(face "Arial")
+				(size 3.81 3.81)
+				(thickness 2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "4053b978-4eb1-40e0-8ad6-8281ddf8d122")
 	)
 	(text "VDDIO/VDDCORE Caps"
 		(exclude_from_sim no)
@@ -9572,6 +9826,12 @@
 		(uuid "833026dc-d3e4-44f9-a92b-a04e06fe1c51")
 	)
 	(junction
+		(at 278.13 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "84f977cf-3782-4bd0-af28-c8a2954f7ed4")
+	)
+	(junction
 		(at 558.8 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9734,6 +9994,12 @@
 		(uuid "c96be8fd-62e8-46b7-b710-abc317d1d4c4")
 	)
 	(junction
+		(at 523.24 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c994e775-4c04-4306-8f23-72cf68ae48bd")
+	)
+	(junction
 		(at 332.74 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9858,6 +10124,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f935934b-4488-4376-b780-9f252f977a48")
+	)
+	(junction
+		(at 394.97 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f95f65b8-7322-467d-a29b-74bb090e7759")
 	)
 	(junction
 		(at 356.87 46.99)
@@ -10089,7 +10361,7 @@
 	)
 	(wire
 		(pts
-			(xy 308.61 214.63) (xy 312.42 214.63)
+			(xy 308.61 214.63) (xy 334.01 214.63)
 		)
 		(stroke
 			(width 0)
@@ -10136,6 +10408,16 @@
 			(type default)
 		)
 		(uuid "0f1298d9-1fc5-40c1-b56d-c821f8ba3e6a")
+	)
+	(wire
+		(pts
+			(xy 524.51 80.01) (xy 523.24 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10bee56d-8b18-48f1-a35f-f38e7a78552b")
 	)
 	(wire
 		(pts
@@ -10669,6 +10951,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 232.41) (xy 273.05 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29fd4d7d-a929-4a7a-aa01-631bafafbb52")
+	)
+	(wire
+		(pts
 			(xy 308.61 194.31) (xy 312.42 194.31)
 		)
 		(stroke
@@ -10919,6 +11211,16 @@
 	)
 	(wire
 		(pts
+			(xy 558.8 154.94) (xy 558.8 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36d9fe94-35de-4c55-8967-00122be39b3b")
+	)
+	(wire
+		(pts
 			(xy 91.44 259.08) (xy 91.44 256.54)
 		)
 		(stroke
@@ -10956,6 +11258,16 @@
 			(type default)
 		)
 		(uuid "388802f4-23a6-415b-ba3e-0e8f52e17377")
+	)
+	(wire
+		(pts
+			(xy 483.87 153.67) (xy 480.06 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "388ccf7a-cd0e-4c2e-b599-96a4bdd263dc")
 	)
 	(wire
 		(pts
@@ -11119,6 +11431,16 @@
 	)
 	(wire
 		(pts
+			(xy 405.13 153.67) (xy 401.32 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42fa7c51-de8b-4a65-870e-31724b64adb9")
+	)
+	(wire
+		(pts
 			(xy 558.8 173.99) (xy 558.8 175.26)
 		)
 		(stroke
@@ -11126,6 +11448,16 @@
 			(type default)
 		)
 		(uuid "433db36d-c2d7-4751-b149-8712d3123d26")
+	)
+	(wire
+		(pts
+			(xy 523.24 80.01) (xy 523.24 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43b826c0-fb95-4e19-ae39-8fc42e4d9c7f")
 	)
 	(wire
 		(pts
@@ -11649,6 +11981,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 234.95) (xy 273.05 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "690e4929-333b-4ea0-af9e-6a209f9c5bb3")
+	)
+	(wire
+		(pts
 			(xy 453.39 92.71) (xy 453.39 106.68)
 		)
 		(stroke
@@ -11746,6 +12088,16 @@
 			(type default)
 		)
 		(uuid "6cf28480-a61e-42f8-8d77-72ec58cd4914")
+	)
+	(wire
+		(pts
+			(xy 397.51 59.69) (xy 394.97 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d3a8522-370d-41c4-a7d8-18ac37ce4f29")
 	)
 	(wire
 		(pts
@@ -11876,6 +12228,16 @@
 			(type default)
 		)
 		(uuid "76ffa8d1-941a-458c-99be-7e2ada4b93a1")
+	)
+	(wire
+		(pts
+			(xy 394.97 36.83) (xy 394.97 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "770ec161-777a-42d7-bc79-f3155f723fc3")
 	)
 	(wire
 		(pts
@@ -12049,7 +12411,7 @@
 	)
 	(wire
 		(pts
-			(xy 308.61 212.09) (xy 312.42 212.09)
+			(xy 308.61 212.09) (xy 334.01 212.09)
 		)
 		(stroke
 			(width 0)
@@ -12269,6 +12631,16 @@
 	)
 	(wire
 		(pts
+			(xy 278.13 53.34) (xy 278.13 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bdd9d1c-742e-4aac-9a76-cb1432169d13")
+	)
+	(wire
+		(pts
 			(xy 49.53 242.57) (xy 49.53 251.46)
 		)
 		(stroke
@@ -12429,16 +12801,6 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 234.95) (xy 273.05 234.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98957931-83e4-4117-ad14-93384ba59afd")
-	)
-	(wire
-		(pts
 			(xy 144.78 52.07) (xy 144.78 53.34)
 		)
 		(stroke
@@ -12446,6 +12808,16 @@
 			(type default)
 		)
 		(uuid "99e52771-5b7c-41a8-91a1-a248d109f548")
+	)
+	(wire
+		(pts
+			(xy 401.32 153.67) (xy 401.32 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99f920d0-3daa-4955-9dc9-6a64f8c86fdc")
 	)
 	(wire
 		(pts
@@ -12799,6 +13171,16 @@
 	)
 	(wire
 		(pts
+			(xy 397.51 36.83) (xy 394.97 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaba2eb6-85d2-4d53-91cd-e92847b617b9")
+	)
+	(wire
+		(pts
 			(xy 50.8 48.26) (xy 71.12 48.26)
 		)
 		(stroke
@@ -13036,16 +13418,6 @@
 			(type default)
 		)
 		(uuid "c001217d-ba98-43db-b542-be52b458453e")
-	)
-	(wire
-		(pts
-			(xy 394.97 46.99) (xy 394.97 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c020eb78-f47e-4ebd-a0d5-ce92c31d7389")
 	)
 	(wire
 		(pts
@@ -13639,7 +14011,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 49.53) (xy 278.13 54.61)
+			(xy 278.13 49.53) (xy 278.13 53.34)
 		)
 		(stroke
 			(width 0)
@@ -13679,16 +14051,6 @@
 	)
 	(wire
 		(pts
-			(xy 267.97 232.41) (xy 273.05 232.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e8d0929c-17ef-497c-b500-66c2ed674858")
-	)
-	(wire
-		(pts
 			(xy 59.69 300.99) (xy 59.69 302.26)
 		)
 		(stroke
@@ -13709,7 +14071,7 @@
 	)
 	(wire
 		(pts
-			(xy 308.61 217.17) (xy 312.42 217.17)
+			(xy 308.61 217.17) (xy 334.01 217.17)
 		)
 		(stroke
 			(width 0)
@@ -13726,6 +14088,16 @@
 			(type default)
 		)
 		(uuid "eb1516c4-40ab-4f43-89c9-3eb1f2084092")
+	)
+	(wire
+		(pts
+			(xy 480.06 153.67) (xy 480.06 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb2242d5-0a2d-4896-be1e-a48cc2853372")
 	)
 	(wire
 		(pts
@@ -13926,6 +14298,16 @@
 			(type default)
 		)
 		(uuid "f936201b-27d4-4704-a456-faf05e20a9f1")
+	)
+	(wire
+		(pts
+			(xy 561.34 154.94) (xy 558.8 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa8c44da-fa3b-407f-9365-b20db632b69e")
 	)
 	(wire
 		(pts
@@ -15003,6 +15385,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 248.92 232.41 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05bff2cb-f770-4c42-8c8f-b7de205b3008")
+		(property "Reference" "J13"
+			(at 248.92 226.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 248.92 228.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 248.92 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 248.92 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "159fb3c1-4ee6-4d65-a1e9-c5bc3f6b1fa6")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDREF")
 		(at 372.11 233.68 0)
 		(unit 1)
@@ -15156,6 +15615,84 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 283.21 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1268ab30-eacf-4beb-927e-9d380113bc84")
+		(property "Reference" "J6"
+			(at 285.75 52.0699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 281.686 56.388 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 283.21 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 283.21 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 283.21 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3423910e-e701-40c3-8986-4b693a612ccc")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -15542,6 +16079,82 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 516.89 232.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ba03504-f5d7-47a4-87af-5ef5b4b898bc")
+		(property "Reference" "H2"
+			(at 519.43 231.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 519.43 233.6799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 516.89 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 516.89 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 516.89 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -16287,6 +16900,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 339.09 214.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2d9570bd-e546-4dab-9bab-0e8d5675a998")
+		(property "Reference" "J16"
+			(at 346.456 215.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 346.456 213.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 339.09 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 339.09 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4cd42d6f-1bc1-4e35-b4b0-d43c7b82ed83")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 314.96 102.87 0)
 		(unit 1)
@@ -16454,6 +17143,82 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 339.09 212.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "342fb9e3-1014-442a-a17f-7ac00da05a37")
+		(property "Reference" "J15"
+			(at 339.09 209.296 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 339.09 206.756 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 339.09 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 339.09 212.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "29e0bb9f-da2f-4fa3-9ce6-ada83866512f")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J15")
 					(unit 1)
 				)
 			)
@@ -19767,6 +20532,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 248.92 234.95 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "731f7d84-838c-43f3-a93f-a2fd6d2ae5ea")
+		(property "Reference" "J14"
+			(at 248.92 237.744 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 248.92 240.284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 248.92 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 248.92 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 248.92 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ea90ccf5-bfe2-489d-8154-dacfd0dd2822")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MCU_Microchip_SAMD:ATSAMD21J18A-A")
 		(at 290.83 222.25 0)
 		(unit 1)
@@ -20273,6 +21114,85 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 566.42 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7aa87965-88a0-431f-bb5a-7ccb001da2ff")
+		(property "Reference" "J12"
+			(at 568.96 153.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 568.96 156.2099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 566.42 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 566.42 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 566.42 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ef5d4bb-edee-4696-aa41-f6176a652cd4")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J12")
 					(unit 1)
 				)
 			)
@@ -21661,6 +22581,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 410.21 153.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c90ed69-b222-4996-9a1e-b27722c4920c")
+		(property "Reference" "J10"
+			(at 412.75 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 412.75 154.9399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 410.21 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 410.21 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 410.21 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5ba8201f-67b8-41b9-b8ce-e0b2d4bcc2a8")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 523.24 102.87 270)
 		(unit 1)
@@ -22663,6 +23662,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 339.09 217.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "93d0a52e-30c0-44f0-a5be-e8ac19ffb56e")
+		(property "Reference" "J17"
+			(at 339.344 222.504 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 339.344 219.964 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 339.09 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 339.09 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6468ccf1-51b0-4dbb-aeab-50493baee45c")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Power_Supervisor_Custom:TPS3840")
 		(at 251.46 48.26 0)
 		(unit 1)
@@ -22745,6 +23820,164 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 488.95 153.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "97774b94-a5c5-4c9b-9d03-7e87e6263afd")
+		(property "Reference" "J11"
+			(at 491.49 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 491.49 154.9399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 488.95 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 488.95 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 488.95 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "020b1c25-bbec-4762-b83f-39ab6d5876a2")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 402.59 36.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ad98a7e-7684-46b5-b2df-32523ac31f01")
+		(property "Reference" "J1"
+			(at 405.13 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 405.13 38.0999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 402.59 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 402.59 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 402.59 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3c1eb28-1b75-46c6-b30d-fb5aa52327bf")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -23716,6 +24949,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 402.59 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "afc7cf35-26ad-480c-b0e9-2de3f9f0b274")
+		(property "Reference" "J8"
+			(at 405.13 58.4199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 405.13 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 402.59 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 402.59 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 402.59 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c1907501-094a-4305-a92d-acb25c73ff7d")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_BJT:MMBT3904")
 		(at 99.06 307.34 0)
 		(unit 1)
@@ -24531,6 +25842,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 529.59 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c95cbdc3-cc7d-4ca2-8247-f2cb88dc7001")
+		(property "Reference" "J9"
+			(at 532.13 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x01"
+			(at 532.13 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 529.59 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 529.59 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 529.59 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91f45713-14a1-4e8f-940f-0c439e07472e")
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 86.36 256.54 90)
 		(unit 1)
@@ -25191,6 +26580,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 546.1 232.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d93429a4-ac71-45af-a062-d93a1141f0f5")
+		(property "Reference" "H4"
+			(at 548.64 231.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 548.64 233.6799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 546.1 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 546.1 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 546.1 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 218.44 53.34 0)
 		(unit 1)
@@ -25425,6 +26890,82 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 516.89 213.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e14c1c51-fa0f-4031-9ff8-4702326c7159")
+		(property "Reference" "H1"
+			(at 519.43 212.0899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 519.43 214.6299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 516.89 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 516.89 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 516.89 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -25914,6 +27455,82 @@
 			(project "LumiSquare"
 				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 546.1 213.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f0801a2b-9ca3-4c96-bedd-a30078cc5baa")
+		(property "Reference" "H3"
+			(at 548.64 212.0899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 548.64 214.6299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
+			(at 546.1 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 546.1 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 546.1 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "LumiSquare"
+				(path "/092b428a-5a5f-4f13-b55d-abd406e11b5b"
+					(reference "H3")
 					(unit 1)
 				)
 			)
