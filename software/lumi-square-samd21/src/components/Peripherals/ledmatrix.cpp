@@ -191,16 +191,16 @@ void LEDMatrix::enableSimonLights(bool all)
 
     if (all)
     {
-        LEDMatrix::ledOn(0, Colors::purple, .5);
-        LEDMatrix::ledOn(3, Colors::pink, .5);
-        LEDMatrix::ledOn(12, Colors::orange, .5);
-        LEDMatrix::ledOn(15, Colors::turquoise, .5);
+        LEDMatrix::ledOn(0, Colors::purple, .2);
+        LEDMatrix::ledOn(3, Colors::pink, .2);
+        LEDMatrix::ledOn(12, Colors::orange, .2);
+        LEDMatrix::ledOn(15, Colors::turquoise, .2);
     }
 
-    LEDMatrix::ledOn(5, Colors::green, .5);
-    LEDMatrix::ledOn(6, Colors::red, .5);
-    LEDMatrix::ledOn(9, Colors::yellow, .5);
-    LEDMatrix::ledOn(10, Colors::blue, .5);
+    LEDMatrix::ledOn(5, Colors::green, .2);
+    LEDMatrix::ledOn(6, Colors::red, .2);
+    LEDMatrix::ledOn(9, Colors::yellow, .2);
+    LEDMatrix::ledOn(10, Colors::blue, .2);
 }
 
 void LEDMatrix::enableMemoryMatchLights()

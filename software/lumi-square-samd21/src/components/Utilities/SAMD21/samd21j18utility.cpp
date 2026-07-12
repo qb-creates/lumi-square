@@ -51,7 +51,7 @@ static const uint8_t DF_PLAYER_COMMANDS[46][10] = {
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0A, 0xFE, 0xDE, 0xEF},
     {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0B, 0xFE, 0xDD, 0xEF},
     {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x00, 0xFE, 0xF5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}};
+    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x19, 0xFE, 0xDC, 0xEF}};
 static const uint8_t MUTE_COMMAND_RESPONSE[20] = {0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF, 0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF};
 static volatile uint8_t receiveBufferIndex = 0;
 static volatile uint8_t voiceOverBuffer[20];
@@ -163,15 +163,13 @@ void SAMD21J18Utility::refreshButtonColor(volatile uint16_t ledColorData[4][4][8
     LED *led = &LED::leds[currentLedIndex];
 
     PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0);
+
     for (uint32_t j = 0; j < 700; ++j)
     {
         __NOP();
     }
     PORT_REGS->GROUP[1].PORT_OUT = (PORT_REGS->GROUP[1].PORT_OUT & 0xFFFFFFF0) | (1 << led->column);
-    for (uint32_t j = 0; j < 200; ++j)
-    {
-        __NOP();
-    }
+
     for (int colorDataIndex = 0; colorDataIndex < 8; ++colorDataIndex)
     {
         transmitLedData(ledColorData[led->column][led->row][colorDataIndex]);
@@ -322,7 +320,7 @@ void SAMD21J18Utility::configureLeds()
     }
 
     // Set sercom 4 to spi master. Transmit msb first. Set to SPI frame. Configure pads.
-    SERCOM4_REGS->SPIM.SERCOM_CTRLA = SERCOM_SPIM_CTRLA_ENABLE_Msk | SERCOM_SPIM_CTRLA_MODE_SPI_MASTER | SERCOM_SPIM_CTRLA_DORD_MSB | SERCOM_SPIM_CTRLA_FORM_SPI_FRAME | SERCOM_SPIM_CTRLA_DIPO_PAD3 | SERCOM_SPIM_CTRLA_DOPO_PAD0 | SERCOM_SPIM_CTRLA_CPOL_IDLE_HIGH;
+    SERCOM4_REGS->SPIM.SERCOM_CTRLA = SERCOM_SPIM_CTRLA_ENABLE_Msk | SERCOM_SPIM_CTRLA_MODE_SPI_MASTER | SERCOM_SPIM_CTRLA_DORD_MSB | SERCOM_SPIM_CTRLA_FORM_SPI_FRAME | SERCOM_SPIM_CTRLA_DIPO_PAD3 | SERCOM_SPIM_CTRLA_DOPO_PAD0 | SERCOM_SPIM_CTRLA_CPOL_IDLE_HIGH  | SERCOM_SPIM_CTRLA_CPHA_TRAILING_EDGE;
     while ((SERCOM4_REGS->SPIM.SERCOM_SYNCBUSY & SERCOM_SPIM_SYNCBUSY_ENABLE_Msk) == SERCOM_SPIM_SYNCBUSY_ENABLE_Msk)
     {
     }
