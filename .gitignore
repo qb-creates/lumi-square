@@ -3,8 +3,9 @@ lumi-square-bootloader-atmega1284/.vscode
 **/.gitignore
 **/*-backups
 package.json
-.Build
-
+.build
+.build-desktop
+*:Zone.Identifier
 #Build Directories
 [Dd]ebug/
 [Rr]elease/
@@ -50,3 +51,4 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+.history/

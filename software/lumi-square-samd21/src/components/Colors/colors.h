@@ -23,10 +23,8 @@ public:
     static const Color red;
     static const Color pink;
     static const Color blue;
-    static const Color azure;
+    static const Color turquoise;
     static const Color purple;
-    static const Color cyan;
-    static const Color aquamarine;
     static const Color orange;
     static const Color yellow;
     static const Color green;

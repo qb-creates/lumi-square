@@ -1,0 +1,18 @@
+(kicad_symbol_lib (version 20211014) (generator chatgpt)
+  (symbol "RDT-4.000-1375-NS1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "BZ" (at 0 6.35 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "RDT-4.000-1375-NS1" (at 0 -6.35 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "RDT.pretty:RDT-4.000-1375-NS1" (at 0 -8.89 0) (effects (font (size 1.27 1.27)) hide))
+    (property "Datasheet" "" (at 0 -11.43 0) (effects (font (size 1.27 1.27)) hide))
+    (property "Description" "Magnetic buzzer/transducer, 13.8 mm dia, 7.6 mm pin pitch" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+    (symbol "RDT-4.000-1375-NS1_0_1"
+      (circle (center 0 0) (radius 3.81) (stroke (width 0.254) (type default)) (fill (type none)))
+      (circle (center 0 0) (radius 0.762) (stroke (width 0.1524) (type default)) (fill (type none)))
+      (text "+" (at -2.54 2.54 0) (effects (font (size 1.27 1.27))))
+    )
+    (symbol "RDT-4.000-1375-NS1_1_1"
+      (pin passive line (at -7.62 2.54 0) (length 3.81) (name "+" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -7.62 -2.54 0) (length 3.81) (name "-" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+)

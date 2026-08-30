@@ -1,0 +1,252 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "CM1224-02SR" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "U" (id 0) (at -3.81 6.35 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "CM1224-02SR" (id 1) (at -3.81 -6.35 0)
+      (effects (font (size 1.27 1.27)) (justify top left))
+    )
+    (property "Footprint" "CM1224-02SR:SOT143" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MF" "ON Semiconductor" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Description" "\n                        \n                            10V (Typ) Clamp 1A (8/20µs) Ipp Tvs Diode Surface Mount SOT-143\n                        \n" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Package" "SOT-143-4 ON Semiconductor" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Price" "None" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Check_prices" "https://www.snapeda.com/parts/CM1224-02SR/Onsemi/view-part/?ref=eda" (id 8) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PART_NUMBER" "CM1224-02SR" (id 9) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "SnapEDA_Link" "https://www.snapeda.com/parts/CM1224-02SR/Onsemi/view-part/?ref=snap" (id 10) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MP" "CM1224-02SR" (id 11) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "Availability" "In Stock" (id 12) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "ON Semiconductor" (id 13) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "CM1224-02SR_0_0"
+      (polyline
+        (pts (xy -1.27 -1.27) (xy 0.0 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 -1.27) (xy 1.27 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.27 -1.27) (xy 0.0 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 1.27) (xy -1.27 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -1.27 1.27) (xy 0.0 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 1.27) (xy 1.27 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 1.27 1.27) (xy 2.54 2.54)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -1.27 1.27) (xy -2.54 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 5.08 -1.27) (xy 6.35 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 -1.27) (xy 7.62 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 5.08 -3.81) (xy 6.35 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 -3.81) (xy 7.62 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 7.62 -3.81) (xy 6.35 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 -1.27) (xy 5.08 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 5.08 1.27) (xy 6.35 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 1.27) (xy 7.62 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 7.62 1.27) (xy 6.35 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 3.81) (xy 5.08 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 5.08 3.81) (xy 6.35 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 3.81) (xy 7.62 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -6.35 1.27) (xy -7.62 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 1.27) (xy -8.89 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -8.89 1.27) (xy -7.62 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 3.81) (xy -6.35 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -6.35 3.81) (xy -7.62 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 3.81) (xy -8.89 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -6.35 -3.81) (xy -7.62 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -3.81) (xy -8.89 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -8.89 -3.81) (xy -7.62 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -1.27) (xy -6.35 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -6.35 -1.27) (xy -7.62 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -1.27) (xy -8.89 -1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -1.27) (xy -7.62 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 0.0) (xy -7.62 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 -1.27) (xy 6.35 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 0.0) (xy 6.35 1.27)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 3.81) (xy 6.35 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 5.08) (xy 0.0 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 5.08) (xy -5.08 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -5.08 5.08) (xy -7.62 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 5.08) (xy -7.62 3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 1.27) (xy 0.0 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 -1.27) (xy 0.0 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 -5.08) (xy -5.08 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 0.0 -5.08) (xy 6.35 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 6.35 -5.08) (xy 6.35 -3.81)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -3.81) (xy -7.62 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -7.62 -5.08) (xy -5.08 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -5.08 6.35) (xy -5.08 5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy 7.62 0.0) (xy 6.35 0.0)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -5.08 -6.35) (xy -5.08 -5.08)) (stroke (width 0.254))
+      )
+      (polyline
+        (pts (xy -10.16 0.0) (xy -7.62 0.0)) (stroke (width 0.254))
+      )
+      (circle (center -5.08 5.08) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center 0.0 5.08) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center 6.35 0.0) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center -7.62 0.0) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center 0.0 -5.08) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (circle (center -5.08 -5.08) (radius 0.254)
+        (stroke (width 0.254)) (fill (type none))
+      )
+      (pin bidirectional line (at -12.7 0.0 0) (length 2.54)
+        (name "CH1"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "2"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin bidirectional line (at -5.08 -8.89 90.0) (length 2.54)
+        (name "VN"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "1"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin bidirectional line (at 10.16 0.0 180.0) (length 2.54)
+        (name "CH2"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "3"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin bidirectional line (at -5.08 8.89 270.0) (length 2.54)
+        (name "VP"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "4"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)

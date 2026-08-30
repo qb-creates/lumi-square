@@ -1,5 +1,5 @@
 #include "gameoverstate.h"
-#include "leds.h"
+#include "ledmatrix.h"
 
 GameOverState::GameOverState()
     : GameBaseState(GameState::GameOver),
@@ -14,7 +14,7 @@ void GameOverState::enterState(GameState previousState)
 
     for (int i = 0; i < 16; i++)
     {
-        onLED[i] = Output::getLedStatus(i);
+        onLED[i] = LEDMatrix::getLedStatus(i);
     }
 }
 
@@ -22,7 +22,7 @@ void GameOverState::exitState()
 {
     for (int i = 0; i < 16; i++)
     {
-        Output::ledOff(i);
+        LEDMatrix::ledOff(i);
         onLED[i] = false;
     }
 
@@ -55,14 +55,14 @@ void GameOverState::updateState()
                 {
                     if (onLED[i])
                     {
-                        Output::ledOff(i);
+                        LEDMatrix::ledOff(i);
                     }
                 }
                 else
                 {
                     if (onLED[i])
                     {
-                        Output::ledOn(i);
+                        LEDMatrix::ledOn(i);
                     }
                 }
             }

@@ -1,0 +1,7906 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x12"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x12"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x12_1_1"
+				(rectangle
+					(start -1.27 13.97)
+					(end 1.27 -16.51)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 12.827)
+					(end 0 12.573)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 10.287)
+					(end 0 10.033)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -12.573)
+					(end 0 -12.827)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -15.113)
+					(end 0 -15.367)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 12.7 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 10.16 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 7.62 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -15.24 0)
+					(length 3.81)
+					(name "Pin_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:LED_BGAR"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED_BGAR"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "RGB LED, blue/green/anode/red"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED RGB diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_BGAR_0_0"
+				(text "R"
+					(at -1.905 3.81 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "G"
+					(at -1.905 -1.27 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(text "B"
+					(at -1.905 -6.35 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "LED_BGAR_0_1"
+				(polyline
+					(pts
+						(xy -1.27 6.35) (xy -1.27 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 6.35) (xy -1.27 3.81) (xy -1.27 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy -2.54 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -3.81) (xy -1.27 -6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -2.54 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy 1.27 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 6.35) (xy 0.508 7.874) (xy -0.254 7.874) (xy 0.508 7.874) (xy 0.508 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 1.27) (xy 0.508 2.794) (xy -0.254 2.794) (xy 0.508 2.794) (xy 0.508 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -3.81) (xy 0.508 -2.286) (xy -0.254 -2.286) (xy 0.508 -2.286) (xy 0.508 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 1.524 7.874) (xy 0.762 7.874) (xy 1.524 7.874) (xy 1.524 7.112)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 1.524 2.794) (xy 0.762 2.794) (xy 1.524 2.794) (xy 1.524 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 1.524 -2.286) (xy 0.762 -2.286) (xy 1.524 -2.286) (xy 1.524 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.35) (xy 1.27 3.81) (xy -1.27 5.08) (xy 1.27 6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 6.35)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 3.81)
+					(end 1.27 6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 1.27)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -1.27)
+					(end 1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -3.81) (xy 1.27 -6.35) (xy -1.27 -5.08) (xy 1.27 -3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 2.032 -5.08) (xy 2.032 5.08) (xy 1.27 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.794 8.382)
+					(end -2.794 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LED_BGAR_1_1"
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 2.54)
+					(name "RK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "GK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "BK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N4148"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4148"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "100V 0.15A standard switching diode, DO-35"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?35*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4148_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N4148_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Switch:SW_Omron_B3FS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Omron_B3FS"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW*Omron*B3FS*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Omron_B3FS_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 157.48 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "18a85955-e3d4-4ba1-aa97-4a5ce574ef29")
+	)
+	(junction
+		(at 69.85 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1f166e51-3f9c-41b9-80eb-4d8024608893")
+	)
+	(junction
+		(at 52.07 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "44166cc5-6b78-4987-8ad5-d25eeeb999ed")
+	)
+	(junction
+		(at 224.79 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "497f3b3a-536f-45ec-ba63-8e050f493b99")
+	)
+	(junction
+		(at 170.18 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "59041787-4efb-4079-8361-949f5cf82e17")
+	)
+	(junction
+		(at 69.85 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d8a7d30-619a-4160-8fd5-1d47e480f24f")
+	)
+	(junction
+		(at 120.65 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f8ba5a1-d2dc-4150-a9a6-73b5309dab1c")
+	)
+	(junction
+		(at 120.65 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89f06678-e642-4fd6-ad9f-bec2dfe6d4ed")
+	)
+	(junction
+		(at 52.07 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "90554c6d-e649-418a-be49-7971d0ce5036")
+	)
+	(junction
+		(at 170.18 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9bbbf3dc-32f5-4ccf-bcbc-786dc8825290")
+	)
+	(junction
+		(at 120.65 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a0ccec48-135f-4b1b-b05e-6d156f71c959")
+	)
+	(junction
+		(at 157.48 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a10b27bf-00f2-4795-9a31-9eeabacd4933")
+	)
+	(junction
+		(at 119.38 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2b5e7f3-3d6e-414f-8c72-7e1f473c387b")
+	)
+	(junction
+		(at 69.85 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b421338e-a793-4a6f-8a8b-7f7badddb57d")
+	)
+	(junction
+		(at 85.09 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b606cb5a-286a-4693-99a1-bb9a4a64fd9a")
+	)
+	(junction
+		(at 52.07 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b745b78c-8396-4963-ad67-3f70bbb7ebf5")
+	)
+	(junction
+		(at 224.79 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de48aef2-457e-4be1-bc10-56da7216b47e")
+	)
+	(junction
+		(at 85.09 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e399a2dc-15e4-45b4-a482-548d458b62cf")
+	)
+	(junction
+		(at 170.18 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e614703c-68c1-48f8-8626-d9e2973e6e74")
+	)
+	(junction
+		(at 119.38 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb4f8a44-0893-42a2-898a-50bfd8ac3376")
+	)
+	(junction
+		(at 224.79 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb773069-d99a-498e-a12e-37755f856b3c")
+	)
+	(junction
+		(at 157.48 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f27b7fae-f7a8-4d70-868f-cb108dc881f6")
+	)
+	(junction
+		(at 119.38 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f54672dc-7e98-4f66-a8d6-b3beacaa21af")
+	)
+	(junction
+		(at 85.09 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f70ae98d-81c2-4422-8811-c40b1d6c50a1")
+	)
+	(wire
+		(pts
+			(xy 135.89 162.56) (xy 140.97 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03337127-098e-4167-83b4-279ddf4d9b32")
+	)
+	(wire
+		(pts
+			(xy 170.18 40.64) (xy 165.1 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "037f76a3-c0d7-4cb5-bc1c-28688c6a85f8")
+	)
+	(wire
+		(pts
+			(xy 30.48 132.08) (xy 35.56 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "042db72e-f25e-4091-a606-db554bdaece4")
+	)
+	(wire
+		(pts
+			(xy 157.48 105.41) (xy 157.48 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "050f2f5d-cfa9-4f61-bc99-3bd005e793a4")
+	)
+	(wire
+		(pts
+			(xy 33.02 40.64) (xy 39.37 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06486133-bbbe-4125-b1f4-09c73c8408de")
+	)
+	(wire
+		(pts
+			(xy 119.38 72.39) (xy 119.38 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0747e2f8-b262-4271-8f28-02eba6a8ab65")
+	)
+	(wire
+		(pts
+			(xy 224.79 40.64) (xy 219.71 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "087d4417-0adc-4116-b967-79642b47f1c6")
+	)
+	(wire
+		(pts
+			(xy 31.75 152.4) (xy 35.56 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09e05990-946b-4eea-bce1-4c50be95f56c")
+	)
+	(wire
+		(pts
+			(xy 199.39 123.19) (xy 205.74 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a9e905c-b2fa-456b-b0cb-6e93b70e1d7a")
+	)
+	(wire
+		(pts
+			(xy 238.76 113.03) (xy 245.11 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ae731f0-e540-4de2-ac5a-1bbf8f4c18dc")
+	)
+	(wire
+		(pts
+			(xy 148.59 24.13) (xy 157.48 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0af4ff02-00e2-4c64-9fa1-afdfc4cd78a0")
+	)
+	(wire
+		(pts
+			(xy 30.48 184.15) (xy 35.56 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b5c5155-c65d-45ea-94fb-3dca6c18871a")
+	)
+	(wire
+		(pts
+			(xy 49.53 40.64) (xy 55.88 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bae1a45-243c-45e2-886f-e257e72a6503")
+	)
+	(wire
+		(pts
+			(xy 133.35 40.64) (xy 138.43 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bb551d0-a02a-495f-aae1-596a964ca657")
+	)
+	(wire
+		(pts
+			(xy 119.38 55.88) (xy 119.38 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c8b804d-c8cb-4aee-bf95-ae583380c687")
+	)
+	(wire
+		(pts
+			(xy 199.39 115.57) (xy 205.74 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d139e34-8bb1-46c0-9e8d-0356b7a812be")
+	)
+	(wire
+		(pts
+			(xy 100.33 55.88) (xy 106.68 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0df7f922-6e47-46f7-98a1-99d9ec449a49")
+	)
+	(wire
+		(pts
+			(xy 52.07 184.15) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1017baad-e70d-4476-bbdb-c88adbca933b")
+	)
+	(wire
+		(pts
+			(xy 99.06 184.15) (xy 104.14 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10e2c2ea-f492-4ac7-aa3a-8c44d37a0c39")
+	)
+	(wire
+		(pts
+			(xy 114.3 157.48) (xy 120.65 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1109a46a-f60b-48d9-aeba-ef5962480fff")
+	)
+	(wire
+		(pts
+			(xy 238.76 107.95) (xy 245.11 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "156292d0-c84e-449a-9b12-3f90af17e030")
+	)
+	(wire
+		(pts
+			(xy 151.13 184.15) (xy 157.48 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15d11309-3a3b-4283-b188-d094f17440c0")
+	)
+	(wire
+		(pts
+			(xy 85.09 184.15) (xy 85.09 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18e9df20-563f-43c2-8e19-3faacaa532eb")
+	)
+	(wire
+		(pts
+			(xy 238.76 115.57) (xy 245.11 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "192d24cd-7a97-4670-a241-2e2950ebf997")
+	)
+	(wire
+		(pts
+			(xy 148.59 72.39) (xy 157.48 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a7bac48-6b4f-4066-b948-bfa823eff9da")
+	)
+	(wire
+		(pts
+			(xy 186.69 24.13) (xy 193.04 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c65a76d-3fdb-4507-be21-d0e638fc58fd")
+	)
+	(wire
+		(pts
+			(xy 120.65 132.08) (xy 114.3 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c96f09f-e3f9-457e-b9fb-ba00e580d794")
+	)
+	(wire
+		(pts
+			(xy 238.76 125.73) (xy 245.11 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "208a499c-cb94-4916-acbe-26cedd3cb7c5")
+	)
+	(wire
+		(pts
+			(xy 30.48 127) (xy 35.56 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21a5c75f-a9fc-4385-8720-542a18ae9838")
+	)
+	(wire
+		(pts
+			(xy 186.69 40.64) (xy 193.04 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2286fe94-4b34-41fc-983d-9cb26179e0b3")
+	)
+	(wire
+		(pts
+			(xy 186.69 55.88) (xy 193.04 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26065f04-8142-4ae7-a0fe-8bbb38a2d114")
+	)
+	(wire
+		(pts
+			(xy 85.09 157.48) (xy 80.01 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2648c8fc-1130-4cbb-89f2-6e83883f7bfc")
+	)
+	(wire
+		(pts
+			(xy 64.77 132.08) (xy 69.85 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "281baa23-bb24-422e-8a75-2afc04e9c3c9")
+	)
+	(wire
+		(pts
+			(xy 33.02 55.88) (xy 39.37 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bf0735e-98f1-4e09-9c86-bb2f6a8b55fd")
+	)
+	(wire
+		(pts
+			(xy 31.75 157.48) (xy 35.56 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c536550-aaec-44d0-954a-aed5fd4849aa")
+	)
+	(wire
+		(pts
+			(xy 80.01 184.15) (xy 85.09 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cd63c4d-10de-4ed6-aca9-603a39a608e7")
+	)
+	(wire
+		(pts
+			(xy 203.2 24.13) (xy 212.09 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d122b58-a4ce-4459-aa89-ad2e3ef9ad26")
+	)
+	(wire
+		(pts
+			(xy 137.16 137.16) (xy 140.97 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb370f8-662a-4dcf-b51c-a9e7c5668df5")
+	)
+	(wire
+		(pts
+			(xy 45.72 184.15) (xy 52.07 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31174f28-2745-46f1-b2ab-b34d3791460d")
+	)
+	(wire
+		(pts
+			(xy 238.76 123.19) (xy 245.11 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31bb076f-eb86-4381-96a6-de987d0fef9a")
+	)
+	(wire
+		(pts
+			(xy 157.48 157.48) (xy 157.48 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32b763c0-4892-436b-919f-405127228002")
+	)
+	(wire
+		(pts
+			(xy 64.77 137.16) (xy 69.85 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33497b4b-228a-48cc-998d-8162941e8900")
+	)
+	(wire
+		(pts
+			(xy 100.33 132.08) (xy 104.14 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "367d48ec-0ecb-42bb-87fa-a3685d533a3a")
+	)
+	(wire
+		(pts
+			(xy 199.39 100.33) (xy 205.74 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "399513bd-c975-486f-b97d-513593c68d30")
+	)
+	(wire
+		(pts
+			(xy 238.76 100.33) (xy 245.11 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ca43eb9-094d-49e8-bea7-f21588054adc")
+	)
+	(wire
+		(pts
+			(xy 151.13 105.41) (xy 157.48 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cdeee7e-60a1-4de6-adcf-3fed8e215682")
+	)
+	(wire
+		(pts
+			(xy 224.79 24.13) (xy 224.79 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43c76d3f-3428-4d7a-8dd8-41dddac650cc")
+	)
+	(wire
+		(pts
+			(xy 120.65 184.15) (xy 120.65 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43f2b88d-969a-459c-a84a-486c3815c239")
+	)
+	(wire
+		(pts
+			(xy 30.48 179.07) (xy 35.56 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "469bc79e-a794-49f2-a790-21911c852aa2")
+	)
+	(wire
+		(pts
+			(xy 199.39 125.73) (xy 205.74 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4829e508-c540-474b-8877-e4fde394af66")
+	)
+	(wire
+		(pts
+			(xy 224.79 72.39) (xy 224.79 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "488068ea-faa8-4408-a224-7da5f076fc0e")
+	)
+	(wire
+		(pts
+			(xy 165.1 55.88) (xy 170.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49c7713a-b997-4a7d-83a9-d63e5859c5ef")
+	)
+	(wire
+		(pts
+			(xy 80.01 132.08) (xy 85.09 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cd7f6ba-152e-4101-98dc-e27ed58f62d9")
+	)
+	(wire
+		(pts
+			(xy 100.33 127) (xy 104.14 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e44cc71-dc67-4c41-9ffb-c2082054b8b8")
+	)
+	(wire
+		(pts
+			(xy 165.1 72.39) (xy 170.18 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52889255-ec76-4856-b5e3-baf1a575c927")
+	)
+	(wire
+		(pts
+			(xy 133.35 24.13) (xy 138.43 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55989794-762a-4028-809c-639c02da6c74")
+	)
+	(wire
+		(pts
+			(xy 238.76 110.49) (xy 245.11 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c3d4cba-eb0c-4c6d-9674-8048894dd9c1")
+	)
+	(wire
+		(pts
+			(xy 199.39 110.49) (xy 205.74 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5da17ef1-7c30-4c8b-93f4-88c13f3e1a81")
+	)
+	(wire
+		(pts
+			(xy 63.5 72.39) (xy 69.85 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fae42a8-cbcf-4ca6-9087-254dfc2d12be")
+	)
+	(wire
+		(pts
+			(xy 114.3 184.15) (xy 120.65 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6214c409-d079-4ea0-b0d0-b117943376d8")
+	)
+	(wire
+		(pts
+			(xy 133.35 55.88) (xy 138.43 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6316f0c8-3c08-4772-99c1-1628dd7b2403")
+	)
+	(wire
+		(pts
+			(xy 99.06 162.56) (xy 104.14 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6395488f-6328-42de-8d22-ba854c365915")
+	)
+	(wire
+		(pts
+			(xy 69.85 24.13) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64cb5752-a73b-405e-933f-528fe27905da")
+	)
+	(wire
+		(pts
+			(xy 52.07 132.08) (xy 45.72 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64f7a75d-8b87-4f54-93f2-5f3cf2e6a716")
+	)
+	(wire
+		(pts
+			(xy 219.71 72.39) (xy 224.79 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66687440-60d3-474a-8271-d78c3a9bab19")
+	)
+	(wire
+		(pts
+			(xy 52.07 132.08) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66a8ed91-8339-461b-804b-8f35a96cd330")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 170.18 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6766e780-b573-435a-873e-c976327eace0")
+	)
+	(wire
+		(pts
+			(xy 30.48 110.49) (xy 35.56 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68937f4c-2c8d-4a76-8673-7a84aae1a998")
+	)
+	(wire
+		(pts
+			(xy 66.04 100.33) (xy 69.85 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69437f96-f513-49b8-bfe3-e94ef4a3ee79")
+	)
+	(wire
+		(pts
+			(xy 148.59 55.88) (xy 157.48 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cfe341c-dd0f-4c2b-a97c-65f9844358e5")
+	)
+	(wire
+		(pts
+			(xy 199.39 105.41) (xy 205.74 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f0ff0f8-bcd8-45fd-a023-4248e1cc6ab8")
+	)
+	(wire
+		(pts
+			(xy 33.02 72.39) (xy 39.37 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f95c711-b281-4e23-85e5-87846feec0a3")
+	)
+	(wire
+		(pts
+			(xy 114.3 105.41) (xy 120.65 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fae35b9-eb17-444e-b2ee-34a56dad7775")
+	)
+	(wire
+		(pts
+			(xy 137.16 100.33) (xy 140.97 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7216cdc2-329f-4388-b194-571a6823a69c")
+	)
+	(wire
+		(pts
+			(xy 100.33 72.39) (xy 106.68 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "721bf10b-6c2d-4e12-81fb-c2614cc33700")
+	)
+	(wire
+		(pts
+			(xy 203.2 72.39) (xy 212.09 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73451644-d834-486c-8eba-54da0ddfb08a")
+	)
+	(wire
+		(pts
+			(xy 120.65 157.48) (xy 120.65 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "758ac4f1-86d7-4908-a55e-71ba2952218c")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 170.18 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "766c3061-a5e1-4a0c-8356-dfa89206e190")
+	)
+	(wire
+		(pts
+			(xy 114.3 55.88) (xy 119.38 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b72d2a-425f-4cb3-8e6c-b22c040e1ee8")
+	)
+	(wire
+		(pts
+			(xy 238.76 120.65) (xy 245.11 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79f961de-35c4-49d1-bca7-78e1ad5528d8")
+	)
+	(wire
+		(pts
+			(xy 45.72 157.48) (xy 52.07 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7dc9e898-1252-4a6e-a50c-c41607a45560")
+	)
+	(wire
+		(pts
+			(xy 199.39 128.27) (xy 205.74 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f68ff7a-f4a2-4c88-bf2b-671229c711b3")
+	)
+	(wire
+		(pts
+			(xy 224.79 72.39) (xy 224.79 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80a64c28-7df0-4c02-b0c9-584dbdcc6e31")
+	)
+	(wire
+		(pts
+			(xy 49.53 72.39) (xy 55.88 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8114c797-abc8-4052-8df2-0b77e5d7fa50")
+	)
+	(wire
+		(pts
+			(xy 83.82 24.13) (xy 90.17 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81421a03-f2fa-4303-aca1-e44f9670862f")
+	)
+	(wire
+		(pts
+			(xy 30.48 137.16) (xy 35.56 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "815737e0-b091-4d18-84cb-98509f7bf95c")
+	)
+	(wire
+		(pts
+			(xy 69.85 72.39) (xy 69.85 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "828d23e6-271a-45e1-b418-1dbc0c8df4dd")
+	)
+	(wire
+		(pts
+			(xy 199.39 107.95) (xy 205.74 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85445db8-c63c-414b-bef1-8f77bb643bcd")
+	)
+	(wire
+		(pts
+			(xy 157.48 132.08) (xy 151.13 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "858003f4-14a4-4f87-a417-ca651e5230b5")
+	)
+	(wire
+		(pts
+			(xy 100.33 40.64) (xy 106.68 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8641a231-60d5-4157-81ef-282425e018ca")
+	)
+	(wire
+		(pts
+			(xy 30.48 189.23) (xy 35.56 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "874632f3-a800-42ec-8014-316c5c073131")
+	)
+	(wire
+		(pts
+			(xy 49.53 55.88) (xy 55.88 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89756c1e-35b3-4e2f-a025-9bfbe35ddcc6")
+	)
+	(wire
+		(pts
+			(xy 157.48 157.48) (xy 157.48 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89f2e925-b24f-4f42-aa2b-eecc9f38d5a3")
+	)
+	(wire
+		(pts
+			(xy 63.5 24.13) (xy 69.85 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d553f16-96a5-4340-85dd-ea53ab0947ac")
+	)
+	(wire
+		(pts
+			(xy 99.06 152.4) (xy 104.14 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d81a045-376c-4084-9653-1dc1cbf1e36f")
+	)
+	(wire
+		(pts
+			(xy 219.71 24.13) (xy 224.79 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "901f8b94-3c24-4dea-b0ae-4ef41fc62f48")
+	)
+	(wire
+		(pts
+			(xy 64.77 157.48) (xy 69.85 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90c1edd3-c9a9-4370-b057-fe4668579fbd")
+	)
+	(wire
+		(pts
+			(xy 69.85 40.64) (xy 63.5 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91fd471a-5ed3-4764-b2bc-b2a2a7a90285")
+	)
+	(wire
+		(pts
+			(xy 186.69 72.39) (xy 193.04 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929bedde-3b4e-4163-8336-c762482d03bb")
+	)
+	(wire
+		(pts
+			(xy 135.89 189.23) (xy 140.97 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93346ac0-c391-4380-a213-c54e5789eed3")
+	)
+	(wire
+		(pts
+			(xy 114.3 24.13) (xy 119.38 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93686dd2-95dd-437d-b9b1-e5d5f487c42e")
+	)
+	(wire
+		(pts
+			(xy 137.16 110.49) (xy 140.97 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "980bf1c9-ea8b-44ac-8bcf-ba2a52c1dac9")
+	)
+	(wire
+		(pts
+			(xy 199.39 120.65) (xy 205.74 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9982b14b-d428-4753-8204-a7ba7e4afbcb")
+	)
+	(wire
+		(pts
+			(xy 137.16 127) (xy 140.97 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99f72e2c-3dbd-499b-b3a1-a6f41fc4683d")
+	)
+	(wire
+		(pts
+			(xy 80.01 105.41) (xy 85.09 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a46c8f0-774c-49de-8462-ac6d603ea621")
+	)
+	(wire
+		(pts
+			(xy 238.76 118.11) (xy 245.11 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a63b0a9-9126-4a03-a4c2-bcb742aadad5")
+	)
+	(wire
+		(pts
+			(xy 45.72 105.41) (xy 52.07 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c87ed63-2cdc-4474-8127-fb011bebf8f9")
+	)
+	(wire
+		(pts
+			(xy 64.77 189.23) (xy 69.85 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d4defb8-4496-4c90-9a15-0d839643cc02")
+	)
+	(wire
+		(pts
+			(xy 119.38 72.39) (xy 119.38 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d8e72e6-6d81-4a7b-bce6-f48079726e69")
+	)
+	(wire
+		(pts
+			(xy 64.77 162.56) (xy 69.85 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e4ce803-eb88-461a-872e-f9f7989b58c4")
+	)
+	(wire
+		(pts
+			(xy 99.06 179.07) (xy 104.14 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e71d272-f6cf-4bc5-9fa3-81f83e384175")
+	)
+	(wire
+		(pts
+			(xy 69.85 72.39) (xy 69.85 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa4cadc-53d7-47cb-bfd0-f9177dfd6b64")
+	)
+	(wire
+		(pts
+			(xy 238.76 102.87) (xy 245.11 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a185f094-c1a4-40cc-9907-db23e8ce2b7c")
+	)
+	(wire
+		(pts
+			(xy 133.35 72.39) (xy 138.43 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a218a5a2-92db-4c52-9cee-7d398815875c")
+	)
+	(wire
+		(pts
+			(xy 99.06 157.48) (xy 104.14 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4fc58be-3715-450d-89de-820a612c3e95")
+	)
+	(wire
+		(pts
+			(xy 30.48 105.41) (xy 35.56 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5bfc10a-8206-4355-a94b-e92dab91fc2e")
+	)
+	(wire
+		(pts
+			(xy 219.71 55.88) (xy 224.79 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6fb682e-1e0e-475e-961c-d1e71b02256c")
+	)
+	(wire
+		(pts
+			(xy 52.07 184.15) (xy 52.07 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6ffaf90-bbb6-47f6-bb02-c791361cf9cd")
+	)
+	(wire
+		(pts
+			(xy 137.16 105.41) (xy 140.97 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a780fc22-32a2-4634-8841-6738d534eec8")
+	)
+	(wire
+		(pts
+			(xy 170.18 55.88) (xy 170.18 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a92321d2-28d0-4ac1-9fae-b1438be05761")
+	)
+	(wire
+		(pts
+			(xy 224.79 55.88) (xy 224.79 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab09e82c-cb1c-4b01-bc0d-5467ea700f81")
+	)
+	(wire
+		(pts
+			(xy 83.82 40.64) (xy 90.17 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adf71ad2-8bb0-4e66-a90e-c3a9bceebe32")
+	)
+	(wire
+		(pts
+			(xy 120.65 105.41) (xy 120.65 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae85a678-14d0-4321-b655-806578e60c2a")
+	)
+	(wire
+		(pts
+			(xy 83.82 55.88) (xy 90.17 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b06f0ff0-8f9c-4520-9559-4da334c23b00")
+	)
+	(wire
+		(pts
+			(xy 119.38 24.13) (xy 119.38 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1205e3f-416b-4ba2-b249-64c6f3cb3cc8")
+	)
+	(wire
+		(pts
+			(xy 66.04 105.41) (xy 69.85 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b54f255e-b503-4ef5-bd50-59b953545dde")
+	)
+	(wire
+		(pts
+			(xy 31.75 162.56) (xy 35.56 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5e87f29-072f-446e-98d4-0364ee90349e")
+	)
+	(wire
+		(pts
+			(xy 199.39 102.87) (xy 205.74 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b61e093e-00b1-4d81-be62-02d7569b5536")
+	)
+	(wire
+		(pts
+			(xy 203.2 55.88) (xy 212.09 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9707406-092f-4442-8635-1f1d4d6a8d39")
+	)
+	(wire
+		(pts
+			(xy 85.09 132.08) (xy 85.09 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba237b4f-1219-4453-9f9f-8a723de4903e")
+	)
+	(wire
+		(pts
+			(xy 135.89 179.07) (xy 140.97 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbc75ce5-941d-45b5-8be1-adfc42d1522a")
+	)
+	(wire
+		(pts
+			(xy 83.82 72.39) (xy 90.17 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc13b655-0e28-4cc0-a35f-cf93348adf0e")
+	)
+	(wire
+		(pts
+			(xy 203.2 40.64) (xy 212.09 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01b0da3-daf9-4bf7-b933-1eae2122efbe")
+	)
+	(wire
+		(pts
+			(xy 100.33 105.41) (xy 104.14 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0daf7ca-fcdd-494c-83cc-dc7920b0ad07")
+	)
+	(wire
+		(pts
+			(xy 135.89 152.4) (xy 140.97 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c799a429-d8ed-48c0-85d4-ee97cf17dce1")
+	)
+	(wire
+		(pts
+			(xy 100.33 110.49) (xy 104.14 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c96bf3b3-7ed7-4c8f-a1a5-ce5a01697b94")
+	)
+	(wire
+		(pts
+			(xy 64.77 152.4) (xy 69.85 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9a9e948-b89b-4ee3-9d0b-9fa3daf0c451")
+	)
+	(wire
+		(pts
+			(xy 66.04 110.49) (xy 69.85 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9c63b9d-246b-4a10-a3d0-c28e57412a3c")
+	)
+	(wire
+		(pts
+			(xy 100.33 137.16) (xy 104.14 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf88b3f4-13bf-4d9c-8e99-12cc8617247c")
+	)
+	(wire
+		(pts
+			(xy 64.77 127) (xy 69.85 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33d8fca-4e42-4a16-95f5-9fc5ba95e9bb")
+	)
+	(wire
+		(pts
+			(xy 120.65 184.15) (xy 120.65 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d58a2fd0-9485-4728-8381-8eac3f43f4e0")
+	)
+	(wire
+		(pts
+			(xy 114.3 72.39) (xy 119.38 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5ec1939-b423-4668-b390-62dcedbd8452")
+	)
+	(wire
+		(pts
+			(xy 64.77 184.15) (xy 69.85 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d728716f-d919-4383-be68-447699fcd844")
+	)
+	(wire
+		(pts
+			(xy 135.89 157.48) (xy 140.97 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da072557-a567-431d-b795-dc3d97950a9d")
+	)
+	(wire
+		(pts
+			(xy 69.85 55.88) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd023ac6-c59a-47d3-b473-5c769c97b20b")
+	)
+	(wire
+		(pts
+			(xy 30.48 100.33) (xy 35.56 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd7a5670-586d-43d5-b59c-196a920275a1")
+	)
+	(wire
+		(pts
+			(xy 64.77 179.07) (xy 69.85 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfa2a32c-2e6d-4b92-b290-3b4679a6c6a7")
+	)
+	(wire
+		(pts
+			(xy 33.02 24.13) (xy 39.37 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f5c284-5681-4ac0-b93f-89a881148878")
+	)
+	(wire
+		(pts
+			(xy 170.18 24.13) (xy 170.18 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e211e8de-3374-406b-8a7a-fffead438c1f")
+	)
+	(wire
+		(pts
+			(xy 151.13 157.48) (xy 157.48 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e278db18-7931-4d8c-849d-88a0672c4440")
+	)
+	(wire
+		(pts
+			(xy 99.06 189.23) (xy 104.14 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5a37fc7-d294-4c5d-9190-cfd0bb7274a5")
+	)
+	(wire
+		(pts
+			(xy 199.39 113.03) (xy 205.74 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecdf4516-f240-4ddf-a548-e05f3fcae860")
+	)
+	(wire
+		(pts
+			(xy 85.09 105.41) (xy 85.09 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed548379-b410-4373-abfe-4a58cee24c1f")
+	)
+	(wire
+		(pts
+			(xy 137.16 132.08) (xy 140.97 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed668a87-a63e-43c7-8287-7e1abfedcb44")
+	)
+	(wire
+		(pts
+			(xy 100.33 24.13) (xy 106.68 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edcac87d-c835-4317-b3fb-cf9bd0920f66")
+	)
+	(wire
+		(pts
+			(xy 119.38 40.64) (xy 114.3 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee6b8f53-6f57-4987-91c0-721c6b05d336")
+	)
+	(wire
+		(pts
+			(xy 135.89 184.15) (xy 140.97 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef14975d-daec-4aed-88b4-c923ba081085")
+	)
+	(wire
+		(pts
+			(xy 52.07 105.41) (xy 52.07 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0fd99b4-27f1-4a08-b6fc-d39f11e7d00e")
+	)
+	(wire
+		(pts
+			(xy 199.39 118.11) (xy 205.74 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f11f7b4c-a940-4382-a7ed-93e6cf9377c0")
+	)
+	(wire
+		(pts
+			(xy 157.48 184.15) (xy 157.48 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f27a5bb8-5148-4e0d-868e-16fd6cc6e020")
+	)
+	(wire
+		(pts
+			(xy 238.76 105.41) (xy 245.11 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2837f06-f145-4cb5-875a-136d75b0a7f7")
+	)
+	(wire
+		(pts
+			(xy 63.5 55.88) (xy 69.85 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f551c7f6-8e86-46d0-b72c-e61d3d97be88")
+	)
+	(wire
+		(pts
+			(xy 85.09 157.48) (xy 85.09 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5a53920-33ce-4909-b3c2-55a3f6ece44e")
+	)
+	(wire
+		(pts
+			(xy 165.1 24.13) (xy 170.18 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6e7870f-4e8a-43a8-8d86-d78b8e802722")
+	)
+	(wire
+		(pts
+			(xy 49.53 24.13) (xy 55.88 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f849ef07-61bd-46a6-9b98-27753c44626c")
+	)
+	(wire
+		(pts
+			(xy 148.59 40.64) (xy 157.48 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8b87eea-79bf-48a7-8717-5a7494c68ea6")
+	)
+	(wire
+		(pts
+			(xy 100.33 100.33) (xy 104.14 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe2f7d88-1fae-41b2-a6d3-76fd56c3929d")
+	)
+	(wire
+		(pts
+			(xy 238.76 128.27) (xy 245.11 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feb5d0ae-d1fb-41cc-8e46-24ad20bfa811")
+	)
+	(label "LED_R3"
+		(at 99.06 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "027417a6-fa13-48ce-8171-857a12462ef4")
+	)
+	(label "SW_COL3"
+		(at 170.18 77.47 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0388b57b-295a-4551-a747-942d1a0ebab8")
+	)
+	(label "LED_B4"
+		(at 135.89 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "069defa8-47aa-45c0-a154-858c0ca35f03")
+	)
+	(label "LED_R3"
+		(at 135.89 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0a1ac049-09a5-4898-9568-241fec66b0d0")
+	)
+	(label "SW_ROW1"
+		(at 133.35 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "104495c1-6c7c-4a45-8755-30450ffd91bd")
+	)
+	(label "LED_G4"
+		(at 99.06 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "17b0f5ec-660b-4414-9702-c83091faa671")
+	)
+	(label "LED_B2"
+		(at 64.77 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "185917ed-e92e-4019-8f0e-2063c829177f")
+	)
+	(label "LED_B4"
+		(at 64.77 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "195bf4a2-9fff-4edc-a0db-bc2374779bc8")
+	)
+	(label "SW_ROW3"
+		(at 199.39 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b02f5b5-d5b5-4afa-8812-3c6bccc7cc4d")
+	)
+	(label "LED_R2"
+		(at 64.77 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b72889a-aa45-42f0-b300-66517a41558b")
+	)
+	(label "SW_COL2"
+		(at 119.38 77.47 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1d7edaa0-49c6-46b7-971c-84b86e37df6e")
+	)
+	(label "LED_G1"
+		(at 238.76 102.87 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1db4069e-1c40-4b94-b9dd-fc17e0cfbaad")
+	)
+	(label "LED_G2"
+		(at 137.16 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2266e2b7-6010-460f-ace3-2c55f64c360a")
+	)
+	(label "SW_ROW4"
+		(at 83.82 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "247193f6-bdd5-419d-aaf7-01ccb93f27be")
+	)
+	(label "LED_G1"
+		(at 30.48 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2789d2ab-bb89-4259-9d80-1573db8b1db4")
+	)
+	(label "LED_B2"
+		(at 238.76 113.03 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "27d65a90-fd32-49e3-a4d2-fecdde15d490")
+	)
+	(label "SW_COL4"
+		(at 199.39 118.11 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2889d45c-e70f-4560-90f1-5ca3fbe585e8")
+	)
+	(label "LED_R2"
+		(at 238.76 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2d569569-c636-462d-b8b7-e3f6c0d816f8")
+	)
+	(label "SW_ROW1"
+		(at 83.82 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31d3a1f6-4202-4e1b-a083-9ffcfe5063b3")
+	)
+	(label "LED_G3"
+		(at 31.75 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "32fcd413-68da-445d-94f5-b9b0f70ba85f")
+	)
+	(label "LED_B2"
+		(at 30.48 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3335e3ae-060f-4831-9588-a51db455ac9c")
+	)
+	(label "LED_R4"
+		(at 135.89 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "352f1621-7f18-432a-b5a9-249c4aecd995")
+	)
+	(label "LED_R4"
+		(at 64.77 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "35630bf4-cf36-4240-8836-90390e052d1e")
+	)
+	(label "SW_COL3"
+		(at 199.39 115.57 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3a609fbb-6294-45df-bab3-d215a8df8bc6")
+	)
+	(label "SW_ROW3"
+		(at 186.69 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3c4e0a45-2c2a-4a2f-93a6-ab41c43a48d1")
+	)
+	(label "LED_B1"
+		(at 238.76 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3cc8654f-da39-4cfe-ab2d-aa065705c092")
+	)
+	(label "LED_COL2"
+		(at 85.09 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3f2a5707-5361-4898-af03-7ddf0fa2254e")
+	)
+	(label "LED_B3"
+		(at 64.77 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3fd5c077-505e-49f2-883d-f26beb25e47e")
+	)
+	(label "LED_G3"
+		(at 238.76 118.11 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "41234753-a165-4c6f-82ce-dc62068a6625")
+	)
+	(label "SW_COL2"
+		(at 199.39 113.03 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "441f32a6-e6e3-481a-b44e-6f8888ecfcf4")
+	)
+	(label "LED_G4"
+		(at 135.89 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4e8cd647-53f3-42be-aca3-52d73c424f0b")
+	)
+	(label "SW_ROW4"
+		(at 199.39 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "524c8f7a-0393-4162-84d5-30b73ac69a3b")
+	)
+	(label "LED_G4"
+		(at 30.48 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "54e3d90a-cfe1-4a90-811d-e5176c9d0e3c")
+	)
+	(label "LED_G3"
+		(at 64.77 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5a3903cc-adc2-4d65-a632-7383a818814b")
+	)
+	(label "LED_G1"
+		(at 66.04 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5bf2689b-35a6-483f-8ebe-6014ac9ed851")
+	)
+	(label "SW_ROW3"
+		(at 83.82 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d140608-e675-4f92-9165-f95af1dd2f7c")
+	)
+	(label "SW_COL4"
+		(at 224.79 77.47 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d2b6740-4636-4d80-8e4f-0d482e5969ad")
+	)
+	(label "LED_COL3"
+		(at 120.65 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6014c68f-c4d3-434e-9787-2dc0ed90db08")
+	)
+	(label "SW_ROW2"
+		(at 186.69 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "68ced424-7b4c-4d5e-b9da-c719950029a9")
+	)
+	(label "LED_COL4"
+		(at 199.39 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "70deeb94-2bbc-44fc-bb14-e7f562ab00a9")
+	)
+	(label "LED_G4"
+		(at 238.76 125.73 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "71f119e9-5efb-42cd-aadf-b6aeaceeb83c")
+	)
+	(label "LED_B3"
+		(at 135.89 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "73ffac7c-913a-4a1f-9722-8240d69661a5")
+	)
+	(label "LED_G3"
+		(at 99.06 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "780be331-068c-452c-b066-f3f180a1cb63")
+	)
+	(label "SW_ROW4"
+		(at 33.02 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "79119e3a-5771-477b-a712-976edc4c8f9d")
+	)
+	(label "SW_COL1"
+		(at 199.39 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7ac1d804-0f40-4fa0-9c25-766fb6ad10dc")
+	)
+	(label "LED_R2"
+		(at 100.33 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7bbe08b7-82fb-400e-8fcc-c5dfc484c77e")
+	)
+	(label "LED_B4"
+		(at 99.06 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7de048a4-977d-461d-a52a-1af598c4e531")
+	)
+	(label "SW_ROW1"
+		(at 33.02 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7f319379-48ac-4a9b-bcc8-4f62fb278d2a")
+	)
+	(label "LED_B3"
+		(at 31.75 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7f8f5b06-1f19-4146-9ccb-f12d69c2aed8")
+	)
+	(label "LED_R3"
+		(at 64.77 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82c6bdd0-c179-4bc6-8039-86d06dac4146")
+	)
+	(label "LED_G1"
+		(at 100.33 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8413ab92-ffd1-4655-adf5-9c9048200e89")
+	)
+	(label "LED_G2"
+		(at 238.76 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8773967d-1b79-42d1-8028-05c1f9f2a6fb")
+	)
+	(label "LED_B3"
+		(at 238.76 120.65 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "891c6bde-c649-42ce-9fbe-4766976a8ad3")
+	)
+	(label "LED_R3"
+		(at 238.76 115.57 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "893e5621-e464-4e2c-993b-129727a2be0a")
+	)
+	(label "LED_B3"
+		(at 99.06 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8e975a5a-2938-4e48-8d29-d8f6df8406f9")
+	)
+	(label "SW_ROW4"
+		(at 133.35 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "915f18ff-d55f-4ad6-adf5-add87603e687")
+	)
+	(label "LED_B1"
+		(at 137.16 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "917383b4-b491-4aba-b637-6d30b3eacc14")
+	)
+	(label "LED_COL1"
+		(at 52.07 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "93880f84-9a79-4280-88da-268d6ada12cd")
+	)
+	(label "LED_R2"
+		(at 30.48 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "953e49e2-be42-4442-912d-e85975cc73ed")
+	)
+	(label "SW_ROW2"
+		(at 199.39 102.87 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "956b6857-5bbf-4577-96a9-d0ba537b29be")
+	)
+	(label "LED_COL1"
+		(at 199.39 120.65 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9603e213-bc6b-4589-a52c-7a5f61c66481")
+	)
+	(label "LED_R4"
+		(at 99.06 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9a32ad57-1a00-44d4-a07a-1e92c77c668b")
+	)
+	(label "LED_G4"
+		(at 64.77 184.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a1f408dd-4bf8-423a-900f-e0a017ad22f0")
+	)
+	(label "SW_ROW2"
+		(at 33.02 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "abd4c3ef-61c3-40fe-92f2-69ff2a22208a")
+	)
+	(label "LED_B2"
+		(at 137.16 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ad6277e2-aba3-459e-930f-95126193d52a")
+	)
+	(label "SW_ROW1"
+		(at 199.39 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "afe1487f-117d-44c0-bff6-c631eded5a27")
+	)
+	(label "SW_ROW2"
+		(at 133.35 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b1692b90-1fab-444e-aec0-7b0e67366cf4")
+	)
+	(label "LED_G2"
+		(at 30.48 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b1cc472a-8b0c-486b-87ff-c638f9833812")
+	)
+	(label "LED_B1"
+		(at 100.33 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2d40660-8772-4c43-b6fd-5294b7e2bd40")
+	)
+	(label "LED_R1"
+		(at 100.33 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2fa66b3-1597-4210-b833-f335daf191bb")
+	)
+	(label "LED_COL2"
+		(at 199.39 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b54e4dc3-6374-46b8-a5ac-7b03fd68f016")
+	)
+	(label "LED_R1"
+		(at 30.48 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bed5b95a-6147-47d6-89ee-31602ba1f4ea")
+	)
+	(label "SW_ROW4"
+		(at 186.69 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c5ab8793-5ac8-48dc-8d75-ef302b092bc2")
+	)
+	(label "LED_R2"
+		(at 137.16 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c7c8db77-b94b-488f-85a5-0a834239bf51")
+	)
+	(label "LED_R1"
+		(at 238.76 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca2234f8-b156-443f-98c0-f6b9d1208373")
+	)
+	(label "LED_R4"
+		(at 238.76 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca45f8c2-7e30-4c8c-b507-7eb2e40ad94f")
+	)
+	(label "LED_B4"
+		(at 238.76 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cc6496a2-1014-4f5d-9b9d-315eace4b26c")
+	)
+	(label "LED_R4"
+		(at 30.48 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cf5abe3b-d465-48a3-80f2-83be63d1709d")
+	)
+	(label "LED_B2"
+		(at 100.33 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d10bc18d-2298-4066-972d-4bfbd3e1572c")
+	)
+	(label "LED_G3"
+		(at 135.89 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d199a6a8-c68a-42cc-9896-7f354e821418")
+	)
+	(label "LED_B1"
+		(at 30.48 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d3513683-f2c3-47d4-82e4-797c42abcd45")
+	)
+	(label "LED_G2"
+		(at 64.77 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d72c6a7b-d131-432f-9139-682938dde5ad")
+	)
+	(label "LED_G1"
+		(at 137.16 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d8e31543-2bde-414d-985c-c92892703b72")
+	)
+	(label "LED_R1"
+		(at 66.04 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d989ab3f-4793-4d6e-9c74-ccfa5a439911")
+	)
+	(label "LED_R1"
+		(at 137.16 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dcc3167c-a672-480c-8424-a10843770e59")
+	)
+	(label "SW_ROW1"
+		(at 186.69 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e46593ef-04cb-42dd-8372-03cf0593cd6c")
+	)
+	(label "LED_R3"
+		(at 31.75 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e4d4d8d6-2160-4358-af2e-c5b0538055d1")
+	)
+	(label "LED_G2"
+		(at 100.33 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e5862ca1-b491-4ab5-8152-0049c17bd0f2")
+	)
+	(label "LED_COL4"
+		(at 157.48 186.69 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e59a2189-7a42-4997-9be6-1152c7aa9525")
+	)
+	(label "SW_ROW3"
+		(at 33.02 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e6638c00-aee1-4df6-ba54-d9f49ee85494")
+	)
+	(label "LED_B1"
+		(at 66.04 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f61b034e-31d3-492a-9553-627fe6ed9dee")
+	)
+	(label "SW_ROW2"
+		(at 83.82 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6466bef-373d-4304-8cd1-6f29e7138d46")
+	)
+	(label "SW_COL1"
+		(at 69.85 77.47 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f98f8e76-6112-496d-8a8a-df5e12d7117f")
+	)
+	(label "LED_B4"
+		(at 30.48 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fb3da4fb-8636-4e10-9829-ba13a083cda6")
+	)
+	(label "LED_COL3"
+		(at 199.39 125.73 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fdc0fad2-c5a5-4cce-903f-a66f35176fc9")
+	)
+	(label "SW_ROW3"
+		(at 133.35 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe0c32d2-cd54-4444-9097-a8a4a37b9eee")
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 74.93 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "042047ba-21c8-4a33-b374-22bcced9bfaa")
+		(property "Reference" "LED6"
+			(at 74.93 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 74.93 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 74.93 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 74.93 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "faafb6dc-671c-41de-bba4-5afd6f97b45f")
+		)
+		(pin "2"
+			(uuid "0a5ef3c3-e361-4e04-a7dd-7cc468838fe1")
+		)
+		(pin "1"
+			(uuid "8a999206-edeb-4a7a-89f8-b605fd85fe16")
+		)
+		(pin "3"
+			(uuid "085b3ebf-64e4-42f5-b54b-a63dfb36b7f9")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 40.64 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0755cb63-1a5f-4f56-a9db-67d8d0846507")
+		(property "Reference" "LED9"
+			(at 40.64 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 40.64 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 40.64 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 40.64 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "d39c19e3-ba22-423b-aad0-5307cad6c445")
+		)
+		(pin "2"
+			(uuid "0f1527b3-a99a-4750-b66f-d94a1495691f")
+		)
+		(pin "1"
+			(uuid "b91a7583-c830-46ba-9819-1f0893752c10")
+		)
+		(pin "3"
+			(uuid "26f1757c-785c-4954-bfcc-92cd4da182df")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 161.29 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0b8e8bc8-41ca-4920-94a0-b83a27c94442")
+		(property "Reference" "D11"
+			(at 161.29 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 161.29 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 161.29 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 161.29 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 161.29 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 161.29 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 161.29 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "00ddb04b-d14a-44cf-9ce2-2b50dd3cb594")
+		)
+		(pin "1"
+			(uuid "3c1c927a-9328-4786-82f0-910cd06787ee")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 59.69 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e207aab-694e-420c-8b01-704e8571d6b5")
+		(property "Reference" "D1"
+			(at 59.69 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 59.69 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 59.69 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c0588660-d912-4c8f-b180-67cf1b3530d7")
+		)
+		(pin "1"
+			(uuid "c82661b2-9f45-42cb-8c8b-5bb029df8248")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 146.05 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e3a1fbd-7e90-4cca-bb96-ce8be02be045")
+		(property "Reference" "LED8"
+			(at 146.05 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 146.05 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 146.05 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 146.05 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "fd3dd824-6f33-4ed9-9592-41fc14570f9c")
+		)
+		(pin "2"
+			(uuid "4ee7f817-0f7b-40a8-bfb0-81935685f2ad")
+		)
+		(pin "1"
+			(uuid "4b298b23-4d9f-42ec-b9c8-2957010f5390")
+		)
+		(pin "3"
+			(uuid "f8102016-a8da-4ff1-9dec-71abc66a185a")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 109.22 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e65fb84-c8d9-411c-ad93-3dcef1fa4147")
+		(property "Reference" "LED11"
+			(at 109.22 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 109.22 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 109.22 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 109.22 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "89cd90f2-442f-4f59-8733-18c0ff1f0981")
+		)
+		(pin "2"
+			(uuid "e6d1b56d-a963-4904-9a77-00f099a2005a")
+		)
+		(pin "1"
+			(uuid "4d64d4c5-7e50-42d5-b121-790fb9a92018")
+		)
+		(pin "3"
+			(uuid "11d8fbcb-b23e-409a-b78c-8a18d99abe1b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 215.9 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f596b80-d77a-4bed-9368-966ef3be3de0")
+		(property "Reference" "D16"
+			(at 215.9 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 215.9 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 215.9 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 215.9 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 215.9 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 215.9 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 215.9 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4b1b4fc2-cff6-46dc-99c3-33fbccad38fb")
+		)
+		(pin "1"
+			(uuid "955f6ccc-b5fa-4f5d-917c-32be0cdc86df")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 161.29 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "201b12aa-542d-48ee-9c76-1c098e812898")
+		(property "Reference" "D15"
+			(at 161.29 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 161.29 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 161.29 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4c9e940d-0b68-4397-aa08-9661fd018a94")
+		)
+		(pin "1"
+			(uuid "f717cd54-1145-4c0b-b5dc-eb2192e302e4")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 215.9 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21faa56e-5c7b-48bd-a425-ff128e990cd7")
+		(property "Reference" "D12"
+			(at 215.9 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 215.9 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 215.9 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 215.9 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 215.9 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 215.9 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 215.9 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d49e03ff-399c-4e81-b4a1-5a95e4939539")
+		)
+		(pin "1"
+			(uuid "953d3098-d0da-48e7-b262-97aaa800342f")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 110.49 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26c83e56-972c-42f1-895c-67f1c70f7fe5")
+		(property "Reference" "D14"
+			(at 110.49 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 110.49 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 110.49 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 110.49 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 110.49 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 110.49 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 110.49 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4707a74d-119e-4632-aded-d53c223b017e")
+		)
+		(pin "1"
+			(uuid "928291cf-fdae-43f4-a352-660e07bcff45")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 95.25 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27ec019d-6304-423a-98d8-7b79ec019e65")
+		(property "Reference" "SW14"
+			(at 95.25 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 95.25 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 95.25 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 95.25 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 95.25 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c38bae0-e67f-48ce-a5b7-fd0373b58ec3")
+		)
+		(pin "2"
+			(uuid "0f3f6fd1-a49a-44c8-8bee-15b315d6c1ae")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 143.51 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "354374f5-abc2-47e7-9bdb-5abaeaeb641c")
+		(property "Reference" "SW15"
+			(at 143.51 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 143.51 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 143.51 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 143.51 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 143.51 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21ff5656-b8f5-4930-bf1e-f966aa4a4ba5")
+		)
+		(pin "2"
+			(uuid "7c5a75e3-b900-45cb-b727-e09fc83f35e9")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 59.69 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36def472-8984-4b11-9121-fe8633424295")
+		(property "Reference" "D13"
+			(at 59.69 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 59.69 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 59.69 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 59.69 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 59.69 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 59.69 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 59.69 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b3022db4-00c6-4d40-b46a-955aee50c8af")
+		)
+		(pin "1"
+			(uuid "9d88ab11-e15a-4426-a771-97ac9e575100")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 40.64 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37dfa1ed-7c6d-4eb2-802f-43ff57808390")
+		(property "Reference" "LED1"
+			(at 40.64 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 40.64 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 40.64 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 40.64 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8ee53db0-ca36-4309-9a7c-23125d265475")
+		)
+		(pin "2"
+			(uuid "a62fa9f9-1e64-4b2f-a764-2fa0ea56cb88")
+		)
+		(pin "1"
+			(uuid "5b83ca90-8d18-46ed-b7e4-5e63d1b6cb54")
+		)
+		(pin "3"
+			(uuid "41d8f2da-9a13-4ab3-837a-918e3853a4b8")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 59.69 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3913712d-b0f7-4522-8f65-0c51ac69ae03")
+		(property "Reference" "D9"
+			(at 59.69 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 59.69 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 59.69 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 59.69 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 59.69 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 59.69 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 59.69 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2bf6b6db-a368-4aa3-b5f2-20268f4e29d5")
+		)
+		(pin "1"
+			(uuid "67f84540-87bc-4f78-af23-62b1e5ccea29")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 74.93 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "425641dd-eac3-48ef-9130-5e95b3c18ba4")
+		(property "Reference" "LED2"
+			(at 74.93 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 74.93 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 74.93 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 74.93 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8727e9b2-56d4-4814-bcc2-be8282114f43")
+		)
+		(pin "2"
+			(uuid "66c86fab-3744-4880-b6f4-5d4a7100effd")
+		)
+		(pin "1"
+			(uuid "8083ec66-bf8d-4cb9-b429-c16f3b45c1bf")
+		)
+		(pin "3"
+			(uuid "b35b4357-07d3-49a3-b525-7af792993bf8")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 161.29 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4907cf3c-d3af-4146-b0aa-ac06050e818d")
+		(property "Reference" "D7"
+			(at 161.29 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 161.29 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e201cc03-f9a1-49e3-9fbc-ad78ec940aea")
+		)
+		(pin "1"
+			(uuid "22ea938f-ded1-4974-ab9c-175bd980431b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 95.25 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "568f0afb-714a-4591-b4b9-573c1136ece0")
+		(property "Reference" "SW2"
+			(at 95.25 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 95.25 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 95.25 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 95.25 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 95.25 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9eb5d090-ef66-4e39-8020-6687a2c1e2e1")
+		)
+		(pin "2"
+			(uuid "3e6c35a7-fb98-4186-9bb7-552c1a2908d6")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 198.12 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5eb50ecb-d4d8-4e92-9ac5-ff49f437d5c0")
+		(property "Reference" "SW4"
+			(at 198.12 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 198.12 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 198.12 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 198.12 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 198.12 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f3f2fe4-5c47-4e4e-b784-df4022a7b76c")
+		)
+		(pin "2"
+			(uuid "ba2d3336-68d1-4f1b-9652-565fa49ae25b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 44.45 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "60f12715-86e2-4dd5-8e9c-98e6ae397bbf")
+		(property "Reference" "SW13"
+			(at 44.45 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 44.45 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 44.45 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 44.45 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e6452c66-039e-43fd-8eb7-0deaf128b70b")
+		)
+		(pin "2"
+			(uuid "f213e524-899f-4d80-a54e-b1b32182e7f3")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 44.45 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a87cdbe-62b1-4173-9776-012977393a48")
+		(property "Reference" "SW1"
+			(at 44.45 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 44.45 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 44.45 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 44.45 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37d5b660-713d-49c2-b70d-804b0cb3d969")
+		)
+		(pin "2"
+			(uuid "9d0390f0-05d8-4c4b-becb-84c367a3ff93")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x12")
+		(at 250.19 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "71186948-22fa-429b-ae3c-50f9bb104434")
+		(property "Reference" "J2"
+			(at 252.73 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x12"
+			(at 252.73 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
+			(at 250.19 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 250.19 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 250.19 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "53dcb149-02ef-40cd-b07e-a95c70ac516d")
+		)
+		(pin "4"
+			(uuid "e4a0767b-cc4e-43a6-8409-f0ca8b1adb61")
+		)
+		(pin "5"
+			(uuid "c452fdec-c717-413f-b2fa-d31cd71b25c4")
+		)
+		(pin "6"
+			(uuid "b2c291b6-692f-451f-b346-23640b0c3d3e")
+		)
+		(pin "7"
+			(uuid "57432b1d-6a0d-496e-9144-c1588826e84c")
+		)
+		(pin "1"
+			(uuid "3f3c57dc-ca1d-417e-a908-ddbc160479c9")
+		)
+		(pin "2"
+			(uuid "56263596-f9c0-4d35-877a-c9718be7ea41")
+		)
+		(pin "8"
+			(uuid "f18e7b7b-6a8b-42ff-ab89-acf01bd8ea33")
+		)
+		(pin "9"
+			(uuid "88de6054-c9e0-4cae-861d-51af5f00b6d9")
+		)
+		(pin "10"
+			(uuid "2da71c44-7a2f-45b1-a345-5662baa1521a")
+		)
+		(pin "11"
+			(uuid "5ad00452-3995-4851-b1a0-3a86a30f91de")
+		)
+		(pin "12"
+			(uuid "8037d30f-3090-4250-ba4c-72e41f0c719f")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 198.12 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "72ec881d-c012-4d93-a8fe-d766086f594a")
+		(property "Reference" "SW12"
+			(at 198.12 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 198.12 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 198.12 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 198.12 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 198.12 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5edd2cee-74ba-453f-bb2d-9ffa5d3cd0f2")
+		)
+		(pin "2"
+			(uuid "31080564-36ef-4edb-8816-42e2fcaa26ec")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 198.12 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81ff17e2-d6fe-4444-bafb-36be2e4bde65")
+		(property "Reference" "SW8"
+			(at 198.12 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 198.12 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 198.12 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 198.12 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b326b36-f02c-4190-afa3-4166f267c1d1")
+		)
+		(pin "2"
+			(uuid "76856436-608b-4167-b719-2e2c7eb1dac0")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 143.51 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "83ab39aa-b250-4549-9fd1-a7b51bf73770")
+		(property "Reference" "SW7"
+			(at 143.51 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 143.51 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 143.51 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 143.51 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 143.51 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e776deca-1cf1-4a20-a1de-c3b57af1865a")
+		)
+		(pin "2"
+			(uuid "237e6edd-a329-4f6b-8f9d-aa0a973fb25b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 74.93 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8447dd95-5215-426c-8ecc-234d2b878f4e")
+		(property "Reference" "LED14"
+			(at 74.93 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 74.93 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 74.93 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 74.93 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "6292cf45-f36e-4509-9ad0-234acf1ca0da")
+		)
+		(pin "2"
+			(uuid "e88ce5d8-3734-4e99-bdce-30c4b62f2cbf")
+		)
+		(pin "1"
+			(uuid "a78bd924-bda1-4433-b577-7864e2390a75")
+		)
+		(pin "3"
+			(uuid "e3c89bbe-8961-40da-8267-2a7e22aec24d")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 74.93 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "88bfab41-16a6-4b30-9731-62eec93db0a0")
+		(property "Reference" "LED10"
+			(at 74.93 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 74.93 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 74.93 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8ccf6e84-4a15-4dcc-8455-569efa9cadd9")
+		)
+		(pin "2"
+			(uuid "6dfa18d4-c4e1-4231-97b4-19aa1d772849")
+		)
+		(pin "1"
+			(uuid "959e4fd6-dea0-43dd-95d1-6848a3af1778")
+		)
+		(pin "3"
+			(uuid "724ec5de-3da7-447b-a18d-b46660781990")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 110.49 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "890ed240-c290-4010-bf43-8d5879cbc03b")
+		(property "Reference" "D2"
+			(at 110.49 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 110.49 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 110.49 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 110.49 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 110.49 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 110.49 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 110.49 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "768b3251-c0c8-4e05-af84-465f4f6f6a02")
+		)
+		(pin "1"
+			(uuid "ca01533d-273e-4972-8a02-44c7fca86d07")
+		)
+		(instances
+			(project ""
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 198.12 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "89f0ab51-2b10-4a90-ac65-aef6c26dfd8e")
+		(property "Reference" "SW16"
+			(at 198.12 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 198.12 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 198.12 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 198.12 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 198.12 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aad78895-fd00-4ccf-b7f9-52e1f3aaa4d2")
+		)
+		(pin "2"
+			(uuid "81a0eb1c-0f8c-4c3b-93a5-2c08ff2a4fe4")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 161.29 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8eb0252d-a23a-49e8-86f7-b879deed929c")
+		(property "Reference" "D3"
+			(at 161.29 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 161.29 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 161.29 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "979cc6e5-f24c-4d9d-bc78-0ee624ab9338")
+		)
+		(pin "1"
+			(uuid "41e1c27a-e150-4231-8801-aac439615015")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 95.25 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1945059-2c31-4c7f-9e39-76582cbd4516")
+		(property "Reference" "SW10"
+			(at 95.25 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 95.25 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 95.25 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 95.25 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 95.25 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11170797-46c3-4d2f-a7a2-8e1b9e37f951")
+		)
+		(pin "2"
+			(uuid "95448e8c-4dc7-486d-9ae2-d95f050d0f0d")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 110.49 55.88 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a29b23e1-1f29-4101-9b71-284a47f1f218")
+		(property "Reference" "D10"
+			(at 110.49 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 110.49 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 110.49 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 110.49 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 110.49 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 110.49 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 110.49 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b33e3ce7-2a19-40eb-b480-3be482a789cc")
+		)
+		(pin "1"
+			(uuid "55fdac4b-6173-44fa-82a3-8f41dcfe4597")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 110.49 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "accd1ee7-fa09-4daf-ab11-86e8c2e60ec1")
+		(property "Reference" "D6"
+			(at 110.49 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 110.49 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "db6d4736-b743-4d8d-a9f0-75cdf2e211b5")
+		)
+		(pin "1"
+			(uuid "3097382a-6cc4-4edb-b1ff-f19b69e33519")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 44.45 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b290e56f-b692-4261-b5ef-71c882288567")
+		(property "Reference" "SW5"
+			(at 44.45 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 44.45 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 44.45 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 44.45 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ffe433a3-34e2-4f9a-addc-e3b4ee0acd7d")
+		)
+		(pin "2"
+			(uuid "cdaceb6b-30e4-40da-b1ca-a23fdaa7f7e8")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 95.25 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b53efb74-06b5-4c22-90fb-1ab5c04be579")
+		(property "Reference" "SW6"
+			(at 95.25 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 95.25 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 95.25 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 95.25 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 95.25 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c603a85-5ac6-434a-b941-740d6adfb1e2")
+		)
+		(pin "2"
+			(uuid "9801c160-e0bc-4a89-8a5d-4d3d0228c1d4")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 215.9 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6eea2a5-d053-4600-9b96-7809384b81ee")
+		(property "Reference" "D4"
+			(at 215.9 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 215.9 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 215.9 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 215.9 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 215.9 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 215.9 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 215.9 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "59aef07f-8db8-4961-b46a-41d02fefd6ab")
+		)
+		(pin "1"
+			(uuid "ef5ef9c6-c1d6-4232-8b4d-f5f1c4084d09")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 143.51 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b7871110-6216-40a6-8a8e-42eca5c2f9e0")
+		(property "Reference" "SW3"
+			(at 143.51 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 143.51 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 143.51 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 143.51 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 143.51 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "885511ea-13df-4aad-abd8-128ef27c843b")
+		)
+		(pin "2"
+			(uuid "5b49b5ae-b3c3-42be-ade9-fcca2a44cf81")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 109.22 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc3f3593-15f0-4528-ad69-ea26bc73557b")
+		(property "Reference" "LED3"
+			(at 109.22 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 109.22 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 109.22 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 109.22 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "57321288-f310-4137-b1b6-4a11373cc1f3")
+		)
+		(pin "2"
+			(uuid "f8991353-0288-4136-afb3-05da5a725e68")
+		)
+		(pin "1"
+			(uuid "e06926f2-ab42-4735-b01e-4a4f7a0897ea")
+		)
+		(pin "3"
+			(uuid "e4bcce93-4187-49e7-84e7-46c3e8230f29")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 146.05 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c22dcb52-06e8-49ee-9d74-67608a7de6f5")
+		(property "Reference" "LED4"
+			(at 146.05 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 146.05 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 146.05 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 146.05 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "9211ba9a-fa32-4417-a3c7-4d86ce95b40a")
+		)
+		(pin "2"
+			(uuid "5fb6d8ea-462c-42c7-8f8a-c4ad1a50afbe")
+		)
+		(pin "1"
+			(uuid "4e8ce8f0-0769-4d7c-80e7-efe7f3c6f1bc")
+		)
+		(pin "3"
+			(uuid "1743e615-e142-4014-964b-e4f86a46ad59")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 109.22 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3f80c33-ba33-42e0-b29e-e801cd491a86")
+		(property "Reference" "LED7"
+			(at 109.22 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 109.22 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 109.22 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 109.22 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "38c7941a-1730-4f08-9657-04c9a1a5890b")
+		)
+		(pin "2"
+			(uuid "1ea4b621-fa8c-41eb-8eec-d864020cede5")
+		)
+		(pin "1"
+			(uuid "37bd0cec-48b0-4e3d-8ad5-1be1b5f65c0c")
+		)
+		(pin "3"
+			(uuid "4c3b6bde-afd3-475b-a0c8-540051592c57")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 146.05 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ca63503a-3ffb-41db-bd78-a7e1a31532b5")
+		(property "Reference" "LED16"
+			(at 146.05 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 146.05 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 146.05 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 146.05 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "11295e82-ab11-4405-903a-0672453f2cb2")
+		)
+		(pin "2"
+			(uuid "57810fb9-cab5-4e61-88b5-9905b4e54058")
+		)
+		(pin "1"
+			(uuid "dd2a7733-2641-47d0-a54a-bebb2836b3d7")
+		)
+		(pin "3"
+			(uuid "296a6bda-c95a-4fdc-974f-fd1049698468")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 44.45 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6c93c24-e29d-4ffb-b76f-6b941d663abc")
+		(property "Reference" "SW9"
+			(at 44.45 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 44.45 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 44.45 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 44.45 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b8cabaf1-4af1-4c1b-900e-1f5549f172a7")
+		)
+		(pin "2"
+			(uuid "fd885df1-f602-4918-a4a7-5b683ccb93e7")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 146.05 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d997e2e3-ce06-46e7-9f1d-4aba52e80038")
+		(property "Reference" "LED12"
+			(at 146.05 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 146.05 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 146.05 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 146.05 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "736b331b-b5dd-447d-bdf9-63dfe34b14b6")
+		)
+		(pin "2"
+			(uuid "2a1f7645-efba-4fca-88ba-d16b4ad58bcd")
+		)
+		(pin "1"
+			(uuid "079a1177-7e0c-421c-9acc-da6ca01914d7")
+		)
+		(pin "3"
+			(uuid "e959ea64-8209-43f3-8b21-98ed8fe474e3")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 59.69 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e411b896-1828-49c2-9999-9f86b19090d6")
+		(property "Reference" "D5"
+			(at 59.69 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 59.69 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 59.69 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 59.69 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 59.69 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 59.69 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 59.69 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7ab43fc2-44e1-4c31-8cb3-c59295c1a178")
+		)
+		(pin "1"
+			(uuid "787fbb98-7972-4ea8-b297-208575d0c608")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 40.64 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e783f796-2f26-4977-aab2-e3e171671a03")
+		(property "Reference" "LED13"
+			(at 40.64 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 40.64 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 40.64 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 40.64 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "bc58c942-8d3c-4893-8266-48ece7c31b5c")
+		)
+		(pin "2"
+			(uuid "069020f7-ece2-4893-9f77-6756cb3665d5")
+		)
+		(pin "1"
+			(uuid "71706f08-e1b1-4c99-84b1-1b284a73a44a")
+		)
+		(pin "3"
+			(uuid "274dd219-f2e6-4de6-97ce-a57488822719")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Omron_B3FS")
+		(at 143.51 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed0518e6-0302-4149-a934-6a011a67a529")
+		(property "Reference" "SW11"
+			(at 143.51 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 143.51 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Lumisquare_Library:lumisquare button"
+			(at 143.51 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"
+			(at 143.51 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Omron B3FS 6x6mm single pole normally-open tactile switch"
+			(at 143.51 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "41b0d4c5-33ff-4a35-bb72-620c45936bd1")
+		)
+		(pin "2"
+			(uuid "eb92d8bf-9ee7-4165-bf84-839d00ef474e")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "SW11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 109.22 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ef618154-b985-44f6-9923-112f978be34c")
+		(property "Reference" "LED15"
+			(at 109.22 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 109.22 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 109.22 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 109.22 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "05c578be-699c-4b38-b4fc-7e4dc0c069ce")
+		)
+		(pin "2"
+			(uuid "8ddce421-1e9f-42ae-84f2-1b3d11bb10c2")
+		)
+		(pin "1"
+			(uuid "f56840d7-139f-42c8-8e07-a83aab54b30d")
+		)
+		(pin "3"
+			(uuid "74cd608c-6486-49e8-8682-233673a0e00b")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4148")
+		(at 215.9 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f7e57d08-2852-49fb-a8d7-8056f0bf3c9d")
+		(property "Reference" "D8"
+			(at 215.9 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 215.9 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a5f9e435-4f4b-4fb0-b5b5-a4f346938d5a")
+		)
+		(pin "1"
+			(uuid "b0ea6018-4b7b-4bf3-b31d-e2a493d8da5f")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED_BGAR")
+		(at 40.64 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fcbd0d1e-6a42-4b3a-a802-494fe8664baa")
+		(property "Reference" "LED5"
+			(at 40.64 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_BGAR"
+			(at 40.64 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB"
+			(at 40.64 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED, blue/green/anode/red"
+			(at 40.64 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "0598448d-f238-474a-acd9-82ae54041788")
+		)
+		(pin "2"
+			(uuid "1c5488ef-4c9b-4747-840c-4a8d1709f0de")
+		)
+		(pin "1"
+			(uuid "8103739d-791b-417f-8be2-db70c2f377d1")
+		)
+		(pin "3"
+			(uuid "b81335b8-d2f2-4834-922c-634d750076ff")
+		)
+		(instances
+			(project "ButtonMatrix"
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "LED5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x12")
+		(at 210.82 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff68264d-df1f-40f2-b4df-b46c8094c6c7")
+		(property "Reference" "J1"
+			(at 213.36 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x12"
+			(at 213.36 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical"
+			(at 210.82 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 210.82 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 210.82 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "690cb50d-07e2-497c-878c-3e3506bb82fb")
+		)
+		(pin "4"
+			(uuid "d62a4d8e-2899-4472-83b6-35352a4d72e5")
+		)
+		(pin "5"
+			(uuid "b6d46313-7307-46a1-b62d-70db1769c13b")
+		)
+		(pin "6"
+			(uuid "f8b4f6d8-0dd5-4afe-ae76-66c05a06b63f")
+		)
+		(pin "7"
+			(uuid "c94298a9-28e9-47da-abee-fc89b67460b7")
+		)
+		(pin "1"
+			(uuid "1a0e2f9c-8d80-4eeb-85f0-8fa86ae69d9d")
+		)
+		(pin "2"
+			(uuid "aae39f16-7db3-4c86-b857-139f824e4cbf")
+		)
+		(pin "8"
+			(uuid "b5f800b8-2ef6-4f82-aaf0-a371234b9af5")
+		)
+		(pin "9"
+			(uuid "a2114e4b-fb1c-49b1-bfe2-4ad5c3e0fc60")
+		)
+		(pin "10"
+			(uuid "30bfabba-8b63-40a2-b054-2c2a224a40e5")
+		)
+		(pin "11"
+			(uuid "c194a2fc-1bda-4ef5-8a54-700670918400")
+		)
+		(pin "12"
+			(uuid "f58dde14-0bc4-493f-9c21-262e95cb8768")
+		)
+		(instances
+			(project ""
+				(path "/a9cc6e02-ad1b-41d7-8cd8-8cf0c6fe637e"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

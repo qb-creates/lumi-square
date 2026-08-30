@@ -1,6 +1,6 @@
 #include "mainmenustate.h"
 #include "buttons.h"
-#include "leds.h"
+#include "ledmatrix.h"
 #include <random.h>
 
 MainMenuState::MainMenuState()
@@ -75,7 +75,7 @@ void MainMenuState::onButtonPressed(int8_t buttonIndex)
     {
         if (queuedState == GameState::Simon)
         {
-            Output::enableSimonLights(GameProperties::Instance().gameDifficulty != Difficulty::Easy);
+            LEDMatrix::enableSimonLights(GameProperties::Instance().gameDifficulty != Difficulty::Easy);
         }
 
         startCountdownTimer();

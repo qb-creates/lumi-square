@@ -7,7 +7,6 @@
 class Random
 {
 public:
-    static void configureRNG();
     static void seedRNG();
     static int16_t range(int16_t min = 1, int16_t max = 255);
 

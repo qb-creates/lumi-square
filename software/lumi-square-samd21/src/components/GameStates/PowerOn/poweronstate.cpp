@@ -1,5 +1,5 @@
 #include "poweronstate.h"
-#include "leds.h"
+#include "ledmatrix.h"
 
 PowerOnState::PowerOnState()
     : GameBaseState(GameState::PowerOn),
@@ -13,18 +13,18 @@ PowerOnState::PowerOnState()
       m_buttonIndexList{0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 4, 5, 6, 10, 9},
       m_ledColorList{
           Colors::pink,
-          Colors::azure,
-          Colors::cyan,
+          Colors::turquoise,
+          Colors::blue,
           Colors::purple,
-          Colors::aquamarine,
+          Colors::green,
           Colors::red,
           Colors::orange,
           Colors::yellow,
           Colors::pink,
-          Colors::azure,
-          Colors::cyan,
+          Colors::turquoise,
+          Colors::blue,
           Colors::purple,
-          Colors::aquamarine,
+          Colors::green,
           Colors::red,
           Colors::orange,
           Colors::yellow}
@@ -37,7 +37,7 @@ void PowerOnState::enterState(GameState previousState)
     
     for (int i = 0; i < 16; ++i)
     {
-        Output::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
+        LEDMatrix::ledOff(m_buttonIndexList[i], m_ledColorList[i], 1);
     }
 
     AudioSource::Instance().playNoteSequence(POWER_UP_AUDIO_CLIP);
@@ -55,7 +55,7 @@ void PowerOnState::updateState()
         {
             m_animationTimer = 0;
 
-            m_reverseAnimation ? Output::ledOff(m_buttonIndexList[m_currentLedIndex]) : Output::ledOn(m_buttonIndexList[m_currentLedIndex]);
+            m_reverseAnimation ? LEDMatrix::ledOff(m_buttonIndexList[m_currentLedIndex]) : LEDMatrix::ledOn(m_buttonIndexList[m_currentLedIndex]);
 
             ++m_currentLedIndex;
 

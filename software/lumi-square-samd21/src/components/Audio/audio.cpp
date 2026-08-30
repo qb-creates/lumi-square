@@ -1,87 +1,10 @@
 #include "audio.h"
 #include "buttons.h"
 #include "deviceutility.h"
-#include "samd21j18a.h"
-#include <string.h>
-
-const uint8_t DF_PLAYER_COMMANDS[46][10] = {
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x01, 0xFE, 0xEA, 0xEF}, // 0
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x02, 0xFE, 0xE9, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x03, 0xFE, 0xE8, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x04, 0xFE, 0xE7, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x05, 0xFE, 0xE6, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x06, 0xFE, 0xE5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x07, 0xFE, 0xE4, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x08, 0xFE, 0xE3, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x09, 0xFE, 0xE2, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x01, 0x0A, 0xFE, 0xE1, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x01, 0xFE, 0xE9, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x02, 0xFE, 0xE8, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x03, 0xFE, 0xE7, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x04, 0xFE, 0xE6, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x05, 0xFE, 0xE5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x06, 0xFE, 0xE4, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x07, 0xFE, 0xE3, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x08, 0xFE, 0xE2, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x09, 0xFE, 0xE1, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0A, 0xFE, 0xE0, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0B, 0xFE, 0xDF, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0C, 0xFE, 0xDE, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0D, 0xFE, 0xDD, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0E, 0xFE, 0xDC, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x0F, 0xFE, 0xDB, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x10, 0xFE, 0xDA, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x11, 0xFE, 0xD9, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x02, 0x12, 0xFE, 0xD8, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x03, 0x01, 0xFE, 0xE8, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x03, 0x02, 0xFE, 0xE7, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x03, 0x03, 0xFE, 0xE6, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x03, 0x04, 0xFE, 0xE5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x03, 0x05, 0xFE, 0xE4, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x01, 0xFE, 0xE7, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x02, 0xFE, 0xE6, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x03, 0xFE, 0xE5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x04, 0xFE, 0xE4, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x05, 0xFE, 0xE3, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x06, 0xFE, 0xE2, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x07, 0xFE, 0xE1, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x08, 0xFE, 0xE0, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x09, 0xFE, 0xDF, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0A, 0xFE, 0xDE, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x0F, 0x00, 0x04, 0x0B, 0xFE, 0xDD, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x00, 0xFE, 0xF5, 0xEF},
-    {0x7E, 0xFF, 0x06, 0x06, 0x00, 0x00, 0x0F, 0xFE, 0xE6, 0xEF}};
-const uint8_t MUTE_COMMAND_RESPONSE[20] = {0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF, 0x7E, 0xFF, 0x06, 0x3D, 0x00, 0x00, 0x2B, 0xFE, 0x93, 0xEF};
 
 volatile DFPlayerCommand voiceOverQueue[10] = {DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None, DFPlayerCommand::None};
-volatile uint8_t receiveBufferIndex = 0;
 volatile int8_t voiceOverQueueCount = 0;
 volatile bool isPlayingVoiceOver = false;
-volatile bool muteInProgress = false;
-volatile uint8_t voiceOverBuffer[20];
-
-extern "C" void SERCOM5_Handler(void)
-{
-    if (SERCOM5_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_RXC_Msk)
-    {
-        uint8_t data = SERCOM5_REGS->USART_INT.SERCOM_DATA;
-        voiceOverBuffer[receiveBufferIndex] = data;
-        receiveBufferIndex++;
-    
-        if (receiveBufferIndex == 20 && data == 0xEF)
-        {
-            if (memcmp((const void *)voiceOverBuffer, MUTE_COMMAND_RESPONSE, sizeof(voiceOverBuffer)) == 0)
-            {
-                muteInProgress = true;
-            }
-    
-            receiveBufferIndex = 0;
-            isPlayingVoiceOver = false;
-        }
-
-        SERCOM5_REGS->USART_INT.SERCOM_INTFLAG = SERCOM_USART_INT_INTFLAG_RXC_Msk;
-    }
-}
 
 AudioSource::AudioSource()
     : m_pQueuedNoteSequenceData(nullptr),
@@ -93,45 +16,7 @@ AudioSource::AudioSource()
       m_noteSequenceBeatDuration(0),
       m_muteButtonDelay(0)
 {
-
-    // Configure PWM for music tones
-    // Power Manager
-    PM_REGS->PM_APBCMASK |= PM_APBCMASK_TC7_Msk;
-    
-    // Generic Clock Controller
-    GCLK_REGS->GCLK_CLKCTRL = GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID_TC6_TC7 | GCLK_CLKCTRL_CLKEN_Msk;
-
-    PORT_REGS->GROUP[1].PORT_PINCFG[23] = PORT_PINCFG_PMUXEN_Msk;
-    PORT_REGS->GROUP[1].PORT_PMUX[11] = PORT_PMUX_PMUXO_E;
-    
-    TC7_REGS->COUNT16.TC_CTRLA = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MPWM | TC_CTRLA_PRESCALER_DIV256;
-    while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
-
-    // // Configure SERCOM5 USart for DFPlayer mini
-    // Turn on clock for usart
-    PM_REGS->PM_APBCMASK |= PM_APBCMASK_SERCOM5_Msk;
-
-    // Configure clocks for timer and interrupts
-    GCLK_REGS->GCLK_CLKCTRL = GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID_SERCOM5_CORE | GCLK_CLKCTRL_CLKEN_Msk;
-
-    // Enable pin multiplexer for PA20 and configure it to be function C Pad 0
-    PORT_REGS->GROUP[0].PORT_PINCFG[20] = PORT_PINCFG_PMUXEN_Msk;
-    PORT_REGS->GROUP[0].PORT_PMUX[10] |= PORT_PMUX_PMUXE_C;
-
-    // Enable pin multiplexer for PA21 and configure it to be function C Pad 0
-    PORT_REGS->GROUP[0].PORT_PINCFG[21] = PORT_PINCFG_PMUXEN_Msk;
-    PORT_REGS->GROUP[0].PORT_PMUX[10] |= PORT_PMUX_PMUXO_C;
-
-    SERCOM5_REGS->USART_INT.SERCOM_CTRLB = SERCOM_USART_INT_CTRLB_TXEN_Msk | SERCOM_USART_INT_CTRLB_RXEN_Msk;
-    while ((SERCOM5_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U) { }
-    
-    // Sets the baud rate to 9600
-    SERCOM5_REGS->USART_INT.SERCOM_BAUD = 0xFF2E;
-    SERCOM5_REGS->USART_INT.SERCOM_INTENSET = SERCOM_USART_INT_INTENSET_RXC_Msk;
-    SERCOM5_REGS->USART_INT.SERCOM_CTRLA = SERCOM_USART_INT_CTRLA_ENABLE_Msk | SERCOM_USART_INT_CTRLA_DORD_LSB | SERCOM_USART_INT_CTRLA_TXPO(1) | SERCOM_USART_INT_CTRLA_RXPO(3) | SERCOM_USART_INT_CTRLA_MODE_USART_INT_CLK;
-    NVIC_EnableIRQ(SERCOM5_IRQn);
-
-    sendDFPlayerCommand(DF_PLAYER_COMMANDS[DFPlayerCommand::Unmute]);
+    DeviceUtility::Instance().processAudioCommand(DFPlayerCommand::Unmute);
 }
 
 AudioSource &AudioSource::Instance()
@@ -146,17 +31,11 @@ AudioSource &AudioSource::Instance()
  */
 void AudioSource::onFixedUpdate()
 {
-    if (muteInProgress)
-    {
-        sendDFPlayerCommand(DF_PLAYER_COMMANDS[DFPlayerCommand::Mute]);
-        muteInProgress = false;
-    }
-
     if (voiceOverQueueCount > 0 && !isPlayingVoiceOver)
     {
         isPlayingVoiceOver = true;
         DFPlayerCommand voiceOver = voiceOverQueue[0];
-        sendDFPlayerCommand(DF_PLAYER_COMMANDS[voiceOver]);
+        DeviceUtility::Instance().processAudioCommand(voiceOver, [](){ isPlayingVoiceOver = false; });
 
         for (int8_t i = 0; i < voiceOverQueueCount - 1; ++i)
         {
@@ -266,7 +145,7 @@ void AudioSource::playNextMusicSequenceNote()
 {
     if (!m_isPlayingMusicNote && m_isPlayingNoteSequence)
     {
-        int16_t note = static_cast<int16_t>(*m_pQueuedNoteSequenceData++);
+        DeviceUtility::Instance().setBeepNote(*m_pQueuedNoteSequenceData++);
         int16_t noteDuration = static_cast<int16_t>(*m_pQueuedNoteSequenceData++);
 
         if (noteDuration < 0)
@@ -279,16 +158,10 @@ void AudioSource::playNextMusicSequenceNote()
             m_notePlayTime = (m_noteSequenceBeatDuration * 4) / noteDuration;
         }
 
-        // Configure pwm frequency
-        TC7_REGS->COUNT16.TC_CC[0] = static_cast<uint16_t>(note);
-        TC7_REGS->COUNT16.TC_CC[1] = static_cast<uint16_t>(note) / 2;
-        TC7_REGS->COUNT16.TC_COUNT = 0;
 
         if (!m_isMute)
         {
-            // Enable PWM output
-            TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-            while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+            DeviceUtility::Instance().enableBeep(true);
         }
 
         m_isPlayingMusicNote = true;
@@ -306,15 +179,11 @@ void AudioSource::playNextMusicSequenceNote()
  */
 void AudioSource::playMusicNote(MusicNote note, int16_t time)
 {
-    TC7_REGS->COUNT16.TC_CC[0] = static_cast<uint16_t>(note);
-    TC7_REGS->COUNT16.TC_CC[1] = static_cast<uint16_t>(note) / 2;
-    TC7_REGS->COUNT16.TC_COUNT = 0;
+    DeviceUtility::Instance().setBeepNote(note);
 
     if (!m_isMute)
     {
-        // Enable PWM output
-        TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+        DeviceUtility::Instance().enableBeep(true);
     }
 
     m_notePlayTime = time;
@@ -332,7 +201,8 @@ void AudioSource::playVoiceOver(DFPlayerCommand voiceOver)
         return;
 
     isPlayingVoiceOver = true;
-    sendDFPlayerCommand(DF_PLAYER_COMMANDS[voiceOver]);
+    DeviceUtility::Instance().processAudioCommand(voiceOver, []()
+                                                  { isPlayingVoiceOver = false; });
 }
 
 /**
@@ -361,7 +231,7 @@ void AudioSource::queueNumberVoiceOver(uint16_t number)
         queueVoiceOver(static_cast<DFPlayerCommand>(mappedTens));
     }
 
-    if ((ones != 0  && (ones + tens < 10 || ones + tens > 20)) || number == 0)
+    if ((ones != 0 && (ones + tens < 10 || ones + tens > 20)) || number == 0)
         queueVoiceOver(static_cast<DFPlayerCommand>(ones));
 }
 
@@ -393,19 +263,17 @@ void AudioSource::muteAudioSource(bool mute)
 
     if (mute)
     {
-        TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
+        DeviceUtility::Instance().enableBeep(false);
         playVoiceOver(DFPlayerCommand::MuteVoiceOver);
         return;
     }
 
     if (m_isPlayingMusicNote)
     {
-        TC7_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
-    }        
+        DeviceUtility::Instance().enableBeep(true);
+    }
 
-    sendDFPlayerCommand(DF_PLAYER_COMMANDS[DFPlayerCommand::Unmute]);
+    DeviceUtility::Instance().processAudioCommand(DFPlayerCommand::Unmute);
     queueVoiceOver(DFPlayerCommand::UnmuteVoiceOver);
 }
 
@@ -431,17 +299,6 @@ void AudioSource::updateMusicNoteTimer()
             m_isPlayingNoteSequence = false;
         }
 
-        // Disable PWM output
-        TC7_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
-        while ((TC7_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk) == TC_STATUS_SYNCBUSY_Msk) {}
-    }
-}
-
-void AudioSource::sendDFPlayerCommand(const uint8_t data[])
-{
-    for (size_t i = 0; i < 10; i++)
-    {
-        while (!(SERCOM5_REGS->USART_INT.SERCOM_INTFLAG & SERCOM_USART_INT_INTFLAG_DRE_Msk)) {}        
-        SERCOM5_REGS->USART_INT.SERCOM_DATA = data[i];
+        DeviceUtility::Instance().enableBeep(false);
     }
 }

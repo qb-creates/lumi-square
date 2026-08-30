@@ -1,5 +1,5 @@
 #include "./matchingstate.h"
-#include "../../Peripherals/leds.h"
+#include "../../Peripherals/ledmatrix.h"
 #include "../../Utilities/random.h"
 
 MemoryMatchingState::MemoryMatchingState()
@@ -11,19 +11,19 @@ MemoryMatchingState::MemoryMatchingState()
       isGuessCorrect(false),
       colorList {
           Colors::pink,
-          Colors::azure,
-          Colors::cyan,
+          Colors::turquoise,
+          Colors::blue,
           Colors::purple,
-          Colors::aquamarine,
+          Colors::green,
           Colors::red,
           Colors::orange,
           Colors::yellow,
-          Colors::aquamarine,
+          Colors::green,
           Colors::red,
-          Colors::azure,
+          Colors::turquoise,
           Colors::purple,
           Colors::pink,
-          Colors::cyan,
+          Colors::blue,
           Colors::orange,
           Colors::yellow} {}
 
@@ -63,7 +63,7 @@ void MemoryMatchingState::updateState()
 
 void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
 {
-    if (!ledBrightnessAdjustTimer.isComplete() || Output::getLedStatus(buttonIndex))
+    if (!ledBrightnessAdjustTimer.isComplete() || LEDMatrix::getLedStatus(buttonIndex))
         return;
 
     if (selectedLedIndex1 == -1)
@@ -77,7 +77,7 @@ void MemoryMatchingState::onButtonPressed(int8_t buttonIndex)
     }
 
     MusicNote musicNote = selectedLedIndex2 == -1 ? MusicNote::C5 : MusicNote::D5;
-    Output::ledOn(buttonIndex);
+    LEDMatrix::ledOn(buttonIndex);
     AudioSource::Instance().playMusicNote(musicNote, 100);
 }
 
@@ -95,13 +95,13 @@ void MemoryMatchingState::shuffleLedColors()
     // Set Led colors.
     for (int i = 0; i < 16; ++i)
     {
-        Output::setLedColor(i, colorList[i], 1);
+        LEDMatrix::setLedColor(i, colorList[i], 1);
     }
 }
 
 void MemoryMatchingState::evaluateGuess()
 {
-    if (Output::getLedColor(selectedLedIndex1) == Output::getLedColor(selectedLedIndex2))
+    if (LEDMatrix::getLedColor(selectedLedIndex1) == LEDMatrix::getLedColor(selectedLedIndex2))
     {
         isGuessCorrect = true;
         ledBrightnessAdjustTimer.setTargetTime(300);
@@ -117,14 +117,14 @@ void MemoryMatchingState::adjustLedBrightness()
 {
     if (isGuessCorrect)
     {
-        Output::setLedIntensity(selectedLedIndex1, .4);
-        Output::setLedIntensity(selectedLedIndex2, .4);
+        LEDMatrix::setLedIntensity(selectedLedIndex1, .4);
+        LEDMatrix::setLedIntensity(selectedLedIndex2, .4);
         correctMatches++;
     }
     else
     {
-        Output::ledOff(selectedLedIndex1);
-        Output::ledOff(selectedLedIndex2);
+        LEDMatrix::ledOff(selectedLedIndex1);
+        LEDMatrix::ledOff(selectedLedIndex2);
     }
 
     selectedLedIndex1 = -1;

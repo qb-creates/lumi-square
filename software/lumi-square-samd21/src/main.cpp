@@ -1,16 +1,19 @@
 #include "audio.h"
 #include "buttons.h"
 #include "deviceutility.h"
-#include "leds.h"
+#include "ledmatrix.h"
 #include "random.h"
 #include "serialcommandmanager.h"
 #include "shutdownutility.h"
 #include "statemanager.h"
+
+#ifndef DESKTOP_SIMULATION
 #include <samd21j18a.h>
 #include <system_samd21.h>
+#endif
 
+#ifndef DESKTOP_SIMULATION
 volatile uint32_t msTicks = 0;
-
 extern "C" void SysTick_Handler(void)
 {
     msTicks++;
@@ -22,22 +25,21 @@ void delayMS(uint32_t ms)
     while (msTicks < targetTicks)
         ;
 }
+#endif
 
 int main(void)
 {
+#ifndef DESKTOP_SIMULATION
     SystemInit();
-
     delayMS(1000);
+#endif
 
     // Configure
-    Random::configureRNG();
-    Output::configureLeds();    
-    DeviceUtility::Instance().configureButtonPins();
-    DeviceUtility::Instance().configureFixedUpdateTimer();
+    DeviceUtility::Instance().configure();
 
     while (true)
     {
-        Output::refreshLeds();
+        LEDMatrix::refreshLeds();
 
         if (!DeviceUtility::fixedUpdate)
             continue;
@@ -49,7 +51,6 @@ int main(void)
         AudioSource::Instance().onFixedUpdate();
         ShutdownUtility::Instance().onFixedUpdate();
         SerialCommandManager::Instance().onFixedUpdate();
-        // triggerFixedUpdateEvent();
     }
 
     return 1;

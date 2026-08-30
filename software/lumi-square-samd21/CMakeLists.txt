@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 # Check if building for desktop simulation
 if(DESKTOP_SIMULATION)
     # Include the desktop-specific CMakeLists
-    include(CMakeLists-desktop.txt)
+    include(desktop.cmake)
     return()
 endif()
 
@@ -32,7 +32,7 @@ set(MCPU cortex-m0plus)
 # add_compile_options(-mfloat-abi=soft)
 add_compile_options(-mcpu=${MCPU} -mthumb)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
-
+add_compile_options(-fdiagnostics-color=always)
 add_compile_definitions(F_CPU=48000000UL)
 
 # uncomment to mitigate c++17 absolute addresses warnings
@@ -65,6 +65,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/src/components/systick
     ${CMAKE_SOURCE_DIR}/src/config
     ${CMAKE_SOURCE_DIR}/src/components/Utilities
+    ${CMAKE_SOURCE_DIR}/src/components/Utilities/SAMD21
     ${CMAKE_SOURCE_DIR}/src/components/Colors
     ${CMAKE_SOURCE_DIR}/src/components/Peripherals
     ${CMAKE_SOURCE_DIR}/src/components/Managers
@@ -73,7 +74,28 @@ include_directories(
 )
 
 # add_definitions(#[[TODO insert definitions, ex. -DUSE_HAL_DRIVER -DCORE_CM4 -DDEBUG -DSTM32H745xx]])
-file(GLOB_RECURSE SOURCES src/*.cpp src/*.c)
+file(GLOB COMMON_SOURCES
+    src/components/Audio/*.cpp
+    src/components/Colors/*.cpp
+    src/components/GameStates/*.cpp
+    src/components/GameStates/GameOver/*.cpp
+    src/components/GameStates/LightDash/*.cpp
+    src/components/GameStates/MainMenu/*.cpp
+    src/components/GameStates/MemoryMatching/*.cpp
+    src/components/GameStates/PowerOn/*.cpp
+    src/components/GameStates/Simon/*.cpp
+    src/components/Managers/*.cpp
+    src/components/Peripherals/*.cpp
+    src/components/Utilities/*.cpp
+)
+
+file(GLOB_RECURSE HARDWARE_SOURCES
+    src/third-party/CMSIS/*.cpp
+    src/third-party/CMSIS/*.c
+    src/third-party/SAMD21J18A/*.cpp
+    src/third-party/SAMD21J18A/*.c
+    src/components/Utilities/SAMD21/*.cpp
+)
 
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/samd21j18a_flash.ld)
 
@@ -81,7 +103,7 @@ add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR
 add_link_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
-add_executable(firmware.elf ${SOURCES} ${LINKER_SCRIPT})
+add_executable(firmware.elf src/main.cpp ${COMMON_SOURCES} ${HARDWARE_SOURCES} ${LINKER_SCRIPT})
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/firmware.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/firmware.bin)
