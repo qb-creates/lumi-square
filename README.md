@@ -244,19 +244,19 @@ The device can be safely used while charging due to its power-path design. When 
                     <tr><td><a href="https://www.amazon.com/dp/B0B21B262L?ref=ppx_yo2ov_dt_b_fed_asin_title&amp;th=1">4.2V Lipo</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-SM4-TB/926655">S2B-PH-SM4-TB</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/raltron-electronics/RDT-4-000-1375-NS1/22320849">RDT-4.000-1375-NS1</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A475KP8NNNC/3886702">4.7uF</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/kyocera-avx/TPCL105M010R5000/1472496">1uF tantalum</a></td><td align="center">x3</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/taiyo-yuden/TMK107B7105KA-T/2714162">1uF</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GCM31CR71C106KA64K/2592432">10uF</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GCM31CR70J226ME23L/2592428">22uF</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/kyocera-avx/TAJC107K010RNJ/563809">100uF</a></td><td align="center">x3</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C102K5RACTU/411081">.001uF</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C103K5RACTU/411090">.01uF</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C104K3RACTU/416044">.1uF</a></td><td align="center">x6</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E225KA12D/4905349">2.2uF</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A475KP8NNNC/3886702">4.7uF Capacitor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/kyocera-avx/TPCL105M010R5000/1472496">1uF Tantalum Capacitor</a></td><td align="center">x3</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/taiyo-yuden/TMK107B7105KA-T/2714162">1uF Capacitor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GCM31CR71C106KA64K/2592432">10uF Capacitor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GCM31CR70J226ME23L/2592428">22uF Capacitor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/kyocera-avx/TAJC107K010RNJ/563809">100uF Capacitor</a></td><td align="center">x3</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C102K5RACTU/411081">.001uF Capacitor</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C103K5RACTU/411090">.01uF Capacitor</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/kemet/C0603C104K3RACTU/416044">.1uF Capacitor</a></td><td align="center">x6</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E225KA12D/4905349">2.2uF Capacitor</a></td><td align="center">x1</td></tr>
                     <tr><td>LED</td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970">1N5819HW-7-F</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4148W/6022450">1N4148W</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970">1N5819HW-7-F Diode</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/smc-diode-solutions/1N4148W/6022450">1N4148W Diode</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.amazon.com/2-54mm-Breakaway-Female-Connector-Arduino/dp/B01MQ48T2V/ref=sr_1_2_sspa?crid=16L90K4M3IPUJ&amp;dib=eyJ2IjoiMSJ9.PiVZGqfONIcta-M5ftDeSQvccVRmw9BxQL2rt7zLLUlXX1aAbZE0DyQvFnNRSX7J1oJEA5hJfbgi6EJ3rHkMxb469SjCBiPbG4t4CkfheX_9W7Yiw4iFecXODu6yRoJ7FvokpWTZ5C9jK1dhZLU-0gXDsoVq96wH-NXO7UmstsQCzrZOSzCfbpis861lxSzX91fkbaxrOKRMrX-EQ3cjwH1Og4xyfn4PJ6o445uHR2s.cW7WMcxh5mXZc1T8bR0I8nLIh45-W5JJZGus4sUdDDI&amp;dib_tag=se&amp;keywords=Male+headers&amp;qid=1783892715&amp;sprefix=male+header%2Caps%2C141&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1">Conn_01x12</a></td><td align="center">x2</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/gct/USB4125-GF-A/13547388">USB_C_Receptacle_PowerOnly_6P</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/samtec-inc/FTSH-105-01-L-DV-K/1875039">FTSH-105-01-X-DV-P-K-X</a></td><td align="center">x1</td></tr>
@@ -265,25 +265,25 @@ The device can be safely used while charging due to its power-path design. When 
                     <tr><td><a href="https://www.digikey.com/en/products/detail/umw/UMWIRLML2246TR/24889419">UMWIRLML2246TRCT</a></td><td align="center">x2</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/onsemi/MMBT3904LT1G/919601">MMBT3904</a></td><td align="center">x5</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TSM680P06CH-X0G/7360503">TSM680P06CH</a></td><td align="center">x4</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-075K1L/727268">5.1k</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603JT10K0/1758104">10k</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162">330</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603JR-071K3L/726686">1.3k</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RK73B1JTTD154J/9844780">150k</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-075K1L/727268">5.1k ohm Resistor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603JT10K0/1758104">10k ohm Resistor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07330RL/727162">330 ohm Resistor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603JR-071K3L/726686">1.3k ohm Resistor</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RK73B1JTTD154J/9844780">150k ohm Resistor</a></td><td align="center">x1</td></tr>
                 </table>
             </td>
             <td width="24"></td>
             <td valign="top">
                 <table>
                     <tr><th>Part Number</th><th>Quantity</th></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07715KL/727372">720k</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603JR-0775KL/726828">80k</a></td><td align="center">x2</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603FT220K/1760805">220k</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/rohm-semiconductor/ESR03EZPF2000/1983436">200</a></td><td align="center">x1</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100KL/726889">100k</a></td><td align="center">x5</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/panasonic-industry/ERA-3AEB153V/1465882">15k</a></td><td align="center">x3</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-072K2L/727016">2.2k</a></td><td align="center">x5</td></tr>
-                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-0747KL/727253">47k</a></td><td align="center">x4</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07715KL/727372">720k ohm Resistor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603JR-0775KL/726828">80k ohm Resistor</a></td><td align="center">x2</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603FT220K/1760805">220k ohm Resistor</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/rohm-semiconductor/ESR03EZPF2000/1983436">200 ohm Resistor</a></td><td align="center">x1</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-07100KL/726889">100k ohm Resistor</a></td><td align="center">x5</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/panasonic-industry/ERA-3AEB153V/1465882">15k ohm Resistor</a></td><td align="center">x3</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-072K2L/727016">2.2k ohm Resistor</a></td><td align="center">x5</td></tr>
+                    <tr><td><a href="https://www.digikey.com/en/products/detail/yageo/RC0603FR-0747KL/727253">47k ohm Resistor</a></td><td align="center">x4</td></tr>
                     <tr><td><a href="https://www.amazon.com/2-54mm-Breakaway-Female-Connector-Arduino/dp/B01MQ48T2V/ref=sr_1_2_sspa?crid=16L90K4M3IPUJ&amp;dib=eyJ2IjoiMSJ9.PiVZGqfONIcta-M5ftDeSQvccVRmw9BxQL2rt7zLLUlXX1aAbZE0DyQvFnNRSX7J1oJEA5hJfbgi6EJ3rHkMxb469SjCBiPbG4t4CkfheX_9W7Yiw4iFecXODu6yRoJ7FvokpWTZ5C9jK1dhZLU-0gXDsoVq96wH-NXO7UmstsQCzrZOSzCfbpis861lxSzX91fkbaxrOKRMrX-EQ3cjwH1Og4xyfn4PJ6o445uHR2s.cW7WMcxh5mXZc1T8bR0I8nLIh45-W5JJZGus4sUdDDI&amp;dib_tag=se&amp;keywords=Male+headers&amp;qid=1783892715&amp;sprefix=male+header%2Caps%2C141&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1">SW_SPST</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM02B-NSHSS-TB/3313627">SM02B-NSHSS-TB</a></td><td align="center">x1</td></tr>
                     <tr><td><a href="https://www.amazon.com/dp/B0FD32HBD2?ref=ppx_yo2ov_dt_b_fed_asin_title">JST SH 1.0mm 2-Pin Connector Male</a></td><td align="center">x6</td></tr>
